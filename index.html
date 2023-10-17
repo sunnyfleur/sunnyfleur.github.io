@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <!-- overlay -->
+    <section id="overlay"></section>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <ul class="navbar__links">
+            <li class="navbar__link"><a href="#works">Work</a></li>
+            <li class="navbar__link"><a href="#things">About</a></li>
+            <li class="navbar__link"><a href="#works">Resume</a></li>
+            <a href="#footer"><button class="navbar__btn">Contact</button></a>
+          </ul>
+          <!-- menu button -->
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- banner -->
+    <section id="banner">
+      <div class="container">
+        <!-- img -->
+        <div class="banner__img">
+          <img src="./img/game_banner.jpg" alt="illustration of women" />
+        </div>
+        <!-- heading -->
+        <div class="banner__heading">
+          <h1>Hello, I'm Kiet</h1>
+          <p>
+            Hey there! I'm Kiet, a passionate Unity game developer with a flair for turning ideas into immersive gaming experiences. I've honed my skills in C#, 3D modeling, and 2D art to bring dreams to life.
+          </p>
+          <a href="#"><button class="banner__btn">View More</button></a>
+          <div class="banner__socials">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- things -->
+    <section id="things">
+      <div class="container">
+        <!-- dec -->
+        <div class="things__dec">
+          <img src="./img/things-dec-l.png" alt="a" />
+        </div>
+        <!-- dec -->
+        <div class="things__dec">
+          <img src="./img/things-dec-r.png" alt="a" />
+        </div>
+        <!-- heading -->
+        <h2>Skills And Experiences</h2>
+        <!-- item 1 -->
+        <div class="things__item">
+          <!-- img -->
+          <img src="./img/game_developemnt.jpg" alt="a" />
+          <!-- text -->
+          <div class="things__item--heading">
+            <h3>Technical Skills</h3>
+            <p>Tools Proficiency: Unity Engine, Photoshop, Aseprite</p>
+            <p>Tools Knowledge : Photon PUN, Android Studio, Blender, Window Form, Godot </p>
+            <p>Languagues Proficiency: C#, ShaderLab, Java</p>
+            <p>Languagues Knowledge: C++, MySQL, Python, TypeScript</p> 
+          </div>
+        </div>
+        <!-- item 2 -->
+        <div class="things__item">
+          <!-- img -->
+          <img src="./img/educations.jpg" alt="a" />
+          <!-- text -->
+          <div class="things__item--heading">
+            <h3>Educations And Certifications</h3>
+            <p>Bachelor Degree Of University of Economics Ho Chi Minh City</p>
+            <p>CodeGym Certifications Of Unity Development</p>
+            <p>Digiart Academy Certifications Of 2D Game Artist </p>
+            <p>Udemy Certifications Of 3D Game Development</p>
+            <p>Udemy Certifications Of 3D Blender</p> 
+            <p>IELTS Certifications</p>
+          </div>
+        </div>
+        <!-- item 3 -->
+        <div class="things__item">
+          <!-- img -->
+          <img src="./img/hobbies.jpg" alt="a" />
+          <!-- text -->
+          <div class="things__item--heading">
+            <h3>Hobbies</h3>
+            <p>Playing Offline Game</p>
+            <p>Drawing</p>
+            <p>Reading Books Of Game Design</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- works -->
+    <section id="works">
+      <div class="container">
+        <!-- dec -->
+        <div class="works__dec">
+          <img src="./img/work-dec.png" alt="a" />
+        </div>
+        <div class="works__dec">
+          <img src="./img/work-dec.png" alt="a" />
+        </div>
+        <!-- heading -->
+        <h2>Recent Works</h2>
+        <!-- img -->
+        <div class="works__img">
+          <div class="works__img--single">
+            <img src="./img/project1.png" alt="a" />
+            <h3>How Mob Feel With Unity Engine</h3>
+            <p>Input Cotroller Pattern</p>
+            <p>Object Pooling Pattern</p>
+            <p>Extendable And Reusable Architecture</p>
+          </div>
+          <div class="works__img--single">
+            <img src="./img/project2.png" alt="a" />
+            <h3>Space Conqueror with Unity Engine</h3>
+            <p>Using Photon Server For Multiplayer</p>
+            <p>Input Cotroller Pattern</p>
+            <p>Object Pooling Pattern</p>
+            <p>Extendable And Reusable Architecture</p>
+            
+          </div>
+          <div class="works__img--single">
+            <img src="./img/project3.png" alt="a" />
+            <h3>Clone Fishing Game With Unity Engine</h3>
+            <p>Object Pooling Pattern</p>
+          </div>
+          <div class="works__img--single">
+            <img src="./img/project4.png" alt="a" />
+            <h3>Window Application Shoes Retail Management</h3>
+            <p>Logical And Physical 3-Layer Model Combination</p>
+            <p>TCP/IP Protocol Multi User</p>
+          </div>
+        </div>
+        <!-- btn -->
+        <div class="works__btn">
+          <a href="#"><button>Scroll Back</button></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/ab8d5f74a0.js" crossorigin="anonymous"></script>
+    <!-- main js -->
+    <script src="./js/main.js"></script>
+    <!-- BootStrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
