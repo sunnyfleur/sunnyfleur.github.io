@@ -1,0 +1,94 @@
+{
+    "menu": {
+      "home": "Home",
+      "game": "Game",
+      "overview": "Overview",
+      "detailed": "Detailed Info",
+      "examples": "Examples"
+    },
+    "header": {
+      "emailSubject": "Message from your site",
+      "email": "tranhoangkiet1312@gmail.com"
+    },
+    "gameSection": {
+      "subtitle": "Space Conqueror",
+      "title": "Demo Video",
+      "videoLink": "https://www.youtube.com/embed/dFWq_yK8yhs"
+    },
+    "overviewSection": {
+      "subtitle": "Overview",
+      "title": "Overviews",
+      "description1": "Đây là phần giới thiệu đầu tiên...",
+      "description2": "Đây là phần giới thiệu thứ hai..."
+    },
+    "aboutDescription": {
+      "para1": "Long ago, humans and mystical creatures lived in harmony, coexisting in a world brimming with magic and wonder. But peace was fragile. Greedy and ambitious, humans crossed the line—expanding their dominion, claiming sacred lands, and ravaging the delicate ecosystem that once nurtured both species. With their homes destroyed and their kin slaughtered, the ancient creatures had no choice but to fight back. From the depths of the forgotten realms, the slumbering king of darkness—Death Bringer—was awakened. Summoned by his people, he rises once more, not as a tyrant, but as a savior, sworn to reclaim the world that was stolen from them.Now, as one of these so-called monsters, you must rally the oppressed, unleash your latent powers, and lead the uprising against humanity’s tyranny. The battle for survival has begun, and this time, the invaders will learn what it means to be the hunted.",
+      "downloadBtnText": "Design & Analysist Docs",
+      "downloadLink": "CV/CV_Tran Hoang Kiet_Game Designer.pdf"
+    },
+    "aboutInfo": {
+      "platform": "PC, WebGL, Android",
+      "engine": "Unity 2022.3.10f1",
+      "language": "English",
+      "toolsUsed": "Unity",
+      "completion": "2023",
+      "teamSize": "1",
+      "role": "Unity Developer, Game Designer"
+    },
+    "detailedInfo": {
+      "subtitle": "Detailed Info",
+      "title": "Information",
+      "mainDescription": "I developed this game inspired by the art style of Kingdom: Two Crowns during my time learning Unity programming. In this game, you step into the role of creatures that are typically seen as enemies in traditional RPGs. However, this time, the story is told from their perspective—a tale of rebellion against the oppression of mankind.",
+      "sections": [
+        {
+          "sectionTitle": "Game Design",
+          "items": [
+            "Defined the game concept, story, and mechanics",
+            "Designed the world map, dungeons, towns, and NPC locations"
+          ]
+        },
+        {
+          "sectionTitle": "Scripting (Unity C#)",
+          "items": [
+            "Character & Enemy Systems",
+            "Exploration & World Mechanics",
+            "RPG Core Systems",
+            "UI & UX Implementation",
+            "Optimization & Performance",
+            "Built and tested the game for PC, WebGL, Android, or iOS"
+          ]
+        }
+      ]
+    },
+    "examplesSection": {
+      "subtitle": "Pictures",
+      "title": "Examples",
+      "gallery": [
+        {
+          "imageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
+          "fullImageUrl": "./img/ExampleImages/EI_SpaceConqueror.png",
+          "title": "Main Menu",
+          "description": "Main menu User Interface"
+        },
+        {
+          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
+          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "title": "Dashboard Template",
+          "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
+        },
+        {
+          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
+          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "title": "Notification Icon",
+          "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
+        },
+        {
+          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
+          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "title": "Smart Penguin",
+          "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
+        }
+      ]
+    }
+  }
+  

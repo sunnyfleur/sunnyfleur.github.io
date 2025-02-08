@@ -1026,7 +1026,11 @@ p.additional-text a {
     font-size: 2rem;
   }
 }
-
+.highlight-text {
+  color: #D9B9CD;  /* thay màu bạn muốn, ví dụ cam */
+  font-weight: bold; /* tuỳ chọn in đậm, hoặc bỏ nếu không muốn */
+  /* Không cần background nếu chỉ đổi màu chữ */
+}
 .rounded-tag {
   display: -webkit-inline-box;
   display: -moz-inline-box;
