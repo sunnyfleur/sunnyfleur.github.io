@@ -1,0 +1,96 @@
+{
+    "menu": {
+      "home": "Home",
+      "game": "Game",
+      "overview": "Overview",
+      "detailed": "Detailed Info",
+      "examples": "Examples"
+    },
+    "header": {
+      "emailSubject": "Message from your site",
+      "email": "tranhoangkiet1312@gmail.com"
+    },
+    "gameSection": {
+      "subtitle": "Space Conqueror",
+      "title": "Demo Video",
+      "videoLink": "https://www.youtube.com/embed/PD-p8LtxGlE"
+    },
+    "overviewSection": {
+      "subtitle": "Overview",
+      "title": "Overviews",
+      "description1": "Đây là phần giới thiệu đầu tiên...",
+      "description2": "Đây là phần giới thiệu thứ hai..."
+    },
+    "aboutDescription": {
+      "para1": "A 3D voxel-based space shooter featuring both a thrilling single-player campaign and intense competitive multiplayer, developed during my time as a Unity Developer",
+      "para2": "Space Conqueror is a space-themed game where players control a spaceship to attack enemies while dodging incoming fire. The game emphasizes quick reflexes and strategic maneuvering to survive and progress through various levels. Players must navigate through space, manage their ship's resources, and eliminate adversaries to achieve high scores and complete missions. The gameplay focuses on providing an engaging and challenging experience for those interested in space combat scenarios. ",
+      "downloadBtnText": "Design & Analysist Docs",
+      "downloadLink": "CV/CV_Tran Hoang Kiet_Game Designer.pdf"
+    },
+    "aboutInfo": {
+      "platform": "PC, WebGL",
+      "engine": "Unity 2022.3.10f1",
+      "language": "English",
+      "toolsUsed": "Unity",
+      "completion": "2024",
+      "teamSize": "1",
+      "role": "Unity Developer, Game Designer"
+    },
+    "detailedInfo": {
+      "subtitle": "Detailed Info",
+      "title": "Information",
+      "mainDescription": "Drawing inspiration from Midnite Oil Software's tutorials (His Youtube Channel: https://www.youtube.com/@midniteoilsoftware), I developed this game, enhancing it with additional features and integrating networking capabilities using Photon Unity Networking (PUN).",
+      "sections": [
+        {
+          "sectionTitle": "Game & level Design",
+          "items": [
+            "Level design, prototyping, and construction",
+            "Environment design",
+            "Combat encounters (enemy composition, waves, retreating, etc.)"
+          ]
+        },
+        {
+          "sectionTitle": "Scripting (Unity C#)",
+          "items": [
+            "Implementing enemy AI using a finite state machine",
+            "Optimized resource management with object pooling",
+            "Enhancing performance with Universal Render Pipeline (URP)",
+            "Building cross-platform support for PC and WebGL",
+            "Seamless player management powered by Azure PlayFab",
+            "Real-time multiplayer integration with Photon Unity Networking (PUN)"
+          ]
+        }
+      ]
+    },
+    "examplesSection": {
+      "subtitle": "Pictures",
+      "title": "Examples",
+      "gallery": [
+        {
+          "imageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
+          "fullImageUrl": "./img/ExampleImages/EI_SpaceConqueror.png",
+          "title": "Main Menu",
+          "description": "Main menu User Interface"
+        },
+        {
+          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
+          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "title": "Dashboard Template",
+          "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
+        },
+        {
+          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
+          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "title": "Notification Icon",
+          "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
+        },
+        {
+          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
+          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "title": "Smart Penguin",
+          "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
+        }
+      ]
+    }
+  }
+  
