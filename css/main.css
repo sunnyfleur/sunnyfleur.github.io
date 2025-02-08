@@ -3398,7 +3398,15 @@ form textarea:required:valid {
 /* Features Gallery Start */
 /* ------------------------------------------------*/
 .gallery__item {
-  position: relative;
+  display: block; /* Mặc định hiện */
+  transition: all 0.3s ease-in-out; /* Hiệu ứng mượt */
+}
+
+.gallery__item.hidden {
+  display: none !important; /* Đảm bảo không chiếm chỗ */
+}
+.hidden {
+  display: none !important; /* Đảm bảo không chiếm chỗ */
 }
 
 .gallery__link {
@@ -3459,7 +3467,9 @@ form textarea:required:valid {
 .gallery__image {
   opacity: 0;
 }
-
+.hidden {
+  display: none !important;
+}
 .gallery__descr {
   position: absolute;
   bottom: 0;
@@ -3989,12 +3999,107 @@ form textarea:required:valid {
   -moz-border-radius: var(--_radius-xl);
        border-radius: var(--_radius-xl);
 }
+
 @media only screen and (min-width: 1400px) {
   .testimonials-card {
     padding: 5rem;
   }
 }
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  grid-auto-flow: dense; /* Sắp xếp lại grid khi một phần tử bị ẩn */
+}
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Căn giữa items */
+  align-items: start; /* Tránh việc bị kéo dãn khi item ẩn */
+}
+
+.col-md-6 {
+  width: 50%; /* Đảm bảo mỗi item chiếm 50% chiều rộng */
+  padding: 10px; /* Tránh bị dính nhau */
+}
+
+@media (max-width: 768px) { 
+  .col-md-6 {
+    width: 100%; /* Khi màn nhỏ thì xuống hàng */
+  }
+}
+
+.about-image-container {
+  width: 100%; /* Chiều rộng full */
+  max-width: 1000px; /* Giới hạn kích thước tối đa để tránh ảnh quá to */
+  margin: 2rem auto; /* Căn giữa ảnh */
+  overflow: hidden;
+  border-radius: 10px; /* Bo tròn nhẹ */
+}
+/* Khung chứa các nút filter */
+.filter-menu {
+  margin: 2rem auto;       /* Khoảng cách trên - dưới */
+  text-align: center;      /* Canh giữa các nút */
+}
+
+/* Reset mặc định */
+.filter-menu button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Style nút filter tương tự các btn trong main.css */
+.filter-menu button {
+  display: inline-flex;                      /* Inline-flex để nằm ngang */
+  align-items: center;
+  justify-content: center;
+  height: 5rem;                              /* Tương đương nút .btn-default */
+  padding: 0 2rem;
+  font: normal 700 1.6rem/5rem var(--_font-default);
+  background-color: transparent;            /* Nền trong suốt như .btn-outline */
+  border: 1px solid var(--stroke-controls); /* Màu viền mặc định từ biến */
+  color: var(--t-bright);                   /* Màu chữ trắng/cơ bản */
+  border-radius: var(--_radius-m);          /* Bo góc trung bình */
+  transition: all 0.3s var(--_animbezier);
+  text-transform: none; /* Tùy, nếu muốn uppercase, thêm text-transform: uppercase; */
+  margin: 0 1rem;       /* Khoảng cách giữa các nút */
+}
+
+/* Hiệu ứng hover (tương tự .btn-hover-outline hoặc .btn-hover-accent) */
+.no-touch .filter-menu button:hover {
+  /* Tăng scale nhẹ khi hover (tùy thích) */
+  transform: scale(1.03);
+  /* Đổi viền & nền & màu chữ, có thể làm kiểu outline, accent, ... */
+  border-color: var(--accent);
+  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+  color: var(--t-opp-bright); /* Màu chữ ngược */
+}
+
+/* Khi đang active (nút được chọn) */
+.filter-menu button.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+  color: var(--t-opp-bright);
+  transform: scale(1.03);
+}
+
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2419 / 977; /* Đảm bảo đúng tỷ lệ ảnh */
+  object-fit: cover; /* Cắt ảnh để giữ bố cục đẹp */
+}
 .testimonials-card__descr {
   max-width: 1050px;
   margin-top: 2rem;

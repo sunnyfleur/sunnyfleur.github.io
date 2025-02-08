@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Template Favicon & Icons Start -->
+     
     <link rel="icon" href="img/favicon/favicon.ico" sizes="any">
     <link rel="icon" href="img/favicon/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
@@ -282,18 +283,25 @@
             <h2 class="h2__title animate-in-up">Check out my featured projects</h2>
           </div>
           <!-- Content Block - H2 Section Title End -->
-
-          <!-- Content Block - Works Gallery Start -->
+          <div class="filter-menu">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="personal-project">Personal Project</button>
+            <button data-filter="professional-project">Game Designer</button>
+          </div>
+          <!-- Portfolio Grid Start -->
           <div class="container">
             <div class="row">
-              <!-- Works Gallery Single Item Start -->
               <div class="col-12 col-md-6">
                 <a href="product_SpaceConquer.html" class="d-block text-decoration-none">
-                  <figure class="gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                  <figure class="gallery__item grid-item animate-card-2"
+                          data-tags="personal-project"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject">
                     <img src="./img/ExampleImages/IM_SpaceConqueror.jpg" 
-                        class="img-fluid rounded" 
-                        alt="Test Image"
-                        style="max-width: 100%; height: auto; display: block;">
+                         class="img-fluid rounded" 
+                         alt="Test Image"
+                         style="max-width: 100%; height: auto; display: block;">
                     <figcaption class="gallery__descr opposite mt-3" itemprop="caption description">
                       <h5 class="opposite">Dashboard Template</h5>
                       <div class="card__tags d-flex flex-wrap">
@@ -301,76 +309,65 @@
                         <span class="rounded-tag">Game Designer</span>
                         <span class="rounded-tag">Unity Developer</span>
                       </div>
-                      <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio, a mollis ipsum tristique eu.</p>
+                      <p class="small">Mauris porttitor lobortis ligula...</p>
                     </figcaption>
                   </figure>
                 </a>
               </div>
-              <!-- Works Gallery Single Item End -->
-          
-              <!-- Works Gallery Single Item Start -->
               <div class="col-12 col-md-6">
                 <a href="product_HowMobFeel.html" class="d-block text-decoration-none">
-                  <figure class="gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <img src="./img/ExampleImages/IM_HowMobFeel.jpg"
-                        class="img-fluid rounded" 
-                        alt="Test Image"
-                        style="max-width: 100%; height: auto; display: block;">
-                    <figcaption class="gallery__descr opposite mt-3" itemprop="caption description">
-                      <h5 class="opposite">Notification Icon</h5>
-                      <div class="card__tags d-flex flex-wrap">
-                        <span class="rounded-tag">Personal Project</span>
-                        <span class="rounded-tag">Unity Developer</span>
-                      </div>
-                      <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio, a mollis ipsum tristique eu.</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </div>
-              <!-- Works Gallery Single Item End -->
-              <div class="col-12 col-md-6">
-                <a href="product.html" class="d-block text-decoration-none">
-                  <figure class="gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <img src="https://dummyimage.com/800x800/3c3c3c/636363" 
-                        class="img-fluid rounded" 
-                        alt="Test Image"
-                        style="max-width: 100%; height: auto; display: block;">
+                  <figure class="gallery__item grid-item animate-card-2"
+                          data-tags="professional-project"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject">
+                    <img src="./img/ExampleImages/IM_HowMobFeel.jpg" 
+                         class="img-fluid rounded" 
+                         alt="Test Image"
+                         style="max-width: 100%; height: auto; display: block;">
                     <figcaption class="gallery__descr opposite mt-3" itemprop="caption description">
                       <h5 class="opposite">Dashboard Template</h5>
                       <div class="card__tags d-flex flex-wrap">
-                        <span class="rounded-tag">UI Design</span>
-                        <span class="rounded-tag">Figma</span>
+                        <span class="rounded-tag">Professional Project</span>
+                        <span class="rounded-tag">Game Designer</span>
+                        <span class="rounded-tag">Unity Developer</span>
                       </div>
-                      <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio, a mollis ipsum tristique eu.</p>
+                      <p class="small">Mauris porttitor lobortis ligula...</p>
                     </figcaption>
                   </figure>
                 </a>
+                
               </div>
-              <!-- Works Gallery Single Item End -->
-          
-              <!-- Works Gallery Single Item Start -->
+              <!-- Portfolio Item -->
               <div class="col-12 col-md-6">
-                <a href="product.html" class="d-block text-decoration-none">
-                  <figure class="gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <img src="https://dummyimage.com/800x800/3c3c3c/636363" 
-                        class="img-fluid rounded" 
-                        alt="Test Image"
-                        style="max-width: 100%; height: auto; display: block">
+                <a href="product_HowMobFeel.html" class="d-block text-decoration-none">
+                  <figure class="gallery__item grid-item animate-card-2"
+                          data-tags="professional-project"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject">
+                    <img src="./img/ExampleImages/IM_HowMobFeel.jpg" 
+                         class="img-fluid rounded" 
+                         alt="Test Image"
+                         style="max-width: 100%; height: auto; display: block;">
                     <figcaption class="gallery__descr opposite mt-3" itemprop="caption description">
-                      <h5 class="opposite">Notification Icon</h5>
+                      <h5 class="opposite">Dashboard Template</h5>
                       <div class="card__tags d-flex flex-wrap">
-                        <span class="rounded-tag">Illustrations</span>
-                        <span class="rounded-tag">3D Render</span>
+                        <span class="rounded-tag">Professional Project</span>
+                        <span class="rounded-tag">Game Designer</span>
+                        <span class="rounded-tag">Unity Developer</span>
                       </div>
-                      <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio, a mollis ipsum tristique eu.</p>
+                      <p class="small">Mauris porttitor lobortis ligula...</p>
                     </figcaption>
                   </figure>
                 </a>
+                
               </div>
             </div>
+            
           </div>
           
-
+      
         </section>
         <!-- Portfolio Section End -->
 
@@ -388,9 +385,11 @@
               <span>About Me</span>
             </p>
             <h2 class="h2__title animate-in-up">I am a Game Designer and a gamer</h2>
+            <div class="about-image-container animate-in-up">
+              <img src="img/about-me-banner.jpg" alt="About Me Image" class="about-image">
+            </div>
           </div>
           <!-- Content Block - H2 Section Title End -->
-
           <!-- Content Block - Achievements Start -->
           <div class="content__block grid-block">
             <div class="achievements d-flex flex-column flex-md-row align-items-md-stretch">
@@ -423,12 +422,12 @@
           <div class="content__block grid-block block-large">
             <div class="container-fluid p-0">
               <div class="row g-0 justify-content-between">
-                
                 <!-- About Me Description Start -->
                 <div class="col-12 col-xl-8 grid-item about-descr">
                   <p class="about-descr__text animate-in-up">
                     I am a <span class="highlight-text">Game Designer</span>  with a deep passion for video games, digital art, and literature. From blockbuster AAA titles to hyper-casual experiences, I enjoy exploring different genres and analyzing what makes games truly engaging. My all-time favorite games are Red Dead Redemption 2 and the Persona series, both of which have greatly influenced my perspective on storytelling and game design.
                   </p>
+                  
                   <p class="about-descr__text animate-in-up">
                     I hold a degree in <span class="highlight-text">Software Engineering from UEH University</span> and have previously worked as a Unity Developer, gaining hands-on experience in game mechanics, core loop design, level design, data analysis, and monetization strategies. This technical background allows me to bridge the gap between creativity and functionality, ensuring that my designs are both innovative and feasible.
                   </p>
@@ -444,7 +443,7 @@
                   </div>
                 </div>
                 <!-- About Me Description End -->
-      
+                
                 <!-- About Me Information Start -->
                 <div class="col-12 col-xl-4 grid-item about-info">
                   <div class="about-info__item animate-in-up">
@@ -1187,6 +1186,39 @@
         const delta = max - min;
         return (direction = 1) => (min + delta * Math.random()) * direction;
       }
+      const filterButtons = document.querySelectorAll('.filter-menu [data-filter]');
+const items = document.querySelectorAll('.gallery__item');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filterVal = btn.getAttribute('data-filter');
+
+    items.forEach(item => {
+      const parentCol = item.closest('.col-12.col-md-6'); // Tìm phần tử cha (Bootstrap Grid)
+      const tags = item.getAttribute('data-tags')?.split(' ') || [];
+
+      if (filterVal === 'all' || tags.includes(filterVal)) {
+        item.classList.remove('hidden'); // Hiện item
+        parentCol.classList.remove('hidden'); // Hiện cả cột chứa item
+      } else {
+        item.classList.add('hidden'); // Ẩn item
+        parentCol.classList.add('hidden'); // Ẩn cả cột chứa item
+      }
+    });
+
+    // Cập nhật layout để tránh lỗi grid bị giữ khoảng trống
+    const container = document.querySelector('.container');
+    container.style.display = 'none';
+    container.offsetHeight; // Trigger reflow
+    container.style.display = 'grid'; // hoặc 'flex'
+  });
+});
+
+
+
     </script>
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js"></script>
