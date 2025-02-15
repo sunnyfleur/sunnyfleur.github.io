@@ -67,26 +67,26 @@
       "title": "Examples",
       "gallery": [
         {
-          "imageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
+          "imageUrl": "../img/ExampleImages/EI_SpaceConqueror.jpg",
           "fullImageUrl": "./img/ExampleImages/EI_SpaceConqueror.png",
           "title": "Main Menu",
           "description": "Main menu User Interface"
         },
         {
-          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
-          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "imageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
+          "fullImageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
           "title": "Dashboard Template",
           "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
         },
         {
-          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
-          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "imageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
+          "fullImageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
           "title": "Notification Icon",
           "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
         },
         {
-          "imageUrl": "https://dummyimage.com/800x800/3c3c3c/636363",
-          "fullImageUrl": "https://dummyimage.com/1400x1400/3c3c3c/636363",
+          "imageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
+          "fullImageUrl": "./img/ExampleImages/EI_SpaceConqueror.jpg",
           "title": "Smart Penguin",
           "description": "Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu."
         }

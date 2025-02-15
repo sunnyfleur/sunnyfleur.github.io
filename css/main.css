@@ -3465,7 +3465,7 @@ form textarea:required:valid {
 }
 
 .gallery__image {
-  opacity: 0;
+  opacity: 1;
 }
 .hidden {
   display: none !important;
@@ -4373,6 +4373,7 @@ form textarea:required:valid {
   transition: transform 0.3s var(--_animbezier);
   transition: transform 0.3s var(--_animbezier), -webkit-transform 0.3s var(--_animbezier), -moz-transform 0.3s var(--_animbezier);
 }
+
 .socials-square__link i {
   display: block;
   position: relative;
@@ -4415,6 +4416,13 @@ form textarea:required:valid {
   .no-touch .socials-square__link:hover i {
     text-shadow: 0 -5rem var(--t-bright), 0 0 var(--t-bright);
   }
+  /* Tăng cỡ chữ cho cột phải */
+.right-col-text {
+  font-size: 2rem;      /* hoặc 18px, 2rem,... tuỳ ý */
+  line-height: 1.5;       /* line-height rộng hơn chút để thoáng */
+  /* Bạn có thể tùy chỉnh thêm như font-weight, margin, vv. */
+}
+
 }
 
 /* ------------------------------------------------*/
