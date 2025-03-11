@@ -2,18 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Chỉ giữ một meta viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Professional products</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
-
-    <!-- Viewport Meta-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
 
     <!-- Template Favicon & Icons Start -->
     <link rel="icon" href="img/favicon/favicon.ico" sizes="any" />
@@ -25,22 +19,10 @@
     <!-- Facebook Metadata Start -->
     <meta property="og:image:height" content="1200" />
     <meta property="og:image:width" content="1200" />
-    <meta
-      property="og:title"
-      content="Braxton - Personal Portfolio & Resume HTML Template"
-    />
-    <meta
-      property="og:description"
-      content="Show yourself brightly with Braxton - unique and creative portfolio and resume template!"
-    />
-    <meta
-      property="og:url"
-      content="https://mixdesign.club/themeforest/braxton"
-    />
-    <meta
-      property="og:image"
-      content="https://mixdesign.club/themeforest/braxton/img/favicon/og-image.jpg"
-    />
+    <meta property="og:title" content="Braxton - Personal Portfolio & Resume HTML Template" />
+    <meta property="og:description" content="Show yourself brightly with Braxton - unique and creative portfolio and resume template!" />
+    <meta property="og:url" content="https://mixdesign.club/themeforest/braxton" />
+    <meta property="og:image" content="https://mixdesign.club/themeforest/braxton/img/favicon/og-image.jpg" />
     <!-- Facebook Metadata End -->
 
     <!-- Template Styles Start -->
@@ -51,22 +33,11 @@
     <!-- Template Styles End -->
 
     <!-- Custom Browser Color Start -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#dcdce7"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#111111"
-    />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#dcdce7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
     <meta name="msapplication-navbutton-color" content="#111111" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   </head>
   <body>
     <div id="loader" class="loader">
@@ -132,11 +103,7 @@
           aria-label="light/dark mode"
           aria-checked="true"
         ></button>
-        <a
-          id="notify-trigger"
-          class="header__trigger btn"
-          href="#"
-        >
+        <a id="notify-trigger" class="header__trigger btn" href="#">
           <span class="trigger__caption">Let's Talk</span>
           <i class="ph-bold ph-chat-dots"></i>
         </a>
@@ -144,60 +111,56 @@
       <!-- Header Controls End -->
     </header>
 
-    <!-- GAME SECTION -->
-    <section id="game" class="overview-section">
-      <div class="content__block section-grid-title">
+   
+
+    <!-- DETAILED SECTION -->
+    <section id="detailed" class="overview-section py-4">
+      <div class="content__block section-grid-title mb-1">
         <p class="h2__subtitle animate-in-up">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13px"
-            height="13px"
-            viewBox="0 0 13 13"
-            fill="currentColor"
-          >
-            <path
-              fill="currentColor"
-              d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
-              C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7
-              C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 13 13" fill="currentColor">
+            <path fill="currentColor" d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
+                  C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7
+                  C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/>
           </svg>
-          <span id="gameSubtitle">Name of the game</span>
+          <span id="detailedSubtitle">Detailed Info</span>
         </p>
-        <h2 class="h2__title animate-in-up" id="gameTitle">Description</h2>
+        <h2 class="h2__title animate-in-up" id="detailedTitle">Information</h2>
+        <p class="h2__text animate-in-up" id="detailedMainDesc">
+          <!-- JSON bơm vào -->
+        </p>
+      </div>
+
+      <!-- Container chia 2 cột: bên trái chiếm 7 phần, bên phải chiếm 5 phần -->
+      <div class="container-fluid px-0">
+        <div class="row g-5">
+          <!-- Cột trái (7/12) -->
+          <div class="col-md-6">
+            <div class="ratio ratio-16x9">
+              <iframe 
+                src="https://www.youtube.com/embed/PD-p8LtxGlE" 
+                title="Demo"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Cột phải (5/12) -->
+          <div class="col-md-5">
+            <div id="detailedSections" class="right-col-text"></div>
+            <!-- JSON bơm các h5, ul... vào đây -->
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- VIDEO DEMO CONTAINER -->
-    <div class="video-demo-container">
-      <div class="video-wrapper">
-        <iframe
-          id="gameVideo"
-          src=""
-          title="Video demo"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
 
     <!-- OVERVIEW SECTION -->
     <section id="overview" class="overview-section">
       <div class="content__block section-grid-title">
         <p class="h2__subtitle animate-in-up">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13px"
-            height="13px"
-            viewBox="0 0 13 13"
-            fill="currentColor"
-          >
-            <path
-              fill="currentColor"
-              d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
-                C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7
-                C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 13 13" fill="currentColor">
+            <path fill="currentColor" d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
+              C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7
+              C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/>
           </svg>
           <span id="overviewSubtitle">Overview</span>
         </p>
@@ -241,18 +204,6 @@
             </div>
             <div class="about-info__item animate-in-up">
               <h6>
-                <small class="top">Engine:</small>
-                <span id="infoEngine">UDK</span>
-              </h6>
-            </div>
-            <div class="about-info__item animate-in-up">
-              <h6>
-                <small class="top">Language:</small>
-                <span id="infoLanguage">English, Vietnamese</span>
-              </h6>
-            </div>
-            <div class="about-info__item animate-in-up">
-              <h6>
                 <small class="top">Tools Used:</small>
                 <span id="infoTools">UDK, Photoshop, Wacom Tablet</span>
               </h6>
@@ -263,12 +214,7 @@
                 <span id="infoCompletion">2013</span>
               </h6>
             </div>
-            <div class="about-info__item animate-in-up">
-              <h6>
-                <small class="top">Team Size:</small>
-                <span id="infoTeamSize">1</span>
-              </h6>
-            </div>
+        
             <div class="about-info__item animate-in-up">
               <h6>
                 <small class="top">Role:</small>
@@ -283,54 +229,17 @@
       </div>
     </div>
 
-    <!-- DETAILED SECTION -->
-    <section id="detailed" class="overview-section">
-      <div class="content__block section-grid-title">
-        <p class="h2__subtitle animate-in-up">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13px"
-            height="13px"
-            viewBox="0 0 13 13"
-            fill="currentColor"
-          >
-            <path
-              fill="currentColor"
-              d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
-                C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7
-                C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"
-            />
-          </svg>
-          <span id="detailedSubtitle">Detailed Info</span>
-        </p>
-        <h2 class="h2 animate-in-up" id="detailedTitle">
-          Information
-        </h2>
-        <p class="h2__text animate-in-up" id="detailedMainDesc">
-          <!-- Bơm nội dung JSON -->
-        </p>
-        <!-- Nơi chèn các mục chi tiết (Game & level design, Scripting, Visual Scripting,...) -->
-        <div id="detailedSections"></div>
-      </div>
-    </section>
-
-    <!-- EXAMPLES SECTION -->
+    
+    
+    <!-- EXAMPLES SECTION (commented out) -->
+    
     <section id="example" class="overview-section">
       <div class="content__block section-grid-title">
         <p class="h2__subtitle animate-in-up">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13px"
-            height="13px"
-            viewBox="0 0 13 13"
-            fill="currentColor"
-          >
-            <path
-              fill="currentColor"
-              d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
+          <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 13 13" fill="currentColor">
+            <path fill="currentColor" d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
                   C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7
-                  C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"
-            />
+                  C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/>
           </svg>
           <span id="examplesSubtitle">Pictures</span>
         </p>
@@ -344,13 +253,14 @@
         </div>
       </div>
     </section>
+   
 
-    <!-- (Các file JS gốc) -->
+    <!-- Scripts -->
     <script src="js/libs.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js"></script>
 
-    <!-- Code GSAP hiệu ứng blur (nếu vẫn dùng) -->
+    <!-- GSAP effect for blur -->
     <script>
       const randomX = random(-400, 400);
       const randomY = random(-200, 200);
@@ -404,83 +314,54 @@
       }
     </script>
 
-    <!-- (ĐẶT FETCH CUỐI CÙNG) Script Load JSON & "bơm" dữ liệu -->
+    <!-- JSON content load script -->
     <script>
       fetch('content_sq.json')
         .then(response => response.json())
         .then(data => {
-          //=================
-          // 1) MENU
-          //=================
+          //================= 1) MENU =================
           document.getElementById('menuHome').textContent = data.menu.home;
           document.getElementById('menuGame').textContent = data.menu.game;
           document.getElementById('menuOverview').textContent = data.menu.overview;
           document.getElementById('menuDetailed').textContent = data.menu.detailed;
           document.getElementById('menuExamples').textContent = data.menu.examples;
 
-          //=================
-          // 2) HEADER EMAIL LINK
-          //=================
+          //================= 2) HEADER EMAIL LINK =================
           const notifyTrigger = document.getElementById('notify-trigger');
           notifyTrigger.href = `mailto:${data.header.email}?subject=${encodeURIComponent(data.header.emailSubject)}`;
 
-          //=================
-          // 3) GAME SECTION
-          //=================
-          document.getElementById('gameSubtitle').textContent = data.gameSection.subtitle;
-          document.getElementById('gameTitle').textContent = data.gameSection.title;
-          // Video
-          document.getElementById('gameVideo').src = data.gameSection.videoLink;
+          //================= 3) GAME SECTION =================
 
-          //=================
-          // 4) OVERVIEW SECTION
-          //=================
+          //================= 4) OVERVIEW SECTION =================
           document.getElementById('overviewSubtitle').textContent = data.overviewSection.subtitle;
           document.getElementById('overviewTitle').textContent = data.overviewSection.title;
-          // (Bạn có thể thêm nội dung nếu tạo ID cho description1/description2)
 
-          //=================
-          // 5) ABOUT DESCRIPTION
-          //=================
+          //================= 5) ABOUT DESCRIPTION =================
           document.getElementById('aboutDescPara1').textContent = data.aboutDescription.para1;
           document.getElementById('aboutDescPara2').textContent = data.aboutDescription.para2;
           document.getElementById('downloadBtnText').textContent = data.aboutDescription.downloadBtnText;
           document.getElementById('downloadLink').href = data.aboutDescription.downloadLink;
 
-          //=================
-          // 6) ABOUT INFO
-          //=================
+          //================= 6) ABOUT INFO =================
           document.getElementById('infoPlatform').textContent = data.aboutInfo.platform;
-          document.getElementById('infoEngine').textContent = data.aboutInfo.engine;
-          document.getElementById('infoLanguage').textContent = data.aboutInfo.language;
           document.getElementById('infoTools').textContent = data.aboutInfo.toolsUsed;
           document.getElementById('infoCompletion').textContent = data.aboutInfo.completion;
-          document.getElementById('infoTeamSize').textContent = data.aboutInfo.teamSize;
           document.getElementById('infoRole').textContent = data.aboutInfo.role;
 
-          //=================
-          // 7) DETAILED INFO
-          //=================
+          //================= 7) DETAILED INFO =================
           document.getElementById('detailedSubtitle').textContent = data.detailedInfo.subtitle;
           document.getElementById('detailedTitle').textContent = data.detailedInfo.title;
           document.getElementById('detailedMainDesc').textContent = data.detailedInfo.mainDescription;
-
-          // Tạo các phần con (mục Game & level design, Scripting, Visual Scripting, etc.)
           const detailedSectionsContainer = document.getElementById('detailedSections');
           data.detailedInfo.sections.forEach(section => {
-            // Tạo tiêu đề h5
             const h5 = document.createElement('h5');
             h5.className = 'animate-in-up';
             h5.style.color = '#e1bac5';
             h5.textContent = section.sectionTitle;
             h5.style.marginTop = '30px';
-
             detailedSectionsContainer.appendChild(h5);
-
-            // Tạo danh sách các item
             const ul = document.createElement('ul');
             ul.style.marginTop = '5px';
-
             section.items.forEach(item => {
               const li = document.createElement('li');
               li.textContent = item;
@@ -489,56 +370,40 @@
             detailedSectionsContainer.appendChild(ul);
           });
 
-          //=================
-          // 8) EXAMPLES SECTION (GALLERY)
-          //=================
+          //================= 8) EXAMPLES SECTION (GALLERY) =================
           document.getElementById('examplesSubtitle').textContent = data.examplesSection.subtitle;
           document.getElementById('examplesTitle').textContent = data.examplesSection.title;
-
           const galleryRow = document.getElementById('galleryRow');
           data.examplesSection.gallery.forEach(g => {
-            // Tạo figure
             const figure = document.createElement('figure');
             figure.className = 'col-12 col-md-6 gallery__item grid-item animate-card-2';
             figure.setAttribute('itemprop', 'associatedMedia');
             figure.setAttribute('itemscope', '');
             figure.setAttribute('itemtype', 'http://schema.org/ImageObject');
-
-            // Tạo link
             const a = document.createElement('a');
             a.href = g.fullImageUrl;
             a.setAttribute('data-image', g.imageUrl);
             a.className = 'gallery__link';
             a.setAttribute('itemprop', 'contentUrl');
             a.setAttribute('data-size', '1400x1400');
-
-            // Tạo img
             const img = document.createElement('img');
             img.src = g.imageUrl;
             img.className = 'gallery__image';
             img.setAttribute('itemprop', 'thumbnail');
             img.alt = g.title;
-
-            // Link chứa ảnh
             a.appendChild(img);
-
-            // Tạo figcaption
             const figcaption = document.createElement('figcaption');
             figcaption.className = 'gallery__descr';
             figcaption.setAttribute('itemprop', 'caption description');
-
             const h5 = document.createElement('h5');
             h5.textContent = g.title;
             figcaption.appendChild(h5);
-
             const p = document.createElement('p');
             p.className = 'small';
             p.textContent = g.description;
             figcaption.appendChild(p);
-
             figure.appendChild(a);
             figure.appendChild(figcaption);
-
             galleryRow.appendChild(figure);
           });
         })
@@ -546,6 +411,5 @@
           console.error('Lỗi khi tải JSON:', error);
         });
     </script>
-    <!-- Load Scripts End -->
   </body>
 </html>

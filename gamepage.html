@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Collection - SunnyFleur</title>
+    <link rel="stylesheet" type="text/css" href="css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <style>
+        body {
+            background: #000;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: var(--font-primary);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .gradient-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blur {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.5;
+        }
+
+        .blur:nth-of-type(1) {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            top: -400px;
+            left: -300px;
+        }
+
+        .blur:nth-of-type(2) {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            top: 50%;
+            right: -300px;
+        }
+
+        .blur:nth-of-type(3) {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            bottom: -400px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .game-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        .game-container h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .game-container h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            border-radius: 2px;
+        }
+
+        .platform-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .platform-tab {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--accent);
+            background: transparent;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            min-width: 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .platform-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .platform-tab:hover::before,
+        .platform-tab.active::before {
+            opacity: 1;
+        }
+
+        .platform-tab:hover,
+        .platform-tab.active {
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+        }
+
+        .tier-list {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .tier {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px;
+            color: #000;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tier::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: brightness(1.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tier:hover::before {
+            opacity: 1;
+        }
+
+        .tier-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            min-height: 120px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .game-card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.2rem;
+            width: calc((100% - 6rem) / 5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: transparent;
+            box-shadow: 0 12px 28px rgba(var(--accent-rgb), 0.2);
+        }
+
+        .game-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 160px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .game-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .game-card:hover .game-image img {
+            transform: scale(1.1);
+        }
+
+        .game-card:hover .game-image::after {
+            opacity: 0.7;
+        }
+
+        .game-title {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            transition: color 0.3s ease;
+            font-family: sans-serif;
+        }
+
+        .game-card:hover .game-title {
+            color: var(--accent);
+        }
+
+        .game-info {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .game-info div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .tier-s { background: linear-gradient(135deg, #ff6b6b, #ff8787); }
+        .tier-a { background: linear-gradient(135deg, #ffd93d, #ffa502); }
+        .tier-b { background: linear-gradient(135deg, #51cf66, #40c057); }
+        .tier-c { background: linear-gradient(135deg, #339af0, #228be6); }
+        .tier-d { background: linear-gradient(135deg, #845ef7, #7048e8); }
+        .tier-f { background: linear-gradient(135deg, #ff6b6b, #fa5252); }
+
+        @media (max-width: 1200px) {
+            .game-card {
+                width: calc((100% - 4.5rem) / 4);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .game-card {
+                width: calc((100% - 3rem) / 3);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .game-container {
+                padding: 1rem;
+            }
+
+            .tier-list {
+                grid-template-columns: 100px 1fr;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .platform-tab {
+                padding: 0.6rem 1.2rem;
+                min-width: 100px;
+            }
+
+            .game-card {
+                width: calc((100% - 1.5rem) / 2);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tier-list {
+                grid-template-columns: 1fr;
+            }
+
+            .tier {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .game-card {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-card {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Gradient Background Start -->
+    <div class="gradient-background">
+        <div class="blur"></div>
+        <div class="blur"></div>
+        <div class="blur"></div>
+    </div>
+    <!-- Gradient Background End -->
+
+    <div class="game-container">
+        <h1>Game Collection</h1>
+        
+        <div class="platform-tabs">
+            <button class="platform-tab active" data-platform="all">Tất cả</button>
+            <button class="platform-tab" data-platform="pc">PC</button>
+            <button class="platform-tab" data-platform="console">Console</button>
+            <button class="platform-tab" data-platform="mobile">Mobile</button>
+        </div>
+
+        <div class="tier-list">
+            <div class="tier tier-s">S Tier</div>
+            <div class="tier-content" data-tier="s">
+                <!-- Game cards will be added here -->
+            </div>
+
+            <div class="tier tier-a">A Tier</div>
+            <div class="tier-content" data-tier="a">
+                <!-- Game cards will be added here -->
+            </div>
+
+            <div class="tier tier-b">B Tier</div>
+            <div class="tier-content" data-tier="b">
+                <!-- Game cards will be added here -->
+            </div>
+
+            <div class="tier tier-c">C Tier</div>
+            <div class="tier-content" data-tier="c">
+                <!-- Game cards will be added here -->
+            </div>
+
+            <div class="tier tier-d">D Tier</div>
+            <div class="tier-content" data-tier="d">
+                <!-- Game cards will be added here -->
+            </div>
+
+            <div class="tier tier-f">F Tier</div>
+            <div class="tier-content" data-tier="f">
+                <!-- Game cards will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample game data - you can replace this with your actual games
+        const games = [
+            // S Tier
+            {
+                title: "Red Dead Redemption",
+                platform: "pc",
+                tier: "s",
+                hours: "180+",
+                year: "2010",
+                image: "./img/games/reddeadredemption.jpg"
+            },
+            {
+                title: "Elden Ring",
+                platform: "pc",
+                tier: "s",
+                hours: "150+",
+                year: "2022",
+                image: "./img/games/eldenring.jpg"
+            },
+            {
+                title: "Persona 5 Royal",
+                platform: "console",
+                tier: "s",
+                hours: "120+",
+                year: "2019",
+                image: "./img/games/persona5royal.jpg"
+            },
+            {
+                title: "Witcher 3",
+                platform: "pc",
+                tier: "s",
+                hours: "150+",
+                year: "2015",
+                image: "./img/games/witcher3.jpg"
+            },
+            {
+                title: "Persona 3 Reload",
+                platform: "console",
+                tier: "s",
+                hours: "100+",
+                year: "2023",
+                image: "./img/games/persona3reload.jpg"
+            },
+            {
+                title: "Pokemon Emerald",
+                platform: "console",
+                tier: "s",
+                hours: "80+",
+                year: "2004",
+                image: "./img/games/pokemonemerald.jpg"
+            },
+            {
+                title: "The Elder Scrolls V: Skyrim",
+                platform: "pc",
+                tier: "s",
+                hours: "200+",
+                year: "2011",
+                image: "./img/games/skyrim.jpg"
+            },
+
+            // A Tier
+            {
+                title: "Pokemon Black and White",
+                platform: "console",
+                tier: "a",
+                hours: "50+",
+                year: "2010",
+                image: "./img/games/pokemonblackandwhite.jpg"
+            },
+            {
+                title: "God of War 4",
+                platform: "console",
+                tier: "a",
+                hours: "40+",
+                year: "2018",
+                image: "./img/games/godofwar4.jpg"
+            },
+            {
+                title: "Kingdom Come: Deliverance",
+                platform: "pc",
+                tier: "a",
+                hours: "100+",
+                year: "2018",
+                image: "./img/games/kingdomcomedeliverance.jpg"
+            },
+            {
+                title: "Assassin's Creed Black Flag",
+                platform: "pc",
+                tier: "a",
+                hours: "80+",
+                year: "2013",
+                image: "./img/games/assassinscreedblackflag.jpg"
+            },
+            {
+                title: "L.A. Noire",
+                platform: "pc",
+                tier: "a",
+                hours: "30+",
+                year: "2011",
+                image: "./img/games/lanoire.jpg"
+            },
+            {
+                title: "Mafia II",
+                platform: "pc",
+                tier: "a",
+                hours: "30+",
+                year: "2010",
+                image: "./img/games/mafiaii.jpg"
+            },
+            {
+                title: "Valiant Hearts",
+                platform: "pc",
+                tier: "a",
+                hours: "10+",
+                year: "2014",
+                image: "./img/games/valianthearts.jpg"
+            },
+            {
+                title: "Far Cry 3",
+                platform: "pc",
+                tier: "a",
+                hours: "50+",
+                year: "2012",
+                image: "./img/games/farcry3.jpg"
+            },
+            {
+                title: "Sleeping Dogs",
+                platform: "pc",
+                tier: "a",
+                hours: "30+",
+                year: "2012",
+                image: "./img/games/sleepingdogs.jpg"
+            },
+            {
+                title: "Dynasty Warriors 8",
+                platform: "pc",
+                tier: "a",
+                hours: "70+",
+                year: "2013",
+                image: "./img/games/dynastywarriors8.jpg"
+            },
+            {
+                title: "Ori and the Blind Forest",
+                platform: "pc",
+                tier: "a",
+                hours: "10+",
+                year: "2015",
+                image: "./img/games/oriandtheblindforest.jpg"
+            },
+
+            // B Tier
+            {
+                title: "Total War: Three Kingdoms",
+                platform: "pc",
+                tier: "b",
+                hours: "100+",
+                year: "2019",
+                image: "./img/games/totalwarthreekingdoms.jpg"
+            },
+            {
+                title: "Total War: Warhammer",
+                platform: "pc",
+                tier: "b",
+                hours: "150+",
+                year: "2016",
+                image: "./img/games/totalwarwarhammer.jpg"
+            },
+            {
+                title: "Civilization VI",
+                platform: "pc",
+                tier: "b",
+                hours: "200+",
+                year: "2016",
+                image: "./img/games/civilizationvi.jpg"
+            },
+            {
+                title: "Persona 4 Golden",
+                platform: "pc",
+                tier: "b",
+                hours: "80+",
+                year: "2012",
+                image: "./img/games/persona4golden.jpg"
+            },
+            {
+                title: "Yakuza: Like a Dragon",
+                platform: "pc",
+                tier: "b",
+                hours: "100+",
+                year: "2020",
+                image: "./img/games/yakuzalikeadragon.jpg"
+            },
+            {
+                title: "Far Cry Primal",
+                platform: "pc",
+                tier: "b",
+                hours: "50+",
+                year: "2016",
+                image: "./img/games/farcryprimal.jpg"
+            },
+            {
+                title: "Assassin's Creed Unity",
+                platform: "pc",
+                tier: "b",
+                hours: "60+",
+                year: "2014",
+                image: "./img/games/assassinscreedunity.jpg"
+            },
+            {
+                title: "Assassin's Creed II",
+                platform: "pc",
+                tier: "b",
+                hours: "40+",
+                year: "2009",
+                image: "./img/games/assassinscreedii.jpg"
+            },
+            {
+                title: "Batman: Arkham Knight",
+                platform: "pc",
+                tier: "b",
+                hours: "50+",
+                year: "2015",
+                image: "./img/games/batmanarkhamknight.jpg"
+            },
+            {
+                title: "Dead Island",
+                platform: "pc",
+                tier: "b",
+                hours: "30+",
+                year: "2011",
+                image: "./img/games/deadisland.jpg"
+            },
+            {
+                title: "Dead Cells",
+                platform: "pc",
+                tier: "b",
+                hours: "40+",
+                year: "2018",
+                image: "./img/games/deadcells.jpg"
+            },
+            {
+                title: "Hades 2",
+                platform: "pc",
+                tier: "b",
+                hours: "60+",
+                year: "2023",
+                image: "./img/games/hades2.jpg"
+            },
+
+            // C Tier
+            {
+                title: "Dynasty Warriors 9",
+                platform: "pc",
+                tier: "c",
+                hours: "50+",
+                year: "2018",
+                image: "./img/games/dynastywarriors9.jpg"
+            },
+            {
+                title: "Dynasty Warriors 7",
+                platform: "pc",
+                tier: "c",
+                hours: "60+",
+                year: "2011",
+                image: "./img/games/dynastywarriors7.jpg"
+            },
+            {
+                title: "Might and Magic",
+                platform: "pc",
+                tier: "c",
+                hours: "100+",
+                year: "2014",
+                image: "./img/games/mightandmagic.jpg"
+            },
+            {
+                title: "Castlevania: Lords of Shadow",
+                platform: "pc",
+                tier: "c",
+                hours: "20+",
+                year: "2010",
+                image: "./img/games/castlevanialordsofshadow.jpg"
+            },
+            {
+                title: "Watch Dogs",
+                platform: "pc",
+                tier: "c",
+                hours: "40+",
+                year: "2014",
+                image: "./img/games/watchdogs.jpg"
+            },
+            {
+                title: "Heavy Rain",
+                platform: "pc",
+                tier: "c",
+                hours: "10+",
+                year: "2010",
+                image: "./img/games/heavyrain.jpg"
+            },
+            {
+                title: "Assassin's Creed III",
+                platform: "pc",
+                tier: "c",
+                hours: "50+",
+                year: "2012",
+                image: "./img/games/assassinscreediii.jpg"
+            },
+            {
+                title: "Assassin's Creed Odyssey",
+                platform: "pc",
+                tier: "c",
+                hours: "100+",
+                year: "2018",
+                image: "./img/games/assassinscreedodyssey.jpg"
+            },
+            {
+                title: "Left 4 Dead 2",
+                platform: "pc",
+                tier: "c",
+                hours: "30+",
+                year: "2009",
+                image: "./img/games/left4dead2.jpg"
+            },
+
+            // D Tier
+            {
+                title: "Naruto Shippuden: Ultimate Ninja Storm 4",
+                platform: "pc",
+                tier: "d",
+                hours: "30+",
+                year: "2016",
+                image: "./img/games/narutoshippudenultimateninjastorm4.jpg"
+            },
+            {
+                title: "One Piece: Pirate Warriors 4",
+                platform: "pc",
+                tier: "d",
+                hours: "20+",
+                year: "2020",
+                image: "./img/games/onepiecepiratewarriors4.jpg"
+            },
+            {
+                title: "League of Legends",
+                platform: "pc",
+                tier: "d",
+                hours: "1000+",
+                year: "2009",
+            },
+            // F Tier
+            {
+                title: "eFootball 2022",
+                platform: "pc",
+                tier: "f",
+                hours: "5+",
+                year: "2021",
+                image: "./img/games/efootball2022.jpg"
+            },
+            {
+                title: "Grand Theft Auto: The Trilogy DE",
+                platform: "pc",
+                tier: "f",
+                hours: "10+",
+                year: "2021",
+                image: "./img/games/grandtheftautothetrilogyde.jpg"
+            },
+            {
+                title: "Battlefield 2042 (Launch)",
+                platform: "pc",
+                tier: "f",
+                hours: "15+",
+                year: "2021",
+                image: "./img/games/battlefield2042.jpg"
+            },
+            {
+                title: "WWE 2K20",
+                platform: "console",
+                tier: "f",
+                hours: "8+",
+                year: "2019",
+                image: "./img/games/wwe2k20.jpg"
+            },
+            {
+                title: "Warcraft III: Reforged",
+                platform: "pc",
+                tier: "f",
+                hours: "12+",
+                year: "2020",
+                image: "./img/games/warcraftiiireforged.jpg"
+            },
+            {
+                title: "Cyberpunk 2077 (PS4/XOne)",
+                platform: "console",
+                tier: "f",
+                hours: "20+",
+                year: "2020",
+                image: "./img/games/cyberpunk2077.jpg"
+            },
+            {
+                title: "Blade of God 2",
+                platform: "mobile",
+                tier: "f",
+                hours: "4+",
+                year: "2021",
+                image: "./img/games/bladeofgod2.jpg"
+            },
+            {
+                title: "The Quiet Man",
+                platform: "pc",
+                tier: "f",
+                hours: "3+",
+                year: "2018",
+                image: "./img/games/thequietman.jpg"
+            },
+            {
+                title: "Agony",
+                platform: "pc",
+                tier: "f",
+                hours: "7+",
+                year: "2018",
+                image: "./img/games/agony.jpg"
+            },
+            {
+                title: "Time Machine VR",
+                platform: "pc",
+                tier: "f",
+                hours: "2+",
+                year: "2016",
+                image: "./img/games/timemachinevr.jpg"
+            }
+        ];
+
+        function createGameCard(game) {
+            return `
+                <div class="game-card" data-platform="${game.platform}">
+                    <div class="game-image">
+                        <img src="${game.image}" alt="${game.title}" onerror="this.src='images/games/placeholder.jpg'">
+                    </div>
+                    <div class="game-title">${game.title}</div>
+                    <div class="game-info">
+                        <div>Platform: ${game.platform.toUpperCase()}</div>
+                        <div>Hours: ${game.hours}</div>
+                        <div>Year: ${game.year}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateTierList(platform = 'all') {
+            const tierContents = document.querySelectorAll('.tier-content');
+            tierContents.forEach(content => {
+                content.innerHTML = '';
+                const tier = content.dataset.tier;
+                games
+                    .filter(game => game.tier === tier && (platform === 'all' || game.platform === platform))
+                    .forEach(game => {
+                        content.innerHTML += createGameCard(game);
+                    });
+            });
+        }
+
+        // Platform tab switching
+        document.querySelectorAll('.platform-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                updateTierList(tab.dataset.platform);
+            });
+        });
+
+        // Initial render
+        updateTierList();
+    </script>
+</body>
+</html>
