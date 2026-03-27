@@ -46,7 +46,7 @@ $(function() {
   const content = document.querySelector('body');
   const imgLoad = imagesLoaded(content);
 
-  imgLoad.on('done', instance => {
+  imgLoad.on('always', instance => {
 
     document.getElementById("loaderContent").classList.add("fade-out");
     setTimeout(() => {
