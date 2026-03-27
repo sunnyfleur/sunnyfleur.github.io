@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Project | Tran Hoang Kiet Portfolio</title>
+
+    <meta name="description" content="Project detail page for Tran Hoang Kiet's portfolio.">
+    <meta name="keywords" content="game design, portfolio, case study">
+    <meta name="author" content="Tran Hoang Kiet">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="icon" href="img/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="img/favicon/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="img/favicon/manifest.webmanifest">
+
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:title" content="Project | Tran Hoang Kiet Portfolio">
+    <meta property="og:description" content="Project detail page for Tran Hoang Kiet's portfolio.">
+    <meta property="og:url" content="https://sunnyfleur.github.io/project.html">
+    <meta property="og:image" content="https://sunnyfleur.github.io/img/og-image.png">
+
+    <link rel="stylesheet" href="css/loaders/loader.css">
+    <link rel="stylesheet" type="text/css" href="css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/portfolio-ux.css">
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f7fb">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1117">
+    <meta name="msapplication-navbutton-color" content="#0b1117">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  </head>
+  <body>
+    <div id="loader" class="loader">
+      <div id="loaderContent" class="loader__content">
+        <div class="loader__shadow"></div>
+        <div class="loader__box"></div>
+      </div>
+    </div>
+
+    <header id="header" class="header d-flex justify-content-between">
+      <div class="header__navigation">
+        <nav id="menu" class="menu">
+          <ul class="menu__list d-flex justify-content-start">
+            <li class="menu__item">
+              <a class="menu__link btn" href="index.html">
+                <span class="menu__caption">Home</span>
+                <i class="ph-bold ph-house-simple"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#project-overview">
+                <span class="menu__caption">Overview</span>
+                <i class="ph-bold ph-user"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#project-systems-anchor">
+                <span class="menu__caption">Systems</span>
+                <i class="ph-bold ph-stack"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#project-gallery">
+                <span class="menu__caption">Gallery</span>
+                <i class="ph-bold ph-images"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#project-related">
+                <span class="menu__caption">More Work</span>
+                <i class="ph-bold ph-arrow-bend-up-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__controls d-flex justify-content-end">
+        <button id="color-switcher" class="color-switcher header__switcher btn" type="button" role="switch" aria-label="light/dark mode" aria-checked="true"></button>
+        <a id="notify-trigger" class="header__trigger btn" href="mailto:tranhoangkiet1312@gmail.com?subject=Message%20from%20your%20site">
+          <span class="trigger__caption">Let's Talk</span>
+          <i class="ph-bold ph-chat-dots"></i>
+        </a>
+      </div>
+    </header>
+
+    <div class="gradient-background">
+      <div class="blur"></div>
+      <div class="blur"></div>
+      <div class="blur"></div>
+    </div>
+
+    <div id="content" class="content">
+      <div class="content__wrapper">
+        <div class="project-page" data-project-page>
+          <a id="project-back-link" class="project-back-link" href="index.html#portfolio">
+            <i class="ph-bold ph-arrow-left"></i>
+            <span>Back to portfolio explorer</span>
+          </a>
+
+          <section class="project-page__hero">
+            <div class="project-hero__panel">
+              <img id="project-hero-image" class="project-hero__image" src="img/og-image.png" alt="Project hero image">
+              <div class="project-hero__content">
+                <div class="project-meta-row">
+                  <span id="project-type" class="project-pill">Project</span>
+                  <span id="project-year" class="project-pill">Year</span>
+                  <span id="project-status" class="project-pill">Status</span>
+                </div>
+                <p class="project-hero__eyebrow">Project Snapshot</p>
+                <h1 id="project-title" class="project-hero__title">Loading project...</h1>
+                <p id="project-tagline" class="project-hero__summary">Please wait while the case study is loaded.</p>
+                <p id="project-summary" class="project-hero__summary"></p>
+                <div id="project-actions" class="project-hero__actions"></div>
+              </div>
+            </div>
+
+            <aside class="project-snapshot">
+              <p class="project-hero__eyebrow">Quick Facts</p>
+              <div class="project-facts">
+                <div class="project-fact">
+                  <span class="project-fact__label">Platform</span>
+                  <p id="project-platform" class="project-fact__value"></p>
+                </div>
+                <div class="project-fact">
+                  <span class="project-fact__label">Role</span>
+                  <p id="project-role" class="project-fact__value"></p>
+                </div>
+                <div class="project-fact">
+                  <span class="project-fact__label">Team Size</span>
+                  <p id="project-team" class="project-fact__value"></p>
+                </div>
+                <div class="project-fact">
+                  <span class="project-fact__label">Tools</span>
+                  <p id="project-tools" class="project-fact__value"></p>
+                </div>
+              </div>
+              <nav class="project-section-nav" aria-label="Project sections">
+                <a class="project-section-nav__link" href="#project-overview">Overview</a>
+                <a class="project-section-nav__link" href="#project-contributions-anchor">My Role</a>
+                <a class="project-section-nav__link" href="#project-systems-anchor">Systems</a>
+                <a class="project-section-nav__link" href="#project-gallery">Gallery</a>
+              </nav>
+            </aside>
+          </section>
+
+          <section id="project-overview" class="project-section">
+            <div class="project-section__panel">
+              <p class="project-section__eyebrow">Why This Project Matters</p>
+              <h2>Context and design challenge</h2>
+              <p id="project-problem" class="project-section__lead"></p>
+            </div>
+          </section>
+
+          <section id="project-video-wrap" class="project-section">
+            <div class="project-section__panel">
+              <p class="project-section__eyebrow">Walkthrough</p>
+              <h2>Video and interaction context</h2>
+              <div class="ratio ratio-16x9">
+                <iframe id="project-video" src="" title="Project video" allowfullscreen></iframe>
+              </div>
+            </div>
+          </section>
+
+          <section id="project-contributions-anchor" class="project-section">
+            <div class="project-section__panel">
+              <p class="project-section__eyebrow">My Role</p>
+              <h2>What I owned</h2>
+              <ul id="project-contributions" class="project-list"></ul>
+            </div>
+          </section>
+
+          <section id="project-systems-anchor" class="project-section">
+            <div class="project-section__panel">
+              <p class="project-section__eyebrow">Design and Implementation</p>
+              <h2>Key systems and decisions</h2>
+              <div id="project-systems" class="project-system-grid"></div>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="project-section__panel">
+              <p class="project-section__eyebrow">Outcome</p>
+              <h2>Results and learnings</h2>
+              <ul id="project-results" class="project-list"></ul>
+            </div>
+          </section>
+
+          <section id="project-gallery" class="project-section">
+            <div class="project-section__panel">
+              <p class="project-section__eyebrow">Gallery</p>
+              <h2>Browse images without losing context</h2>
+              <p class="project-section__lead">Open any image in the lightbox, then jump back into the case study where you left off.</p>
+              <div id="project-gallery-grid" class="project-gallery-grid my-gallery" itemscope itemtype="http://schema.org/ImageGallery"></div>
+            </div>
+          </section>
+
+          <section id="project-related" class="project-section">
+            <div class="project-section__panel">
+              <p class="project-section__eyebrow">Continue Browsing</p>
+              <h2>Other projects in this portfolio</h2>
+              <div id="project-related-grid" class="project-related-grid"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close link-s" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share link-s" title="Share"></button>
+            <button class="pswp__button pswp__button--fs link-s" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom link-s" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left link-s" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right link-s" title="Next (arrow right)"></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/libs.min.js"></script>
+    <script>
+      const randomX = random(-400, 400);
+      const randomY = random(-200, 200);
+      const randomTime = random(20, 40);
+      const randomTime2 = random(5, 12);
+      const randomAngle = random(-30, 150);
+
+      const blurs = gsap.utils.toArray(".blur");
+      blurs.forEach((blur) => {
+        gsap.set(blur, {
+          x: randomX(-1),
+          y: randomX(1),
+          rotation: randomAngle(-1)
+        });
+
+        moveX(blur, 1);
+        moveY(blur, -1);
+        rotate(blur, 1);
+      });
+
+      function rotate(target, direction) {
+        gsap.to(target, randomTime2(), {
+          rotation: randomAngle(direction),
+          ease: Sine.easeInOut,
+          onComplete: rotate,
+          onCompleteParams: [target, direction * -1]
+        });
+      }
+
+      function moveX(target, direction) {
+        gsap.to(target, randomTime(), {
+          x: randomX(direction),
+          ease: Sine.easeInOut,
+          onComplete: moveX,
+          onCompleteParams: [target, direction * -1]
+        });
+      }
+
+      function moveY(target, direction) {
+        gsap.to(target, randomTime(), {
+          y: randomY(direction),
+          ease: Sine.easeInOut,
+          onComplete: moveY,
+          onCompleteParams: [target, direction * -1]
+        });
+      }
+
+      function random(min, max) {
+        const delta = max - min;
+        return (direction = 1) => (min + delta * Math.random()) * direction;
+      }
+    </script>
+    <script src="js/app.js"></script>
+    <script src="js/gallery-init.js"></script>
+    <script src="js/project-page.js"></script>
+  </body>
+</html>

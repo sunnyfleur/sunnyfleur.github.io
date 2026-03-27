@@ -1,0 +1,356 @@
+{
+  "projects": [
+    {
+      "slug": "space-conqueror",
+      "title": "Space Conqueror",
+      "tagline": "Voxel combat prototype with single-player pacing and multiplayer hooks.",
+      "summary": "Space Conqueror is a space-themed action prototype where I explored combat feel, enemy behavior, encounter pacing, and technical systems needed for both solo and networked play.",
+      "type": "Personal Project",
+      "status": "Playable Prototype",
+      "featured": true,
+      "year": "2024",
+      "platform": "PC, WebGL",
+      "teamSize": "Solo",
+      "role": [
+        "Game Designer",
+        "Unity Developer"
+      ],
+      "tools": [
+        "Unity",
+        "Photon PUN",
+        "PlayFab",
+        "URP"
+      ],
+      "filters": [
+        "featured",
+        "prototype",
+        "unity",
+        "systems"
+      ],
+      "thumbnail": "img/ExampleImages/IM_SpaceConqueror.jpg",
+      "heroImage": "img/ExampleImages/IM_SpaceConqueror.jpg",
+      "video": "https://www.youtube.com/embed/PD-p8LtxGlE",
+      "problem": "I wanted a portfolio piece that showed I could handle more than visual presentation: combat tuning, AI behavior, resource management, and the technical groundwork for multiplayer needed to come together in one readable case study.",
+      "contributions": [
+        "Designed the core combat loop and enemy encounter structure.",
+        "Built and iterated on level flow, pacing, and prototype layout.",
+        "Implemented enemy AI using a finite state machine.",
+        "Added object pooling, URP optimization, and cross-platform support.",
+        "Integrated multiplayer systems using Photon PUN and player services through PlayFab."
+      ],
+      "systems": [
+        {
+          "title": "Combat and Encounter Design",
+          "items": [
+            "Defined enemy composition, wave structure, and retreat or pressure moments.",
+            "Balanced player movement and survivability around fast readability.",
+            "Used space layout as part of difficulty shaping rather than only visual dressing."
+          ]
+        },
+        {
+          "title": "Technical Implementation",
+          "items": [
+            "Implemented enemy state logic with a finite state machine.",
+            "Used object pooling to reduce runtime allocation spikes.",
+            "Prepared the prototype for PC and WebGL delivery."
+          ]
+        },
+        {
+          "title": "Online Systems",
+          "items": [
+            "Integrated Photon PUN for real-time multiplayer support.",
+            "Connected player-facing services with Azure PlayFab.",
+            "Used the project to bridge design intention and engineering constraints."
+          ]
+        }
+      ],
+      "results": [
+        "Produced a portfolio project that demonstrates both design thinking and implementation depth.",
+        "Created a reusable case study structure for future gameplay-heavy projects.",
+        "Learned where multiplayer complexity changes scope and design priorities early."
+      ],
+      "links": [
+        {
+          "label": "Download Design Docs",
+          "url": "CV/CV_Tran Hoang Kiet_Game Designer.pdf",
+          "kind": "download"
+        }
+      ],
+      "gallery": [
+        {
+          "image": "img/ExampleImages/EI_SpaceConqueror.jpg",
+          "fullImage": "img/ExampleImages/EI_SpaceConqueror.jpg",
+          "title": "Main Menu",
+          "description": "Main menu interface and overall visual framing."
+        },
+        {
+          "image": "img/ExampleImages/IM_SpaceConqueror.jpg",
+          "fullImage": "img/ExampleImages/IM_SpaceConqueror.jpg",
+          "title": "Project Overview",
+          "description": "Hero artwork used across the case study and project explorer."
+        }
+      ]
+    },
+    {
+      "slug": "how-mob-feel",
+      "title": "How Mob Feel",
+      "tagline": "Dark-fantasy concept built around player fantasy, rebellion, and systems clarity.",
+      "summary": "How Mob Feel explores a reversal of the usual RPG framing by letting the player act from the monster side of the conflict. The project is valuable in my portfolio because it combines worldbuilding, system direction, and implementation thinking in one cohesive pitch.",
+      "type": "Prototype",
+      "status": "Concept and Prototype",
+      "featured": true,
+      "year": "2023",
+      "platform": "PC, WebGL, Android",
+      "teamSize": "Solo",
+      "role": [
+        "Game Designer",
+        "Unity Developer"
+      ],
+      "tools": [
+        "Unity",
+        "Figma",
+        "Notion"
+      ],
+      "filters": [
+        "featured",
+        "prototype",
+        "worldbuilding",
+        "unity"
+      ],
+      "thumbnail": "img/ExampleImages/IM_HowMobFeel.jpg",
+      "heroImage": "img/ExampleImages/IM_HowMobFeel.jpg",
+      "video": "https://www.youtube.com/embed/dFWq_yK8yhs",
+      "problem": "The portfolio needed a project that shows more than implementation. I wanted a case study where the fantasy, narrative framing, and system structure were the main design challenge, not only the code underneath.",
+      "contributions": [
+        "Defined the game concept, story framing, and player fantasy.",
+        "Mapped the world structure, dungeon rhythm, and key locations.",
+        "Built early gameplay and RPG systems in Unity.",
+        "Connected visual tone, progression goals, and technical scope."
+      ],
+      "systems": [
+        {
+          "title": "Narrative and Fantasy Framing",
+          "items": [
+            "Reframed monsters as the player perspective rather than the enemy side.",
+            "Used the rebellion theme to drive progression and conflict.",
+            "Built a pitch that immediately communicates why the concept is different."
+          ]
+        },
+        {
+          "title": "RPG Systems",
+          "items": [
+            "Worked through exploration, combat, world interaction, and progression structure.",
+            "Scoped the project so the fantasy stayed strong without exploding implementation cost.",
+            "Connected UI, UX, and system feedback to the core pitch."
+          ]
+        },
+        {
+          "title": "Prototype Implementation",
+          "items": [
+            "Implemented player and enemy systems in Unity.",
+            "Used the prototype to validate whether the concept was readable in play.",
+            "Documented the system structure so it can be expanded later."
+          ]
+        }
+      ],
+      "results": [
+        "Created a strong portfolio piece for concept communication and system framing.",
+        "Clarified how to present design intent without relying only on long text blocks.",
+        "Established a repeatable format for future case studies that start from fantasy and player motivation."
+      ],
+      "links": [
+        {
+          "label": "Download Design Docs",
+          "url": "CV/CV_Tran Hoang Kiet_Game Designer.pdf",
+          "kind": "download"
+        }
+      ],
+      "gallery": [
+        {
+          "image": "img/ExampleImages/IM_HowMobFeel.jpg",
+          "fullImage": "img/ExampleImages/IM_HowMobFeel.jpg",
+          "title": "Project Key Art",
+          "description": "Primary visual used to represent the project in the portfolio."
+        },
+        {
+          "image": "img/og-image.png",
+          "fullImage": "img/og-image.png",
+          "title": "Case Study Framing",
+          "description": "Placeholder gallery entry while the extended asset set is being consolidated."
+        }
+      ]
+    },
+    {
+      "slug": "horror-carnival",
+      "title": "Horror Carnival",
+      "tagline": "Atmosphere-first project framing built around tension, pacing, and attraction spaces.",
+      "summary": "Horror Carnival is currently an archive-style entry in the portfolio system. It exists to keep the project discoverable while the full case study is being rewritten to match the new structure.",
+      "type": "Archive",
+      "status": "Case Study Rewrite In Progress",
+      "featured": false,
+      "year": "2024",
+      "platform": "PC, WebGL",
+      "teamSize": "TBD",
+      "role": [
+        "Game Designer",
+        "Unity Developer"
+      ],
+      "tools": [
+        "Unity",
+        "Photoshop"
+      ],
+      "filters": [
+        "archive",
+        "case-study",
+        "horror"
+      ],
+      "thumbnail": "img/og-image.png",
+      "heroImage": "img/og-image.png",
+      "video": "",
+      "problem": "The previous page structure made it hard to keep partially documented work visible without copying weak placeholder content. The new system allows a lightweight archive entry until the deeper write-up is ready.",
+      "contributions": [
+        "Preserved the project in the portfolio browse flow.",
+        "Defined a lighter archive presentation for incomplete case studies.",
+        "Prepared the data structure so a full write-up can be added without rebuilding the page."
+      ],
+      "systems": [
+        {
+          "title": "Current Archive View",
+          "items": [
+            "Project remains visible in browse and filter flows.",
+            "Summary stays honest about current documentation depth.",
+            "The entry can expand incrementally without new page scaffolding."
+          ]
+        }
+      ],
+      "results": [
+        "Reduced maintenance friction for unfinished or partially documented work.",
+        "Created a path to improve presentation without publishing misleading placeholder copy."
+      ],
+      "links": [],
+      "gallery": [
+        {
+          "image": "img/og-image.png",
+          "fullImage": "img/og-image.png",
+          "title": "Archive Placeholder",
+          "description": "Visual placeholder while the full Horror Carnival gallery is being restored."
+        }
+      ]
+    },
+    {
+      "slug": "bubble-jam",
+      "title": "Bubble Jam",
+      "tagline": "Arcade-style archive entry preserved for discovery while the new write-up is assembled.",
+      "summary": "Bubble Jam is kept in the portfolio as a lightweight archive entry so the project remains browseable without maintaining another fragile standalone HTML case study. The new structure makes it easier to tighten the content later without rebuilding the presentation layer again.",
+      "type": "Archive",
+      "status": "Archive Refresh Pending",
+      "featured": false,
+      "year": "2024",
+      "platform": "PC, WebGL",
+      "teamSize": "TBD",
+      "role": [
+        "Game Designer",
+        "Unity Developer"
+      ],
+      "tools": [
+        "Unity",
+        "Photoshop",
+        "Notion"
+      ],
+      "filters": [
+        "archive",
+        "case-study",
+        "prototype"
+      ],
+      "thumbnail": "img/og-image.png",
+      "heroImage": "img/og-image.png",
+      "video": "",
+      "problem": "The old portfolio architecture made lower-priority projects expensive to keep accurate. Bubble Jam now lives inside the shared portfolio system so it can stay visible while its design notes, media, and final case study copy are rewritten.",
+      "contributions": [
+        "Kept the project accessible from the main browse flow instead of isolating it in a legacy page.",
+        "Prepared the data structure for a future full case study without duplicating HTML.",
+        "Defined an archive state that stays honest about documentation maturity."
+      ],
+      "systems": [
+        {
+          "title": "Archive-First Maintenance",
+          "items": [
+            "The project can stay visible while content quality improves over time.",
+            "The same browse, gallery, and navigation UX applies to this entry as well.",
+            "Future updates now happen in one shared content model instead of a separate bespoke page."
+          ]
+        }
+      ],
+      "results": [
+        "Reduced maintenance cost for another legacy project page.",
+        "Created a cleaner path to rewrite the project story when better assets are ready."
+      ],
+      "links": [],
+      "gallery": [
+        {
+          "image": "img/og-image.png",
+          "fullImage": "img/og-image.png",
+          "title": "Archive Placeholder",
+          "description": "Bubble Jam will use this shared placeholder until dedicated project media is added to the new content workflow."
+        }
+      ]
+    },
+    {
+      "slug": "fantasy-tactics",
+      "title": "Fantasy Tactics",
+      "tagline": "Tactical combat archive focused on structure, readability, and future documentation.",
+      "summary": "Fantasy Tactics is another archive entry that benefits from the new data-driven portfolio system. Instead of leaving an inconsistent standalone page in the main flow, it now has a stable structure that can be expanded into a richer case study over time.",
+      "type": "Archive",
+      "status": "Documentation Pass Pending",
+      "featured": false,
+      "year": "2024",
+      "platform": "PC",
+      "teamSize": "TBD",
+      "role": [
+        "Game Designer"
+      ],
+      "tools": [
+        "Unity",
+        "Figma",
+        "Notion"
+      ],
+      "filters": [
+        "archive",
+        "tactics",
+        "case-study"
+      ],
+      "thumbnail": "img/og-image.png",
+      "heroImage": "img/og-image.png",
+      "video": "",
+      "problem": "The old portfolio structure made it expensive to keep lower-priority case studies accurate. This entry demonstrates how the new system supports gradual improvement instead of duplicated HTML maintenance.",
+      "contributions": [
+        "Kept the project discoverable in the new explorer.",
+        "Established a structured placeholder state that is honest about documentation maturity.",
+        "Prepared the project for future expansion with clearer sections and gallery support."
+      ],
+      "systems": [
+        {
+          "title": "Archive Presentation Rules",
+          "items": [
+            "Use a clear summary instead of template filler.",
+            "Surface project status so viewers know what level of detail to expect.",
+            "Keep the same browsing and reading UX as fully documented projects."
+          ]
+        }
+      ],
+      "results": [
+        "Improved consistency across the portfolio even when some projects are still being rewritten.",
+        "Made future content editing lighter because the structure is already in place."
+      ],
+      "links": [],
+      "gallery": [
+        {
+          "image": "img/og-image.png",
+          "fullImage": "img/og-image.png",
+          "title": "Archive Placeholder",
+          "description": "Placeholder visual while the detailed Fantasy Tactics asset set is being curated."
+        }
+      ]
+    }
+  ]
+}

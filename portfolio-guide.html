@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio Guide | Cách cập nhật nội dung</title>
+    <meta
+      name="description"
+      content="Hướng dẫn nội bộ để cập nhật nội dung portfolio: sửa project, đổi ảnh, cập nhật homepage và kiểm tra trước khi publish."
+    >
+    <style>
+      :root {
+        --bg: #071018;
+        --bg-soft: #0f1b27;
+        --surface: rgba(17, 27, 38, 0.88);
+        --surface-strong: rgba(10, 17, 25, 0.96);
+        --card: rgba(255, 255, 255, 0.05);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: #eff6fb;
+        --muted: rgba(239, 246, 251, 0.74);
+        --accent: #f2b9d4;
+        --accent-strong: #d6d3ff;
+        --success: #9be7c4;
+        --warning: #ffd590;
+        --danger: #ffb2b2;
+        --shadow: 0 24px 64px rgba(0, 0, 0, 0.32);
+        --radius-xl: 28px;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+        --content: 1160px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        background:
+          radial-gradient(circle at top left, rgba(242, 185, 212, 0.16), transparent 28%),
+          radial-gradient(circle at top right, rgba(214, 211, 255, 0.18), transparent 30%),
+          linear-gradient(180deg, #09131d 0%, #050b11 100%);
+        color: var(--text);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      code,
+      pre {
+        font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+      }
+
+      .shell {
+        width: min(var(--content), calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 72px;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        background: linear-gradient(180deg, rgba(13, 20, 30, 0.92), rgba(8, 13, 20, 0.98));
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(12px);
+        opacity: 0.72;
+      }
+
+      .hero::before {
+        width: 240px;
+        height: 240px;
+        top: -90px;
+        right: -80px;
+        background: rgba(242, 185, 212, 0.22);
+      }
+
+      .hero::after {
+        width: 200px;
+        height: 200px;
+        bottom: -70px;
+        left: -60px;
+        background: rgba(214, 211, 255, 0.18);
+      }
+
+      .hero__content,
+      .hero__actions,
+      .hero__meta {
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 14px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        font-size: 0.9rem;
+        line-height: 1.35;
+        color: var(--muted);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+        font-weight: 750;
+        letter-spacing: 0;
+        text-wrap: balance;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 5vw, 4.5rem);
+        line-height: 1.08;
+        max-width: 16ch;
+      }
+
+      h2 {
+        line-height: 1.18;
+      }
+
+      h3 {
+        line-height: 1.3;
+      }
+
+      .hero__lead {
+        max-width: 66ch;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 1.04rem;
+        line-height: 1.8;
+      }
+
+      .hero__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.4;
+      }
+
+      .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.05);
+        text-decoration: none;
+        transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+
+      .button--accent {
+        background: linear-gradient(135deg, rgba(242, 185, 212, 0.2), rgba(214, 211, 255, 0.18));
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 290px) minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+        align-items: start;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 20px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .panel,
+      .section,
+      .task-card,
+      .warning,
+      .code-card,
+      .map-card {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .panel h2,
+      .panel h3,
+      .section h2,
+      .task-card h3,
+      .warning h3 {
+        margin-top: 0;
+      }
+
+      .panel h2 {
+        font-size: 1.5rem;
+        line-height: 1.24;
+      }
+
+      .quick-nav {
+        display: grid;
+        gap: 10px;
+      }
+
+      .quick-nav a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 12px;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: rgba(255, 255, 255, 0.03);
+        line-height: 1.45;
+      }
+
+      .quick-nav a:hover,
+      .quick-nav a:focus-visible {
+        color: var(--text);
+        border-color: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .rule-list,
+      .step-list,
+      .mistake-list {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .content {
+        display: grid;
+        gap: 18px;
+      }
+
+      .section {
+        padding: 22px;
+      }
+
+      .section p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .section h2 {
+        margin-bottom: 10px;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+      }
+
+      .section-intro {
+        margin: 0 0 18px;
+        max-width: 70ch;
+      }
+
+      .map-grid,
+      .task-grid,
+      .callout-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .map-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .task-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .callout-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .map-card,
+      .task-card {
+        padding: 18px;
+      }
+
+      .label {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 10px;
+        margin-bottom: 12px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--muted);
+      }
+
+      .file-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .code-card {
+        overflow: hidden;
+      }
+
+      .code-card__head {
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      pre {
+        margin: 0;
+        padding: 18px;
+        overflow-x: auto;
+        white-space: pre;
+        line-height: 1.7;
+        color: #f8fbff;
+      }
+
+      .inline-code {
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
+
+      .warning {
+        padding: 18px;
+      }
+
+      .warning--success {
+        border-color: rgba(155, 231, 196, 0.25);
+        background: linear-gradient(180deg, rgba(155, 231, 196, 0.08), rgba(17, 27, 38, 0.88));
+      }
+
+      .warning--warn {
+        border-color: rgba(255, 213, 144, 0.24);
+        background: linear-gradient(180deg, rgba(255, 213, 144, 0.08), rgba(17, 27, 38, 0.88));
+      }
+
+      .warning--danger {
+        border-color: rgba(255, 178, 178, 0.25);
+        background: linear-gradient(180deg, rgba(255, 178, 178, 0.08), rgba(17, 27, 38, 0.88));
+      }
+
+      .warning p,
+      .task-card p,
+      .map-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .warning h3,
+      .task-card h3,
+      .map-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.18rem;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 12px;
+      }
+
+      .checklist__item {
+        display: grid;
+        gap: 6px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .checklist__item strong {
+        display: block;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .footer-note {
+        margin-top: 18px;
+        color: rgba(239, 246, 251, 0.6);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 1080px) {
+        .layout,
+        .callout-grid,
+        .map-grid,
+        .task-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .shell {
+          width: min(var(--content), calc(100% - 20px));
+          padding-top: 16px;
+        }
+
+        .hero,
+        .section,
+        .panel,
+        .map-card,
+        .task-card,
+        .warning {
+          padding: 16px;
+        }
+
+        h1 {
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">User Guide nội bộ</p>
+          <h1>Hướng dẫn cập nhật nội dung portfolio</h1>
+          <p class="hero__lead">
+            File này dành cho chính bạn: mở lên khi cần sửa project, đổi ảnh, cập nhật homepage,
+            thay CV, kiểm tra trước khi publish. Mục tiêu là biết <strong>sửa đúng file</strong>,
+            <strong>sửa đúng chỗ</strong>, và tránh đụng vào những phần không cần thiết.
+          </p>
+          <div class="hero__meta">
+            <span class="pill">Nguồn project: <code>projects.json</code></span>
+            <span class="pill">Trang chi tiết dùng chung: <code>project.html</code></span>
+            <span class="pill">Kiểm tra nhanh: <code>verify-portfolio.ps1</code></span>
+          </div>
+          <div class="hero__actions">
+            <a class="button button--accent" href="index.html">Mở portfolio</a>
+            <a class="button" href="projects.json">Mở projects.json</a>
+            <a class="button" href="project.html?slug=space-conqueror">Xem ví dụ project</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <section class="panel">
+            <h2>Đi nhanh đến phần cần xem</h2>
+            <nav class="quick-nav">
+              <a href="#rules">3 quy tắc nhớ nhanh</a>
+              <a href="#map">Muốn sửa gì thì mở file nào</a>
+              <a href="#edit-project">Cách sửa project hiện có</a>
+              <a href="#add-project">Cách thêm project mới</a>
+              <a href="#homepage">Cách sửa homepage</a>
+              <a href="#assets">Đổi ảnh, CV, link</a>
+              <a href="#checklist">Checklist trước khi publish</a>
+              <a href="#mistakes">Lỗi thường gặp</a>
+            </nav>
+          </section>
+
+          <section class="warning warning--success">
+            <h3>Ghi nhớ ngắn</h3>
+            <p>
+              Nếu bạn đang sửa <strong>nội dung project</strong>, gần như luôn luôn phải bắt đầu ở
+              <code class="inline-code">projects.json</code>, không phải ở
+              <code class="inline-code">index.html</code>.
+            </p>
+          </section>
+        </aside>
+
+        <div class="content">
+          <section id="rules" class="section">
+            <h2>3 quy tắc nhớ nhanh</h2>
+            <p class="section-intro">
+              Chỉ cần nhớ đúng 3 ý dưới đây là bạn đã tránh được phần lớn lỗi cập nhật nội dung.
+            </p>
+            <div class="callout-grid">
+              <article class="warning warning--success">
+                <h3>1. Project sửa ở một nơi</h3>
+                <p>
+                  Nội dung card project và nội dung trang chi tiết đều đọc từ
+                  <code class="inline-code">projects.json</code>.
+                </p>
+              </article>
+              <article class="warning warning--warn">
+                <h3>2. <code>project.html</code> không phải nơi viết nội dung</h3>
+                <p>
+                  File này chủ yếu là layout dùng chung. Chỉ sửa khi bạn muốn đổi cách hiển thị,
+                  không phải khi chỉ đổi text hay ảnh của một project.
+                </p>
+              </article>
+              <article class="warning warning--danger">
+                <h3>3. Trước khi publish phải kiểm tra</h3>
+                <p>
+                  Sau khi sửa xong, chạy
+                  <code class="inline-code">powershell -ExecutionPolicy Bypass -File .\verify-portfolio.ps1</code>
+                  để kiểm tra cấu trúc cơ bản.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="map" class="section">
+            <h2>Muốn sửa gì thì mở file nào</h2>
+            <p class="section-intro">
+              Phần này để bạn không mất thời gian đoán “nội dung này nằm ở đâu”.
+            </p>
+            <div class="map-grid">
+              <article class="map-card">
+                <span class="label">Project content</span>
+                <h3>Sửa card project hoặc nội dung case study</h3>
+                <p>
+                  Mở <code class="inline-code">projects.json</code>. Đây là nơi chứa title,
+                  summary, role, gallery, links và toàn bộ phần đọc trên trang chi tiết.
+                </p>
+                <a class="file-link" href="projects.json">Mở projects.json</a>
+              </article>
+
+              <article class="map-card">
+                <span class="label">Project layout</span>
+                <h3>Sửa cách hiển thị trang chi tiết</h3>
+                <p>
+                  Mở <code class="inline-code">project.html</code> nếu bạn muốn đổi bố cục.
+                  Ví dụ: thêm section mới, đổi thứ tự phần Overview / Gallery / More Work.
+                </p>
+                <a class="file-link" href="project.html">Mở project.html</a>
+              </article>
+
+              <article class="map-card">
+                <span class="label">Homepage</span>
+                <h3>Sửa phần giới thiệu, about, resume, contact</h3>
+                <p>
+                  Mở <code class="inline-code">index.html</code>. Đây là nơi bạn sửa các phần
+                  text chính ngoài khu vực project explorer.
+                </p>
+                <a class="file-link" href="index.html">Mở index.html</a>
+              </article>
+
+              <article class="map-card">
+                <span class="label">Assets</span>
+                <h3>Đổi ảnh hoặc thay file CV</h3>
+                <p>
+                  Ảnh nằm trong <code class="inline-code">img/</code>. File CV / PDF nằm trong
+                  <code class="inline-code">CV/</code>. Sau khi thay file, nhớ cập nhật đường dẫn
+                  ở nơi đang dùng file đó.
+                </p>
+              </article>
+
+              <article class="map-card">
+                <span class="label">Verification</span>
+                <h3>Kiểm tra trước khi publish</h3>
+                <p>
+                  Dùng <code class="inline-code">verify-portfolio.ps1</code>. Script này kiểm tra
+                  file chính, cấu trúc project data và một số phần bắt buộc của flow mới.
+                </p>
+                <a class="file-link" href="verify-portfolio.ps1">Mở verify-portfolio.ps1</a>
+              </article>
+
+              <article class="map-card">
+                <span class="label">UX logic</span>
+                <h3>Chỉ mở khi muốn đổi cách browse</h3>
+                <p>
+                  Nếu bạn muốn đổi filter, spotlight, card behavior, lúc đó mới xem
+                  <code class="inline-code">js/portfolio-index.js</code> hoặc
+                  <code class="inline-code">js/project-page.js</code>.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="edit-project" class="section">
+            <h2>Cách sửa một project đang có</h2>
+            <p class="section-intro">
+              Đây là việc bạn sẽ làm nhiều nhất. Khi muốn sửa text, ảnh, role, gallery, link của
+              một project, hãy làm theo đúng thứ tự dưới đây.
+            </p>
+            <div class="task-grid">
+              <article class="task-card">
+                <h3>Bước 1. Mở đúng object trong <code>projects.json</code></h3>
+                <p>
+                  Tìm project bằng <code class="inline-code">slug</code>. Ví dụ:
+                  <code class="inline-code">space-conqueror</code> hoặc
+                  <code class="inline-code">how-mob-feel</code>.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Bước 2. Sửa phần nhìn thấy ngay trên homepage</h3>
+                <p>
+                  Ba field quan trọng nhất cho homepage là
+                  <code class="inline-code">title</code>,
+                  <code class="inline-code">tagline</code> và
+                  <code class="inline-code">summary</code>.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Bước 3. Sửa ảnh đúng chỗ</h3>
+                <p>
+                  <code class="inline-code">thumbnail</code> là ảnh card.
+                  <code class="inline-code">heroImage</code> là ảnh lớn ở đầu case study.
+                  <code class="inline-code">gallery</code> là danh sách ảnh bên trong project.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Bước 4. Sửa phần thông tin đọc sâu</h3>
+                <p>
+                  Các phần như <code class="inline-code">problem</code>,
+                  <code class="inline-code">contributions</code>,
+                  <code class="inline-code">systems</code> và
+                  <code class="inline-code">results</code> là nội dung dùng cho trang chi tiết.
+                </p>
+              </article>
+            </div>
+
+            <div class="code-card" style="margin-top: 16px;">
+              <div class="code-card__head">Ví dụ object rút gọn trong projects.json</div>
+              <pre>{
+  "slug": "my-new-project",
+  "title": "My New Project",
+  "tagline": "Một câu ngắn để mô tả project",
+  "summary": "Đoạn mô tả dài hơn, dùng cho homepage và phần mở đầu project.",
+  "type": "Personal Project",
+  "status": "Prototype",
+  "featured": true,
+  "year": "2026",
+  "platform": "PC",
+  "role": ["Game Designer"],
+  "thumbnail": "img/my-project/thumb.jpg",
+  "heroImage": "img/my-project/hero.jpg",
+  "problem": "Project này giải quyết điều gì?",
+  "contributions": [
+    "Bạn đã làm gì",
+    "Bạn chịu trách nhiệm phần nào"
+  ],
+  "systems": [
+    {
+      "title": "Gameplay",
+      "items": ["Điểm 1", "Điểm 2"]
+    }
+  ],
+  "results": [
+    "Kết quả chính",
+    "Bài học rút ra"
+  ]
+}</pre>
+            </div>
+
+            <div class="warning warning--warn" style="margin-top: 16px;">
+              <h3>Lưu ý rất quan trọng</h3>
+              <p>
+                Nếu bạn chỉ muốn đổi nội dung của project, đừng sửa trực tiếp card trong
+                <code class="inline-code">index.html</code>. Project explorer mới không đọc card
+                cứng ở đó nữa.
+              </p>
+            </div>
+          </section>
+
+          <section id="add-project" class="section">
+            <h2>Cách thêm project mới</h2>
+            <p class="section-intro">
+              Muốn thêm project mới thì bạn không cần tạo thêm một HTML riêng. Chỉ cần thêm đúng
+              data vào <code class="inline-code">projects.json</code> là homepage và trang chi tiết
+              sẽ tự dùng lại layout có sẵn.
+            </p>
+            <ol class="step-list">
+              <li>Sao chép một object project đã có trong <code>projects.json</code>.</li>
+              <li>Đổi <code>slug</code> thành tên mới, ngắn gọn và không trùng với project khác.</li>
+              <li>Đổi <code>title</code>, <code>tagline</code>, <code>summary</code> và các phần text khác.</li>
+              <li>Đặt ảnh mới vào <code>img/</code> rồi cập nhật đường dẫn cho <code>thumbnail</code>, <code>heroImage</code> và <code>gallery</code>.</li>
+              <li>Nếu muốn project nằm ở nhóm nổi bật, đặt <code>featured</code> thành <code>true</code>.</li>
+              <li>Nếu muốn project xuất hiện khi lọc, thêm các tag phù hợp vào <code>filters</code>.</li>
+              <li>Lưu file, mở <code>index.html</code> và <code>project.html?slug=slug-cua-ban</code> để xem lại.</li>
+            </ol>
+
+            <div class="warning warning--success" style="margin-top: 16px;">
+              <h3>Mẹo nhỏ</h3>
+              <p>
+                Nếu project mới chưa đủ tài liệu, hãy dùng cách viết trung thực kiểu archive:
+                mô tả ngắn gọn, ảnh placeholder rõ ràng, không dùng text filler.
+              </p>
+            </div>
+          </section>
+
+          <section id="homepage" class="section">
+            <h2>Cách sửa homepage</h2>
+            <p class="section-intro">
+              Những phần như giới thiệu cá nhân, about, resume, contact và metadata của trang chủ
+              vẫn nằm trong <code class="inline-code">index.html</code>.
+            </p>
+            <div class="task-grid">
+              <article class="task-card">
+                <h3>Hero / giới thiệu đầu trang</h3>
+                <p>
+                  Vào <code class="inline-code">index.html</code> để sửa tên, headline, phần giới
+                  thiệu chính hoặc CTA ở khu vực đầu trang.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>About Me</h3>
+                <p>
+                  Nếu muốn cập nhật câu chuyện cá nhân, định hướng nghề nghiệp hoặc phong cách làm
+                  việc, sửa phần About trong <code class="inline-code">index.html</code>.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Resume / kinh nghiệm</h3>
+                <p>
+                  Các mốc học tập, kinh nghiệm, kỹ năng và mô tả ngắn ở resume section đều nằm
+                  trong <code class="inline-code">index.html</code>.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Contact</h3>
+                <p>
+                  Email, số điện thoại, link social, location và form contact cũng sửa trực tiếp ở
+                  <code class="inline-code">index.html</code>.
+                </p>
+              </article>
+            </div>
+
+            <div class="warning warning--warn" style="margin-top: 16px;">
+              <h3>Nhớ phân biệt 2 loại nội dung</h3>
+              <p>
+                <strong>Project content</strong> nằm ở <code class="inline-code">projects.json</code>.
+                <strong>Personal site content</strong> như about / resume / contact nằm ở
+                <code class="inline-code">index.html</code>.
+              </p>
+            </div>
+          </section>
+
+          <section id="assets" class="section">
+            <h2>Đổi ảnh, CV và link</h2>
+            <p class="section-intro">
+              Đây là các thay đổi thường gặp nhưng dễ lỗi nếu quên cập nhật đường dẫn.
+            </p>
+            <div class="task-grid">
+              <article class="task-card">
+                <h3>Đổi ảnh project</h3>
+                <p>
+                  Thêm ảnh mới vào <code class="inline-code">img/</code>, sau đó sửa đường dẫn ở
+                  <code class="inline-code">projects.json</code>. Không chỉ chép ảnh vào thư mục rồi
+                  để nguyên path cũ.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Đổi CV</h3>
+                <p>
+                  Thay file trong <code class="inline-code">CV/</code>, rồi kiểm tra các nút tải CV
+                  hoặc link đang trỏ đúng tới file mới.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Đổi link ngoài</h3>
+                <p>
+                  Link project nằm trong field <code class="inline-code">links</code> của
+                  <code class="inline-code">projects.json</code>. Link social hoặc contact thì sửa
+                  trong <code class="inline-code">index.html</code>.
+                </p>
+              </article>
+
+              <article class="task-card">
+                <h3>Đổi video</h3>
+                <p>
+                  Nếu project có video, sửa field <code class="inline-code">video</code> trong
+                  <code class="inline-code">projects.json</code>. Nếu không có video, bạn có thể để
+                  trống.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="checklist" class="section">
+            <h2>Checklist trước khi publish</h2>
+            <p class="section-intro">
+              Đây là checklist ngắn nhất nên làm sau mỗi lần sửa nội dung.
+            </p>
+            <div class="checklist">
+              <div class="checklist__item">
+                <strong>1. Mở lại đúng trang cần xem</strong>
+                <span class="muted">
+                  Project thì xem ở <code>project.html?slug=...</code>. Trang chủ thì xem ở
+                  <code>index.html</code>.
+                </span>
+              </div>
+              <div class="checklist__item">
+                <strong>2. Chạy script kiểm tra nhanh</strong>
+                <span class="muted">
+                  Dùng lệnh:
+                  <code>powershell -ExecutionPolicy Bypass -File .\verify-portfolio.ps1</code>
+                </span>
+              </div>
+              <div class="checklist__item">
+                <strong>3. Kiểm tra ảnh có hiển thị đúng không</strong>
+                <span class="muted">
+                  Nếu ảnh mất, gần như chắc chắn là path sai hoặc file chưa nằm đúng thư mục.
+                </span>
+              </div>
+              <div class="checklist__item">
+                <strong>4. Kiểm tra text ngắn trên homepage</strong>
+                <span class="muted">
+                  Nhìn lại <code>title</code>, <code>tagline</code>, <code>summary</code> vì đây là
+                  phần người xem đọc đầu tiên.
+                </span>
+              </div>
+              <div class="checklist__item">
+                <strong>5. Kiểm tra CTA và link tải</strong>
+                <span class="muted">
+                  Nếu có nút download docs / CV / link build, bấm thử để chắc là không lỗi.
+                </span>
+              </div>
+            </div>
+
+            <div class="code-card" style="margin-top: 16px;">
+              <div class="code-card__head">Lệnh kiểm tra nhanh</div>
+              <pre>powershell -ExecutionPolicy Bypass -File .\verify-portfolio.ps1</pre>
+            </div>
+          </section>
+
+          <section id="mistakes" class="section">
+            <h2>Lỗi thường gặp và cách tránh</h2>
+            <p class="section-intro">
+              Nếu thấy project không hiện đúng hoặc trang nhìn kỳ lạ sau khi sửa, hãy kiểm tra các
+              lỗi bên dưới trước.
+            </p>
+            <ol class="mistake-list">
+              <li>
+                <strong>Sửa nhầm file:</strong> sửa nội dung project ở <code>index.html</code> thay
+                vì <code>projects.json</code>.
+              </li>
+              <li>
+                <strong>Slug bị trùng hoặc sai:</strong> làm URL project mở nhầm dữ liệu hoặc không
+                hiện đúng project mong muốn.
+              </li>
+              <li>
+                <strong>Sai đường dẫn ảnh:</strong> ảnh không hiện vì file chưa nằm đúng trong
+                <code>img/</code> hoặc path viết sai.
+              </li>
+              <li>
+                <strong>Quên dấu phẩy / ngoặc trong JSON:</strong> lưu xong nhưng project explorer
+                hoặc project page tải lỗi.
+              </li>
+              <li>
+                <strong>Chỉ thay file CV mà không đổi link:</strong> nếu tên file đổi, các nút cũ
+                sẽ trỏ sai.
+              </li>
+              <li>
+                <strong>Summary quá dài:</strong> homepage sẽ khó scan. Hãy để
+                <code>summary</code> rõ, gọn, đọc nhanh.
+              </li>
+            </ol>
+
+            <p class="footer-note">
+              Nếu sau này workflow đổi thêm, hãy cập nhật file này cùng lúc với
+              <code>projects.json</code>, <code>project.html</code> hoặc
+              <code>verify-portfolio.ps1</code> để tài liệu luôn khớp với cách làm thật.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

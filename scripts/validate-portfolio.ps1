@@ -1,0 +1,47 @@
+$ErrorActionPreference = 'Stop'
+
+function Assert-True {
+    param(
+        [bool]$Condition,
+        [string]$Message
+    )
+
+    if (-not $Condition) {
+        throw $Message
+    }
+}
+
+$root = Split-Path -Parent $PSScriptRoot
+$projectsPath = Join-Path $root 'content/projects.json'
+$indexPath = Join-Path $root 'index.html'
+$projectPagePath = Join-Path $root 'project.html'
+$indexScriptPath = Join-Path $root 'js/portfolio-index.js'
+$projectScriptPath = Join-Path $root 'js/project-page.js'
+$stylesPath = Join-Path $root 'css/portfolio-ux.css'
+
+Assert-True (Test-Path -LiteralPath $projectsPath) 'Missing content/projects.json'
+Assert-True (Test-Path -LiteralPath $projectPagePath) 'Missing project.html'
+Assert-True (Test-Path -LiteralPath $indexScriptPath) 'Missing js/portfolio-index.js'
+Assert-True (Test-Path -LiteralPath $projectScriptPath) 'Missing js/project-page.js'
+Assert-True (Test-Path -LiteralPath $stylesPath) 'Missing css/portfolio-ux.css'
+
+$projects = Get-Content -LiteralPath $projectsPath -Raw | ConvertFrom-Json
+Assert-True ($projects.projects.Count -ge 3) 'Expected at least 3 projects in content/projects.json'
+
+foreach ($project in $projects.projects) {
+    Assert-True (-not [string]::IsNullOrWhiteSpace($project.slug)) "Project missing slug: $($project | ConvertTo-Json -Compress)"
+    Assert-True (-not [string]::IsNullOrWhiteSpace($project.title)) "Project '$($project.slug)' missing title"
+    Assert-True (-not [string]::IsNullOrWhiteSpace($project.summary)) "Project '$($project.slug)' missing summary"
+    Assert-True (-not [string]::IsNullOrWhiteSpace($project.thumbnail)) "Project '$($project.slug)' missing thumbnail"
+}
+
+$indexHtml = Get-Content -LiteralPath $indexPath -Raw
+$projectHtml = Get-Content -LiteralPath $projectPagePath -Raw
+
+Assert-True ($indexHtml.Contains('id="portfolio-explorer"')) 'index.html missing portfolio explorer root'
+Assert-True ($indexHtml.Contains('js/portfolio-index.js')) 'index.html missing portfolio index script'
+Assert-True ($indexHtml.Contains('css/portfolio-ux.css')) 'index.html missing portfolio UX styles'
+Assert-True ($projectHtml.Contains('data-project-page')) 'project.html missing project page marker'
+Assert-True ($projectHtml.Contains('js/project-page.js')) 'project.html missing project page script'
+
+Write-Output 'Portfolio validation passed.'

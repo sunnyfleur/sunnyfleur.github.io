@@ -1018,7 +1018,7 @@
             return `
                 <div class="game-card" data-platform="${game.platform}">
                     <div class="game-image">
-                        <img src="${game.image}" alt="${game.title}" onerror="this.src='images/games/placeholder.jpg'">
+                        <img src="${game.image}" alt="${game.title}" onerror="this.onerror=null;this.src='./img/og-image.png'">
                     </div>
                     <div class="game-title">${game.title}</div>
                     <div class="game-info">
