@@ -104,19 +104,27 @@
           <div class="portfolio-meta-row">
             <span class="portfolio-pill">${project.type}</span>
             <span class="portfolio-pill">${project.year}</span>
-            <span class="portfolio-pill">${project.status}</span>
           </div>
-          <div>
-            <p class="project-section__eyebrow">Current Focus</p>
+          <div class="portfolio-spotlight__intro">
+            <p class="project-section__eyebrow">${project.status}</p>
             <h3 class="portfolio-spotlight__title">${project.title}</h3>
-            <p class="portfolio-spotlight__summary">${project.tagline}</p>
+            <p class="portfolio-spotlight__lede">${project.tagline}</p>
           </div>
           <p class="portfolio-spotlight__summary">${project.summary}</p>
-          <div class="portfolio-meta-row">
-            <span class="portfolio-pill">${roleSummary}</span>
-            <span class="portfolio-pill">${project.platform}</span>
-            <span class="portfolio-pill">Team: ${project.teamSize}</span>
-          </div>
+          <dl class="portfolio-facts">
+            <div class="portfolio-fact">
+              <dt class="portfolio-fact__label">Role</dt>
+              <dd class="portfolio-fact__value">${roleSummary}</dd>
+            </div>
+            <div class="portfolio-fact">
+              <dt class="portfolio-fact__label">Platform</dt>
+              <dd class="portfolio-fact__value">${project.platform}</dd>
+            </div>
+            <div class="portfolio-fact">
+              <dt class="portfolio-fact__label">Team</dt>
+              <dd class="portfolio-fact__value">${project.teamSize}</dd>
+            </div>
+          </dl>
           <div class="portfolio-spotlight__actions">
             <a class="btn btn-default btn-hover btn-hover-accent" href="${projectUrl(project.slug)}">
               <span class="btn-caption">${actionLabel}</span>
@@ -149,17 +157,17 @@
                 <span class="portfolio-pill">${project.type}</span>
                 <span class="portfolio-pill">${project.year}</span>
               </div>
-              <div>
+              <div class="portfolio-card__intro">
                 <h3 class="portfolio-card__title">${project.title}</h3>
-                <p class="portfolio-card__summary">${project.tagline}</p>
+                <p class="portfolio-card__tagline">${project.tagline}</p>
               </div>
-              <div class="portfolio-meta-row">
-                <span class="portfolio-pill">${roleSummary}</span>
-                <span class="portfolio-pill">${project.platform}</span>
+              <div class="portfolio-card__meta" aria-label="Project details">
+                <span class="portfolio-card__meta-item">${roleSummary}</span>
+                <span class="portfolio-card__meta-item">${project.platform}</span>
               </div>
-              <p class="portfolio-card__summary">${project.summary}</p>
+              <p class="portfolio-card__description">${project.summary}</p>
               <span class="portfolio-card__cta">
-                <span>Open project</span>
+                <span>Open case study</span>
                 <i class="ph-bold ph-arrow-up-right"></i>
               </span>
             </div>
