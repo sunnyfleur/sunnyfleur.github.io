@@ -410,6 +410,16 @@
   gap: 2rem;
 }
 
+.project-page-view .content {
+  padding-left: 0;
+}
+
+.project-page-view .content__wrapper {
+  width: min(100%, 148rem);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 .project-page__hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
@@ -626,5 +636,17 @@
 
   .portfolio-card__description {
     -webkit-line-clamp: 3;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .project-page-view .content__wrapper {
+    padding: 0 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .project-page-view .content__wrapper {
+    padding: 0 4rem;
   }
 }
