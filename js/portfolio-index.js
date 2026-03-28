@@ -1,29 +1,40 @@
 (async function () {
-  const explorerRoot = document.getElementById("portfolio-explorer");
-  const filtersRoot = document.getElementById("portfolio-filters");
-  const spotlightRoot = document.getElementById("portfolio-spotlight");
-  const emptyRoot = document.getElementById("portfolio-empty");
+  const carouselRoot = document.getElementById("portfolio-carousel");
+  const trackRoot = document.getElementById("portfolio-carousel-track");
+  const prevButton = document.getElementById("portfolio-carousel-prev");
+  const nextButton = document.getElementById("portfolio-carousel-next");
+  const statusRoot = document.getElementById("portfolio-carousel-status");
   const fallbackImage = "img/og-image.png";
 
-  if (!explorerRoot || !filtersRoot || !spotlightRoot || !emptyRoot) {
+  if (!carouselRoot || !trackRoot || !prevButton || !nextButton || !statusRoot) {
     return;
   }
 
-  const filterLabels = {
-    all: "All",
-    featured: "Featured",
-    prototype: "Prototype",
-    unity: "Unity",
-    systems: "Systems",
-    worldbuilding: "Worldbuilding",
-    "case-study": "Case Study",
-    archive: "Archive",
-    horror: "Horror",
-    tactics: "Tactics"
-  };
-
   function projectUrl(slug) {
     return "project.html?slug=" + encodeURIComponent(slug);
+  }
+
+  function viewportCardCount() {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      return 1;
+    }
+
+    if (window.matchMedia("(max-width: 1199px)").matches) {
+      return 2;
+    }
+
+    return 3;
+  }
+
+  function extractVideoId(embedUrl) {
+    return embedUrl.split("/embed/")[1]?.split("?")[0] || "";
+  }
+
+  function buildVideoUrl(embedUrl) {
+    const separator = embedUrl.includes("?") ? "&" : "?";
+    const videoId = extractVideoId(embedUrl);
+    const playlist = videoId ? "&playlist=" + videoId : "";
+    return embedUrl + separator + "autoplay=1&mute=1&controls=0&loop=1" + playlist + "&playsinline=1&rel=0&modestbranding=1";
   }
 
   try {
@@ -34,191 +45,158 @@
     }
 
     const payload = await response.json();
-    const projects = (Array.isArray(payload.projects) ? payload.projects : [])
-      .slice()
-      .sort((left, right) => {
-        if (left.featured !== right.featured) {
-          return left.featured ? -1 : 1;
-        }
+    const featuredProjects = (Array.isArray(payload.projects) ? payload.projects : [])
+      .filter((project) => project.featured)
+      .sort((left, right) => Number(right.year || 0) - Number(left.year || 0));
 
-        return Number(right.year || 0) - Number(left.year || 0);
-      });
+    let activeIndex = 0;
+    let cardsPerView = Math.min(Math.max(1, viewportCardCount()), Math.max(1, featuredProjects.length));
+    let viewportMode = cardsPerView;
 
-    const filters = [
-      "all",
-      ...Object.keys(filterLabels).filter((key) => {
-        if (key === "all") {
-          return false;
-        }
-
-        return projects.some((project) => (project.filters || []).includes(key));
-      })
-    ];
-
-    let activeFilter = "all";
-    let spotlightSlug = projects[0] ? projects[0].slug : "";
-
-    function getFilteredProjects() {
-      if (activeFilter === "all") {
-        return projects;
+    function getWindowStart() {
+      if (featuredProjects.length <= cardsPerView) {
+        return 0;
       }
 
-      return projects.filter((project) => (project.filters || []).includes(activeFilter));
+      const preferredOffset = cardsPerView === 1 ? 0 : Math.floor(cardsPerView / 2);
+      const maxStart = featuredProjects.length - cardsPerView;
+      return Math.min(Math.max(0, activeIndex - preferredOffset), maxStart);
     }
 
-    function renderFilters() {
-      filtersRoot.innerHTML = "";
+    function getVisibleProjects() {
+      const windowStart = getWindowStart();
 
-      filters.forEach((filterKey) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "portfolio-filter";
-        button.textContent = filterLabels[filterKey] || filterKey;
-        button.setAttribute("aria-pressed", filterKey === activeFilter ? "true" : "false");
-
-        if (filterKey === activeFilter) {
-          button.classList.add("is-active");
-        }
-
-        button.addEventListener("click", () => {
-          activeFilter = filterKey;
-          render();
-        });
-
-        filtersRoot.appendChild(button);
-      });
+      return featuredProjects
+        .slice(windowStart, windowStart + cardsPerView)
+        .map((project, offset) => ({
+          project,
+          absoluteIndex: windowStart + offset
+        }));
     }
 
-    function renderSpotlight(project) {
-      if (!project) {
-        spotlightRoot.innerHTML = "";
-        return;
-      }
+    function cardTemplate(project, absoluteIndex) {
+      const isActive = absoluteIndex === activeIndex;
+      const summary = project.cardSummary || project.summary;
+      const metaDuration = project.homepageMeta?.duration || project.year;
+      const metaLabel = project.homepageMeta?.linkLabel || project.type;
+      const activeMedia = isActive && project.video;
+      const mediaMarkup = activeMedia
+        ? `<iframe class="portfolio-feature-card__video" src="${buildVideoUrl(project.video)}" title="${project.title} preview video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>`
+        : `<img class="portfolio-feature-card__image" src="${project.thumbnail || fallbackImage}" alt="${project.title} preview" loading="lazy" decoding="async">`;
 
-      const roleSummary = Array.isArray(project.role) ? project.role.join(" / ") : project.role;
-      const actionLabel = project.type === "Archive" ? "Open Archive Entry" : "View Case Study";
-
-      spotlightRoot.innerHTML = `
-        <img class="portfolio-spotlight__image" src="${project.heroImage || fallbackImage}" alt="${project.title} hero image" loading="eager" decoding="async">
-        <div class="portfolio-spotlight__body">
-          <div class="portfolio-meta-row">
-            <span class="portfolio-pill">${project.type}</span>
-            <span class="portfolio-pill">${project.year}</span>
-          </div>
-          <div class="portfolio-spotlight__intro">
-            <p class="project-section__eyebrow">${project.status}</p>
-            <h3 class="portfolio-spotlight__title">${project.title}</h3>
-            <p class="portfolio-spotlight__lede">${project.tagline}</p>
-          </div>
-          <p class="portfolio-spotlight__summary">${project.summary}</p>
-          <dl class="portfolio-facts">
-            <div class="portfolio-fact">
-              <dt class="portfolio-fact__label">Role</dt>
-              <dd class="portfolio-fact__value">${roleSummary}</dd>
+      return `
+        <article class="portfolio-feature-card${isActive ? " is-active" : ""}" data-project-index="${absoluteIndex}">
+          <a class="portfolio-feature-card__link" href="${projectUrl(project.slug)}" aria-label="Open ${project.title}">
+            <div class="portfolio-feature-card__media">
+              ${mediaMarkup}
+              ${project.video ? '<span class="portfolio-feature-card__play" aria-hidden="true"><i class="ph-fill ph-play"></i></span>' : ""}
             </div>
-            <div class="portfolio-fact">
-              <dt class="portfolio-fact__label">Platform</dt>
-              <dd class="portfolio-fact__value">${project.platform}</dd>
+            <div class="portfolio-feature-card__body">
+              <h3 class="portfolio-feature-card__title">${project.title}</h3>
+              <div class="portfolio-feature-card__meta" aria-label="Homepage project details">
+                <span class="portfolio-feature-card__meta-item"><i class="ph ph-clock"></i><span>${metaDuration}</span></span>
+                <span class="portfolio-feature-card__meta-item"><i class="ph ph-link-simple"></i><span>${metaLabel}</span></span>
+              </div>
+              <p class="portfolio-feature-card__summary">${summary}</p>
+              <span class="portfolio-feature-card__cta">View Case Study</span>
             </div>
-            <div class="portfolio-fact">
-              <dt class="portfolio-fact__label">Team</dt>
-              <dd class="portfolio-fact__value">${project.teamSize}</dd>
-            </div>
-          </dl>
-          <div class="portfolio-spotlight__actions">
-            <a class="btn btn-default btn-hover btn-hover-accent" href="${projectUrl(project.slug)}">
-              <span class="btn-caption">${actionLabel}</span>
-              <i class="ph-bold ph-arrow-right"></i>
-            </a>
-            <a class="btn btn-default btn-hover btn-hover-outline" href="${projectUrl(project.slug)}#project-gallery">
-              <span class="btn-caption">Browse Gallery</span>
-              <i class="ph-bold ph-images"></i>
-            </a>
-          </div>
-        </div>
+          </a>
+        </article>
       `;
     }
 
-    function renderCards(filteredProjects) {
-      explorerRoot.innerHTML = "";
-
-      filteredProjects.forEach((project) => {
-        const roleSummary = Array.isArray(project.role) ? project.role.join(" / ") : project.role;
-        const card = document.createElement("article");
-        card.className = "portfolio-card";
-
-        card.innerHTML = `
-          <a class="portfolio-card__link" href="${projectUrl(project.slug)}" aria-label="Open ${project.title}">
-            <div class="portfolio-card__media">
-              <img class="portfolio-card__image" src="${project.thumbnail || fallbackImage}" alt="${project.title} thumbnail" loading="lazy" decoding="async">
-            </div>
-            <div class="portfolio-card__body">
-              <div class="portfolio-meta-row">
-                <span class="portfolio-pill">${project.type}</span>
-                <span class="portfolio-pill">${project.year}</span>
-              </div>
-              <div class="portfolio-card__intro">
-                <h3 class="portfolio-card__title">${project.title}</h3>
-                <p class="portfolio-card__tagline">${project.tagline}</p>
-              </div>
-              <div class="portfolio-card__meta" aria-label="Project details">
-                <span class="portfolio-card__meta-item">${roleSummary}</span>
-                <span class="portfolio-card__meta-item">${project.platform}</span>
-              </div>
-              <p class="portfolio-card__description">${project.summary}</p>
-              <span class="portfolio-card__cta">
-                <span>Open case study</span>
-                <i class="ph-bold ph-arrow-up-right"></i>
-              </span>
-            </div>
-          </a>
-        `;
-
-        card.addEventListener("mouseenter", () => {
-          spotlightSlug = project.slug;
-          renderSpotlight(project);
-        });
-
-        card.addEventListener("focusin", () => {
-          spotlightSlug = project.slug;
-          renderSpotlight(project);
-        });
-
-        explorerRoot.appendChild(card);
-      });
-
-      spotlightRoot.querySelector(".portfolio-spotlight__image")?.addEventListener("error", (event) => {
-        event.currentTarget.src = fallbackImage;
-      }, { once: true });
-
-      explorerRoot.querySelectorAll(".portfolio-card__image").forEach((image) => {
+    function attachFallbackImages() {
+      trackRoot.querySelectorAll(".portfolio-feature-card__image").forEach((image) => {
         image.addEventListener("error", (event) => {
           event.currentTarget.src = fallbackImage;
         }, { once: true });
       });
     }
 
-    function render() {
-      const filteredProjects = getFilteredProjects();
-      const spotlightProject = filteredProjects.find((project) => project.slug === spotlightSlug) || filteredProjects[0];
+    function updateControls() {
+      const disabled = featuredProjects.length <= 1;
+      prevButton.disabled = disabled;
+      nextButton.disabled = disabled;
+      prevButton.setAttribute("aria-disabled", String(disabled));
+      nextButton.setAttribute("aria-disabled", String(disabled));
+    }
 
-      if (spotlightProject) {
-        spotlightSlug = spotlightProject.slug;
+    function updateStatus() {
+      if (!featuredProjects.length) {
+        statusRoot.textContent = "Featured projects are being prepared.";
+        return;
       }
 
-      renderFilters();
-      renderSpotlight(spotlightProject);
-      renderCards(filteredProjects);
-      emptyRoot.hidden = filteredProjects.length > 0;
+      if (featuredProjects.length <= cardsPerView) {
+        statusRoot.textContent = "Showing all featured projects";
+        return;
+      }
+
+      statusRoot.textContent = "Project " + (activeIndex + 1) + " of " + featuredProjects.length;
     }
+
+    function render() {
+      cardsPerView = Math.min(Math.max(1, viewportCardCount()), Math.max(1, featuredProjects.length));
+
+      if (!featuredProjects.length) {
+        trackRoot.innerHTML = '<div class="portfolio-carousel__empty">Featured projects are being prepared.</div>';
+        updateControls();
+        updateStatus();
+        return;
+      }
+
+      const visibleProjects = getVisibleProjects();
+      trackRoot.dataset.columns = String(cardsPerView);
+      trackRoot.innerHTML = visibleProjects.map(({ project, absoluteIndex }) => cardTemplate(project, absoluteIndex)).join("");
+      attachFallbackImages();
+      updateControls();
+      updateStatus();
+    }
+
+    function stepCarousel(delta) {
+      if (featuredProjects.length <= 1) {
+        return;
+      }
+
+      activeIndex = (activeIndex + delta + featuredProjects.length) % featuredProjects.length;
+      render();
+    }
+
+    prevButton.addEventListener("click", () => {
+      stepCarousel(-1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      stepCarousel(1);
+    });
+
+    carouselRoot.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        stepCarousel(-1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        stepCarousel(1);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      const nextMode = viewportCardCount();
+
+      if (nextMode !== viewportMode) {
+        viewportMode = nextMode;
+        render();
+      }
+    });
 
     render();
   } catch (error) {
-    console.error("Unable to load portfolio explorer data.", error);
-    spotlightRoot.innerHTML = "";
-    explorerRoot.innerHTML = "";
-    filtersRoot.innerHTML = "";
-    emptyRoot.hidden = false;
-    emptyRoot.textContent = "The project explorer could not be loaded right now.";
+    console.error("Unable to load homepage featured projects.", error);
+    trackRoot.innerHTML = '<div class="portfolio-carousel__empty">The featured project carousel could not be loaded right now.</div>';
+    statusRoot.textContent = "";
+    prevButton.disabled = true;
+    nextButton.disabled = true;
   }
 })();

@@ -474,15 +474,28 @@
           </div>
 
           <div class="content__block">
-            <div class="portfolio-explorer">
-              <div id="portfolio-filters" class="portfolio-explorer__controls" aria-label="Project filters"></div>
-              <div class="portfolio-explorer__layout">
-                <aside id="portfolio-spotlight" class="portfolio-spotlight"></aside>
-                <div>
-                  <div id="portfolio-explorer" class="portfolio-card-grid" aria-live="polite"></div>
-                  <div id="portfolio-empty" class="portfolio-empty" hidden>No projects match this filter yet.</div>
+            <div id="portfolio-carousel" class="portfolio-carousel" aria-roledescription="carousel">
+              <div class="portfolio-carousel__head">
+                <div class="portfolio-carousel__copy">
+                  <p class="portfolio-carousel__eyebrow animate-in-up">Featured Projects</p>
+                  <h3 class="portfolio-carousel__title animate-in-up">Large project cards with live preview motion</h3>
+                  <p class="portfolio-carousel__text animate-in-up">
+                    Browse selected work through media-first cards, then open the full case study when one catches your eye.
+                  </p>
+                </div>
+                <div class="portfolio-carousel__controls animate-in-up">
+                  <button id="portfolio-carousel-prev" class="portfolio-carousel__arrow btn btn-outline" type="button" aria-label="Show previous projects">
+                    <i class="ph-bold ph-arrow-left"></i>
+                  </button>
+                  <button id="portfolio-carousel-next" class="portfolio-carousel__arrow btn btn-outline" type="button" aria-label="Show next projects">
+                    <i class="ph-bold ph-arrow-right"></i>
+                  </button>
                 </div>
               </div>
+              <div class="portfolio-carousel__viewport">
+                <div id="portfolio-carousel-track" class="portfolio-carousel__track" aria-live="polite"></div>
+              </div>
+              <p id="portfolio-carousel-status" class="portfolio-carousel__status" aria-live="polite"></p>
             </div>
           </div>
         </section>

@@ -22,12 +22,23 @@
 - Update `gallery` when you add or replace screenshots.
 - Update `links` for playable builds, docs, CV downloads, or external videos.
 
+## Homepage Featured Carousel
+
+- Set `featured: true` to include a project in the homepage featured carousel.
+- Add `cardSummary` for the shorter homepage card description.
+- Add `homepageMeta.duration` for the short info pill text shown on the homepage card.
+- Add `homepageMeta.linkLabel` for the second homepage meta label.
+- Use the embeddable YouTube URL in `video` if the active homepage card should play inline.
+- Keep `cardSummary` short enough to stay readable in 2 to 4 lines on desktop.
+
 ## Field Notes
 
 - `slug`: URL-safe identifier, for example `space-conqueror`
 - `type`: short label shown in pills, for example `Personal Project` or `Archive`
 - `status`: short production or documentation state
 - `featured`: `true` puts the project first in homepage ordering
+- `cardSummary`: shorter copy used by the homepage featured carousel card
+- `homepageMeta`: homepage-only meta block with `duration` and `linkLabel`
 - `filters`: array of short tags used by the homepage filter buttons
 - `role`: array of roles joined into a quick summary
 - `tools`: array of tools shown in quick facts

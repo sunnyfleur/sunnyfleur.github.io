@@ -29,6 +29,11 @@
       ],
       "thumbnail": "img/ExampleImages/IM_SpaceConqueror.jpg",
       "heroImage": "img/ExampleImages/IM_SpaceConqueror.jpg",
+      "cardSummary": "Space-themed combat prototype focused on encounter pacing, enemy behavior, and multiplayer-ready systems.",
+      "homepageMeta": {
+        "duration": "2024",
+        "linkLabel": "Case Study"
+      },
       "video": "https://www.youtube.com/embed/PD-p8LtxGlE",
       "problem": "I wanted a portfolio piece that showed I could handle more than visual presentation: combat tuning, AI behavior, resource management, and the technical groundwork for multiplayer needed to come together in one readable case study.",
       "contributions": [
@@ -119,6 +124,11 @@
       ],
       "thumbnail": "img/ExampleImages/IM_HowMobFeel.jpg",
       "heroImage": "img/ExampleImages/IM_HowMobFeel.jpg",
+      "cardSummary": "Dark-fantasy concept prototype combining player-fantasy framing, worldbuilding, and readable RPG systems direction.",
+      "homepageMeta": {
+        "duration": "2023",
+        "linkLabel": "Case Study"
+      },
       "video": "https://www.youtube.com/embed/dFWq_yK8yhs",
       "problem": "The portfolio needed a project that shows more than implementation. I wanted a case study where the fantasy, narrative framing, and system structure were the main design challenge, not only the code underneath.",
       "contributions": [
