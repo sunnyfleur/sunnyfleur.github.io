@@ -1,99 +1,105 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Tạo container cho hiệu ứng theo dõi
-  const trailContainer = document.createElement('div');
-  trailContainer.classList.add('cursor-trail-container');
-  document.body.appendChild(trailContainer);
+document.addEventListener("DOMContentLoaded", function () {
+  const supportsFinePointer =
+    window.matchMedia("(pointer: fine)").matches &&
+    window.matchMedia("(hover: hover)").matches;
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  // Kiểm tra nếu hiệu ứng con trỏ đã bị tắt
-  const cursorEnabled = localStorage.getItem('cursorEnabled') !== 'false';
-  if (!cursorEnabled) {
-    trailContainer.style.display = 'none';
+  if (!supportsFinePointer) {
+    return;
   }
 
-  // Mảng lưu trữ các điểm trong đuôi
+  const trailContainer = document.createElement("div");
   const trail = [];
-  const maxTrail = 20; // Số lượng điểm tối đa trong đuôi
+  const maxTrail = 6;
+  const trailLifetime = 420;
+  let lastX = 0;
+  let lastY = 0;
+  let lastSpawnAt = 0;
 
-  // Tạo điểm và thêm vào đuôi
+  trailContainer.className = "cursor-trail-container";
+  document.body.appendChild(trailContainer);
+
+  function isTrailEnabled() {
+    return (
+      document.body.classList.contains("custom-cursor") &&
+      document.body.classList.contains("cursor-trail-enabled") &&
+      !reducedMotionQuery.matches
+    );
+  }
+
+  function clearTrail() {
+    while (trail.length > 0) {
+      const trailPoint = trail.pop();
+      trailPoint.element.remove();
+    }
+  }
+
   function createTrailPoint(x, y) {
-    // Kiểm tra nếu hiệu ứng đã bị tắt
-    if (!document.body.classList.contains('custom-cursor')) {
+    const point = document.createElement("div");
+    point.className = "cursor-trail-point";
+    point.style.left = x + "px";
+    point.style.top = y + "px";
+    trailContainer.appendChild(point);
+
+    trail.push({
+      element: point,
+      createdAt: performance.now()
+    });
+
+    while (trail.length > maxTrail) {
+      const oldestPoint = trail.shift();
+      oldestPoint.element.remove();
+    }
+  }
+
+  function updateTrail() {
+    const now = performance.now();
+
+    if (!isTrailEnabled()) {
+      clearTrail();
+      window.requestAnimationFrame(updateTrail);
       return;
     }
 
-    const point = document.createElement('div');
-    point.classList.add('cursor-trail-point');
-    point.style.left = x + 'px';
-    point.style.top = y + 'px';
-    
-    // Kích thước và màu sắc ngẫu nhiên
-    const size = Math.random() * 6 + 1;
-    const hue = Math.random() * 30 + 30; // Trong phạm vi vàng/cam (30-60)
-    
-    point.style.width = size + 'px';
-    point.style.height = size + 'px';
-    point.style.backgroundColor = `hsla(${hue}, 90%, 50%, 0.8)`;
-    
-    trailContainer.appendChild(point);
-    
-    // Thêm vào mảng và giới hạn số lượng
-    trail.push({
-      element: point,
-      x: x,
-      y: y,
-      size: size,
-      createdAt: Date.now()
-    });
-    
-    // Xóa các điểm cũ nếu vượt quá số lượng tối đa
-    if (trail.length > maxTrail) {
-      const oldestPoint = trail.shift();
-      trailContainer.removeChild(oldestPoint.element);
-    }
-  }
-
-  // Cập nhật vị trí và độ mờ của các điểm theo thời gian
-  function updateTrail() {
-    const now = Date.now();
-    trail.forEach((point, index) => {
+    for (let index = trail.length - 1; index >= 0; index -= 1) {
+      const point = trail[index];
       const age = now - point.createdAt;
-      const maxAge = 1000; // Thời gian tồn tại tối đa (ms)
-      
-      // Tính toán độ mờ dựa trên tuổi
-      const opacity = 1 - age / maxAge;
-      
-      // Cập nhật style nếu điểm vẫn còn tồn tại
-      if (opacity > 0) {
-        point.element.style.opacity = opacity;
-        
-        // Thêm hiệu ứng thu nhỏ dần
-        const scale = 1 - (age / maxAge) * 0.5;
-        point.element.style.transform = `scale(${scale})`;
+      const progress = age / trailLifetime;
+
+      if (progress >= 1) {
+        point.element.remove();
+        trail.splice(index, 1);
+        continue;
       }
-    });
-    
-    requestAnimationFrame(updateTrail);
+
+      point.element.style.opacity = String(0.16 * (1 - progress));
+      point.element.style.transform = "translate(-50%, -50%) scale(" + (1 - progress * 0.18) + ")";
+    }
+
+    window.requestAnimationFrame(updateTrail);
   }
 
-  // Theo dõi di chuyển chuột để tạo điểm mới
-  let lastX = 0;
-  let lastY = 0;
-  let lastTimeCreated = 0;
+  document.addEventListener("mousemove", function (event) {
+    if (!isTrailEnabled()) {
+      return;
+    }
 
-  document.addEventListener('mousemove', function(e) {
-    const now = Date.now();
-    // Chỉ tạo điểm mới sau mỗi 40ms (tương đương ~25 điểm/giây) 
-    // và khi chuột di chuyển đủ xa
-    const distance = Math.sqrt(Math.pow(e.clientX - lastX, 2) + Math.pow(e.clientY - lastY, 2));
-    
-    if (now - lastTimeCreated > 40 && distance > 5) {
-      createTrailPoint(e.clientX, e.clientY);
-      lastX = e.clientX;
-      lastY = e.clientY;
-      lastTimeCreated = now;
+    const now = performance.now();
+    const distance = Math.hypot(event.clientX - lastX, event.clientY - lastY);
+
+    if (now - lastSpawnAt > 85 && distance > 18) {
+      createTrailPoint(event.clientX, event.clientY);
+      lastX = event.clientX;
+      lastY = event.clientY;
+      lastSpawnAt = now;
     }
   });
 
-  // Bắt đầu vòng lặp cập nhật
+  reducedMotionQuery.addEventListener("change", function () {
+    if (reducedMotionQuery.matches) {
+      clearTrail();
+    }
+  });
+
   updateTrail();
-}); 
+});

@@ -32,14 +32,17 @@
   color: var(--t-medium);
   font: normal 500 1.4rem/1 var(--_font-default);
   line-height: 1;
-  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .portfolio-filter:hover,
 .portfolio-filter:focus-visible {
-  transform: translateY(-1px);
-  border-color: var(--stroke-controls);
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 24%, var(--stroke-controls) 76%);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
   color: var(--t-bright);
+  box-shadow: 0 12px 24px rgba(15, 23, 35, 0.08);
 }
 
 .portfolio-filter.is-active {
@@ -95,13 +98,16 @@
 .project-pill {
   display: inline-flex;
   align-items: center;
-  min-height: 3rem;
-  padding: 0 1.15rem;
+  min-height: 2.8rem;
+  padding: 0 1rem;
   border-radius: var(--_radius-s);
-  border: 1px solid var(--stroke-elements);
-  background: transparent;
-  color: var(--t-medium);
-  font: normal 500 1.35rem/1 var(--_font-default);
+  border: 1px solid color-mix(in srgb, var(--stroke-elements) 86%, transparent);
+  background: color-mix(in srgb, var(--base) 4%, transparent);
+  color: var(--portfolio-text-soft);
+  font: normal 500 1.2rem/1 var(--_font-default);
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  user-select: none;
   white-space: nowrap;
 }
 
@@ -192,7 +198,19 @@
   border: 1px solid var(--portfolio-border);
   background: linear-gradient(180deg, var(--portfolio-surface) 0%, var(--portfolio-surface-strong) 100%);
   box-shadow: var(--portfolio-shadow);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.portfolio-card::after,
+.project-related-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--secondary) 0%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, box-shadow 0.18s ease;
 }
 
 .portfolio-card:hover,
@@ -202,6 +220,14 @@
   transform: translateY(-6px);
   border-color: var(--stroke-controls);
   box-shadow: var(--portfolio-shadow-strong);
+}
+
+.portfolio-card:hover::after,
+.portfolio-card:focus-within::after,
+.project-related-card:hover::after,
+.project-related-card:focus-within::after {
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--secondary) 20%, var(--accent) 16%);
 }
 
 .portfolio-card__link,
@@ -223,6 +249,8 @@
   width: 100%;
   object-fit: cover;
   display: block;
+  transform-origin: center center;
+  transition: transform 0.18s ease, filter 0.18s ease;
 }
 
 .portfolio-card__body,
@@ -243,6 +271,7 @@
 .portfolio-card__title {
   font-size: clamp(2.4rem, 2vw, 3.2rem);
   line-height: 0.98;
+  transition: color 0.18s ease, transform 0.18s ease;
 }
 
 .portfolio-card__intro {
@@ -255,6 +284,7 @@
   color: var(--t-bright);
   font-size: 1.7rem;
   line-height: 1.45;
+  transition: color 0.18s ease;
 }
 
 .portfolio-card__summary,
@@ -303,6 +333,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
+  transition: color 0.18s ease;
 }
 
 .portfolio-card__cta,
@@ -314,6 +345,55 @@
   color: var(--t-bright);
   font-weight: 700;
   font-size: 1.45rem;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.portfolio-card__cta i,
+.project-related-card__cta i {
+  transition: transform 0.18s ease;
+}
+
+.portfolio-card:hover .portfolio-card__image,
+.portfolio-card:focus-within .portfolio-card__image,
+.project-related-card:hover .project-related-card__image,
+.project-related-card:focus-within .project-related-card__image {
+  transform: scale(1.03);
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.portfolio-card:hover .portfolio-card__title,
+.portfolio-card:focus-within .portfolio-card__title,
+.project-related-card:hover .project-related-card__title,
+.project-related-card:focus-within .project-related-card__title {
+  color: color-mix(in srgb, var(--t-bright) 86%, var(--secondary) 14%);
+  transform: translateY(-1px);
+}
+
+.portfolio-card:hover .portfolio-card__tagline,
+.portfolio-card:focus-within .portfolio-card__tagline,
+.project-related-card:hover .project-related-card__summary,
+.project-related-card:focus-within .project-related-card__summary {
+  color: var(--t-bright);
+}
+
+.portfolio-card:hover .portfolio-card__description,
+.portfolio-card:focus-within .portfolio-card__description {
+  color: color-mix(in srgb, var(--t-medium) 88%, var(--t-bright) 12%);
+}
+
+.portfolio-card:hover .portfolio-card__cta,
+.portfolio-card:focus-within .portfolio-card__cta,
+.project-related-card:hover .project-related-card__cta,
+.project-related-card:focus-within .project-related-card__cta {
+  color: color-mix(in srgb, var(--t-bright) 80%, var(--secondary) 20%);
+  transform: translateY(-1px);
+}
+
+.portfolio-card:hover .portfolio-card__cta i,
+.portfolio-card:focus-within .portfolio-card__cta i,
+.project-related-card:hover .project-related-card__cta i,
+.project-related-card:focus-within .project-related-card__cta i {
+  transform: translate3d(0.25rem, -0.1rem, 0);
 }
 
 .portfolio-empty {
