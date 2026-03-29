@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/cursor.css">
     <link rel="stylesheet" type="text/css" href="css/portfolio-ux.css">
+    <link rel="stylesheet" type="text/css" href="css/homepage-skills.css">
     <!-- Template Styles End -->
 
     <!-- Custom Browser Color Start -->
@@ -686,75 +687,111 @@
           <!-- Content Block - H3 Block Start -->
           <div class="content__block">
             <div class="section-h3 section-h3-grid">
-              <h3 class="h3__title animate-in-up">My favourite tools</h3>
+              <h3 class="h3__title animate-in-up">Core Skills</h3>
             </div>
           </div>
           <!-- Content Block - H3 Block End -->
 
-          <!-- Content Block - Tools List Start -->
-          <div class="content__block grid-block block-large">
-            <!-- Tools List Start -->
-            <div class="tools-cards d-flex justify-content-start flex-wrap">
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-photoshop.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">Photoshop</h6>
+          <!-- Content Block - Skills Section Start -->
+          <div class="content__block block-large">
+            <section class="skills-section" aria-label="Core skills">
+              <div class="skills-section__grid animate-card-5" role="list">
+                <div class="skills-card__item" role="listitem">
+                  <button
+                    class="skills-card is-active"
+                    type="button"
+                    data-skill-title="Game Design"
+                    data-skill-level="Advanced"
+                    data-skill-description="Design core loops, progression, player goals, and feature direction across prototypes and portfolio-ready game concepts."
+                    data-skill-icon="ph-fill ph-game-controller"
+                    aria-pressed="true">
+                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-game-controller"></i></span>
+                    <span class="skills-card__title">Game Design</span>
+                  </button>
+                </div>
+                <div class="skills-card__item" role="listitem">
+                  <button
+                    class="skills-card"
+                    type="button"
+                    data-skill-title="Level Design"
+                    data-skill-level="Advanced"
+                    data-skill-description="Build encounter flow, progression rhythm, and player guidance using pacing, layout readability, and KPI-informed iteration."
+                    data-skill-icon="ph-fill ph-map-trifold"
+                    aria-pressed="false">
+                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-map-trifold"></i></span>
+                    <span class="skills-card__title">Level Design</span>
+                  </button>
+                </div>
+                <div class="skills-card__item" role="listitem">
+                  <button
+                    class="skills-card"
+                    type="button"
+                    data-skill-title="Combat Design"
+                    data-skill-level="Advanced"
+                    data-skill-description="Shape combat feel, enemy behavior, boss mechanics, and encounter structure to support readable, satisfying player action."
+                    data-skill-icon="ph-fill ph-sword"
+                    aria-pressed="false">
+                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-sword"></i></span>
+                    <span class="skills-card__title">Combat Design</span>
+                  </button>
+                </div>
+                <div class="skills-card__item" role="listitem">
+                  <button
+                    class="skills-card"
+                    type="button"
+                    data-skill-title="Design Documentation"
+                    data-skill-level="Advanced"
+                    data-skill-description="Write and maintain clear design documentation that translates ideas into actionable systems, content plans, and implementation tasks."
+                    data-skill-icon="ph-fill ph-note-pencil"
+                    aria-pressed="false">
+                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-note-pencil"></i></span>
+                    <span class="skills-card__title">Design Documentation</span>
+                  </button>
+                </div>
+                <div class="skills-card__item" role="listitem">
+                  <button
+                    class="skills-card"
+                    type="button"
+                    data-skill-title="Unity"
+                    data-skill-level="Advanced"
+                    data-skill-description="Prototype and iterate gameplay, camera, UI, and systems behavior in Unity with a production-aware mindset for implementation detail."
+                    data-skill-icon="ph-fill ph-cube"
+                    aria-pressed="false">
+                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-cube"></i></span>
+                    <span class="skills-card__title">Unity</span>
+                  </button>
+                </div>
+                <div class="skills-card__item" role="listitem">
+                  <button
+                    class="skills-card"
+                    type="button"
+                    data-skill-title="AI-assisted Workflow"
+                    data-skill-level="Intermediate"
+                    data-skill-description="Use Cursor, Codex, and Claude Code to accelerate prototyping, scripting, documentation, and iteration across design and implementation workflows."
+                    data-skill-icon="ph-fill ph-sparkle"
+                    aria-pressed="false">
+                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-sparkle"></i></span>
+                    <span class="skills-card__title">AI-assisted Workflow</span>
+                  </button>
                 </div>
               </div>
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-figma.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">Figma</h6>
+
+              <aside class="skills-section__detail animate-in-up" aria-live="polite">
+                <div class="skills-detail__media">
+                  <span class="skills-detail__icon" data-skill-detail-icon aria-hidden="true">
+                    <i class="ph-fill ph-game-controller"></i>
+                  </span>
                 </div>
-              </div>
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-illustrator.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">Illustrator</h6>
-                </div>
-              </div>
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-sketch.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">Sketch</h6>
-                </div>
-              </div>
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-blender.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">Blender</h6>
-                </div>
-              </div>
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-html.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">HTML5</h6>
-                </div>
-              </div>
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-css.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">CSS3</h6>
-                </div>
-              </div>
-              <!-- tools simgle item -->
-              <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-                <div class="tools-cards__card">
-                  <img class="tools-cards__icon animate-in-up" src="img/icons/icon-notion.svg" alt="Tools Icon">
-                  <h6 class="tools-cards__caption animate-in-up">Notion</h6>
-                </div>
-              </div>
-            </div>
-            <!-- Tools List End -->
+                <p class="skills-detail__eyebrow">Selected Skill</p>
+                <p class="skills-detail__level" data-skill-detail-level>Advanced</p>
+                <h4 class="skills-detail__title" data-skill-detail-title>Game Design</h4>
+                <p class="skills-detail__text" data-skill-detail-text>
+                  Design core loops, progression, player goals, and feature direction across prototypes and portfolio-ready game concepts.
+                </p>
+              </aside>
+            </section>
           </div>
-          <!-- Content Block - Tools List End -->
+          <!-- Content Block - Skills Section End -->
 
           <!-- Content Block - H2 Block Start -->
           <!-- <div class="content__block section-title">
@@ -1042,6 +1079,7 @@
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js"></script>
     <script src="js/portfolio-index.js"></script>
+    <script src="js/homepage-skills.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/cursor-trail.js"></script>
     <!-- Load Scripts End -->
