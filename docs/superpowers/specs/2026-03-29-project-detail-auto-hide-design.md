@@ -1,0 +1,84 @@
+# Project Detail Auto-Hide Design
+
+## Overview
+
+Adjust the shared project detail page so incomplete projects read as intentionally concise case studies instead of unfinished templates.
+
+The page should only show sections that have meaningful data. Missing sections should disappear entirely, and any navigation link targeting a hidden section must also disappear.
+
+## Goals
+
+- Remove placeholder or apology copy from incomplete project pages.
+- Keep the shared `project.html` experience usable for both full case studies and lighter archive-style entries.
+- Preserve the current visual design and page flow while making sparse projects feel more polished.
+- Avoid requiring extra content authoring work just to satisfy every section.
+
+## Non-Goals
+
+- No new alternate layout mode or new project schema in this pass.
+- No rewrite of homepage portfolio cards or featured carousel behavior.
+- No changes to project content values in `projects.json` as part of this implementation.
+
+## Section Visibility Rules
+
+The page keeps these areas visible regardless of project depth:
+
+- hero
+- quick facts
+- related projects
+
+The page auto-hides these areas when their backing data is empty:
+
+- overview section when `problem` is empty
+- video section when `video` is empty
+- contributions section when `contributions` is empty
+- systems section when `systems` is empty
+- results section when `results` is empty
+- gallery section when `gallery` is empty
+
+“Empty” means:
+
+- missing value
+- empty string after trimming
+- empty array
+- array entries that exist structurally but contain no meaningful text
+
+## Navigation Behavior
+
+Top header anchors and the in-page section nav must stay aligned with what is actually rendered.
+
+- If a section is hidden, any nav link pointing to it must also be hidden.
+- If only one or two content sections remain, the nav should still work without empty gaps.
+- Active-state logic should only observe visible section targets.
+
+The `More Work` section remains visible, but it does not need to be added to the in-page section nav if that nav stays focused on reading the case study itself.
+
+## Content Behavior
+
+Existing fallback copy that explicitly calls out missing documentation should be removed for the auto-hidden sections.
+
+- Do not render “documentation in progress” cards for systems.
+- Do not render “outcome notes are being documented” style list items.
+- Do not render empty gallery placeholders when no gallery exists.
+
+If a project is sparse, the result should be a shorter page with strong hero context, quick facts, and whichever real sections are available.
+
+## Implementation Scope
+
+Primary files:
+
+- `js/project-page.js`
+
+Possible markup touch if needed:
+
+- `project.html`
+
+No `projects.json` schema change is required.
+
+## Acceptance Criteria
+
+- Visiting a project with empty optional fields shows no empty or placeholder sections.
+- Header links and in-page nav links disappear when their target section is hidden.
+- IntersectionObserver active-link behavior continues to work for the remaining visible sections.
+- Full projects still render all populated sections as before.
+- Sparse projects still feel complete because the remaining sections keep clean spacing and structure.
