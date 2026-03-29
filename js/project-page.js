@@ -296,6 +296,136 @@
         `;
         relatedRoot.appendChild(article);
       });
+    // Section nav active state (IntersectionObserver)
+    var navLinks = document.querySelectorAll(".project-section-nav__link");
+    var observedSections = [];
+
+    navLinks.forEach(function (link) {
+      var target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        observedSections.push(target);
+      }
+    });
+
+    if (observedSections.length > 0) {
+      var sectionObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              navLinks.forEach(function (l) {
+                l.classList.remove("is-active");
+              });
+              var activeLink = document.querySelector(
+                '.project-section-nav__link[href="#' + entry.target.id + '"]'
+              );
+              if (activeLink) {
+                activeLink.classList.add("is-active");
+              }
+            }
+          });
+        },
+        { rootMargin: "-20% 0px -60% 0px" }
+      );
+
+      observedSections.forEach(function (s) {
+        sectionObserver.observe(s);
+      });
+    }
+
+    // Scroll progress bar
+    var progressBar = document.createElement("div");
+    progressBar.className = "project-scroll-progress";
+    document.body.appendChild(progressBar);
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        var scrollTop = window.scrollY;
+        var docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + "%";
+      },
+      { passive: true }
+    );
+
+    // GSAP scroll animations
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      // Section reveal
+      gsap.utils.toArray(".project-section").forEach(function (section) {
+        gsap.fromTo(
+          section,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+
+      // Stagger system cards
+      gsap.utils.toArray(".project-system-card").forEach(function (card, i) {
+        gsap.fromTo(
+          card,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            delay: i * 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 88%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+
+      // Stagger gallery items
+      gsap.utils.toArray(".project-gallery-item").forEach(function (item, i) {
+        gsap.fromTo(
+          item,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            delay: (i % 2) * 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 88%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+
+      // Hero parallax-lite
+      var heroImg = document.getElementById("project-hero-image");
+      if (heroImg) {
+        heroImg.style.willChange = "transform";
+        gsap.to(heroImg, {
+          yPercent: 8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".project-page__hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+    }
   } catch (error) {
     console.error("Unable to load project page data.", error);
     pageRoot.innerHTML = `

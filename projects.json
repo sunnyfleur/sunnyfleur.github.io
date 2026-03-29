@@ -1,6 +1,66 @@
 {
   "projects": [
     {
+      "slug": "huli",
+      "title": "Huli",
+      "tagline": "AA Action Hack and Slash",
+      "summary": "HULI draws rich inspiration from Fengshen Yanyi, reimagining it into a brand-new tale set in a dark, mysterious world. Step into the role of LIN a swordswoman and mage as she braves deadly trials, fights for survival, and uncovers the hidden truths of sealed world.",
+      "cardSummary": "Unannounced action project focused on gameplay, combat, content, and camera design within a dark fantasy setting.",
+      "homepageMeta": {
+        "duration": "2025",
+        "linkLabel": "Case Study"
+      },
+      "type": "Unannounced Project",
+      "status": "Unannounced",
+      "featured": true,
+      "year": "2025",
+      "platform": "PC",
+      "teamSize": "TBD",
+      "role": [
+        "Gameplay Designer"
+      ],
+      "tools": [
+        "Unreal Engine 5",
+        "Miro",
+        "AI (Claude, Codex, etc.)"
+      ],
+      "filters": [
+        "unannounced",
+        "action",
+        "hack and slash"
+      ],
+      "thumbnail": "img/IM_Huli.jpg",
+      "heroImage": "img/IM_Huli.jpg",
+      "video": "",
+      "contributions": [
+        "Contribute to the design and iteration of gameplay, combat, content, and camera systems.",
+        "Create and maintain comprehensive design documentation, develop prototypes to validate feature direction, and work cross-functionally to refine systems through implementation and playtesting."
+      ],
+      "systems": [
+        {
+          "title": "Gameplay and Combat Design",
+          "items": [
+            "Designed and iterated on core combat mechanics, including attack patterns, enemy behaviors, and player movement.",
+            "Created and maintained comprehensive design documentation for gameplay systems, combat mechanics, and enemy behaviors.",
+            "Developed prototypes to validate feature direction and refine systems through implementation and playtesting."
+          ]
+        }
+      ],
+      "results": [
+        "Contributed to the design and iteration of gameplay, combat, content, and camera systems.",
+        "Created and maintained comprehensive design documentation, developed prototypes to validate feature direction, and worked cross-functionally to refine systems through implementation and playtesting."
+      ],
+      "links": [],
+      "gallery": [
+        {
+          "image": "img/IM_Huli.jpg",
+          "fullImage": "img/IM_Huli.jpg",
+          "title": "Gameplay and Combat Design",
+          "description": "Design documentation for gameplay systems, combat mechanics, and enemy behaviors."
+        }
+      ]
+    },
+    {
       "slug": "space-conqueror",
       "title": "Space Conqueror",
       "tagline": "Voxel combat prototype with single-player pacing and multiplayer hooks.",
@@ -97,8 +157,8 @@
       ]
     },
     {
-      "slug": "how-mob-feel",
-      "title": "How Mob Feel",
+      "slug": "lunarfall-pixel-strategy",
+      "title": "Lunarfall Pixel Strategy",
       "tagline": "Dark-fantasy concept built around player fantasy, rebellion, and systems clarity.",
       "summary": "How Mob Feel explores a reversal of the usual RPG framing by letting the player act from the monster side of the conflict. The project is valuable in my portfolio because it combines worldbuilding, system direction, and implementation thinking in one cohesive pitch.",
       "type": "Prototype",
@@ -129,7 +189,7 @@
         "duration": "2023",
         "linkLabel": "Case Study"
       },
-      "video": "https://www.youtube.com/embed/dFWq_yK8yhs",
+      "video": "https://www.youtube.com/watch?v=OjqH6ry5Txc",
       "problem": "The portfolio needed a project that shows more than implementation. I wanted a case study where the fantasy, narrative framing, and system structure were the main design challenge, not only the code underneath.",
       "contributions": [
         "Defined the game concept, story framing, and player fantasy.",
@@ -247,6 +307,7 @@
         }
       ]
     },
+
     {
       "slug": "bubble-jam",
       "title": "Bubble Jam",
@@ -359,171 +420,6 @@
           "fullImage": "img/og-image.png",
           "title": "Archive Placeholder",
           "description": "Placeholder visual while the detailed Fantasy Tactics asset set is being curated."
-        }
-      ]
-    },
-    {
-      "slug": "placeholder-combat-lab",
-      "title": "Combat Lab",
-      "tagline": "Placeholder featured card for reviewing homepage rail density and preview behavior.",
-      "summary": "This placeholder project exists only to help review the homepage featured carousel with more items visible in the rail.",
-      "cardSummary": "Homepage placeholder entry used to test the featured rail with more cards in view.",
-      "homepageMeta": {
-        "duration": "6 weeks",
-        "linkLabel": "Preview"
-      },
-      "type": "Placeholder",
-      "status": "Layout Review Only",
-      "featured": true,
-      "year": "2025",
-      "platform": "PC",
-      "teamSize": "Solo",
-      "role": [
-        "Game Designer"
-      ],
-      "tools": [
-        "Unity",
-        "Figma"
-      ],
-      "filters": [
-        "featured",
-        "prototype"
-      ],
-      "thumbnail": "img/ExampleImages/EI_SpaceConqueror.jpg",
-      "heroImage": "img/ExampleImages/EI_SpaceConqueror.jpg",
-      "video": "https://www.youtube.com/embed/PD-p8LtxGlE",
-      "problem": "Placeholder entry for homepage layout review only.",
-      "contributions": [
-        "Used only to review homepage featured carousel density."
-      ],
-      "systems": [
-        {
-          "title": "Placeholder",
-          "items": [
-            "Temporary content used for layout testing."
-          ]
-        }
-      ],
-      "results": [
-        "Lets the homepage rail be reviewed with more than two items."
-      ],
-      "links": [],
-      "gallery": [
-        {
-          "image": "img/ExampleImages/EI_SpaceConqueror.jpg",
-          "fullImage": "img/ExampleImages/EI_SpaceConqueror.jpg",
-          "title": "Placeholder Preview",
-          "description": "Temporary image for homepage layout review."
-        }
-      ]
-    },
-    {
-      "slug": "placeholder-cloud-runner",
-      "title": "Cloud Runner",
-      "tagline": "Second placeholder entry to test rhythm, scale, and repeated card behavior.",
-      "summary": "This placeholder project helps evaluate how the carousel feels once several featured items are available.",
-      "cardSummary": "Placeholder project to review spacing, card rhythm, and carousel movement with extra items.",
-      "homepageMeta": {
-        "duration": "3 months",
-        "linkLabel": "Prototype"
-      },
-      "type": "Placeholder",
-      "status": "Layout Review Only",
-      "featured": true,
-      "year": "2025",
-      "platform": "PC, WebGL",
-      "teamSize": "Solo",
-      "role": [
-        "Game Designer"
-      ],
-      "tools": [
-        "Unity",
-        "Photoshop"
-      ],
-      "filters": [
-        "featured",
-        "prototype"
-      ],
-      "thumbnail": "img/ExampleImages/IM_HowMobFeel.jpg",
-      "heroImage": "img/ExampleImages/IM_HowMobFeel.jpg",
-      "video": "https://www.youtube.com/embed/dFWq_yK8yhs",
-      "problem": "Placeholder entry for homepage layout review only.",
-      "contributions": [
-        "Used only to review homepage featured carousel density."
-      ],
-      "systems": [
-        {
-          "title": "Placeholder",
-          "items": [
-            "Temporary content used for layout testing."
-          ]
-        }
-      ],
-      "results": [
-        "Lets the homepage rail be reviewed with more than two items."
-      ],
-      "links": [],
-      "gallery": [
-        {
-          "image": "img/ExampleImages/IM_HowMobFeel.jpg",
-          "fullImage": "img/ExampleImages/IM_HowMobFeel.jpg",
-          "title": "Placeholder Preview",
-          "description": "Temporary image for homepage layout review."
-        }
-      ]
-    },
-    {
-      "slug": "placeholder-systems-archive",
-      "title": "Systems Archive",
-      "tagline": "Static placeholder card to preview how non-video items sit inside the homepage rail.",
-      "summary": "This placeholder project is intentionally image-only so the homepage rail can be reviewed with a mix of video and still cards.",
-      "cardSummary": "Static placeholder to review how still-image cards behave alongside playable preview cards.",
-      "homepageMeta": {
-        "duration": "Archive",
-        "linkLabel": "Case Study"
-      },
-      "type": "Placeholder",
-      "status": "Layout Review Only",
-      "featured": true,
-      "year": "2025",
-      "platform": "PC",
-      "teamSize": "Solo",
-      "role": [
-        "Game Designer"
-      ],
-      "tools": [
-        "Notion",
-        "Figma"
-      ],
-      "filters": [
-        "featured",
-        "archive"
-      ],
-      "thumbnail": "img/og-image.png",
-      "heroImage": "img/og-image.png",
-      "video": "",
-      "problem": "Placeholder entry for homepage layout review only.",
-      "contributions": [
-        "Used only to review homepage featured carousel density."
-      ],
-      "systems": [
-        {
-          "title": "Placeholder",
-          "items": [
-            "Temporary content used for layout testing."
-          ]
-        }
-      ],
-      "results": [
-        "Lets the homepage rail be reviewed with more than two items."
-      ],
-      "links": [],
-      "gallery": [
-        {
-          "image": "img/og-image.png",
-          "fullImage": "img/og-image.png",
-          "title": "Placeholder Preview",
-          "description": "Temporary image for homepage layout review."
         }
       ]
     }
