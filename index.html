@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
@@ -473,30 +473,22 @@
               Featured work, prototypes, and archive entries now live in one explorer so the next click is always obvious and the case-study flow stays consistent.
             </p>
           </div>
-
           <div class="content__block">
-            <div id="portfolio-carousel" class="portfolio-carousel" aria-roledescription="carousel">
+            <div id="portfolio-explorer" class="portfolio-explorer">
               <div class="portfolio-carousel__head">
                 <div class="portfolio-carousel__copy">
-                  <p class="portfolio-carousel__eyebrow animate-in-up">Featured Projects</p>
-                  <h3 class="portfolio-carousel__title animate-in-up">Featured work with playable preview moments</h3>
+                  <p class="portfolio-carousel__eyebrow animate-in-up">All Projects</p>
+                  <h3 class="portfolio-carousel__title animate-in-up">Full project explorer</h3>
                   <p class="portfolio-carousel__text animate-in-up">
-                    Use the rail to browse, tap play when you want a preview, and open the full case study only when you are ready to dive deeper.
+                    Scan every project in one place, filter by focus area, and open the case study that matches what you want to review next.
                   </p>
                 </div>
               </div>
-              <div class="portfolio-carousel__frame animate-in-up">
-                <button id="portfolio-carousel-prev" class="portfolio-carousel__arrow btn btn-outline" type="button" aria-label="Show previous projects">
-                  <i class="ph-bold ph-arrow-left"></i>
-                </button>
-                <div class="portfolio-carousel__viewport">
-                  <div id="portfolio-carousel-track" class="portfolio-carousel__track" aria-live="polite"></div>
-                </div>
-                <button id="portfolio-carousel-next" class="portfolio-carousel__arrow btn btn-outline" type="button" aria-label="Show next projects">
-                  <i class="ph-bold ph-arrow-right"></i>
-                </button>
+              <div id="portfolio-filters" class="portfolio-explorer__controls animate-in-up" aria-label="Project filters"></div>
+              <div class="portfolio-explorer__layout">
+                <article id="portfolio-spotlight" class="portfolio-spotlight animate-in-up" aria-live="polite"></article>
+                <div id="portfolio-card-grid" class="portfolio-card-grid animate-in-up" aria-live="polite"></div>
               </div>
-              <p id="portfolio-carousel-status" class="portfolio-carousel__status" aria-live="polite"></p>
             </div>
           </div>
         </section>
@@ -1056,28 +1048,28 @@
           const filterVal = "";
 
           items.forEach((item) => {
-      const parentCol = item.closest('.col-12.col-md-6'); // Tìm phần tử cha (Bootstrap Grid)
-      const tags = item.getAttribute('data-tags')?.split(' ') || [];
+            const parentCol = item.closest('.col-12.col-md-6'); // Legacy Bootstrap column wrapper.
+            const tags = item.getAttribute('data-tags')?.split(' ') || [];
 
-      if (filterVal === 'all' || tags.includes(filterVal)) {
-        item.classList.remove('hidden'); // Hiện item
-        parentCol.classList.remove('hidden'); // Hiện cả cột chứa item
-      } else {
-        item.classList.add('hidden'); // Ẩn item
-        parentCol.classList.add('hidden'); // Ẩn cả cột chứa item
-      }
-    });
+            if (filterVal === 'all' || tags.includes(filterVal)) {
+              item.classList.remove('hidden');
+              parentCol.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+              parentCol.classList.add('hidden');
+            }
+          });
 
-    // Cập nhật layout để tránh lỗi grid bị giữ khoảng trống
-    const container = document.querySelector('.container');
-    container.style.display = 'none';
-    container.offsetHeight; // Trigger reflow
-    container.style.display = 'grid'; // hoặc 'flex'
-  });
-});
+          const container = document.querySelector('.container');
+          container.style.display = 'none';
+          container.offsetHeight; // Trigger reflow.
+          container.style.display = 'grid';
+        });
+      });
     </script>
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js"></script>
+    <script src="js/media-source.js"></script>
     <script src="js/portfolio-index.js"></script>
     <script src="js/homepage-skills.js"></script>
     <script src="js/cursor.js"></script>
@@ -1087,4 +1079,3 @@
   </body>
 
 </html>
-
