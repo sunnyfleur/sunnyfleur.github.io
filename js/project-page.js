@@ -530,7 +530,7 @@
     }
 
     try {
-      const response = await fetch("projects.json?v=20260405-gallery-groups");
+      const response = await fetch("projects.json?v=20260504-gallery-thumbs");
 
       if (!response.ok) {
         throw new Error("Unable to fetch project data: " + response.status);

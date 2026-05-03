@@ -217,8 +217,8 @@
   function buildSpotlightMediaTemplate(project, isPlaying) {
     const title = normalizeText(project && project.title) || 'Project';
     const slug = normalizeText(project && project.slug);
-    const poster = normalizeText(project && project.heroImage)
-      || normalizeText(project && project.thumbnail)
+    const poster = normalizeText(project && project.thumbnail)
+      || normalizeText(project && project.heroImage)
       || fallbackImage;
     const resolvedMedia = getResolvedMedia(project && project.video);
 
@@ -279,7 +279,7 @@
 
     return `
       <div class="portfolio-spotlight__poster-wrap">
-        <img class="portfolio-spotlight__image" src="${escapeHtml(poster)}" alt="${escapeHtml(title)} spotlight" loading="lazy" decoding="async">
+        <img class="portfolio-spotlight__image" src="${escapeHtml(poster)}" alt="${escapeHtml(title)} spotlight" loading="eager" decoding="async" fetchpriority="high">
         ${isPlayableMedia(resolvedMedia) ? `
           <button class="portfolio-feature-card__play-button" type="button" data-play-preview="${escapeHtml(slug)}" aria-label="Play preview for ${escapeHtml(title)}">
             <span class="portfolio-feature-card__play-icon"><i class="ph-fill ph-play"></i></span>
@@ -294,7 +294,7 @@
     const year = normalizeText(project && project.year) || 'TBD';
     const title = normalizeText(project && project.title) || 'Untitled Project';
     const tagline = normalizeText(project && project.tagline) || 'Open the case study for the full breakdown.';
-    const summary = normalizeText(project && project.summary) || 'Project summary is being prepared.';
+    const summary = normalizeText(project && project.cardSummary) || normalizeText(project && project.summary) || 'Project summary is being prepared.';
     const platform = normalizeText(project && project.platform) || 'TBD';
     const role = listSummary(project && project.role, 'TBD');
     const status = normalizeText(project && project.status) || 'TBD';
@@ -352,7 +352,7 @@
       <article class="portfolio-card${isActive ? ' is-active' : ''}" data-portfolio-project="${escapeHtml(slug)}">
         <a class="portfolio-card__link" href="${escapeHtml(projectUrl(slug))}" aria-label="Open case study for ${escapeHtml(title)}">
           <div class="portfolio-card__media">
-            <img class="portfolio-card__image" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(title)} thumbnail" loading="lazy" decoding="async">
+            <img class="portfolio-card__image" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(title)} thumbnail" loading="lazy" decoding="async" fetchpriority="low">
           </div>
           <div class="portfolio-card__body">
             <div class="portfolio-card__intro">

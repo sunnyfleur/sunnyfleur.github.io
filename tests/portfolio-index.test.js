@@ -117,6 +117,30 @@ test('portfolio spotlight supports playable video previews', () => {
   assert.match(source, /PortfolioMediaSource/);
 });
 
+test('portfolio spotlight uses short homepage copy before full project summary', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
+  const spotlightTemplateMatch = source.match(/function buildSpotlightTemplate\(project, isPlaying\) \{([\s\S]*?)function buildCardTemplate/);
+
+  assert.ok(spotlightTemplateMatch, 'Expected buildSpotlightTemplate to exist.');
+  assert.match(
+    spotlightTemplateMatch[1],
+    /const summary = normalizeText\(project && project\.cardSummary\)\s*\|\|\s*normalizeText\(project && project\.summary\)/,
+    'Homepage spotlight should not render the full case-study summary before the CTA.'
+  );
+});
+
+test('portfolio spotlight prioritizes lightweight thumbnail posters', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
+
+  assert.match(
+    source,
+    /const poster = normalizeText\(project && project\.thumbnail\)\s*\|\|\s*normalizeText\(project && project\.heroImage\)/,
+    'Homepage spotlight should render the optimized thumbnail before falling back to the full hero image.'
+  );
+  assert.match(source, /loading="eager"/);
+  assert.match(source, /fetchpriority="high"/);
+});
+
 test('portfolio explorer uses hover intent before changing spotlight from pointer movement', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
 
@@ -141,12 +165,12 @@ test('projects data remaps renamed entries to canonical slugs and synced gallery
   assert.equal(slugs.includes('fantasy-tactics'), false);
 
   assert.deepEqual(farmMatch.legacySlugs, ['bubble-jam']);
-  assert.equal(farmMatch.thumbnail, 'img/ExampleImages/IM_FarmMatch.png');
+  assert.equal(farmMatch.thumbnail, 'img/ExampleImages/Thumbs/IM_FarmMatch.jpg');
   assert.equal(farmMatch.video, 'https://drive.google.com/file/d/19SgqRr6oOtx2y5FhDHgH9FDQ3AhO8jeF/preview');
   assert.equal(getProjectGalleryCount(farmMatch), 17);
 
   assert.deepEqual(satisdom.legacySlugs, ['perfect-tidy']);
-  assert.equal(satisdom.thumbnail, 'img/ExampleImages/IM_Satisdom.png');
+  assert.equal(satisdom.thumbnail, 'img/ExampleImages/Thumbs/IM_Satisdom.jpg');
   assert.equal(satisdom.video, 'https://drive.google.com/file/d/1_thUFjzXz22vo3iAT_d92b5mwvyZyK8r/preview');
   assert.equal(getProjectGalleryCount(satisdom), 30);
 
@@ -154,6 +178,27 @@ test('projects data remaps renamed entries to canonical slugs and synced gallery
   assert.equal(getProjectGalleryCount(goodSort), 65);
   assert.equal(getProjectGalleryCount(screw), 35);
   assert.equal(getProjectGalleryCount(tank), 1);
+});
+
+test('homepage project thumbnails stay lightweight', () => {
+  const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'projects.json'), 'utf8'));
+  const maxThumbnailBytes = 250 * 1024;
+
+  for (const project of payload.projects) {
+    const thumbnail = project.thumbnail || '';
+
+    if (!thumbnail || /^https?:\/\//.test(thumbnail)) {
+      continue;
+    }
+
+    const thumbnailPath = path.join(__dirname, '..', thumbnail);
+    const stats = fs.statSync(thumbnailPath);
+
+    assert.ok(
+      stats.size <= maxThumbnailBytes,
+      `${project.slug} thumbnail is ${stats.size} bytes; expected <= ${maxThumbnailBytes}.`
+    );
+  }
 });
 
 

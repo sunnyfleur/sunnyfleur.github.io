@@ -57,7 +57,7 @@ If `video` is empty or unsupported, the homepage card will stay on its poster im
 - `role`: array of roles joined into a quick summary
 - `tools`: array of tools shown in quick facts
 - `systems`: array of cards with `title` and `items`
-- `gallery`: flat array of images with `image`, `fullImage`, `title`, `description`, and optional `size` or `layout`
+- `gallery`: flat array of images with `image`, `fullImage`, `title`, `description`, and optional `size` or `layout`; use `image` for the grid thumbnail and `fullImage` for the lightbox source when the original asset is heavy
 - `galleryGroups`: optional array of grouped gallery blocks with `title`, `intro`, and `items` using the same image shape as `gallery`
 - `links`: array of CTA objects with `label`, `url`, and `kind`
 
@@ -66,7 +66,8 @@ If `video` is empty or unsupported, the homepage card will stay on its poster im
 - Keep thumbnail and hero images in the same visual family so the explorer feels consistent.
 - Prefer landscape images for `thumbnail` and `heroImage`.
 - Use `img/og-image.png` only as a temporary fallback.
-- If a project has a dedicated image folder, use the standalone `IM_*` file for `thumbnail` and `heroImage` when available, and reserve the folder images for the detail gallery.
+- If a project has a dedicated image folder, keep `thumbnail` as a lightweight optimized asset under `img/ExampleImages/Thumbs/` and keep `heroImage` pointed at the fuller presentation image.
+- For screenshot-heavy project galleries, keep optimized gallery thumbnails in a local `Thumbs/` folder and keep `fullImage` pointed at the original screenshot.
 - If a project has no polished gallery yet, keep one placeholder image and write that status clearly in `description`.
 
 ## Legacy Pages

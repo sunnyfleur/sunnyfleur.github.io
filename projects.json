@@ -76,7 +76,7 @@
                                          "unity",
                                          "systems"
                                      ],
-                         "thumbnail":  "img/ExampleImages/IM_SpaceConqueror.jpg",
+                         "thumbnail":  "img/ExampleImages/Thumbs/IM_SpaceConqueror.jpg",
                          "heroImage":  "img/ExampleImages/IM_SpaceConqueror.jpg",
                          "cardSummary":  "Space-themed combat prototype focused on encounter pacing, enemy behavior, and multiplayer-ready systems.",
                          "homepageMeta":  {
@@ -164,7 +164,7 @@
                                          "strategy",
                                          "pixel-art"
                                      ],
-                         "thumbnail":  "img/ExampleImages/Lunarfall/Screenshot 2024-03-16 001810.png",
+                         "thumbnail":  "img/ExampleImages/Thumbs/IM_Lunarfall.jpg",
                          "heroImage":  "img/ExampleImages/Lunarfall/Screenshot 2024-03-16 001810.png",
                          "cardSummary":  "Dark-fantasy pixel strategy concept documented through interface mockups and systems spreadsheets.",
                          "homepageMeta":  {
@@ -248,7 +248,7 @@
                                          "mobile",
                                          "match"
                                      ],
-                         "thumbnail":  "img/ExampleImages/IM_FarmMatch.png",
+                         "thumbnail":  "img/ExampleImages/Thumbs/IM_FarmMatch.jpg",
                          "heroImage":  "img/ExampleImages/IM_FarmMatch.png",
                          "cardSummary":  "Cute animal matching project with portrait-mobile puzzle boards and a bright casual presentation.",
                          "homepageMeta":  {
@@ -281,103 +281,103 @@
                                    ],
                          "gallery":  [
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-10-07 102944.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-10-07 102944.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-10-07 102944.png",
                                              "title":  "Board Layout 01",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-10-07 125837.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-10-07 125837.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-10-07 125837.png",
                                              "title":  "Board Layout 02",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-10-08 141935.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-10-08 141935.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-10-08 141935.png",
                                              "title":  "Board Layout 03",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 140842.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 140842.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 140842.png",
                                              "title":  "Board Layout 04",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 140927.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 140927.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 140927.png",
                                              "title":  "Board Layout 05",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141259.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 141259.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141259.png",
                                              "title":  "Board Layout 06",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141326.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 141326.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141326.png",
                                              "title":  "Board Layout 07",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141829.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 141829.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141829.png",
                                              "title":  "Board Layout 08",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141912.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 141912.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 141912.png",
                                              "title":  "Board Layout 09",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 143102.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 143102.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 143102.png",
                                              "title":  "Board Layout 10",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 143455.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 143455.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 143455.png",
                                              "title":  "Board Layout 11",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 144329.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 144329.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 144329.png",
                                              "title":  "Board Layout 12",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 162812.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 162812.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 162812.png",
                                              "title":  "Board Layout 13",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 162913.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 162913.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 162913.png",
                                              "title":  "Board Layout 14",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 163209.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-05 163209.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-05 163209.png",
                                              "title":  "Board Layout 15",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-15 091419.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2024-11-15 091419.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2024-11-15 091419.png",
                                              "title":  "Board Layout 16",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
                                          },
                                          {
-                                             "image":  "img/ExampleImages/FarmMatch/Screenshot 2025-02-08 132954.png",
+                                             "image":  "img/ExampleImages/FarmMatch/Thumbs/Screenshot 2025-02-08 132954.jpg",
                                              "fullImage":  "img/ExampleImages/FarmMatch/Screenshot 2025-02-08 132954.png",
                                              "title":  "Board Layout 17",
                                              "description":  "Portrait FarmMatch board showing another arrangement of animal pieces, blockers, and level goals."
@@ -410,7 +410,7 @@
                                          "mobile",
                                          "sorting"
                                      ],
-                         "thumbnail":  "img/ExampleImages/IM_GoodSort.png",
+                         "thumbnail":  "img/ExampleImages/Thumbs/IM_GoodSort.jpg",
                          "heroImage":  "img/ExampleImages/IM_GoodSort.png",
                          "cardSummary":  "Portrait shelf-sorting puzzle built around readable boards, satisfying organization, and scalable level variation.",
                          "homepageMeta":  {
@@ -858,7 +858,7 @@
                                          "mobile",
                                          "satisfying"
                                      ],
-                         "thumbnail":  "img/ExampleImages/IM_Satisdom.png",
+                         "thumbnail":  "img/ExampleImages/Thumbs/IM_Satisdom.jpg",
                          "heroImage":  "img/ExampleImages/IM_Satisdom.png",
                          "cardSummary":  "Relaxing mini-game concept documented through sketches, flow notes, and content-planning sheets.",
                          "homepageMeta":  {
@@ -1098,7 +1098,7 @@
                                          "mobile",
                                          "puzzle"
                                      ],
-                         "thumbnail":  "img/ExampleImages/IM_ScrewJam.png",
+                         "thumbnail":  "img/ExampleImages/Thumbs/IM_ScrewJam.jpg",
                          "heroImage":  "img/ExampleImages/IM_ScrewJam.png",
                          "cardSummary":  "Unscrew-style color puzzle project supported by key art and an extensive level screenshot archive.",
                          "homepageMeta":  {
@@ -1380,7 +1380,7 @@
                                          "mobile",
                                          "arcade"
                                      ],
-                         "thumbnail":  "img/ExampleImages/IM_Tank.png",
+                         "thumbnail":  "img/ExampleImages/Thumbs/IM_Tank.jpg",
                          "heroImage":  "img/ExampleImages/IM_Tank.png",
                          "cardSummary":  "Arcade tank battle concept currently represented by title art while more playable documentation is collected.",
                          "homepageMeta":  {
@@ -1444,7 +1444,7 @@
                                          "case-study",
                                          "horror"
                                      ],
-                         "thumbnail":  "img/og-image.png",
+                         "thumbnail":  "img/ExampleImages/Thumbs/OG.jpg",
                          "heroImage":  "img/og-image.png",
                          "video":  "",
                          "problem":  "The previous page structure made it hard to keep partially documented work visible without copying weak placeholder content. The new system allows a lightweight archive entry until the deeper write-up is ready.",

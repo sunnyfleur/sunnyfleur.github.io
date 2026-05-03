@@ -126,6 +126,29 @@ test('project section visibility treats grouped gallery content as renderable ga
 
   assert.equal(visibility.gallery, true);
 });
+
+test('farm-match detail gallery uses lightweight thumbnails with full-size lightbox images', () => {
+  const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'projects.json'), 'utf8'));
+  const farmMatch = payload.projects.find((project) => project.slug === 'farm-match');
+  const maxThumbnailBytes = 70 * 1024;
+
+  assert.ok(farmMatch, 'Expected farm-match project to exist.');
+  assert.ok(Array.isArray(farmMatch.gallery), 'Expected farm-match to use a flat gallery.');
+
+  for (const item of farmMatch.gallery) {
+    assert.match(item.image, /^img\/ExampleImages\/FarmMatch\/Thumbs\//);
+    assert.doesNotMatch(item.fullImage, /\/Thumbs\//);
+    assert.notEqual(item.image, item.fullImage);
+
+    const thumbnailPath = path.join(__dirname, '..', item.image);
+    const stats = fs.statSync(thumbnailPath);
+
+    assert.ok(
+      stats.size <= maxThumbnailBytes,
+      `${item.image} is ${stats.size} bytes; expected <= ${maxThumbnailBytes}.`
+    );
+  }
+});
 test('hero actions stay hidden when a project has no valid links', () => {
   assert.equal(hasRenderableLinks([]), false);
   assert.equal(hasRenderableLinks([{ label: 'Broken link only' }]), false);
