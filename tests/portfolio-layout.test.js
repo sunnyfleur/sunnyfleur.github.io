@@ -4,6 +4,7 @@ const path = require('node:path');
 
 const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
 const spotlightBlockMatch = css.match(/\.portfolio-spotlight\s*\{([^}]*)\}/);
+const spotlightMediaBlockMatch = css.match(/\.portfolio-spotlight__media\s*\{([^}]*)\}/);
 const spotlightBodyBlockMatch = css.match(/\.portfolio-spotlight__body\s*\{([^}]*)\}/);
 const spotlightLedeBlockMatch = css.match(/\.portfolio-spotlight__lede\s*\{([^}]*)\}/);
 const spotlightSummaryBlockMatch = css.match(/\.portfolio-spotlight__summary\s*\{([^}]*)\}/);
@@ -22,6 +23,13 @@ assert.match(
   spotlightBlockMatch[1],
   /max-height:\s*calc\(100vh - 13rem\);/,
   'Expected sticky spotlight to stay within the viewport so its CTA remains reachable.'
+);
+
+assert.ok(spotlightMediaBlockMatch, 'Expected spotlight media layout rule to exist.');
+assert.match(
+  spotlightMediaBlockMatch[1],
+  /width:\s*100%;/,
+  'Expected spotlight media to span the full card width even when max-height caps the aspect-ratio height.'
 );
 
 assert.ok(spotlightBodyBlockMatch, 'Expected spotlight body layout rule to exist.');

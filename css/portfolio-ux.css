@@ -74,6 +74,7 @@
 
 .portfolio-spotlight__media {
   position: relative;
+  width: 100%;
   aspect-ratio: 16 / 10;
   max-height: clamp(15rem, 24vh, 22rem);
   overflow: hidden;
