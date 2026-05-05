@@ -1,0 +1,277 @@
+{
+  "chapters": [
+    {
+      "id": "worlds",
+      "title": "Worlds I Still Remember",
+      "kicker": "Chapter 01",
+      "description": "Games that shaped my taste for atmosphere, exploration, and the feeling of inhabiting a place."
+    },
+    {
+      "id": "stories",
+      "title": "Stories That Stayed",
+      "kicker": "Chapter 02",
+      "description": "Character-driven games that changed my standards for tone, pacing, and emotional payoff."
+    },
+    {
+      "id": "loops",
+      "title": "Loops I Kept Returning To",
+      "kicker": "Chapter 03",
+      "description": "Games whose repeatable actions, feedback, and short-term goals made me keep coming back."
+    },
+    {
+      "id": "systems",
+      "title": "Systems I Learned From",
+      "kicker": "Chapter 04",
+      "description": "Strategy, progression, economy, and combat systems that I keep revisiting as design references."
+    },
+    {
+      "id": "nostalgia",
+      "title": "Nostalgia & Milestones",
+      "kicker": "Chapter 05",
+      "description": "Games tied to specific moments in my gaming life, even when my designer brain sees them differently now."
+    },
+    {
+      "id": "friction",
+      "title": "Lessons From Friction",
+      "kicker": "Chapter 06",
+      "description": "Games that did not fully work for me, but still left useful questions about player trust, feel, scope, and expectation."
+    }
+  ],
+  "games": [
+    {
+      "title": "Red Dead Redemption 2",
+      "chapter": "worlds",
+      "platform": "PC",
+      "hours": "180+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_616x353.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Red Dead Redemption 2 landscape artwork",
+      "reflection": "A benchmark for world texture, quiet pacing, and how small travel moments can make a place feel lived in.",
+      "tags": ["Worldbuilding", "Pacing", "Atmosphere"]
+    },
+    {
+      "title": "Elden Ring",
+      "chapter": "worlds",
+      "platform": "PC",
+      "hours": "150+",
+      "year": "2022",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/capsule_616x353.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Elden Ring landscape artwork",
+      "reflection": "A strong memory of mystery, danger, and discovery pulling the player forward without over-explaining the path.",
+      "tags": ["Exploration", "Mystery", "World Structure"]
+    },
+    {
+      "title": "The Witcher 3: Wild Hunt",
+      "chapter": "worlds",
+      "platform": "PC",
+      "hours": "150+",
+      "year": "2015",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/capsule_616x353.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "The Witcher 3 landscape artwork",
+      "reflection": "A reminder that side content can feel meaningful when local stakes, character writing, and world context support it.",
+      "tags": ["Quest Design", "Worldbuilding", "Narrative"]
+    },
+    {
+      "title": "Persona 5 Royal",
+      "chapter": "stories",
+      "platform": "Console",
+      "hours": "120+",
+      "year": "2019",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/capsule_616x353.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Persona 5 Royal key artwork",
+      "reflection": "A personal standard for how style, routine, UI identity, and character arcs can reinforce each other.",
+      "tags": ["Style", "Routine", "Character"]
+    },
+    {
+      "title": "Persona 3 Reload",
+      "chapter": "stories",
+      "platform": "Console",
+      "hours": "100+",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2161700/capsule_616x353.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2161700/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Persona 3 Reload key artwork",
+      "reflection": "A useful reference for atmosphere, limited time pressure, and the emotional weight of repeated daily decisions.",
+      "tags": ["Mood", "Schedule", "Emotional Pacing"]
+    },
+    {
+      "title": "L.A. Noire",
+      "chapter": "stories",
+      "platform": "PC",
+      "hours": "30+",
+      "year": "2011",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/110800/capsule_616x353.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/110800/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "L.A. Noire key artwork",
+      "reflection": "A memorable case of performance capture, detective fantasy, and the tension between authored drama and player interpretation.",
+      "tags": ["Performance", "Investigation", "Tone"]
+    },
+    {
+      "title": "Plants vs. Zombies GOTY Edition",
+      "chapter": "loops",
+      "platform": "PC",
+      "hours": "50+",
+      "year": "2009",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3590/capsule_616x353.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/3590/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Plants vs. Zombies artwork",
+      "reflection": "A clean reminder that casual strategy works when readability, escalation, and reward timing stay simple but expressive.",
+      "tags": ["Readable Goals", "Escalation", "Casual Strategy"]
+    },
+    {
+      "title": "Peggle Deluxe",
+      "chapter": "loops",
+      "platform": "PC",
+      "hours": "20+",
+      "year": "2007",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3480/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Peggle Deluxe artwork",
+      "reflection": "A small lesson in anticipation, clear feedback, and how a single input can still create drama.",
+      "tags": ["Feedback", "Anticipation", "Session Design"]
+    },
+    {
+      "title": "Dead Cells",
+      "chapter": "loops",
+      "platform": "PC",
+      "hours": "50+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Dead Cells artwork",
+      "reflection": "A strong loop reference for fast restarts, readable combat, and progression that softens failure without removing tension.",
+      "tags": ["Roguelite Loop", "Combat Feel", "Restart Flow"]
+    },
+    {
+      "title": "Hades II",
+      "chapter": "loops",
+      "platform": "PC",
+      "hours": "30+",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Hades II key artwork",
+      "reflection": "A reference for how character writing and mechanical repetition can make repeated runs feel less like repetition.",
+      "tags": ["Run Structure", "Dialogue", "Meta Progression"]
+    },
+    {
+      "title": "Sid Meier's Civilization VI",
+      "chapter": "systems",
+      "platform": "PC",
+      "hours": "150+",
+      "year": "2016",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/289070/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Civilization VI artwork",
+      "reflection": "A systems reference for compounding decisions, readable tradeoffs, and the danger of one-more-turn pacing.",
+      "tags": ["Strategy", "Tradeoffs", "Progression"]
+    },
+    {
+      "title": "Total War: Three Kingdoms",
+      "chapter": "systems",
+      "platform": "PC",
+      "hours": "100+",
+      "year": "2019",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/779340/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Total War Three Kingdoms artwork",
+      "reflection": "A useful mix of campaign-layer relationships, battlefield spectacle, and systemic tension between loyalty and ambition.",
+      "tags": ["Strategy", "Relationships", "Spectacle"]
+    },
+    {
+      "title": "Kingdom Come: Deliverance",
+      "chapter": "systems",
+      "platform": "PC",
+      "hours": "100+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/379430/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Kingdom Come Deliverance artwork",
+      "reflection": "A reference for grounded role-play, friction as identity, and progression that asks the player to inhabit weakness first.",
+      "tags": ["Simulation", "Role-play", "Progression"]
+    },
+    {
+      "title": "The Elder Scrolls V: Skyrim",
+      "chapter": "nostalgia",
+      "platform": "PC",
+      "hours": "200+",
+      "year": "2011",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/489830/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Skyrim Special Edition artwork",
+      "reflection": "One of the games that made wandering feel like a valid goal, even before I had language for open-world structure.",
+      "tags": ["Exploration", "Modding", "Milestone"]
+    },
+    {
+      "title": "Assassin's Creed II",
+      "chapter": "nostalgia",
+      "platform": "PC",
+      "hours": "40+",
+      "year": "2009",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/33230/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Assassin's Creed II artwork",
+      "reflection": "A milestone memory for movement fantasy, historical spaces, and how a strong protagonist can anchor a long journey.",
+      "tags": ["Traversal", "Historical Fantasy", "Character"]
+    },
+    {
+      "title": "Valiant Hearts: The Great War",
+      "chapter": "nostalgia",
+      "platform": "PC",
+      "hours": "10+",
+      "year": "2014",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/260230/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Valiant Hearts artwork",
+      "reflection": "A compact memory of how illustration, puzzle pacing, and historical tone can carry emotion without mechanical complexity.",
+      "tags": ["Tone", "Puzzle Pacing", "Emotion"]
+    },
+    {
+      "title": "Cyberpunk 2077",
+      "chapter": "friction",
+      "platform": "PC",
+      "hours": "20+",
+      "year": "2020",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Cyberpunk 2077 city artwork",
+      "reflection": "A useful case study in ambition, expectation, immersion breaks, and how post-launch iteration can reshape perception.",
+      "tags": ["Expectation", "Immersion", "Iteration"]
+    },
+    {
+      "title": "eFootball 2022",
+      "chapter": "friction",
+      "platform": "PC",
+      "hours": "5+",
+      "year": "2021",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1665460/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "eFootball artwork",
+      "reflection": "A sharp reminder that feel, animation clarity, and trust are fragile when a familiar loop changes too abruptly.",
+      "tags": ["Player Trust", "Game Feel", "Transition"]
+    },
+    {
+      "title": "Battlefield 2042",
+      "chapter": "friction",
+      "platform": "PC",
+      "hours": "10+",
+      "year": "2021",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1517290/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Battlefield 2042 artwork",
+      "reflection": "A useful friction case for scale, class identity, readability, and how expectation shapes multiplayer reception.",
+      "tags": ["Scale", "Readability", "Identity"]
+    }
+  ]
+}

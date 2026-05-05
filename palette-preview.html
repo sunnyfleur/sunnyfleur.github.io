@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunnyFleur Solid Palette Preview</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page-bg: #eef1f6;
+      --page-text: #10131a;
+      --page-muted: #596373;
+      --panel: #ffffff;
+      --line: #d9e0ea;
+      --shadow: 0 18px 46px rgba(12, 18, 28, 0.12);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--page-text);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .intro {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      max-width: 860px;
+      color: #10131a;
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .intro p {
+      max-width: 760px;
+      color: var(--page-muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .note span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      color: #354050;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .palette-card {
+      --accent-light: #2563eb;
+      --accent-dark: #60a5fa;
+      --accent-ink: #102a6b;
+      --accent-tint: #eaf1ff;
+      --base-light: #f7f9ff;
+      --tint-light: #ffffff;
+      --text-light: #10131a;
+      --muted-light: #5a6475;
+      --base-dark: #07111f;
+      --tint-dark: #101b2d;
+      --text-dark: #eff6ff;
+      --muted-dark: #a8b4c8;
+      --button-text-light: #ffffff;
+      --button-text-dark: #07111f;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .palette-card.violet {
+      --accent-light: #7c3aed;
+      --accent-dark: #a78bfa;
+      --accent-ink: #35146f;
+      --accent-tint: #f1eaff;
+      --base-light: #f8f5ff;
+      --tint-light: #ffffff;
+      --text-light: #181124;
+      --muted-light: #63576f;
+      --base-dark: #130d22;
+      --tint-dark: #211738;
+      --text-dark: #f7f0ff;
+      --muted-dark: #b7a8cf;
+      --button-text-light: #ffffff;
+      --button-text-dark: #160d24;
+    }
+
+    .palette-card.rose {
+      --accent-light: #e11d48;
+      --accent-dark: #fb7185;
+      --accent-ink: #6f1027;
+      --accent-tint: #fff0f4;
+      --base-light: #fff7f9;
+      --tint-light: #ffffff;
+      --text-light: #211116;
+      --muted-light: #705965;
+      --base-dark: #1f0d13;
+      --tint-dark: #32141d;
+      --text-dark: #fff2f5;
+      --muted-dark: #d5aab6;
+      --button-text-light: #ffffff;
+      --button-text-dark: #240d13;
+    }
+
+    .palette-card.amber {
+      --accent-light: #d97706;
+      --accent-dark: #fbbf24;
+      --accent-ink: #663300;
+      --accent-tint: #fff5df;
+      --base-light: #fffaf0;
+      --tint-light: #ffffff;
+      --text-light: #1e1710;
+      --muted-light: #6a5e4e;
+      --base-dark: #181109;
+      --tint-dark: #2a1c0d;
+      --text-dark: #fff6e8;
+      --muted-dark: #cbb79a;
+      --button-text-light: #ffffff;
+      --button-text-dark: #1e1508;
+    }
+
+    .palette-card.ink {
+      --accent-light: #111827;
+      --accent-dark: #e5e7eb;
+      --accent-ink: #000000;
+      --accent-tint: #eef0f3;
+      --base-light: #f6f7f9;
+      --tint-light: #ffffff;
+      --text-light: #10131a;
+      --muted-light: #596270;
+      --base-dark: #090a0d;
+      --tint-dark: #15171d;
+      --text-dark: #f5f6f8;
+      --muted-dark: #a8adb7;
+      --button-text-light: #ffffff;
+      --button-text-dark: #090a0d;
+    }
+
+    .palette-card.lime {
+      --accent-light: #4d7c0f;
+      --accent-dark: #bef264;
+      --accent-ink: #223d05;
+      --accent-tint: #f1f9df;
+      --base-light: #fbfdf5;
+      --tint-light: #ffffff;
+      --text-light: #151a10;
+      --muted-light: #5c6750;
+      --base-dark: #0f1509;
+      --tint-dark: #1b2510;
+      --text-dark: #f5ffe8;
+      --muted-dark: #b6c7a2;
+      --button-text-light: #ffffff;
+      --button-text-dark: #101609;
+    }
+
+    .palette-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 18px 0;
+    }
+
+    .palette-title {
+      display: grid;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .palette-title h2 {
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    .palette-title p {
+      color: var(--page-muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      align-self: start;
+      flex: 0 0 auto;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #10131a;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .sample-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .sample {
+      min-width: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(128, 144, 160, 0.25);
+      background: var(--base);
+      color: var(--text);
+    }
+
+    .sample.light {
+      --base: var(--base-light);
+      --tint: var(--tint-light);
+      --text: var(--text-light);
+      --muted: var(--muted-light);
+      --accent: var(--accent-light);
+      --button-text: var(--button-text-light);
+    }
+
+    .sample.dark {
+      --base: var(--base-dark);
+      --tint: var(--tint-dark);
+      --text: var(--text-dark);
+      --muted: var(--muted-dark);
+      --accent: var(--accent-dark);
+      --button-text: var(--button-text-dark);
+    }
+
+    .mock-hero {
+      min-height: 132px;
+      padding: 14px;
+      background: var(--tint);
+    }
+
+    .mock-label {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      padding: 0 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--button-text);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .mock-title {
+      margin-top: 28px;
+      max-width: 11ch;
+      color: var(--accent);
+      font-size: 32px;
+      line-height: 0.92;
+    }
+
+    .mock-card {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+      background: var(--base);
+    }
+
+    .mock-media {
+      height: 82px;
+      border-radius: 10px;
+      background: var(--accent);
+      box-shadow: 0 14px 28px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+
+    .mock-card h3 {
+      color: var(--text);
+      font-size: 19px;
+      line-height: 1.1;
+    }
+
+    .mock-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .mock-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .mock-button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 11px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--button-text);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .mock-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border: 1px solid color-mix(in srgb, var(--muted) 26%, transparent);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      padding: 0 18px 18px;
+    }
+
+    .chip {
+      min-height: 48px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .codes {
+      display: grid;
+      gap: 8px;
+      padding: 0 18px 18px;
+      color: #566171;
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    }
+
+    .codes code {
+      display: block;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      padding: 9px 10px;
+      border-radius: 10px;
+      background: #f6f8fa;
+      border: 1px solid #e3e8ef;
+    }
+
+    @media (max-width: 760px) {
+      .palette-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .sample-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .mock-hero {
+        min-height: 108px;
+      }
+
+      .mock-title {
+        margin-top: 18px;
+        font-size: 27px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main {
+        width: min(100% - 20px, 1180px);
+        padding-top: 22px;
+      }
+
+      .chips {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .palette-header {
+        display: grid;
+      }
+
+      .badge {
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Solid single-color directions</h1>
+      <p>No gradient text, no two-color buttons, no blended hero effects. Each option uses one accent color with neutral surfaces and a matching tint for light and dark mode.</p>
+      <div class="note" aria-label="Preview notes">
+        <span>Solid accent only</span>
+        <span>No gradient text</span>
+        <span>Light and dark samples</span>
+      </div>
+    </section>
+
+    <section class="palette-grid" aria-label="Palette options">
+      <article class="palette-card cobalt">
+        <div class="palette-header">
+          <div class="palette-title">
+            <h2>Cobalt Mono</h2>
+            <p>Cleanest portfolio direction: professional, digital, confident, not playful.</p>
+          </div>
+          <span class="badge">Recommended</span>
+        </div>
+        <div class="sample-wrap">
+          <div class="sample light">
+            <div class="mock-hero">
+              <span class="mock-label">Light</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Mobile</span></div>
+            </div>
+          </div>
+          <div class="sample dark">
+            <div class="mock-hero">
+              <span class="mock-label">Dark</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Mobile</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chips" aria-label="Color chips">
+          <span class="chip" style="background:#f7f9ff"></span>
+          <span class="chip" style="background:#ffffff"></span>
+          <span class="chip" style="background:#eaf1ff"></span>
+          <span class="chip" style="background:#2563eb"></span>
+          <span class="chip" style="background:#102a6b"></span>
+          <span class="chip" style="background:#60a5fa"></span>
+          <span class="chip" style="background:#07111f"></span>
+        </div>
+        <div class="codes">
+          <code>Accent: #2563eb | Dark accent: #60a5fa</code>
+          <code>Light base: #f7f9ff | Dark base: #07111f</code>
+        </div>
+      </article>
+
+      <article class="palette-card violet">
+        <div class="palette-header">
+          <div class="palette-title">
+            <h2>Violet Mono</h2>
+            <p>Creative and premium, good if you want stronger personal identity.</p>
+          </div>
+        </div>
+        <div class="sample-wrap">
+          <div class="sample light">
+            <div class="mock-hero">
+              <span class="mock-label">Light</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">UX</span></div>
+            </div>
+          </div>
+          <div class="sample dark">
+            <div class="mock-hero">
+              <span class="mock-label">Dark</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">UX</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chips" aria-label="Color chips">
+          <span class="chip" style="background:#f8f5ff"></span>
+          <span class="chip" style="background:#ffffff"></span>
+          <span class="chip" style="background:#f1eaff"></span>
+          <span class="chip" style="background:#7c3aed"></span>
+          <span class="chip" style="background:#35146f"></span>
+          <span class="chip" style="background:#a78bfa"></span>
+          <span class="chip" style="background:#130d22"></span>
+        </div>
+        <div class="codes">
+          <code>Accent: #7c3aed | Dark accent: #a78bfa</code>
+          <code>Light base: #f8f5ff | Dark base: #130d22</code>
+        </div>
+      </article>
+
+      <article class="palette-card rose">
+        <div class="palette-header">
+          <div class="palette-title">
+            <h2>Rose Mono</h2>
+            <p>Bold, memorable, and editorial. Better for personality than corporate polish.</p>
+          </div>
+        </div>
+        <div class="sample-wrap">
+          <div class="sample light">
+            <div class="mock-hero">
+              <span class="mock-label">Light</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Design</span></div>
+            </div>
+          </div>
+          <div class="sample dark">
+            <div class="mock-hero">
+              <span class="mock-label">Dark</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Design</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chips" aria-label="Color chips">
+          <span class="chip" style="background:#fff7f9"></span>
+          <span class="chip" style="background:#ffffff"></span>
+          <span class="chip" style="background:#fff0f4"></span>
+          <span class="chip" style="background:#e11d48"></span>
+          <span class="chip" style="background:#6f1027"></span>
+          <span class="chip" style="background:#fb7185"></span>
+          <span class="chip" style="background:#1f0d13"></span>
+        </div>
+        <div class="codes">
+          <code>Accent: #e11d48 | Dark accent: #fb7185</code>
+          <code>Light base: #fff7f9 | Dark base: #1f0d13</code>
+        </div>
+      </article>
+
+      <article class="palette-card amber">
+        <div class="palette-header">
+          <div class="palette-title">
+            <h2>Amber Mono</h2>
+            <p>Warm, craft-focused, and case-study friendly without using trendy gradients.</p>
+          </div>
+        </div>
+        <div class="sample-wrap">
+          <div class="sample light">
+            <div class="mock-hero">
+              <span class="mock-label">Light</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Case study</span></div>
+            </div>
+          </div>
+          <div class="sample dark">
+            <div class="mock-hero">
+              <span class="mock-label">Dark</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Case study</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chips" aria-label="Color chips">
+          <span class="chip" style="background:#fffaf0"></span>
+          <span class="chip" style="background:#ffffff"></span>
+          <span class="chip" style="background:#fff5df"></span>
+          <span class="chip" style="background:#d97706"></span>
+          <span class="chip" style="background:#663300"></span>
+          <span class="chip" style="background:#fbbf24"></span>
+          <span class="chip" style="background:#181109"></span>
+        </div>
+        <div class="codes">
+          <code>Accent: #d97706 | Dark accent: #fbbf24</code>
+          <code>Light base: #fffaf0 | Dark base: #181109</code>
+        </div>
+      </article>
+
+      <article class="palette-card ink">
+        <div class="palette-header">
+          <div class="palette-title">
+            <h2>Ink Mono</h2>
+            <p>Minimal, serious, and portfolio-first. Almost no color, strong typography.</p>
+          </div>
+        </div>
+        <div class="sample-wrap">
+          <div class="sample light">
+            <div class="mock-hero">
+              <span class="mock-label">Light</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Systems</span></div>
+            </div>
+          </div>
+          <div class="sample dark">
+            <div class="mock-hero">
+              <span class="mock-label">Dark</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Systems</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chips" aria-label="Color chips">
+          <span class="chip" style="background:#f6f7f9"></span>
+          <span class="chip" style="background:#ffffff"></span>
+          <span class="chip" style="background:#eef0f3"></span>
+          <span class="chip" style="background:#111827"></span>
+          <span class="chip" style="background:#000000"></span>
+          <span class="chip" style="background:#e5e7eb"></span>
+          <span class="chip" style="background:#090a0d"></span>
+        </div>
+        <div class="codes">
+          <code>Accent: #111827 | Dark accent: #e5e7eb</code>
+          <code>Light base: #f6f7f9 | Dark base: #090a0d</code>
+        </div>
+      </article>
+
+      <article class="palette-card lime">
+        <div class="palette-header">
+          <div class="palette-title">
+            <h2>Lime Mono</h2>
+            <p>Game-facing and distinctive, but calmer than neon two-color palettes.</p>
+          </div>
+        </div>
+        <div class="sample-wrap">
+          <div class="sample light">
+            <div class="mock-hero">
+              <span class="mock-label">Light</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Gameplay</span></div>
+            </div>
+          </div>
+          <div class="sample dark">
+            <div class="mock-hero">
+              <span class="mock-label">Dark</span>
+              <h3 class="mock-title">Game UX Portfolio</h3>
+            </div>
+            <div class="mock-card">
+              <div class="mock-media"></div>
+              <h3>Project Spotlight</h3>
+              <p>Prototype, economy loops, level pacing, and player feedback systems.</p>
+              <div class="mock-actions"><span class="mock-button">View case</span><span class="mock-tag">Gameplay</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chips" aria-label="Color chips">
+          <span class="chip" style="background:#fbfdf5"></span>
+          <span class="chip" style="background:#ffffff"></span>
+          <span class="chip" style="background:#f1f9df"></span>
+          <span class="chip" style="background:#4d7c0f"></span>
+          <span class="chip" style="background:#223d05"></span>
+          <span class="chip" style="background:#bef264"></span>
+          <span class="chip" style="background:#0f1509"></span>
+        </div>
+        <div class="codes">
+          <code>Accent: #4d7c0f | Dark accent: #bef264</code>
+          <code>Light base: #fbfdf5 | Dark base: #0f1509</code>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
