@@ -4,37 +4,55 @@
       "id": "worlds",
       "title": "Worlds I Still Remember",
       "kicker": "Chapter 01",
-      "description": "Games that shaped my taste for atmosphere, exploration, and the feeling of inhabiting a place."
+      "description": "Games that shaped my taste for atmosphere, exploration, and the feeling of inhabiting a place.",
+      "accent": "#e05a38",
+      "accentSoft": "rgba(224, 90, 56, 0.14)",
+      "stamps": ["World Texture", "Exploration", "Atmosphere"]
     },
     {
       "id": "stories",
       "title": "Stories That Stayed",
       "kicker": "Chapter 02",
-      "description": "Character-driven games that changed my standards for tone, pacing, and emotional payoff."
+      "description": "Character-driven games that changed my standards for tone, pacing, and emotional payoff.",
+      "accent": "#d84c5f",
+      "accentSoft": "rgba(216, 76, 95, 0.14)",
+      "stamps": ["Character Arc", "Routine", "Emotional Payoff"]
     },
     {
       "id": "loops",
       "title": "Loops I Kept Returning To",
       "kicker": "Chapter 03",
-      "description": "Games whose repeatable actions, feedback, and short-term goals made me keep coming back."
+      "description": "Games whose repeatable actions, feedback, and short-term goals made me keep coming back.",
+      "accent": "#4fbf7a",
+      "accentSoft": "rgba(79, 191, 122, 0.14)",
+      "stamps": ["Readable Goals", "Feedback", "Return Loop"]
     },
     {
       "id": "systems",
       "title": "Systems I Learned From",
       "kicker": "Chapter 04",
-      "description": "Strategy, progression, economy, and combat systems that I keep revisiting as design references."
+      "description": "Strategy, progression, economy, and combat systems that I keep revisiting as design references.",
+      "accent": "#c9a24b",
+      "accentSoft": "rgba(201, 162, 75, 0.14)",
+      "stamps": ["Tradeoffs", "Progression", "System Tension"]
     },
     {
       "id": "nostalgia",
       "title": "Nostalgia & Milestones",
       "kicker": "Chapter 05",
-      "description": "Games tied to specific moments in my gaming life, even when my designer brain sees them differently now."
+      "description": "Games tied to specific moments in my gaming life, even when my designer brain sees them differently now.",
+      "accent": "#5c86d6",
+      "accentSoft": "rgba(92, 134, 214, 0.14)",
+      "stamps": ["Milestone", "Memory Shelf", "Early Taste"]
     },
     {
       "id": "friction",
       "title": "Lessons From Friction",
       "kicker": "Chapter 06",
-      "description": "Games that did not fully work for me, but still left useful questions about player trust, feel, scope, and expectation."
+      "description": "Games that did not fully work for me, but still left useful questions about player trust, feel, scope, and expectation.",
+      "accent": "#f18f45",
+      "accentSoft": "rgba(241, 143, 69, 0.14)",
+      "stamps": ["Player Trust", "Game Feel", "Scope"]
     }
   ],
   "games": [

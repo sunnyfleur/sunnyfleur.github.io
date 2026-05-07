@@ -3,9 +3,11 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {
+  createChapterMarkup,
   getRenderableChapters,
   createGameCardMarkup,
   createHeroStripMarkup,
+  createJourneyIndexMarkup,
 } = require('../js/gaming-journey.js');
 
 test('gaming journey data renders chapters with games and skips empty chapters', () => {
@@ -67,6 +69,103 @@ test('game card markup includes remote image, source credit, reflection, and des
   assert.match(markup, /Iteration/);
 });
 
+test('chapter markup alternates layout direction and features the first game', () => {
+  const chapter = {
+    id: 'stories',
+    title: 'Stories That Stayed',
+    kicker: 'Chapter 02',
+    description: 'Character-driven games that changed my standards for tone.',
+    accent: '#d84c5f',
+    accentSoft: 'rgba(216, 76, 95, 0.14)',
+    stamps: ['Character Arc', 'Routine', 'Emotional Payoff'],
+    games: [
+      {
+        title: 'Persona 5 Royal',
+        image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/capsule_616x353.jpg',
+        imageSource: 'Steam',
+        reflection: 'A standard for style and character arcs.',
+        tags: ['Style'],
+      },
+      {
+        title: 'L.A. Noire',
+        image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/110800/capsule_616x353.jpg',
+        imageSource: 'Steam',
+        reflection: 'A memorable detective fantasy.',
+        tags: ['Tone'],
+      },
+    ],
+  };
+  const markup = createChapterMarkup(chapter, 1);
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
+
+  assert.match(markup, /<section class="journey-chapter journey-chapter--reverse" id="stories" data-chapter-number="02" style="--chapter-accent: #d84c5f; --chapter-accent-soft: rgba\(216, 76, 95, 0\.14\)">/);
+  assert.match(markup, /<article class="journey-card journey-card--feature">/);
+  assert.equal((markup.match(/journey-card--feature/g) || []).length, 1);
+  assert.ok(markup.indexOf('Persona 5 Royal') < markup.indexOf('L.A. Noire'));
+  assert.match(markup, /journey-chapter__stamps/);
+  assert.match(markup, /Character Arc/);
+  assert.match(markup, /Emotional Payoff/);
+  assert.match(markup, /journey-chapter__rail/);
+  assert.match(markup, /journey-chapter__rail-number">02<\/span>/);
+  assert.match(markup, /journey-chapter__rail-label">Memory stop<\/span>/);
+  assert.match(markup, /journey-chapter__transition/);
+  assert.match(markup, /Memory stop 02/);
+  assert.match(markup, /Character Arc/);
+
+  assert.match(css, /\.journey-chapter--reverse\s*\{/);
+  assert.match(css, /\.journey-chapter::before\s*\{[^}]*content:\s*attr\(data-chapter-number\)/s);
+  assert.match(css, /\.journey-chapter::before\s*\{[^}]*left:\s*clamp\(44px,\s*5vw,\s*76px\)/s);
+  assert.match(css, /\.journey-chapter--reverse::before\s*\{[^}]*left:\s*auto;[^}]*right:\s*clamp\(44px,\s*5vw,\s*76px\)/s);
+  assert.match(css, /\.journey-chapter::after\s*\{[^}]*background:\s*linear-gradient\(90deg,\s*var\(--chapter-accent\),\s*transparent\)/s);
+  assert.match(css, /\.journey-chapter__header\s*\{[^}]*padding-left:\s*clamp\(42px,\s*4vw,\s*62px\)/s);
+  assert.match(css, /\.journey-chapter__rail\s*\{[^}]*position:\s*absolute/s);
+  assert.match(css, /\.journey-chapter__rail-line\s*\{[^}]*background:\s*linear-gradient\(180deg,\s*var\(--chapter-accent\),\s*var\(--chapter-accent-soft\)\)/s);
+  assert.match(css, /\.journey-chapter__rail-dot\s*\{[^}]*background:\s*var\(--chapter-accent\)/s);
+  assert.match(css, /\.journey-chapter--reverse \.journey-chapter__rail\s*\{[^}]*left:\s*auto;[^}]*right:\s*0/s);
+  assert.match(css, /\.journey-chapter__stamps\s*\{/);
+  assert.match(css, /\.journey-stamp\s*\{[^}]*border:\s*1px solid var\(--chapter-accent\)/s);
+  assert.match(css, /\.journey-chapter__transition\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*1/s);
+  assert.match(css, /\.journey-chapter__header\s*\{[^}]*grid-row:\s*2/s);
+  assert.match(css, /\.journey-shelf\s*\{[^}]*grid-row:\s*2/s);
+  assert.match(css, /\.journey-chapter--reverse \.journey-chapter__header\s*\{[^}]*grid-column:\s*2;[^}]*grid-row:\s*2/s);
+  assert.match(css, /\.journey-chapter--reverse \.journey-shelf\s*\{[^}]*grid-column:\s*1;[^}]*grid-row:\s*2/s);
+  assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-column:\s*1 \/ -1/s);
+  assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*0\.58fr\) minmax\(260px,\s*0\.42fr\)/s);
+});
+
+test('journey index renders chapter navigation and progress affordance', () => {
+  const chapters = [
+    {
+      id: 'worlds',
+      title: 'Worlds I Still Remember',
+      accent: '#e05a38',
+    },
+    {
+      id: 'stories',
+      title: 'Stories That Stayed',
+      accent: '#d84c5f',
+    },
+  ];
+  const markup = createJourneyIndexMarkup(chapters);
+  const html = fs.readFileSync(path.join(__dirname, '..', 'gamepage.html'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
+
+  assert.match(html, /data-gaming-journey-index/);
+  assert.match(html, /indexSelector:\s*'\[data-gaming-journey-index\]'/);
+  assert.match(markup, /journey-index__progress/);
+  assert.match(markup, /data-gaming-journey-progress/);
+  assert.match(markup, /href="#worlds"/);
+  assert.match(markup, /data-journey-index-link/);
+  assert.match(markup, /journey-index__number">01<\/span>/);
+  assert.match(markup, /Worlds I Still Remember/);
+  assert.match(markup, /style="--chapter-accent: #e05a38"/);
+
+  assert.match(css, /\.journey-index\s*\{[^}]*position:\s*fixed/s);
+  assert.match(css, /\.journey-index__progress\s*\{[^}]*height:\s*var\(--journey-progress,\s*0%\)/s);
+  assert.match(css, /\.journey-index__link\.is-active\s*\{/);
+  assert.match(css, /@media \(max-width:\s*1540px\)\s*\{[^}]*\.journey-index\s*\{[^}]*display:\s*none/s);
+});
+
 test('gamepage uses the chapter-led journey shell instead of tier list filters', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'gamepage.html'), 'utf8');
 
@@ -94,6 +193,16 @@ test('gaming journey data stores remote images and source labels for every game'
   }
 });
 
+test('gaming journey chapters include editorial decoration metadata', () => {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'gaming-journey.json'), 'utf8'));
+
+  for (const chapter of data.chapters) {
+    assert.match(chapter.accent, /^#[0-9a-f]{6}$/i, `${chapter.title} should include a chapter mood accent.`);
+    assert.match(chapter.accentSoft, /^rgba\(/, `${chapter.title} should include a soft mood accent.`);
+    assert.ok(Array.isArray(chapter.stamps) && chapter.stamps.length >= 2, `${chapter.title} should include editorial stamps.`);
+  }
+});
+
 test('gamepage follows the shared light and dark color scheme tokens', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'gamepage.html'), 'utf8');
   const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
@@ -111,6 +220,19 @@ test('gamepage follows the shared light and dark color scheme tokens', () => {
   assert.doesNotMatch(css, /rgba\(8,\s*8,\s*10/);
 });
 
+test('gamepage reuses the main gradient ambience behind the journey content', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'gamepage.html'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
+
+  assert.match(html, /<div class="gradient-background journey-gradient-background" aria-hidden="true">\s*<div class="blur"><\/div>\s*<div class="blur"><\/div>\s*<div class="blur"><\/div>\s*<\/div>/);
+  assert.match(css, /\.journey-gradient-background\s*\{[^}]*position:\s*fixed;[^}]*z-index:\s*0;[^}]*pointer-events:\s*none/s);
+  assert.match(css, /\.journey-gradient-background \.blur\s*\{[^}]*opacity:\s*var\(--journey-ambient-opacity\);[^}]*filter:\s*blur\(clamp\(70px,\s*9vw,\s*130px\)\)/s);
+  assert.match(css, /\.journey-gradient-background \.blur:nth-of-type\(1\)\s*\{[^}]*background:\s*var\(--gradient-one\)/s);
+  assert.match(css, /\.journey-gradient-background \.blur:nth-of-type\(2\)\s*\{[^}]*background:\s*var\(--gradient-two\)/s);
+  assert.match(css, /\.journey-gradient-background \.blur:nth-of-type\(3\)\s*\{[^}]*background:\s*var\(--gradient-three\)/s);
+  assert.match(css, /\.game-container\s*\{[^}]*position:\s*relative;[^}]*z-index:\s*1/s);
+});
+
 test('gaming journey layout keeps review feedback on scale and image framing', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'gamepage.html'), 'utf8');
   const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
@@ -118,11 +240,16 @@ test('gaming journey layout keeps review feedback on scale and image framing', (
   assert.match(html, /class="back-to-home btn btn-default btn-hover btn-hover-outline"/);
   assert.match(html, /<span class="btn-caption">Trang chủ<\/span>/);
 
-  assert.match(css, /\.journey-hero__lead\s*\{[^}]*font-size:\s*clamp\(1\.35rem,\s*2\.4vw,\s*2\.2rem\)/s);
-  assert.match(css, /\.journey-intro p\s*\{[^}]*font-size:\s*clamp\(1\.35rem,\s*2\.2vw,\s*2rem\)/s);
-  assert.match(css, /\.journey-chapter__kicker\s*\{[^}]*font-size:\s*clamp\(0\.92rem,\s*1vw,\s*1\.05rem\)/s);
-  assert.match(css, /\.journey-chapter__header h2\s*\{[^}]*font-size:\s*clamp\(2\.75rem,\s*5vw,\s*5\.6rem\)/s);
-  assert.match(css, /\.journey-chapter__header p:last-child\s*\{[^}]*font-size:\s*clamp\(1\.15rem,\s*1\.35vw,\s*1\.45rem\)/s);
+  assert.match(css, /\.journey-hero__lead\s*\{[^}]*font-size:\s*clamp\(1\.25rem,\s*1\.9vw,\s*1\.85rem\)/s);
+  assert.match(css, /\.journey-intro p\s*\{[^}]*font-size:\s*clamp\(1\.18rem,\s*1\.65vw,\s*1\.55rem\)/s);
+  assert.match(css, /\.journey-chapter__kicker\s*\{[^}]*font-size:\s*clamp\(0\.82rem,\s*0\.9vw,\s*0\.92rem\)/s);
+  assert.match(css, /\.journey-chapter__header h2\s*\{[^}]*font-size:\s*clamp\(2\.65rem,\s*4\.2vw,\s*4\.6rem\)/s);
+  assert.match(css, /\.journey-chapter__header p:last-child\s*\{[^}]*font-size:\s*clamp\(1rem,\s*1\.12vw,\s*1\.2rem\)/s);
+  assert.match(css, /\.journey-card__title\s*\{[^}]*font-size:\s*clamp\(1\.18rem,\s*1vw,\s*1\.3rem\)/s);
+  assert.match(css, /\.journey-card__reflection\s*\{[^}]*font-size:\s*clamp\(0\.96rem,\s*0\.88vw,\s*1\.02rem\)/s);
+  assert.match(css, /\.journey-card::before\s*\{[^}]*background:\s*linear-gradient\(135deg,\s*transparent,\s*color-mix\(in srgb,\s*var\(--chapter-accent\)\s*22%,\s*transparent\),\s*transparent\)/s);
+  assert.match(css, /\.journey-card:hover::before\s*\{[^}]*opacity:\s*1/s);
+  assert.match(css, /\.journey-card:hover \.journey-card__reflection\s*\{[^}]*color:\s*var\(--journey-text\)/s);
 
   assert.match(css, /\.journey-card__media\s*\{[^}]*aspect-ratio:\s*16 \/ 9/s);
   assert.match(css, /\.journey-card__media img\s*\{[^}]*object-fit:\s*cover/s);

@@ -46,6 +46,50 @@
       .join('');
   }
 
+  function createStampsMarkup(stamps) {
+    const stampsMarkup = asList(stamps)
+      .map((stamp) => `<span class="journey-stamp">${escapeHtml(stamp)}</span>`)
+      .join('');
+
+    return stampsMarkup
+      ? `<div class="journey-chapter__stamps" aria-hidden="true">${stampsMarkup}</div>`
+      : '';
+  }
+
+  function createChapterTransitionMarkup(chapter, index) {
+    const chapterNumber = String(index + 1).padStart(2, '0');
+    const transitionLabel = asList(chapter.stamps)[0] || chapter.title || 'Design reference';
+
+    return `
+        <div class="journey-chapter__transition" aria-hidden="true">
+          <span>Memory stop ${chapterNumber}</span>
+          <span class="journey-chapter__transition-line"></span>
+          <span>${escapeHtml(transitionLabel)}</span>
+        </div>
+    `;
+  }
+
+  function isSafeCssColor(value) {
+    return typeof value === 'string'
+      && /^(#[0-9a-fA-F]{3,8}|rgba?\([\d\s.,%]+\)|[a-zA-Z]+)$/.test(value.trim());
+  }
+
+  function createChapterStyleAttribute(chapter) {
+    const declarations = [];
+
+    if (isSafeCssColor(chapter.accent)) {
+      declarations.push(`--chapter-accent: ${chapter.accent.trim()}`);
+    }
+
+    if (isSafeCssColor(chapter.accentSoft)) {
+      declarations.push(`--chapter-accent-soft: ${chapter.accentSoft.trim()}`);
+    }
+
+    return declarations.length
+      ? ` style="${escapeHtml(declarations.join('; '))}"`
+      : '';
+  }
+
   function createMetaMarkup(game) {
     return [
       game.platform,
@@ -57,7 +101,9 @@
       .join('');
   }
 
-  function createGameCardMarkup(game) {
+  function createGameCardMarkup(game, options) {
+    const isFeatured = Boolean(options && options.featured);
+    const cardClass = isFeatured ? 'journey-card journey-card--feature' : 'journey-card';
     const title = escapeHtml(game.title || 'Untitled game');
     const image = escapeHtml(game.image || FALLBACK_IMAGE);
     const imageAlt = escapeHtml(game.imageAlt || `${game.title || 'Game'} screenshot`);
@@ -68,7 +114,7 @@
       : '';
 
     return `
-      <article class="journey-card">
+      <article class="${cardClass}">
         <figure class="journey-card__media">
           <img src="${image}" alt="${imageAlt}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}'">
           ${sourceMarkup}
@@ -85,20 +131,141 @@
 
   function createChapterMarkup(chapter, index) {
     const label = chapter.kicker || `Chapter ${String(index + 1).padStart(2, '0')}`;
-    const games = chapter.games.map(createGameCardMarkup).join('');
+    const chapterNumber = String(index + 1).padStart(2, '0');
+    const chapterClass = index % 2 === 1
+      ? 'journey-chapter journey-chapter--reverse'
+      : 'journey-chapter';
+    const chapterStyle = createChapterStyleAttribute(chapter);
+    const stamps = createStampsMarkup(chapter.stamps);
+    const games = chapter.games
+      .map((game, gameIndex) => createGameCardMarkup(game, { featured: gameIndex === 0 }))
+      .join('');
 
     return `
-      <section class="journey-chapter" id="${escapeHtml(chapter.id)}">
+      <section class="${chapterClass}" id="${escapeHtml(chapter.id)}" data-chapter-number="${chapterNumber}"${chapterStyle}>
+        ${createChapterTransitionMarkup(chapter, index)}
         <div class="journey-chapter__header">
+          <div class="journey-chapter__rail" aria-hidden="true">
+            <span class="journey-chapter__rail-line"></span>
+            <span class="journey-chapter__rail-dot"></span>
+            <span class="journey-chapter__rail-number">${chapterNumber}</span>
+            <span class="journey-chapter__rail-label">Memory stop</span>
+          </div>
           <p class="journey-chapter__kicker">${escapeHtml(label)}</p>
           <h2>${escapeHtml(chapter.title)}</h2>
           <p>${escapeHtml(chapter.description || '')}</p>
+          ${stamps}
         </div>
         <div class="journey-shelf">
           ${games}
         </div>
       </section>
     `;
+  }
+
+  function createJourneyIndexMarkup(chapters) {
+    const items = asList(chapters)
+      .filter((chapter) => chapter && chapter.id && chapter.title)
+      .map((chapter, index) => {
+        const number = String(index + 1).padStart(2, '0');
+        const activeClass = index === 0 ? ' is-active' : '';
+        const current = index === 0 ? ' aria-current="true"' : '';
+        const style = isSafeCssColor(chapter.accent)
+          ? ` style="--chapter-accent: ${escapeHtml(chapter.accent.trim())}"`
+          : '';
+
+        return `
+          <li class="journey-index__item">
+            <a class="journey-index__link${activeClass}" href="#${escapeHtml(chapter.id)}" data-journey-index-link data-target="${escapeHtml(chapter.id)}"${current}${style}>
+              <span class="journey-index__number">${number}</span>
+              <span class="journey-index__title">${escapeHtml(chapter.title)}</span>
+            </a>
+          </li>
+        `;
+      })
+      .join('');
+
+    return `
+      <nav class="journey-index__panel" aria-label="Game journey chapters">
+        <span class="journey-index__eyebrow">Journey map</span>
+        <div class="journey-index__body">
+          <span class="journey-index__track" aria-hidden="true">
+            <span class="journey-index__progress" data-gaming-journey-progress></span>
+          </span>
+          <ol class="journey-index__list">
+            ${items}
+          </ol>
+        </div>
+      </nav>
+    `;
+  }
+
+  function setupJourneyIndexProgress(indexElement) {
+    if (!indexElement || typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+
+    const links = Array.from(indexElement.querySelectorAll('[data-journey-index-link]'));
+    const progress = indexElement.querySelector('[data-gaming-journey-progress]');
+    const sections = links
+      .map((link) => document.getElementById(link.getAttribute('data-target')))
+      .filter(Boolean);
+
+    if (!links.length || !sections.length || !progress) {
+      return;
+    }
+
+    function setActive(activeIndex) {
+      links.forEach((link, index) => {
+        const isActive = index === activeIndex;
+        link.classList.toggle('is-active', isActive);
+        if (isActive) {
+          link.setAttribute('aria-current', 'true');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function update() {
+      const viewportAnchor = window.scrollY + window.innerHeight * 0.42;
+      let activeIndex = 0;
+
+      sections.forEach((section, index) => {
+        if (section.offsetTop <= viewportAnchor) {
+          activeIndex = index;
+        }
+      });
+
+      const firstTop = sections[0].offsetTop;
+      const lastSection = sections[sections.length - 1];
+      const lastBottom = lastSection.offsetTop + lastSection.offsetHeight;
+      const range = Math.max(lastBottom - firstTop - window.innerHeight * 0.36, 1);
+      const progressValue = clamp(((viewportAnchor - firstTop) / range) * 100, 0, 100);
+
+      indexElement.style.setProperty('--journey-progress', `${progressValue.toFixed(2)}%`);
+      setActive(activeIndex);
+    }
+
+    let frame = null;
+    function requestUpdate() {
+      if (frame !== null) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(() => {
+        frame = null;
+        update();
+      });
+    }
+
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+    requestUpdate();
   }
 
   function getHeroImage(game, tile) {
@@ -126,8 +293,10 @@
   function renderGamingJourney(data, options) {
     const rootSelector = (options && options.rootSelector) || '[data-gaming-journey]';
     const heroSelector = (options && options.heroSelector) || '[data-gaming-hero-strip]';
+    const indexSelector = (options && options.indexSelector) || '[data-gaming-journey-index]';
     const rootElement = document.querySelector(rootSelector);
     const heroElement = document.querySelector(heroSelector);
+    const indexElement = document.querySelector(indexSelector);
     const chapters = getRenderableChapters(data);
 
     if (!rootElement) {
@@ -140,10 +309,17 @@
 
     if (!chapters.length) {
       rootElement.innerHTML = '<p class="journey-empty">No game memories are ready to show yet.</p>';
+      if (indexElement) {
+        indexElement.innerHTML = '';
+      }
       return;
     }
 
     rootElement.innerHTML = chapters.map(createChapterMarkup).join('');
+    if (indexElement) {
+      indexElement.innerHTML = createJourneyIndexMarkup(chapters);
+      setupJourneyIndexProgress(indexElement);
+    }
   }
 
   async function loadGamingJourney(options) {
@@ -175,8 +351,10 @@
   }
 
   return {
+    createChapterMarkup,
     createGameCardMarkup,
     createHeroStripMarkup,
+    createJourneyIndexMarkup,
     getRenderableChapters,
     loadGamingJourney,
     renderGamingJourney,

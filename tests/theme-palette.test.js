@@ -10,42 +10,42 @@ function rootValue(name) {
 }
 
 const expectedPalette = {
-  '--accent--light': '#f47b45',
-  '--secondary--light': '#2fb39b',
-  '--secondary-rgba--light': 'rgba(47,179,155,0.3)',
-  '--t-accent--light': '#d96534',
-  '--t-secondary--light': '#2fb39b',
-  '--text-gradient-mid--light': '#f6b55f',
-  '--gradient-one--light': '#2fb39b',
-  '--gradient-two--light': '#f1f48b',
-  '--gradient-three--light': '#f47b45',
-  '--background-blob-opacity--light': '0.5',
-  '--accent--dark': '#ff9468',
-  '--secondary--dark': '#69d9c6',
-  '--secondary-rgba--dark': 'rgba(105,217,198,0.24)',
-  '--t-accent--dark': '#ffc19f',
-  '--t-secondary--dark': '#b8f3e6',
-  '--text-gradient-mid--dark': '#f1f48b',
-  '--gradient-one--dark': '#165d55',
-  '--gradient-two--dark': '#8c8f3a',
-  '--gradient-three--dark': '#7a341f',
-  '--background-blob-opacity--dark': '0.72',
+  '--accent--light': '#8b5cf6',
+  '--secondary--light': '#ff4fd8',
+  '--secondary-rgba--light': 'rgba(255,79,216,0.3)',
+  '--t-accent--light': '#8b5cf6',
+  '--t-secondary--light': '#ff4fd8',
+  '--text-gradient-mid--light': '#55d6ff',
+  '--gradient-one--light': '#8b5cf6',
+  '--gradient-two--light': '#55d6ff',
+  '--gradient-three--light': '#ff4fd8',
+  '--background-blob-opacity--light': '0.42',
+  '--accent--dark': '#a78bfa',
+  '--secondary--dark': '#ff6bde',
+  '--secondary-rgba--dark': 'rgba(255,107,222,0.22)',
+  '--t-accent--dark': '#c4b5fd',
+  '--t-secondary--dark': '#ff8ee5',
+  '--text-gradient-mid--dark': '#7ddcff',
+  '--gradient-one--dark': '#3b2a6d',
+  '--gradient-two--dark': '#155d75',
+  '--gradient-three--dark': '#76285f',
+  '--background-blob-opacity--dark': '0.62',
 };
 
 Object.entries(expectedPalette).forEach(([name, value]) => {
-  assert.equal(rootValue(name), value, `${name} should use the approved teal-mint-yellow-coral palette.`);
+  assert.equal(rootValue(name), value, `${name} should use the approved digital-lavender-magenta palette.`);
 });
 
 assert.doesNotMatch(
   css,
   /-webkit-linear-gradient\(15deg,\s*var\(--t-accent\)\s+0%,\s*var\(--t-secondary\)\s+80%\)/,
-  'Text gradients should not blend coral directly into teal because that creates muddy dark midtones.'
+  'Text gradients should not blend lavender directly into magenta because the cyan midpoint is part of the approved palette.'
 );
 
 assert.match(
   css,
   /-webkit-linear-gradient\(15deg,\s*var\(--t-accent\)\s+0%,\s*var\(--text-gradient-mid\)\s+48%,\s*var\(--t-secondary\)\s+92%\)/,
-  'Text gradients should use a warm midpoint before transitioning into teal.'
+  'Text gradients should use the cyan midpoint before transitioning into magenta.'
 );
 
 assert.match(

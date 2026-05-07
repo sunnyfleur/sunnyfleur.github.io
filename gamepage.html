@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games That Shaped My Taste - SunnyFleur</title>
     <meta name="description" content="A personal game journey and inspiration map from SunnyFleur, organized by memory, design lessons, and player experience.">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f7fb">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1117">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141126">
     <script>
         (function () {
             var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -21,6 +21,14 @@
     <link rel="stylesheet" type="text/css" href="css/gaming-journey.css">
 </head>
 <body>
+    <div class="gradient-background journey-gradient-background" aria-hidden="true">
+        <div class="blur"></div>
+        <div class="blur"></div>
+        <div class="blur"></div>
+    </div>
+
+    <aside class="journey-index" data-gaming-journey-index aria-label="Game journey chapters"></aside>
+
     <main class="game-container">
         <nav class="journey-nav" aria-label="Game journey navigation">
             <a href="index.html" class="back-to-home btn btn-default btn-hover btn-hover-outline">
@@ -69,7 +77,8 @@
         window.GamingJourney.loadGamingJourney({
             dataUrl: 'gaming-journey.json',
             rootSelector: '[data-gaming-journey]',
-            heroSelector: '[data-gaming-hero-strip]'
+            heroSelector: '[data-gaming-hero-strip]',
+            indexSelector: '[data-gaming-journey-index]'
         });
     </script>
 </body>
