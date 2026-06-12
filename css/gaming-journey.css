@@ -130,9 +130,9 @@ body {
   --journey-progress: 0%;
   position: fixed;
   top: 50%;
-  right: max(18px, calc((100vw - 1180px) / 2 - 168px));
+  right: max(18px, calc((100vw - 1180px) / 2 - clamp(188px, 11vw, 232px) - 18px));
   z-index: 2;
-  width: 156px;
+  width: clamp(188px, 11vw, 232px);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -142,20 +142,20 @@ body {
 }
 
 .journey-index__panel {
-  padding: 14px 12px;
+  padding: 16px 14px;
   border: 1px solid var(--journey-line);
   border-radius: 8px;
-  background: color-mix(in srgb, var(--journey-surface) 72%, transparent);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 18px 42px var(--journey-card-shadow);
+  background: color-mix(in srgb, var(--journey-surface) 82%, transparent);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 22px 54px var(--journey-card-shadow);
   pointer-events: auto;
 }
 
 .journey-index__eyebrow {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: var(--journey-faint);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   line-height: 1.1;
@@ -165,13 +165,13 @@ body {
 .journey-index__body {
   position: relative;
   display: grid;
-  grid-template-columns: 10px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: 12px;
 }
 
 .journey-index__track {
   position: relative;
-  width: 1px;
+  width: 2px;
   min-height: 100%;
   margin: 4px auto;
   overflow: hidden;
@@ -182,14 +182,14 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1px;
+  width: 2px;
   height: var(--journey-progress, 0%);
   background: linear-gradient(180deg, var(--accent), var(--secondary));
 }
 
 .journey-index__list {
   display: grid;
-  gap: 8px;
+  gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -197,33 +197,39 @@ body {
 
 .journey-index__link {
   display: grid;
-  grid-template-columns: 24px minmax(0, 1fr);
-  align-items: baseline;
-  gap: 7px;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  min-height: 34px;
+  padding: 7px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
   color: var(--journey-faint);
   text-decoration: none;
-  transition: color 180ms ease, transform 180ms ease;
+  transition: color 180ms ease, transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
 .journey-index__link.is-active {
   color: var(--journey-text);
+  border-color: color-mix(in srgb, var(--chapter-accent) 34%, transparent);
+  background: color-mix(in srgb, var(--chapter-accent) 14%, transparent);
   transform: translateX(2px);
 }
 
 .journey-index__number {
   color: var(--chapter-accent, var(--journey-accent));
-  font-size: 0.68rem;
+  font-size: 0.86rem;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .journey-index__title {
-  overflow: hidden;
-  font-size: 0.78rem;
+  overflow: visible;
+  font-size: 0.82rem;
   font-weight: 700;
-  line-height: 1.2;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.26;
+  text-overflow: clip;
+  white-space: normal;
 }
 
 @media (max-width: 1540px) {
@@ -395,9 +401,9 @@ body {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 0.68fr);
-  grid-template-rows: auto auto;
-  gap: clamp(22px, 4vw, 54px);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: clamp(24px, 4vw, 52px);
   padding: 68px 0;
   border-top: 1px solid var(--journey-line);
   overflow: hidden;
@@ -431,7 +437,7 @@ body {
 }
 
 .journey-chapter--reverse {
-  grid-template-columns: minmax(0, 0.68fr) minmax(220px, 0.32fr);
+  grid-template-columns: 1fr;
 }
 
 .journey-chapter--reverse::before {
@@ -443,18 +449,6 @@ body {
   left: auto;
   right: 0;
   transform: scaleX(-1);
-}
-
-.journey-chapter--reverse .journey-chapter__header {
-  grid-column: 2;
-  grid-row: 2;
-  padding-right: clamp(42px, 4vw, 62px);
-  padding-left: 0;
-}
-
-.journey-chapter--reverse .journey-shelf {
-  grid-column: 1;
-  grid-row: 2;
 }
 
 .journey-chapter__transition {
@@ -484,13 +478,47 @@ body {
   background: linear-gradient(90deg, var(--chapter-accent), var(--journey-line), transparent);
 }
 
-.journey-chapter__header {
-  position: sticky;
-  top: 28px;
+.journey-chapter__opening {
+  position: relative;
   z-index: 1;
+  grid-column: 1 / -1;
   grid-row: 2;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.32fr) minmax(0, 0.68fr);
+  align-items: start;
+  gap: clamp(22px, 4vw, 54px);
+}
+
+.journey-chapter--reverse .journey-chapter__opening {
+  grid-template-columns: minmax(0, 0.68fr) minmax(260px, 0.32fr);
+}
+
+.journey-chapter__header {
+  position: relative;
+  top: auto;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
   align-self: start;
   padding-left: clamp(42px, 4vw, 62px);
+}
+
+.journey-chapter__spotlight {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.journey-chapter--reverse .journey-chapter__header {
+  grid-column: 2;
+  padding-right: clamp(42px, 4vw, 62px);
+  padding-left: 0;
+}
+
+.journey-chapter--reverse .journey-chapter__spotlight {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .journey-chapter__rail {
@@ -593,9 +621,10 @@ body {
 .journey-shelf {
   position: relative;
   z-index: 1;
-  grid-row: 2;
+  grid-column: 1 / -1;
+  grid-row: 3;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -640,6 +669,10 @@ body {
   display: grid;
   grid-column: 1 / -1;
   grid-template-columns: minmax(0, 0.58fr) minmax(260px, 0.42fr);
+}
+
+.journey-card--wide {
+  grid-column: span 2;
 }
 
 .journey-card__media {
@@ -837,14 +870,22 @@ body {
     top: auto;
   }
 
+  .journey-chapter__opening,
+  .journey-chapter--reverse .journey-chapter__opening {
+    grid-template-columns: 1fr;
+  }
+
   .journey-chapter--reverse .journey-chapter__header,
+  .journey-chapter--reverse .journey-chapter__spotlight,
   .journey-chapter--reverse .journey-shelf {
     grid-column: auto;
     grid-row: auto;
   }
 
   .journey-chapter__transition,
+  .journey-chapter__opening,
   .journey-chapter__header,
+  .journey-chapter__spotlight,
   .journey-shelf {
     grid-column: auto;
     grid-row: auto;
@@ -862,6 +903,10 @@ body {
 
   .journey-card--feature {
     grid-template-columns: 1fr;
+  }
+
+  .journey-shelf {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .journey-card--feature .journey-card__media {
@@ -901,6 +946,10 @@ body {
 
   .journey-shelf {
     grid-template-columns: 1fr;
+  }
+
+  .journey-card--wide {
+    grid-column: span 1;
   }
 
   .journey-intro,

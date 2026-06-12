@@ -103,7 +103,12 @@
 
   function createGameCardMarkup(game, options) {
     const isFeatured = Boolean(options && options.featured);
-    const cardClass = isFeatured ? 'journey-card journey-card--feature' : 'journey-card';
+    const isWide = Boolean(options && options.wide);
+    const cardClass = [
+      'journey-card',
+      isFeatured ? 'journey-card--feature' : '',
+      !isFeatured && isWide ? 'journey-card--wide' : '',
+    ].filter(Boolean).join(' ');
     const title = escapeHtml(game.title || 'Untitled game');
     const image = escapeHtml(game.image || FALLBACK_IMAGE);
     const imageAlt = escapeHtml(game.imageAlt || `${game.title || 'Game'} screenshot`);
@@ -137,27 +142,37 @@
       : 'journey-chapter';
     const chapterStyle = createChapterStyleAttribute(chapter);
     const stamps = createStampsMarkup(chapter.stamps);
-    const games = chapter.games
-      .map((game, gameIndex) => createGameCardMarkup(game, { featured: gameIndex === 0 }))
+    const games = asList(chapter.games);
+    const spotlight = games.length
+      ? createGameCardMarkup(games[0], { featured: true })
+      : '';
+    const shelfGames = games
+      .slice(1)
+      .map((game, gameIndex) => createGameCardMarkup(game, { wide: (gameIndex + 1) % 7 === 0 }))
       .join('');
 
     return `
       <section class="${chapterClass}" id="${escapeHtml(chapter.id)}" data-chapter-number="${chapterNumber}"${chapterStyle}>
         ${createChapterTransitionMarkup(chapter, index)}
-        <div class="journey-chapter__header">
-          <div class="journey-chapter__rail" aria-hidden="true">
-            <span class="journey-chapter__rail-line"></span>
-            <span class="journey-chapter__rail-dot"></span>
-            <span class="journey-chapter__rail-number">${chapterNumber}</span>
-            <span class="journey-chapter__rail-label">Memory stop</span>
+        <div class="journey-chapter__opening">
+          <div class="journey-chapter__header">
+            <div class="journey-chapter__rail" aria-hidden="true">
+              <span class="journey-chapter__rail-line"></span>
+              <span class="journey-chapter__rail-dot"></span>
+              <span class="journey-chapter__rail-number">${chapterNumber}</span>
+              <span class="journey-chapter__rail-label">Memory stop</span>
+            </div>
+            <p class="journey-chapter__kicker">${escapeHtml(label)}</p>
+            <h2>${escapeHtml(chapter.title)}</h2>
+            <p>${escapeHtml(chapter.description || '')}</p>
+            ${stamps}
           </div>
-          <p class="journey-chapter__kicker">${escapeHtml(label)}</p>
-          <h2>${escapeHtml(chapter.title)}</h2>
-          <p>${escapeHtml(chapter.description || '')}</p>
-          ${stamps}
+          <div class="journey-chapter__spotlight">
+            ${spotlight}
+          </div>
         </div>
         <div class="journey-shelf">
-          ${games}
+          ${shelfGames}
         </div>
       </section>
     `;

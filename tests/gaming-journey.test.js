@@ -99,9 +99,12 @@ test('chapter markup alternates layout direction and features the first game', (
   const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
 
   assert.match(markup, /<section class="journey-chapter journey-chapter--reverse" id="stories" data-chapter-number="02" style="--chapter-accent: #d84c5f; --chapter-accent-soft: rgba\(216, 76, 95, 0\.14\)">/);
+  assert.match(markup, /journey-chapter__opening/);
+  assert.match(markup, /journey-chapter__spotlight/);
   assert.match(markup, /<article class="journey-card journey-card--feature">/);
   assert.equal((markup.match(/journey-card--feature/g) || []).length, 1);
-  assert.ok(markup.indexOf('Persona 5 Royal') < markup.indexOf('L.A. Noire'));
+  assert.ok(markup.indexOf('Persona 5 Royal') < markup.indexOf('journey-shelf'));
+  assert.ok(markup.indexOf('journey-shelf') < markup.indexOf('L.A. Noire'));
   assert.match(markup, /journey-chapter__stamps/);
   assert.match(markup, /Character Arc/);
   assert.match(markup, /Emotional Payoff/);
@@ -118,6 +121,7 @@ test('chapter markup alternates layout direction and features the first game', (
   assert.match(css, /\.journey-chapter--reverse::before\s*\{[^}]*left:\s*auto;[^}]*right:\s*clamp\(44px,\s*5vw,\s*76px\)/s);
   assert.match(css, /\.journey-chapter::after\s*\{[^}]*background:\s*linear-gradient\(90deg,\s*var\(--chapter-accent\),\s*transparent\)/s);
   assert.match(css, /\.journey-chapter__header\s*\{[^}]*padding-left:\s*clamp\(42px,\s*4vw,\s*62px\)/s);
+  assert.match(css, /\.journey-chapter__header\s*\{[^}]*position:\s*relative/s);
   assert.match(css, /\.journey-chapter__rail\s*\{[^}]*position:\s*absolute/s);
   assert.match(css, /\.journey-chapter__rail-line\s*\{[^}]*background:\s*linear-gradient\(180deg,\s*var\(--chapter-accent\),\s*var\(--chapter-accent-soft\)\)/s);
   assert.match(css, /\.journey-chapter__rail-dot\s*\{[^}]*background:\s*var\(--chapter-accent\)/s);
@@ -125,10 +129,14 @@ test('chapter markup alternates layout direction and features the first game', (
   assert.match(css, /\.journey-chapter__stamps\s*\{/);
   assert.match(css, /\.journey-stamp\s*\{[^}]*border:\s*1px solid var\(--chapter-accent\)/s);
   assert.match(css, /\.journey-chapter__transition\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*1/s);
-  assert.match(css, /\.journey-chapter__header\s*\{[^}]*grid-row:\s*2/s);
-  assert.match(css, /\.journey-shelf\s*\{[^}]*grid-row:\s*2/s);
-  assert.match(css, /\.journey-chapter--reverse \.journey-chapter__header\s*\{[^}]*grid-column:\s*2;[^}]*grid-row:\s*2/s);
-  assert.match(css, /\.journey-chapter--reverse \.journey-shelf\s*\{[^}]*grid-column:\s*1;[^}]*grid-row:\s*2/s);
+  assert.match(css, /\.journey-chapter__opening\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*2/s);
+  assert.match(css, /\.journey-chapter__opening\s*\{[^}]*grid-template-columns:\s*minmax\(260px,\s*0\.32fr\) minmax\(0,\s*0\.68fr\)/s);
+  assert.match(css, /\.journey-chapter__spotlight\s*\{[^}]*grid-column:\s*2/s);
+  assert.match(css, /\.journey-shelf\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*3/s);
+  assert.match(css, /\.journey-shelf\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/s);
+  assert.match(css, /\.journey-card--wide\s*\{[^}]*grid-column:\s*span 2/s);
+  assert.match(css, /\.journey-chapter--reverse \.journey-chapter__header\s*\{[^}]*grid-column:\s*2/s);
+  assert.match(css, /\.journey-chapter--reverse \.journey-chapter__spotlight\s*\{[^}]*grid-column:\s*1;[^}]*grid-row:\s*1/s);
   assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-column:\s*1 \/ -1/s);
   assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*0\.58fr\) minmax\(260px,\s*0\.42fr\)/s);
 });
@@ -161,8 +169,10 @@ test('journey index renders chapter navigation and progress affordance', () => {
   assert.match(markup, /style="--chapter-accent: #e05a38"/);
 
   assert.match(css, /\.journey-index\s*\{[^}]*position:\s*fixed/s);
+  assert.match(css, /\.journey-index\s*\{[^}]*width:\s*clamp\(188px,\s*11vw,\s*232px\)/s);
   assert.match(css, /\.journey-index__progress\s*\{[^}]*height:\s*var\(--journey-progress,\s*0%\)/s);
-  assert.match(css, /\.journey-index__link\.is-active\s*\{/);
+  assert.match(css, /\.journey-index__link\.is-active\s*\{[^}]*background:\s*color-mix\(in srgb,\s*var\(--chapter-accent\)\s*14%,\s*transparent\)/s);
+  assert.match(css, /\.journey-index__title\s*\{[^}]*white-space:\s*normal/s);
   assert.match(css, /@media \(max-width:\s*1540px\)\s*\{[^}]*\.journey-index\s*\{[^}]*display:\s*none/s);
 });
 
@@ -176,20 +186,196 @@ test('gamepage uses the chapter-led journey shell instead of tier list filters',
   assert.doesNotMatch(html, /platform-tabs/);
 });
 
-test('gaming journey data stores remote images and source labels for every game', () => {
+test('gaming journey data stores valid images and source labels for every game', () => {
   const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'gaming-journey.json'), 'utf8'));
 
   assert.ok(Array.isArray(data.chapters));
   assert.ok(Array.isArray(data.games));
   assert.ok(data.chapters.length >= 5);
-  assert.ok(data.games.length >= 12);
+  assert.ok(data.games.length >= 45);
 
   for (const game of data.games) {
-    assert.match(game.image, /^https:\/\//, `${game.title} should use a remote image URL.`);
-    assert.match(game.image, /capsule_616x353\.jpg$/, `${game.title} should use landscape poster-scale Steam art.`);
+    const isRemoteImage = /^https:\/\//.test(game.image);
+    const isExistingLocalImage = typeof game.image === 'string'
+      && game.image.startsWith('./')
+      && fs.existsSync(path.join(__dirname, '..', game.image));
+
+    assert.ok(isRemoteImage || isExistingLocalImage, `${game.title} should use a remote image URL or an existing local fallback.`);
     assert.ok(game.imageSource, `${game.title} should include imageSource.`);
     assert.ok(game.reflection, `${game.title} should include reflection.`);
     assert.ok(Array.isArray(game.tags) && game.tags.length > 0, `${game.title} should include tags.`);
+  }
+});
+
+test('gaming journey data avoids generic fallback artwork', () => {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'gaming-journey.json'), 'utf8'));
+  const fallbackGames = data.games.filter((game) => {
+    const source = String(game.imageSource || '').toLowerCase();
+    return game.image === './img/og-image.png'
+      || source.includes('fallback')
+      || source.includes('local archive');
+  });
+
+  assert.deepEqual(
+    fallbackGames.map((game) => game.title),
+    [],
+    'Every game should use game-specific artwork instead of the generic portfolio fallback.',
+  );
+});
+
+test('gaming journey data preserves every game from the old tier list', () => {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'gaming-journey.json'), 'utf8'));
+  const titles = new Set(data.games.map((game) => game.title));
+  const legacyTitles = [
+    'Elden Ring',
+    'Persona 5 Royal',
+    'Witcher 3',
+    'Persona 3 Reload',
+    'Pokemon Emerald',
+    'The Elder Scrolls V: Skyrim',
+    'Pokemon Black and White',
+    'God of War 4',
+    'Kingdom Come: Deliverance',
+    "Assassin's Creed Black Flag",
+    'L.A. Noire',
+    'Mafia II',
+    'Valiant Hearts',
+    'Far Cry 3',
+    'Sleeping Dogs',
+    'Dynasty Warriors 8',
+    'Ori and the Blind Forest',
+    'Total War: Three Kingdoms',
+    'Total War: Warhammer',
+    'Civilization VI',
+    'Persona 4 Golden',
+    'Yakuza: Like a Dragon',
+    'Far Cry Primal',
+    "Assassin's Creed Unity",
+    "Assassin's Creed II",
+    'Batman: Arkham Knight',
+    'Dead Island',
+    'Dead Cells',
+    'Hades 2',
+    'Dynasty Warriors 9',
+    'Dynasty Warriors 7',
+    'Castlevania: Lords of Shadow',
+    'Watch Dogs',
+    'Heavy Rain',
+    "Assassin's Creed III",
+    "Assassin's Creed Odyssey",
+    'Left 4 Dead 2',
+    'Naruto Shippuden: Ultimate Ninja Storm 4',
+    'One Piece: Pirate Warriors 4',
+    'League of Legends',
+    'Grand Theft Auto: The Trilogy DE',
+    'Cyberpunk 2077 (PS4/XOne)',
+  ];
+
+  for (const title of legacyTitles) {
+    assert.ok(titles.has(title), `${title} should be migrated from the old tier list.`);
+  }
+});
+
+test('gaming journey data includes the latest requested additions without duplicating existing games', () => {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'gaming-journey.json'), 'utf8'));
+  const titleCounts = new Map();
+  for (const game of data.games) {
+    titleCounts.set(game.title, (titleCounts.get(game.title) || 0) + 1);
+  }
+
+  const requestedAdditions = [
+    'Ni no Kuni II: Revenant Kingdom',
+    'God of War Ragnarok',
+    'The Last of Us Part I',
+    'Ninja Gaiden 4',
+    'DNF Duel',
+    'The First Berserker: Khazan',
+    'Divinity: Original Sin 2',
+    "Baldur's Gate 3",
+    'Clair Obscur: Expedition 33',
+    'Plants vs. Zombies 2',
+    'Nine Sols',
+    'It Takes Two',
+    'Split Fiction',
+    'No Rest for the Wicked',
+    'The Incredible Adventures of Van Helsing',
+    'Teamfight Tactics',
+    'Stick War: Legacy',
+    'Goods Sort Puzzle',
+    'Screw Jam',
+    "Where's My Water?",
+    'Temple Run',
+    'Pokemon Scarlet and Violet',
+    'Pokemon Unite',
+    'Pokemon Omega Ruby',
+    'Dave the Diver',
+    'Dynasty Warriors 7: Xtreme Legends',
+    'Dynasty Warriors: Origins',
+    "Marvel's Spider-Man 2",
+    'Naruto Mobile',
+    'Jump Force',
+    'Naruto: Ultimate Ninja Storm Series',
+    "Sherlock Holmes: The Devil's Daughter",
+    'Sherlock Holmes: Crimes & Punishments',
+    'Uncharted: Legacy of Thieves Collection',
+    'Wo Long: Fallen Dynasty',
+    'Stellar Blade',
+    'Prototype',
+    'Dispatch',
+    'The Wolf Among Us',
+    'To the Moon',
+    'Stardew Valley',
+    'Have a Nice Death',
+    'Dead by Daylight',
+    'NieR:Automata',
+    "Don't Starve",
+  ];
+
+  for (const title of requestedAdditions) {
+    assert.ok(titleCounts.has(title), `${title} should be added to the current journey.`);
+  }
+
+  const existingDuplicates = [
+    'God of War 4',
+    'Heavy Rain',
+    'Dead Cells',
+    'Pokemon Black and White',
+    'Dynasty Warriors 8',
+    'Dynasty Warriors 9',
+    'Mafia II',
+    'One Piece: Pirate Warriors 4',
+    "Assassin's Creed II",
+    "Assassin's Creed Odyssey",
+    'Batman: Arkham Knight',
+    'Dead Island',
+    'Far Cry 3',
+  ];
+
+  for (const title of existingDuplicates) {
+    assert.equal(titleCounts.get(title), 1, `${title} should remain a single entry.`);
+  }
+});
+
+test('gaming journey data omits duplicate or intentionally removed games', () => {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'gaming-journey.json'), 'utf8'));
+  const titles = new Set(data.games.map((game) => game.title));
+  const removedTitles = [
+    'Red Dead Redemption',
+    'Blade of God 2',
+    'Warcraft III: Reforged',
+    'The Quiet Man',
+    'Time Machine VR',
+    'Agony',
+    'WWE 2K20',
+    'eFootball 2022',
+    'Might and Magic',
+    'Peggle Deluxe',
+    'Battlefield 2042 (Launch)',
+  ];
+
+  assert.ok(titles.has('Red Dead Redemption 2'), 'The current Red Dead entry should remain.');
+  for (const title of removedTitles) {
+    assert.ok(!titles.has(title), `${title} should be removed from the journey.`);
   }
 });
 
