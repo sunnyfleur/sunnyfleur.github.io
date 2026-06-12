@@ -108,6 +108,25 @@ test('portfolio explorer script updates spotlight from grid hover and focus', ()
   assert.equal(source.includes("cardGridRoot.addEventListener('focusin'"), true);
 });
 
+test('portfolio explorer uses the View Transition API for spotlight changes', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
+
+  assert.match(source, /function runPortfolioViewTransition/);
+  assert.match(source, /document\.startViewTransition/);
+  assert.match(source, /prefers-reduced-motion:\s*reduce/);
+  assert.match(source, /runPortfolioViewTransition\(\(\) => \{/);
+});
+
+test('portfolio hover spotlight changes do not trigger root view transitions', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
+  const updateMatch = source.match(/function updateSpotlightFromCard\(card\) \{([\s\S]*?)\n        \}\n\n        filtersRoot/);
+
+  assert.ok(updateMatch, 'Expected updateSpotlightFromCard to exist.');
+  assert.doesNotMatch(updateMatch[1], /runPortfolioViewTransition/);
+  assert.match(updateMatch[1], /renderSpotlight\(filteredProjects\)/);
+  assert.match(updateMatch[1], /syncActiveCards\(\)/);
+});
+
 test('portfolio spotlight supports playable video previews', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
 
@@ -148,6 +167,22 @@ test('portfolio explorer uses hover intent before changing spotlight from pointe
   assert.match(source, /clearHoverIntent/);
   assert.equal(source.includes("cardGridRoot.addEventListener('pointerleave'"), true);
   assert.equal(source.includes('setTimeout(() => {'), true);
+});
+
+test('portfolio explorer defines GSAP motion hooks for spotlight and card-grid updates', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
+
+  assert.match(source, /function hasMotionSupport\(\)/);
+  assert.match(source, /function refreshPortfolioMotion\(\)/);
+  assert.match(source, /function animatePortfolioExplorerMotion/);
+  assert.match(source, /function animatePortfolioSpotlight/);
+  assert.match(source, /\.portfolio-spotlight__media/);
+  assert.match(source, /\.portfolio-spotlight__body > \*/);
+  assert.match(source, /\.portfolio-card/);
+  assert.match(source, /autoAlpha:\s*0/);
+  assert.match(source, /scale:\s*0\.985/);
+  assert.match(source, /stagger:\s*0\.05/);
+  assert.match(source, /ScrollTrigger\.refresh/);
 });
 
 test('projects data remaps renamed entries to canonical slugs and synced gallery counts', () => {

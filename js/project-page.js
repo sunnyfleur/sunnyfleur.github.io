@@ -298,6 +298,196 @@
     return "project.html?slug=" + encodeURIComponent(slug);
   }
 
+  function prefersReducedMotion() {
+    return typeof global.matchMedia === "function"
+      && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function isElementVisibleForMotion(element) {
+    return Boolean(element && !element.hidden && !element.closest("[hidden]"));
+  }
+
+  function setMotionReady(elements, isReady) {
+    elements.filter(Boolean).forEach((element) => {
+      element.classList.toggle("is-motion-ready", Boolean(isReady));
+    });
+  }
+
+  function initProjectScrollStorytelling() {
+    if (prefersReducedMotion()) {
+      return;
+    }
+
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+      return;
+    }
+
+    if (!gsap.utils || typeof gsap.fromTo !== "function" || typeof gsap.to !== "function") {
+      return;
+    }
+
+    if (typeof gsap.registerPlugin === "function") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    const visibleSections = gsap.utils.toArray(".project-section").filter(isElementVisibleForMotion);
+    const sectionShells = visibleSections
+      .map((section) => section.querySelector(".project-section__shell"))
+      .filter(isElementVisibleForMotion);
+    const detailItems = gsap.utils
+      .toArray(".project-system-card, .project-gallery-item, .project-related-card")
+      .filter(isElementVisibleForMotion);
+    const heroContentItems = gsap.utils.toArray(".project-hero__content > *").filter(isElementVisibleForMotion);
+    const heroFactItems = gsap.utils.toArray(".project-fact").filter(isElementVisibleForMotion);
+
+    if (typeof ScrollTrigger.batch === "function" && sectionShells.length > 0) {
+      ScrollTrigger.batch(sectionShells, {
+        start: "top 84%",
+        once: true,
+        onEnter: (batch) => {
+          setMotionReady(batch, true);
+          gsap.fromTo(
+            batch,
+            { y: 36, autoAlpha: 0 },
+            {
+              y: 0,
+              autoAlpha: 1,
+              duration: 0.64,
+              stagger: 0.08,
+              ease: "power2.out",
+              overwrite: true,
+              clearProps: "transform,opacity,visibility",
+              onComplete: () => setMotionReady(batch, false),
+            }
+          );
+        },
+      });
+    }
+
+    if (typeof ScrollTrigger.batch === "function" && detailItems.length > 0) {
+      ScrollTrigger.batch(detailItems, {
+        start: "top 88%",
+        once: true,
+        onEnter: (batch) => {
+          setMotionReady(batch, true);
+          gsap.fromTo(
+            batch,
+            { y: 24, autoAlpha: 0 },
+            {
+              y: 0,
+              autoAlpha: 1,
+              duration: 0.42,
+              stagger: 0.06,
+              ease: "power2.out",
+              overwrite: true,
+              clearProps: "transform,opacity,visibility",
+              onComplete: () => setMotionReady(batch, false),
+            }
+          );
+        },
+      });
+    }
+
+    if (heroContentItems.length > 0) {
+      setMotionReady(heroContentItems, true);
+      gsap.fromTo(
+        heroContentItems,
+        { y: 22, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.64,
+          stagger: 0.07,
+          ease: "power3.out",
+          overwrite: true,
+          clearProps: "transform,opacity,visibility",
+          onComplete: () => setMotionReady(heroContentItems, false),
+          scrollTrigger: {
+            trigger: ".project-page__hero",
+            start: "top 72%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    if (heroFactItems.length > 0) {
+      setMotionReady(heroFactItems, true);
+      gsap.fromTo(
+        heroFactItems,
+        { y: 14, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.42,
+          stagger: 0.07,
+          ease: "power2.out",
+          overwrite: true,
+          clearProps: "transform,opacity,visibility",
+          onComplete: () => setMotionReady(heroFactItems, false),
+          scrollTrigger: {
+            trigger: ".project-snapshot",
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    const heroImg = document.getElementById("project-hero-image");
+    if (heroImg) {
+      heroImg.style.willChange = "transform";
+      gsap.to(heroImg, {
+        yPercent: 5,
+        scale: 1.018,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".project-page__hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
+
+    if (typeof ScrollTrigger.refresh === "function") {
+      ScrollTrigger.refresh();
+    }
+  }
+
+  function initProjectScrollProgress() {
+    let progressBar = document.querySelector(".project-scroll-progress");
+    if (!progressBar) {
+      progressBar = document.createElement("div");
+      progressBar.className = "project-scroll-progress";
+      document.body.appendChild(progressBar);
+    }
+
+    let frame = null;
+
+    function updateProgress() {
+      frame = null;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / docHeight)) : 0;
+      progressBar.style.transform = "scaleX(" + progress.toFixed(4) + ")";
+    }
+
+    function requestUpdate() {
+      if (frame !== null) {
+        return;
+      }
+
+      const requestFrame = global.requestAnimationFrame || function (callback) {
+        return global.setTimeout(callback, 16);
+      };
+      frame = requestFrame(updateProgress);
+    }
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    updateProgress();
+  }
+
   function setTextContent(id, value, fallbackText) {
     const element = document.getElementById(id);
 
@@ -771,106 +961,20 @@
         });
       }
 
-      let progressBar = document.querySelector(".project-scroll-progress");
-      if (!progressBar) {
-        progressBar = document.createElement("div");
-        progressBar.className = "project-scroll-progress";
-        document.body.appendChild(progressBar);
-      }
+      initProjectScrollProgress();
+      initProjectScrollStorytelling();
+      pageRoot.setAttribute("data-project-rendered", "true");
 
-      window.addEventListener(
-        "scroll",
-        function () {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-          progressBar.style.width = progress + "%";
-        },
-        { passive: true }
-      );
-
-      if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-        gsap.utils.toArray(".project-section").forEach((section) => {
-          if (section.hidden) {
-            return;
-          }
-
-          gsap.fromTo(
-            section,
-            { y: 40, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.6,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 85%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        });
-
-        gsap.utils.toArray(".project-system-card").forEach((card, index) => {
-          gsap.fromTo(
-            card,
-            { y: 30, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.4,
-              delay: index * 0.1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 88%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        });
-
-        gsap.utils.toArray(".project-gallery-item").forEach((item, index) => {
-          gsap.fromTo(
-            item,
-            { y: 30, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.4,
-              delay: (index % 2) * 0.1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: item,
-                start: "top 88%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        });
-
-        const heroImg = document.getElementById("project-hero-image");
-        if (heroImg) {
-          heroImg.style.willChange = "transform";
-          gsap.to(heroImg, {
-            yPercent: 8,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".project-page__hero",
-              start: "top top",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-        }
+      if (typeof global.dispatchEvent === "function" && typeof global.CustomEvent === "function") {
+        global.dispatchEvent(new CustomEvent("portfolio:project-rendered", {
+          detail: { slug: project.slug },
+        }));
       }
     } catch (error) {
       console.error("Unable to load project page data.", error);
       pageRoot.innerHTML = `
       <section class="project-section">
         <div class="project-section__panel">
-          <p class="project-section__eyebrow">Unavailable</p>
           <h1>Project details could not be loaded</h1>
           <p class="project-section__lead">Try returning to the portfolio explorer and opening the case study again.</p>
           <a class="btn btn-default btn-hover btn-hover-accent" href="index.html#portfolio">

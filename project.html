@@ -26,12 +26,12 @@
 
     <link rel="stylesheet" href="css/loaders/loader.css">
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css?v=20260505-theme-text">
-    <link rel="stylesheet" type="text/css" href="css/portfolio-ux.css?v=20260504-spotlight-cta">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=20260611-deep-palette">
+    <link rel="stylesheet" type="text/css" href="css/portfolio-ux.css?v=20260611-taste-polish">
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efff">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141126">
-    <meta name="msapplication-navbutton-color" content="#141126">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#10111c">
+    <meta name="msapplication-navbutton-color" content="#10111c">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   </head>
@@ -122,7 +122,6 @@
             </div>
 
             <aside class="project-snapshot">
-              <p class="project-hero__eyebrow">Quick Facts</p>
               <div class="project-facts">
                 <div class="project-fact">
                   <span class="project-fact__label">Platform</span>
@@ -153,7 +152,6 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <p class="project-section__eyebrow">Why This Project Matters</p>
                   <h2>Context and design challenge</h2>
                 </div>
                 <div class="project-section__body">
@@ -167,7 +165,6 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <p class="project-section__eyebrow">Walkthrough</p>
                   <h2>Video and interaction context</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
@@ -183,7 +180,6 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <p class="project-section__eyebrow">My Role</p>
                   <h2>What I owned</h2>
                 </div>
                 <div class="project-section__body">
@@ -197,7 +193,6 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <p class="project-section__eyebrow">Design and Implementation</p>
                   <h2>Key systems and decisions</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
@@ -211,7 +206,6 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <p class="project-section__eyebrow">Outcome</p>
                   <h2>Results and learnings</h2>
                 </div>
                 <div class="project-section__body">
@@ -225,7 +219,6 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <p class="project-section__eyebrow">Gallery</p>
                   <h2>Browse images without losing context</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
@@ -240,7 +233,6 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <p class="project-section__eyebrow">Continue Browsing</p>
                   <h2>Other projects in this portfolio</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
@@ -295,21 +287,39 @@
       const randomTime = random(20, 40);
       const randomTime2 = random(5, 12);
       const randomAngle = random(-30, 150);
+      const reducedMotionQuery = typeof window.matchMedia === "function"
+        ? window.matchMedia("(prefers-reduced-motion: reduce)")
+        : null;
 
       const blurs = gsap.utils.toArray(".blur");
-      blurs.forEach((blur) => {
-        gsap.set(blur, {
-          x: randomX(-1),
-          y: randomX(1),
-          rotation: randomAngle(-1)
-        });
 
-        moveX(blur, 1);
-        moveY(blur, -1);
-        rotate(blur, 1);
-      });
+      function prefersReducedMotion() {
+        return Boolean(reducedMotionQuery && reducedMotionQuery.matches);
+      }
+
+      function initAmbientBlurs() {
+        gsap.killTweensOf(blurs);
+
+        blurs.forEach((blur) => {
+          gsap.set(blur, {
+            x: prefersReducedMotion() ? 0 : randomX(-1),
+            y: prefersReducedMotion() ? 0 : randomX(1),
+            rotation: prefersReducedMotion() ? 0 : randomAngle(-1)
+          });
+
+          if (!prefersReducedMotion()) {
+            moveX(blur, 1);
+            moveY(blur, -1);
+            rotate(blur, 1);
+          }
+        });
+      }
 
       function rotate(target, direction) {
+        if (prefersReducedMotion()) {
+          return;
+        }
+
         gsap.to(target, randomTime2(), {
           rotation: randomAngle(direction),
           ease: Sine.easeInOut,
@@ -319,6 +329,10 @@
       }
 
       function moveX(target, direction) {
+        if (prefersReducedMotion()) {
+          return;
+        }
+
         gsap.to(target, randomTime(), {
           x: randomX(direction),
           ease: Sine.easeInOut,
@@ -328,6 +342,10 @@
       }
 
       function moveY(target, direction) {
+        if (prefersReducedMotion()) {
+          return;
+        }
+
         gsap.to(target, randomTime(), {
           y: randomY(direction),
           ease: Sine.easeInOut,
@@ -340,9 +358,16 @@
         const delta = max - min;
         return (direction = 1) => (min + delta * Math.random()) * direction;
       }
+
+      initAmbientBlurs();
+
+      if (reducedMotionQuery && typeof reducedMotionQuery.addEventListener === "function") {
+        reducedMotionQuery.addEventListener("change", initAmbientBlurs);
+      }
     </script>
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js?v=20260405-gallery-groups"></script>
+    <script src="js/page-transition.js"></script>
     <script src="js/project-page.js?v=20260504-gallery-thumbs"></script>
   </body>
 </html>

@@ -43,16 +43,13 @@ $(function() {
   // --------------------------------------------- //
   // Loader & Loading Animation Start
   // --------------------------------------------- //
-  const content = document.querySelector('body');
-  const imgLoad = imagesLoaded(content);
+  const loader = document.getElementById("loader");
+  const loaderContent = document.getElementById("loaderContent");
+  const criticalImage = document.querySelector(".avatar__image img");
+  const loaderTimeout = 1200;
+  let loaderFinished = false;
 
-  imgLoad.on('always', instance => {
-
-    document.getElementById("loaderContent").classList.add("fade-out");
-    setTimeout(() => {
-      document.getElementById("loader").classList.add("loaded");
-    }, 300);
-
+  function startHeadlineAnimation() {
     gsap.set(".animate-headline", {y: 50, opacity: 0});
     ScrollTrigger.batch(".animate-headline", {
       interval: 0.1,
@@ -69,8 +66,35 @@ $(function() {
       onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
       onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 50, overwrite: true})
     });
+  }
 
-  });
+  function finishLoader() {
+    if (loaderFinished) {
+      return;
+    }
+
+    loaderFinished = true;
+
+    if (loaderContent) {
+      loaderContent.classList.add("fade-out");
+    }
+
+    setTimeout(() => {
+      if (loader) {
+        loader.classList.add("loaded");
+      }
+    }, 300);
+
+    startHeadlineAnimation();
+  }
+
+  if (criticalImage && !criticalImage.complete) {
+    criticalImage.addEventListener("load", finishLoader, { once: true });
+    criticalImage.addEventListener("error", finishLoader, { once: true });
+    setTimeout(finishLoader, loaderTimeout);
+  } else {
+    finishLoader();
+  }
   // --------------------------------------------- //
   // Loader & Loading Animation End
   // --------------------------------------------- //

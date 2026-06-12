@@ -36,16 +36,16 @@
     <!-- Template Styles Start -->
     <link rel="stylesheet" href="css/loaders/loader.css">
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css?v=20260505-theme-text">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=20260611-deep-palette">
     <link rel="stylesheet" type="text/css" href="css/cursor.css">
-    <link rel="stylesheet" type="text/css" href="css/portfolio-ux.css?v=20260505-spotlight-media">
-    <link rel="stylesheet" type="text/css" href="css/homepage-skills.css">
+    <link rel="stylesheet" type="text/css" href="css/portfolio-ux.css?v=20260611-taste-polish">
+    <link rel="stylesheet" type="text/css" href="css/homepage-skills.css?v=20260611-taste-polish">
     <!-- Template Styles End -->
 
     <!-- Custom Browser Color Start -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efff">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141126">
-    <meta name="msapplication-navbutton-color" content="#141126">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#10111c">
+    <meta name="msapplication-navbutton-color" content="#10111c">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Custom Browser Color End -->
@@ -163,7 +163,7 @@
             </div>
           </div>
           <div class="avatar__image">
-            <img src="img/avatars/avatar.jpg" alt="Portrait of Tran Hoang Kiet">
+            <img src="img/avatars/avatar.jpg" alt="Portrait of Tran Hoang Kiet" width="900" height="600" decoding="async" fetchpriority="high">
           </div>
         </div>
         <!-- data caption #1 -->
@@ -183,22 +183,25 @@
         <!-- socials and CTA button -->
         <div class="avatar__block">
           <div class="avatar__socials">
-            <ul class="socials-square d-flex justify-content-between">
-              <li class="socials-square__item">
-                <a class="socials-square__link btn" href="https://www.facebook.com/huynh.thien.164275?locale=vi_VN" target="_blank" rel="noopener noreferrer"><i class="ph-bold ph-facebook-logo"></i></a>
+            <ul class="avatar-socials-list" aria-label="Social profiles">
+              <li class="avatar-socials-list__item">
+                <a class="avatar-socials-list__link btn" href="https://www.facebook.com/huynh.thien.164275?locale=vi_VN" target="_blank" rel="noopener noreferrer" aria-label="Open Facebook profile">
+                  <i class="ph-bold ph-facebook-logo" aria-hidden="true"></i>
+                  <span class="avatar-socials-list__label">Facebook</span>
+                </a>
               </li>
-              <li class="socials-square__item">
-                <a class="socials-square__link btn" href="https://www.linkedin.com/in/kiet-tran-hoang-60575b27b/" target="_blank" rel="noopener noreferrer"><i class="ph-bold ph-linkedin-logo"></i></a>
+              <li class="avatar-socials-list__item">
+                <a class="avatar-socials-list__link btn" href="https://www.linkedin.com/in/kiet-tran-hoang-60575b27b/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">
+                  <i class="ph-bold ph-linkedin-logo" aria-hidden="true"></i>
+                  <span class="avatar-socials-list__label">LinkedIn</span>
+                </a>
               </li>
-              <li class="socials-square__item">
-                <a class="socials-square__link btn" href="https://github.com/sunnyfleur/" target="_blank" rel="noopener noreferrer"><i class="ph-bold ph-github-logo"></i></a>
+              <li class="avatar-socials-list__item">
+                <a class="avatar-socials-list__link btn" href="https://github.com/sunnyfleur/" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile">
+                  <i class="ph-bold ph-github-logo" aria-hidden="true"></i>
+                  <span class="avatar-socials-list__label">GitHub</span>
+                </a>
               </li>
-              <!-- <li class="socials-square__item">
-                <a class="socials-square__link btn" href="https://www.twitch.tv/" target="_blank"><i class="ph-bold ph-twitch-logo"></i></a>
-              </li>
-              <li class="socials-square__item">
-                <a class="socials-square__link btn" href="https://www.pinterest.com/" target="_blank"><i class="ph-bold ph-pinterest-logo"></i></a>
-              </li> -->
             </ul>
           </div>
           <div class="avatar__btnholder">
@@ -284,7 +287,7 @@
       </p>
       <h2 class="h2__title animate-in-up">Game designer with a developer's mindset</h2>
       <div class="about-image-container animate-in-up">
-        <img src="img/about-me-banner.jpg" alt="About Me Image" class="about-image">
+        <img src="img/about-me-banner.jpg" alt="About Me Image" class="about-image" width="1600" height="646" loading="lazy" decoding="async" fetchpriority="low">
       </div>
     </div>
     <!-- Content Block - H2 Section Title End -->
@@ -477,7 +480,6 @@
             <div id="portfolio-explorer" class="portfolio-explorer">
               <div class="portfolio-carousel__head">
                 <div class="portfolio-carousel__copy">
-                  <p class="portfolio-carousel__eyebrow animate-in-up">All Projects</p>
                   <h3 class="portfolio-carousel__title animate-in-up">Full project explorer</h3>
                   <p class="portfolio-carousel__text animate-in-up">
                     Scan every project in one place, filter by focus area, and open the case study that matches what you want to review next.
@@ -588,9 +590,7 @@
                   <p class="small resume-lines__descr animate-in-up">This course focused on designing a game from concept to completion.</p>
                 </div>
               </div>
-            </div>
-            <!-- Education Lines End -->
-            <!-- education single item -->
+              <!-- education single item -->
               <div class="row g-0 resume-lines__item animate-in-up">
                 <div class="col-12 col-md-2">
                   <span class="resume-lines__date animate-in-up">04/2023-07/2023</span>
@@ -687,110 +687,85 @@
           <!-- Content Block - Skills Section Start -->
           <div class="content__block block-large">
             <section class="skills-section" aria-label="Core skills">
-              <div class="skills-section__grid animate-card-5" role="list">
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card is-active"
-                    type="button"
-                    data-skill-title="Game Design"
-                    data-skill-level="Advanced"
-                    data-skill-description="Design core loops, progression, player goals, and feature direction across prototypes and portfolio-ready game concepts."
-                    data-skill-icon="ph-fill ph-game-controller"
-                    aria-pressed="true">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-game-controller"></i></span>
-                    <span class="skills-card__title">Game Design</span>
-                  </button>
+              <div class="skills-section__main">
+                <div class="skills-section__grid animate-card-5" role="list">
+                  <div class="skills-card__item" role="listitem">
+                    <button
+                      class="skills-card is-active"
+                      type="button"
+                      data-skill-title="Game Design"
+                      data-skill-level="Advanced"
+                      data-skill-description="Design core loops, progression, player goals, and feature direction across prototypes and portfolio-ready game concepts."
+                      data-skill-proof="Portfolio explorer, shared case-study flow, and gameplay prototype breakdowns."
+                      data-skill-icon="ph-fill ph-game-controller"
+                      aria-pressed="true">
+                      <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-game-controller"></i></span>
+                      <span class="skills-card__title">Game Design</span>
+                    </button>
+                  </div>
+                  <div class="skills-card__item" role="listitem">
+                    <button
+                      class="skills-card"
+                      type="button"
+                      data-skill-title="Level Design"
+                      data-skill-level="Advanced"
+                      data-skill-description="Build encounter flow, progression rhythm, and player guidance using pacing, layout readability, and KPI-informed iteration."
+                      data-skill-proof="Casual level iteration, KPI-informed pacing, and gallery breakdowns."
+                      data-skill-icon="ph-fill ph-map-trifold"
+                      aria-pressed="false">
+                      <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-map-trifold"></i></span>
+                      <span class="skills-card__title">Level Design</span>
+                    </button>
+                  </div>
+                  <div class="skills-card__item" role="listitem">
+                    <button
+                      class="skills-card"
+                      type="button"
+                      data-skill-title="Combat Design"
+                      data-skill-level="Advanced"
+                      data-skill-description="Shape combat feel, enemy behavior, boss mechanics, and encounter structure to support readable, satisfying player action."
+                      data-skill-proof="Boss mechanics, enemy behavior notes, and encounter readability work."
+                      data-skill-icon="ph-fill ph-sword"
+                      aria-pressed="false">
+                      <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-sword"></i></span>
+                      <span class="skills-card__title">Combat Design</span>
+                    </button>
+                  </div>
+                  <div class="skills-card__item" role="listitem">
+                    <button
+                      class="skills-card"
+                      type="button"
+                      data-skill-title="Design Documentation"
+                      data-skill-level="Advanced"
+                      data-skill-description="Write and maintain clear design documentation that translates ideas into actionable systems, content plans, and implementation tasks."
+                      data-skill-proof="GDD-style specs, content plans, and implementation handoff notes."
+                      data-skill-icon="ph-fill ph-note-pencil"
+                      aria-pressed="false">
+                      <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-note-pencil"></i></span>
+                      <span class="skills-card__title">Design Documentation</span>
+                    </button>
+                  </div>
                 </div>
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card"
-                    type="button"
-                    data-skill-title="Level Design"
-                    data-skill-level="Advanced"
-                    data-skill-description="Build encounter flow, progression rhythm, and player guidance using pacing, layout readability, and KPI-informed iteration."
-                    data-skill-icon="ph-fill ph-map-trifold"
-                    aria-pressed="false">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-map-trifold"></i></span>
-                    <span class="skills-card__title">Level Design</span>
-                  </button>
-                </div>
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card"
-                    type="button"
-                    data-skill-title="Combat Design"
-                    data-skill-level="Advanced"
-                    data-skill-description="Shape combat feel, enemy behavior, boss mechanics, and encounter structure to support readable, satisfying player action."
-                    data-skill-icon="ph-fill ph-sword"
-                    aria-pressed="false">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-sword"></i></span>
-                    <span class="skills-card__title">Combat Design</span>
-                  </button>
-                </div>
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card"
-                    type="button"
-                    data-skill-title="Design Documentation"
-                    data-skill-level="Advanced"
-                    data-skill-description="Write and maintain clear design documentation that translates ideas into actionable systems, content plans, and implementation tasks."
-                    data-skill-icon="ph-fill ph-note-pencil"
-                    aria-pressed="false">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-note-pencil"></i></span>
-                    <span class="skills-card__title">Design Documentation</span>
-                  </button>
-                </div>
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card"
-                    type="button"
-                    data-skill-title="Unity"
-                    data-skill-level="Advanced"
-                    data-skill-description="Prototype and iterate gameplay, camera, UI, and systems behavior in Unity with a production-aware mindset for implementation detail."
-                    data-skill-icon="ph-fill ph-cube"
-                    aria-pressed="false">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-cube"></i></span>
-                    <span class="skills-card__title">Unity</span>
-                  </button>
-                </div>
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card"
-                    type="button"
-                    data-skill-title="Unreal"
-                    data-skill-level="Intermediate"
-                    data-skill-description="Prototype gameplay, camera, combat, and content workflows in Unreal Engine while keeping design intent clear for implementation."
-                    data-skill-icon="ph-fill ph-cube"
-                    aria-pressed="false">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-cube"></i></span>
-                    <span class="skills-card__title">Unreal</span>
-                  </button>
-                </div>
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card"
-                    type="button"
-                    data-skill-title="Artistic Vision"
-                    data-skill-level="Advanced"
-                    data-skill-description="Shape visual direction, mood, readability, and presentation choices so game ideas communicate clearly across pitch material and in-game assets."
-                    data-skill-icon="ph-fill ph-palette"
-                    aria-pressed="false">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-palette"></i></span>
-                    <span class="skills-card__title">Artistic Vision</span>
-                  </button>
-                </div>
-                <div class="skills-card__item" role="listitem">
-                  <button
-                    class="skills-card"
-                    type="button"
-                    data-skill-title="AI-assisted Workflow"
-                    data-skill-level="Intermediate"
-                    data-skill-description="Use Cursor, Codex, and Claude Code to accelerate prototyping, scripting, documentation, and iteration across design and implementation workflows."
-                    data-skill-icon="ph-fill ph-sparkle"
-                    aria-pressed="false">
-                    <span class="skills-card__icon" aria-hidden="true"><i class="ph-fill ph-sparkle"></i></span>
-                    <span class="skills-card__title">AI-assisted Workflow</span>
-                  </button>
+
+                <div class="skills-supporting animate-in-up" aria-label="Supporting skills">
+                  <div class="skills-supporting__list" role="list">
+                    <span class="skills-supporting__badge" role="listitem">
+                      <i class="ph-fill ph-cube" aria-hidden="true"></i>
+                      <span class="skills-supporting__label">Unity</span>
+                    </span>
+                    <span class="skills-supporting__badge" role="listitem">
+                      <i class="ph-fill ph-cube" aria-hidden="true"></i>
+                      <span class="skills-supporting__label">Unreal</span>
+                    </span>
+                    <span class="skills-supporting__badge" role="listitem">
+                      <i class="ph-fill ph-palette" aria-hidden="true"></i>
+                      <span class="skills-supporting__label">Artistic Vision</span>
+                    </span>
+                    <span class="skills-supporting__badge" role="listitem">
+                      <i class="ph-fill ph-sparkle" aria-hidden="true"></i>
+                      <span class="skills-supporting__label">AI-assisted Workflow</span>
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -800,11 +775,13 @@
                     <i class="ph-fill ph-game-controller"></i>
                   </span>
                 </div>
-                <p class="skills-detail__eyebrow">Selected Skill</p>
                 <p class="skills-detail__level" data-skill-detail-level>Advanced</p>
                 <h4 class="skills-detail__title" data-skill-detail-title>Game Design</h4>
                 <p class="skills-detail__text" data-skill-detail-text>
                   Design core loops, progression, player goals, and feature direction across prototypes and portfolio-ready game concepts.
+                </p>
+                <p class="skills-detail__proof" data-skill-detail-proof>
+                  Portfolio explorer, shared case-study flow, and gameplay prototype breakdowns.
                 </p>
               </aside>
             </section>
@@ -1020,21 +997,39 @@
       const randomTime = random(20, 40);
       const randomTime2 = random(5, 12);
       const randomAngle = random(-30, 150);
+      const reducedMotionQuery = typeof window.matchMedia === "function"
+        ? window.matchMedia("(prefers-reduced-motion: reduce)")
+        : null;
 
       const blurs = gsap.utils.toArray(".blur");
-      blurs.forEach((blur) => {
-        gsap.set(blur, {
-          x: randomX(-1),
-          y: randomX(1),
-          rotation: randomAngle(-1)
-        });
 
-        moveX(blur, 1);
-        moveY(blur, -1);
-        rotate(blur, 1);
-      });
+      function prefersReducedMotion() {
+        return Boolean(reducedMotionQuery && reducedMotionQuery.matches);
+      }
+
+      function initAmbientBlurs() {
+        gsap.killTweensOf(blurs);
+
+        blurs.forEach((blur) => {
+          gsap.set(blur, {
+            x: prefersReducedMotion() ? 0 : randomX(-1),
+            y: prefersReducedMotion() ? 0 : randomX(1),
+            rotation: prefersReducedMotion() ? 0 : randomAngle(-1)
+          });
+
+          if (!prefersReducedMotion()) {
+            moveX(blur, 1);
+            moveY(blur, -1);
+            rotate(blur, 1);
+          }
+        });
+      }
 
       function rotate(target, direction) {
+        if (prefersReducedMotion()) {
+          return;
+        }
+
         gsap.to(target, randomTime2(), {
           rotation: randomAngle(direction),
           ease: Sine.easeInOut,
@@ -1044,6 +1039,10 @@
       }
 
       function moveX(target, direction) {
+        if (prefersReducedMotion()) {
+          return;
+        }
+
         gsap.to(target, randomTime(), {
           x: randomX(direction),
           ease: Sine.easeInOut,
@@ -1053,6 +1052,10 @@
       }
 
       function moveY(target, direction) {
+        if (prefersReducedMotion()) {
+          return;
+        }
+
         gsap.to(target, randomTime(), {
           y: randomY(direction),
           ease: Sine.easeInOut,
@@ -1065,6 +1068,13 @@
         const delta = max - min;
         return (direction = 1) => (min + delta * Math.random()) * direction;
       }
+
+      initAmbientBlurs();
+
+      if (reducedMotionQuery && typeof reducedMotionQuery.addEventListener === "function") {
+        reducedMotionQuery.addEventListener("change", initAmbientBlurs);
+      }
+
       // Legacy gallery filter logic is kept inert while the homepage uses the data-driven explorer.
       const filterButtons = [];
       const items = [];
@@ -1097,6 +1107,7 @@
     <script src="js/gallery-init.js"></script>
     <script src="js/media-source.js"></script>
     <script src="js/portfolio-index.js?v=20260504-spotlight-cta"></script>
+    <script src="js/page-transition.js"></script>
     <script src="js/homepage-skills.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/cursor-trail.js"></script>

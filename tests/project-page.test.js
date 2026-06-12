@@ -224,3 +224,64 @@ test('project detail major sections use the narrative shell structure and shared
   assert.match(css, /\.project-section__body--wide\s*\{/);
 });
 
+test('project detail template uses restrained labels and a lightweight facts strip', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'project.html'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
+
+  assert.equal(
+    (html.match(/project-section__eyebrow/g) || []).length,
+    0,
+    'Case-study sections should rely on headings instead of repeated eyebrow labels.'
+  );
+
+  assert.doesNotMatch(html, /<p class="project-hero__eyebrow">Quick Facts<\/p>/);
+  assert.match(css, /\.project-snapshot\s*\{[^}]*box-shadow:\s*none;/s);
+  assert.match(css, /\.project-snapshot\s*\{[^}]*background:\s*transparent;/s);
+  assert.match(css, /\.project-section__shell\s*\{[^}]*box-shadow:\s*none;/s);
+});
+
+test('portfolio UX stylesheet enables progressive view transitions', () => {
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
+
+  assert.match(css, /::view-transition-old\(root\)/);
+  assert.match(css, /::view-transition-new\(root\)/);
+  assert.match(css, /view-transition-name:\s*portfolio-project-media/);
+  assert.match(css, /view-transition-name:\s*portfolio-project-title/);
+  assert.match(css, /prefers-reduced-motion:\s*reduce/);
+});
+
+test('project page initializes ScrollTrigger storytelling with a reduced-motion guard', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'project-page.js'), 'utf8');
+
+  assert.match(source, /function initProjectScrollStorytelling/);
+  assert.match(source, /prefers-reduced-motion:\s*reduce/);
+  assert.match(source, /ScrollTrigger\.batch/);
+  assert.match(source, /\.project-section__shell/);
+  assert.match(source, /ScrollTrigger\.refresh/);
+});
+
+test('project page motion polish animates hero facts and detail cards with subtle timing', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'project-page.js'), 'utf8');
+
+  assert.match(source, /const heroFactItems = gsap\.utils\.toArray\("\.project-fact"\)/);
+  assert.match(source, /duration:\s*0\.42/);
+  assert.match(source, /stagger:\s*0\.07/);
+  assert.match(source, /start:\s*"top 88%"/);
+  assert.match(source, /once:\s*true/);
+  assert.match(source, /autoAlpha:\s*0/);
+  assert.match(source, /autoAlpha:\s*1/);
+});
+
+test('project page motion uses scoped will-change and throttled scroll progress', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'project-page.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
+
+  assert.doesNotMatch(css, /transition:\s*all\b/);
+  assert.doesNotMatch(css, /\.project-fact,\s*\n\.project-system-card,\s*\n\.project-gallery-item,\s*\n\.project-related-card\s*\{\s*will-change:\s*transform,\s*opacity;/);
+  assert.match(css, /\.is-motion-ready/);
+
+  assert.match(source, /function initProjectScrollProgress/);
+  assert.match(source, /requestAnimationFrame/);
+  assert.doesNotMatch(source, /progressBar\.style\.width\s*=\s*progress\s*\+\s*"%"/);
+});
+

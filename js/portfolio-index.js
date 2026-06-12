@@ -382,6 +382,156 @@
     return target.closest('[data-portfolio-project]');
   }
 
+  function prefersReducedMotion() {
+    return typeof global.matchMedia === 'function'
+      && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function runPortfolioViewTransition(update) {
+    if (typeof update !== 'function') {
+      return;
+    }
+
+    if (prefersReducedMotion() || !document.startViewTransition) {
+      update();
+      return;
+    }
+
+    try {
+      const transition = document.startViewTransition(update);
+
+      if (transition && transition.finished && typeof transition.finished.catch === 'function') {
+        transition.finished.catch(() => {});
+      }
+    } catch (error) {
+      update();
+    }
+  }
+
+  function hasMotionSupport() {
+    return !prefersReducedMotion()
+      && typeof global.gsap !== 'undefined'
+      && typeof global.gsap.timeline === 'function';
+  }
+
+  function refreshPortfolioMotion() {
+    if (typeof global.ScrollTrigger === 'undefined' || typeof global.ScrollTrigger.refresh !== 'function') {
+      return;
+    }
+
+    const refresh = () => {
+      global.ScrollTrigger.refresh();
+    };
+
+    if (typeof global.requestAnimationFrame === 'function') {
+      global.requestAnimationFrame(refresh);
+      return;
+    }
+
+    refresh();
+  }
+
+  function animatePortfolioSpotlight() {
+    if (!hasMotionSupport()) {
+      refreshPortfolioMotion();
+      return;
+    }
+
+    const media = spotlightRoot.querySelector('.portfolio-spotlight__media');
+    const bodyItems = Array.from(spotlightRoot.querySelectorAll('.portfolio-spotlight__body > *'));
+    const motionItems = [media, ...bodyItems].filter(Boolean);
+
+    if (!motionItems.length) {
+      refreshPortfolioMotion();
+      return;
+    }
+
+    spotlightRoot.setAttribute('data-motion-ready', 'true');
+    global.gsap.killTweensOf(motionItems);
+
+    const timeline = global.gsap.timeline({
+      defaults: { ease: 'power2.out', overwrite: true },
+      onComplete: () => {
+        global.gsap.set(motionItems, { clearProps: 'transform,opacity,visibility' });
+        refreshPortfolioMotion();
+      },
+    });
+
+    if (media) {
+      timeline.fromTo(
+        media,
+        { autoAlpha: 0, scale: 0.985 },
+        {
+          autoAlpha: 1,
+          scale: 1,
+          duration: 0.42,
+          ease: 'power3.out',
+        },
+        0
+      );
+    }
+
+    if (bodyItems.length) {
+      timeline.fromTo(
+        bodyItems,
+        { autoAlpha: 0, y: 16 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.42,
+          stagger: 0.05,
+        },
+        media ? 0.06 : 0
+      );
+    }
+  }
+
+  function animatePortfolioExplorerMotion(options = {}) {
+    if (!hasMotionSupport()) {
+      refreshPortfolioMotion();
+      return;
+    }
+
+    const cards = Array.from(cardGridRoot.querySelectorAll('.portfolio-card'));
+
+    animatePortfolioSpotlight();
+
+    if (!cards.length) {
+      return;
+    }
+
+    if (options.includeFilters) {
+      const filters = Array.from(filtersRoot.querySelectorAll('.portfolio-filter'));
+      global.gsap.fromTo(
+        filters,
+        { autoAlpha: 0, y: 8 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.22,
+          stagger: 0.04,
+          ease: 'power2.out',
+          overwrite: true,
+          clearProps: 'transform,opacity,visibility',
+        }
+      );
+    }
+
+    global.gsap.fromTo(
+      cards,
+      { autoAlpha: 0, y: 18 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.42,
+        stagger: 0.05,
+        ease: 'power2.out',
+        overwrite: true,
+        clearProps: 'transform,opacity,visibility',
+      }
+    );
+  }
+
   try {
     fetch('projects.json')
       .then((response) => {
@@ -459,11 +609,18 @@
             .join('');
         }
 
-        function renderExplorer() {
+        function renderExplorer(options = {}) {
           const filteredProjects = getFilteredProjects();
           renderFilters();
           renderSpotlight(filteredProjects);
           renderCards(filteredProjects);
+
+          if (options.animate) {
+            animatePortfolioExplorerMotion({ includeFilters: Boolean(options.includeFilters) });
+            return;
+          }
+
+          refreshPortfolioMotion();
         }
 
         function clearHoverIntent() {
@@ -506,6 +663,7 @@
           playingSlug = '';
           renderSpotlight(filteredProjects);
           syncActiveCards();
+          animatePortfolioSpotlight();
         }
 
         filtersRoot.addEventListener('click', (event) => {
@@ -520,7 +678,9 @@
           activeFilter = normalizeFilterValue(filterButton.getAttribute('data-portfolio-filter')) || 'all';
           clearHoverIntent();
           playingSlug = '';
-          renderExplorer();
+          runPortfolioViewTransition(() => {
+            renderExplorer({ animate: true, includeFilters: true });
+          });
         });
 
         cardGridRoot.addEventListener('pointerenter', (event) => {
@@ -564,7 +724,10 @@
             event.preventDefault();
             event.stopPropagation();
             playingSlug = normalizeText(playButton.getAttribute('data-play-preview'));
-            renderSpotlight(getFilteredProjects());
+            runPortfolioViewTransition(() => {
+              renderSpotlight(getFilteredProjects());
+              animatePortfolioSpotlight();
+            });
             return;
           }
 
@@ -572,11 +735,14 @@
             event.preventDefault();
             event.stopPropagation();
             playingSlug = '';
-            renderSpotlight(getFilteredProjects());
+            runPortfolioViewTransition(() => {
+              renderSpotlight(getFilteredProjects());
+              animatePortfolioSpotlight();
+            });
           }
         });
 
-        renderExplorer();
+        renderExplorer({ animate: true, includeFilters: true });
       })
       .catch((error) => {
         console.error('Unable to load homepage portfolio data.', error);
