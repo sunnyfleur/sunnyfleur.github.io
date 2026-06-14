@@ -6,6 +6,7 @@
   }
 })(typeof self !== 'undefined' ? self : this, function () {
   const FALLBACK_IMAGE = './img/og-image.png';
+  const INITIAL_SHELF_LIMIT = 5;
   const HERO_TILE_LAYOUT = [
     { modifier: 'portrait-feature', source: 'poster' },
     { modifier: 'landscape-wide', source: 'landscape' },
@@ -13,6 +14,28 @@
     { modifier: 'landscape-mid', source: 'landscape' },
     { modifier: 'portrait-lower', source: 'poster' },
     { modifier: 'portrait-accent', source: 'poster' },
+  ];
+  const DESIGN_PRINCIPLES = [
+    {
+      title: 'World texture',
+      body: 'Small travel beats, local stakes, and environmental memory make a place feel authored.',
+    },
+    {
+      title: 'Readable goals',
+      body: 'Strong loops keep the next useful action clear without flattening discovery.',
+    },
+    {
+      title: 'System tension',
+      body: 'Good progression asks the player to trade comfort, risk, economy, and timing.',
+    },
+    {
+      title: 'Style as function',
+      body: 'UI, music, routine, and pacing work best when they reinforce the same fantasy.',
+    },
+    {
+      title: 'Player trust',
+      body: 'Friction is useful when it teaches; it becomes noise when feedback feels unfair.',
+    },
   ];
 
   function escapeHtml(value) {
@@ -101,14 +124,31 @@
       .join('');
   }
 
+  function createLessonMarkup(game) {
+    const lesson = asList(game && game.tags)[0] || 'Design reference';
+
+    return `
+          <p class="journey-card__lesson">
+            <span>Design lesson</span>
+            ${escapeHtml(lesson)}
+          </p>
+    `;
+  }
+
   function createGameCardMarkup(game, options) {
     const isFeatured = Boolean(options && options.featured);
+    const isCompact = Boolean(options && options.compact);
     const isWide = Boolean(options && options.wide);
+    const isHidden = Boolean(options && options.hidden);
     const cardClass = [
       'journey-card',
       isFeatured ? 'journey-card--feature' : '',
+      !isFeatured && isCompact ? 'journey-card--compact' : '',
       !isFeatured && isWide ? 'journey-card--wide' : '',
     ].filter(Boolean).join(' ');
+    const cardAttributes = isHidden
+      ? ' hidden data-shelf-extra data-journey-card'
+      : (isCompact ? ' data-journey-card' : '');
     const title = escapeHtml(game.title || 'Untitled game');
     const image = escapeHtml(game.image || FALLBACK_IMAGE);
     const imageAlt = escapeHtml(game.imageAlt || `${game.title || 'Game'} screenshot`);
@@ -119,12 +159,13 @@
       : '';
 
     return `
-      <article class="${cardClass}">
+      <article class="${cardClass}"${cardAttributes}>
         <figure class="journey-card__media">
-          <img src="${image}" alt="${imageAlt}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}'">
+          <img src="${image}" alt="${imageAlt}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}'">
           ${sourceMarkup}
         </figure>
         <div class="journey-card__body">
+          ${createLessonMarkup(game)}
           <h3 class="journey-card__title">${title}</h3>
           <div class="journey-card__meta">${createMetaMarkup(game)}</div>
           ${reflection ? `<p class="journey-card__reflection">${reflection}</p>` : ''}
@@ -146,10 +187,18 @@
     const spotlight = games.length
       ? createGameCardMarkup(games[0], { featured: true })
       : '';
+    const shelfList = games.slice(1);
+    const hiddenCount = Math.max(shelfList.length - INITIAL_SHELF_LIMIT, 0);
     const shelfGames = games
       .slice(1)
-      .map((game, gameIndex) => createGameCardMarkup(game, { wide: (gameIndex + 1) % 7 === 0 }))
+      .map((game, gameIndex) => createGameCardMarkup(game, {
+        compact: true,
+        hidden: gameIndex >= INITIAL_SHELF_LIMIT,
+      }))
       .join('');
+    const shelfToggle = hiddenCount
+      ? `<button class="journey-shelf__toggle" type="button" data-shelf-toggle aria-expanded="false" data-collapsed-label="Show all ${shelfList.length} games" data-expanded-label="Show curated set">Show all ${shelfList.length} games</button>`
+      : '';
 
     return `
       <section class="${chapterClass}" id="${escapeHtml(chapter.id)}" data-chapter-number="${chapterNumber}"${chapterStyle}>
@@ -171,8 +220,38 @@
             ${spotlight}
           </div>
         </div>
-        <div class="journey-shelf">
-          ${shelfGames}
+        <div class="journey-shelf-shell" data-collapsible-shelf>
+          <div class="journey-shelf__header">
+            <p>Curated shelf</p>
+            <span>${shelfList.length} references</span>
+          </div>
+          <div class="journey-shelf">
+            ${shelfGames}
+          </div>
+          ${shelfToggle}
+        </div>
+      </section>
+    `;
+  }
+
+  function createPrinciplesMarkup() {
+    const items = DESIGN_PRINCIPLES
+      .map((principle) => `
+        <article class="journey-principles__item" data-journey-motion>
+          <span>${escapeHtml(principle.title)}</span>
+          <p>${escapeHtml(principle.body)}</p>
+        </article>
+      `)
+      .join('');
+
+    return `
+      <section class="journey-principles" aria-labelledby="journey-principles-title">
+        <div class="journey-principles__header" data-journey-motion>
+          <p class="journey-eyebrow">Design takeaways</p>
+          <h2 id="journey-principles-title">What these games trained me to notice</h2>
+        </div>
+        <div class="journey-principles__grid">
+          ${items}
         </div>
       </section>
     `;
@@ -283,6 +362,130 @@
     requestUpdate();
   }
 
+  function prefersReducedMotion() {
+    return typeof window !== 'undefined'
+      && typeof window.matchMedia === 'function'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function animateExpandedCards(cards) {
+    if (prefersReducedMotion() || typeof window === 'undefined') {
+      return;
+    }
+
+    const requestFrame = window.requestAnimationFrame || function (callback) {
+      return window.setTimeout(callback, 16);
+    };
+
+    requestFrame(() => {
+      cards.forEach((card, index) => {
+        if (typeof card.animate !== 'function') {
+          return;
+        }
+
+        card.animate(
+          [
+            { opacity: 0, transform: 'translateY(14px)' },
+            { opacity: 1, transform: 'translateY(0)' },
+          ],
+          {
+            duration: 320,
+            delay: Math.min(index * 36, 180),
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          },
+        );
+      });
+    });
+  }
+
+  function setupChapterShelves(rootElement) {
+    if (!rootElement || typeof window === 'undefined') {
+      return;
+    }
+
+    const shelves = Array.from(rootElement.querySelectorAll('[data-collapsible-shelf]'));
+    shelves.forEach((shelf) => {
+      const button = shelf.querySelector('[data-shelf-toggle]');
+      const extraCards = Array.from(shelf.querySelectorAll('[data-shelf-extra]'));
+
+      if (!button || !extraCards.length) {
+        return;
+      }
+
+      button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const nextExpanded = !isExpanded;
+
+        extraCards.forEach((card) => {
+          if (nextExpanded) {
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden', '');
+          }
+        });
+
+        shelf.classList.toggle('is-expanded', nextExpanded);
+        button.setAttribute('aria-expanded', String(nextExpanded));
+        button.textContent = nextExpanded
+          ? button.getAttribute('data-expanded-label')
+          : button.getAttribute('data-collapsed-label');
+
+        if (nextExpanded) {
+          animateExpandedCards(extraCards);
+        }
+
+        window.requestAnimationFrame(() => {
+          window.dispatchEvent(new Event('resize'));
+        });
+      });
+    });
+  }
+
+  function setupJourneyMotion(rootElement) {
+    if (!rootElement || typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+
+    const motionTargets = Array.from(document.querySelectorAll([
+      '.journey-hero__copy',
+      '.journey-hero__strip',
+      '.journey-intro',
+      '[data-journey-motion]',
+      '.journey-chapter__opening',
+      '.journey-shelf-shell',
+    ].join(',')));
+
+    if (!motionTargets.length) {
+      return;
+    }
+
+    motionTargets.forEach((target, index) => {
+      target.classList.add('journey-motion-item');
+      target.style.setProperty('--motion-order', String(index % 6));
+    });
+
+    if (prefersReducedMotion() || !('IntersectionObserver' in window)) {
+      motionTargets.forEach((target) => target.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, {
+      rootMargin: '0px 0px -12% 0px',
+      threshold: 0.12,
+    });
+
+    motionTargets.forEach((target) => observer.observe(target));
+  }
+
   function getHeroImage(game, tile) {
     if (tile.source === 'poster') {
       return game.posterImage || game.image || FALLBACK_IMAGE;
@@ -331,6 +534,8 @@
     }
 
     rootElement.innerHTML = chapters.map(createChapterMarkup).join('');
+    setupChapterShelves(rootElement);
+    setupJourneyMotion(rootElement);
     if (indexElement) {
       indexElement.innerHTML = createJourneyIndexMarkup(chapters);
       setupJourneyIndexProgress(indexElement);
@@ -370,8 +575,11 @@
     createGameCardMarkup,
     createHeroStripMarkup,
     createJourneyIndexMarkup,
+    createPrinciplesMarkup,
     getRenderableChapters,
     loadGamingJourney,
     renderGamingJourney,
+    setupChapterShelves,
+    setupJourneyMotion,
   };
 });

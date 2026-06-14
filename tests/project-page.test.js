@@ -13,6 +13,10 @@ const {
   getRenderableTextList,
   getRenderableSystems,
   getRenderableGallery,
+  getProjectAccentTone,
+  getProjectGalleryPreviewSummary,
+  getProjectPresentationMode,
+  getProjectReviewerBriefItems,
   normalizePhotoSwipeSize,
 } = require('../js/project-page.js');
 
@@ -125,6 +129,56 @@ test('project section visibility treats grouped gallery content as renderable ga
   });
 
   assert.equal(visibility.gallery, true);
+});
+
+test('project presentation mode distinguishes case studies, archives, and confidential briefs', () => {
+  const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'projects.json'), 'utf8'));
+  const spaceConqueror = payload.projects.find((project) => project.slug === 'space-conqueror');
+  const huli = payload.projects.find((project) => project.slug === 'huli');
+  const screw = payload.projects.find((project) => project.slug === 'screw');
+
+  assert.equal(getProjectPresentationMode(spaceConqueror), 'case');
+  assert.equal(getProjectPresentationMode(huli), 'confidential');
+  assert.equal(getProjectPresentationMode(screw), 'archive');
+
+  assert.equal(getProjectAccentTone(spaceConqueror), 'prototype');
+  assert.equal(getProjectAccentTone(huli), 'confidential');
+  assert.equal(getProjectAccentTone(screw), 'archive');
+});
+
+test('project reviewer brief returns three scan-friendly case-file rows', () => {
+  const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'projects.json'), 'utf8'));
+  const spaceConqueror = payload.projects.find((project) => project.slug === 'space-conqueror');
+  const huli = payload.projects.find((project) => project.slug === 'huli');
+
+  const caseBrief = getProjectReviewerBriefItems(spaceConqueror);
+  const confidentialBrief = getProjectReviewerBriefItems(huli);
+
+  assert.equal(caseBrief.length, 3);
+  assert.deepEqual(
+    caseBrief.map((item) => item.label),
+    ['Role', 'Challenge', 'Proof']
+  );
+  assert.ok(caseBrief.every((item) => item.title && item.body && item.body.length <= 180));
+  assert.ok(confidentialBrief.every((item) => item.title && item.body));
+});
+
+test('archive gallery preview limits initial image dump and records the hidden count', () => {
+  const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'projects.json'), 'utf8'));
+  const screw = payload.projects.find((project) => project.slug === 'screw');
+  const spaceConqueror = payload.projects.find((project) => project.slug === 'space-conqueror');
+
+  const screwSummary = getProjectGalleryPreviewSummary(screw);
+  const prototypeSummary = getProjectGalleryPreviewSummary(spaceConqueror);
+
+  assert.equal(screwSummary.mode, 'archive');
+  assert.equal(screwSummary.isCurated, true);
+  assert.equal(screwSummary.totalCount, 35);
+  assert.equal(screwSummary.visibleCount, 12);
+  assert.equal(screwSummary.hiddenCount, 23);
+
+  assert.equal(prototypeSummary.isCurated, false);
+  assert.equal(prototypeSummary.visibleCount, prototypeSummary.totalCount);
 });
 
 test('farm-match detail gallery uses lightweight thumbnails with full-size lightbox images', () => {
@@ -240,6 +294,36 @@ test('project detail template uses restrained labels and a lightweight facts str
   assert.match(css, /\.project-section__shell\s*\{[^}]*box-shadow:\s*none;/s);
 });
 
+test('project hero text keeps light-mode contrast over dark media overlays', () => {
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
+
+  assert.match(css, /\.project-hero__content\s+\.project-hero__title\s*\{[^}]*color:\s*rgba\(255,\s*255,\s*255,\s*0\.96\);/s);
+  assert.match(css, /\.project-hero__content\s+#project-tagline\.project-hero__summary\s*\{[^}]*color:\s*rgba\(255,\s*255,\s*255,\s*0\.92\);/s);
+  assert.match(css, /\.project-hero__content\s+#project-summary\.project-hero__summary\s*\{[^}]*color:\s*rgba\(255,\s*255,\s*255,\s*0\.76\);/s);
+  assert.match(css, /\.project-hero__content\s+\.project-hero__title\s*\{[^}]*text-shadow:\s*0 10px 30px rgba\(0,\s*0,\s*0,\s*0\.45\);/s);
+});
+
+test('project detail template exposes case-file and reviewer brief hooks', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'project.html'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'project-page.js'), 'utf8');
+
+  assert.match(html, /id="project-review-brief"/);
+  assert.match(html, /project-snapshot__header/);
+  assert.match(css, /\[data-case-mode="archive"\]/);
+  assert.match(css, /\[data-case-mode="confidential"\]/);
+  assert.match(source, /project-gallery-reveal/);
+});
+
+test('project detail template relies on header navigation instead of duplicate back link', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'project.html'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
+
+  assert.doesNotMatch(html, /project-back-link/);
+  assert.doesNotMatch(html, /Back to portfolio explorer/);
+  assert.doesNotMatch(css, /\.project-back-link/);
+});
+
 test('portfolio UX stylesheet enables progressive view transitions', () => {
   const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'portfolio-ux.css'), 'utf8');
 
@@ -260,16 +344,17 @@ test('project page initializes ScrollTrigger storytelling with a reduced-motion 
   assert.match(source, /ScrollTrigger\.refresh/);
 });
 
-test('project page motion polish animates hero facts and detail cards with subtle timing', () => {
+test('project page scroll motion avoids opacity flicker on reveal', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'project-page.js'), 'utf8');
 
   assert.match(source, /const heroFactItems = gsap\.utils\.toArray\("\.project-fact"\)/);
   assert.match(source, /duration:\s*0\.42/);
-  assert.match(source, /stagger:\s*0\.07/);
+  assert.match(source, /stagger:\s*0\.04/);
   assert.match(source, /start:\s*"top 88%"/);
   assert.match(source, /once:\s*true/);
-  assert.match(source, /autoAlpha:\s*0/);
-  assert.match(source, /autoAlpha:\s*1/);
+  assert.doesNotMatch(source, /autoAlpha:\s*[01]/);
+  assert.doesNotMatch(source, /clearProps:\s*"transform,opacity,visibility"/);
+  assert.match(source, /clearProps:\s*"transform"/);
 });
 
 test('project page motion uses scoped will-change and throttled scroll progress', () => {

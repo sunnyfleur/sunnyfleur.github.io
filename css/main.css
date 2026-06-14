@@ -3488,6 +3488,63 @@ form textarea:required:valid {
   }
 }
 
+.about-descr__lead {
+  max-width: 72rem;
+  margin-bottom: 2rem;
+  color: var(--t-medium);
+  font-size: clamp(2rem, 1.7vw, 2.45rem);
+  line-height: 1.42;
+}
+
+.about-focus {
+  display: grid;
+  max-width: 78rem;
+  border-top: 1px solid var(--stroke-elements);
+}
+
+.about-focus__item {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.28fr) minmax(0, 1fr);
+  gap: 1.6rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--stroke-elements);
+}
+
+.about-focus__label,
+.about-focus__text {
+  margin: 0;
+}
+
+.about-focus__label {
+  color: color-mix(in srgb, var(--secondary) 74%, var(--t-muted) 26%);
+  font: normal 700 1.18rem/1.15 var(--_font-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-focus__text {
+  color: var(--t-medium);
+  font-size: 1.72rem;
+  line-height: 1.52;
+}
+
+@media only screen and (max-width: 767px) {
+  .about-descr__lead {
+    font-size: 1.85rem;
+    line-height: 1.45;
+  }
+
+  .about-focus__item {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    padding: 1.25rem 0;
+  }
+
+  .about-focus__text {
+    font-size: 1.48rem;
+  }
+}
+
 .about-descr__btnholder {
   margin-top: 2.5rem;
 }

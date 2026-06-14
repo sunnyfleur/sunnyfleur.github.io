@@ -8,6 +8,7 @@ const {
   createGameCardMarkup,
   createHeroStripMarkup,
   createJourneyIndexMarkup,
+  createPrinciplesMarkup,
 } = require('../js/gaming-journey.js');
 
 test('gaming journey data renders chapters with games and skips empty chapters', () => {
@@ -69,6 +70,27 @@ test('game card markup includes remote image, source credit, reflection, and des
   assert.match(markup, /Iteration/);
 });
 
+test('compact game card markup supports collapsible shelves and performance hints', () => {
+  const markup = createGameCardMarkup({
+    title: 'Cyberpunk 2077',
+    platform: 'PC',
+    hours: '20+',
+    year: '2020',
+    image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg',
+    imageSource: 'Steam',
+    imageAlt: 'Cyberpunk 2077 city screenshot',
+    reflection: 'A useful case study in ambition, expectation, immersion breaks, and post-launch iteration.',
+    tags: ['Expectation', 'Iteration'],
+  }, { compact: true, hidden: true });
+
+  assert.match(markup, /class="journey-card journey-card--compact"/);
+  assert.match(markup, /hidden data-shelf-extra/);
+  assert.match(markup, /decoding="async"/);
+  assert.match(markup, /data-journey-card/);
+  assert.match(markup, /journey-card__lesson/);
+  assert.match(markup, /Design lesson/);
+});
+
 test('chapter markup alternates layout direction and features the first game', () => {
   const chapter = {
     id: 'stories',
@@ -114,6 +136,9 @@ test('chapter markup alternates layout direction and features the first game', (
   assert.match(markup, /journey-chapter__transition/);
   assert.match(markup, /Memory stop 02/);
   assert.match(markup, /Character Arc/);
+  assert.match(markup, /journey-shelf-shell/);
+  assert.match(markup, /data-collapsible-shelf/);
+  assert.match(markup, /journey-shelf__header/);
 
   assert.match(css, /\.journey-chapter--reverse\s*\{/);
   assert.match(css, /\.journey-chapter::before\s*\{[^}]*content:\s*attr\(data-chapter-number\)/s);
@@ -130,15 +155,52 @@ test('chapter markup alternates layout direction and features the first game', (
   assert.match(css, /\.journey-stamp\s*\{[^}]*border:\s*1px solid var\(--chapter-accent\)/s);
   assert.match(css, /\.journey-chapter__transition\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*1/s);
   assert.match(css, /\.journey-chapter__opening\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*2/s);
-  assert.match(css, /\.journey-chapter__opening\s*\{[^}]*grid-template-columns:\s*minmax\(260px,\s*0\.32fr\) minmax\(0,\s*0\.68fr\)/s);
+  assert.match(css, /\.journey-chapter__opening\s*\{[^}]*grid-template-columns:\s*minmax\(280px,\s*0\.36fr\) minmax\(0,\s*0\.64fr\)/s);
   assert.match(css, /\.journey-chapter__spotlight\s*\{[^}]*grid-column:\s*2/s);
-  assert.match(css, /\.journey-shelf\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*3/s);
-  assert.match(css, /\.journey-shelf\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/s);
-  assert.match(css, /\.journey-card--wide\s*\{[^}]*grid-column:\s*span 2/s);
+  assert.match(css, /\.journey-shelf-shell\s*\{[^}]*grid-column:\s*1 \/ -1;[^}]*grid-row:\s*3/s);
+  assert.match(css, /\.journey-shelf\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fit,\s*minmax\(190px,\s*1fr\)\)/s);
+  assert.match(css, /\.journey-card--compact \.journey-card__reflection\s*\{/);
   assert.match(css, /\.journey-chapter--reverse \.journey-chapter__header\s*\{[^}]*grid-column:\s*2/s);
   assert.match(css, /\.journey-chapter--reverse \.journey-chapter__spotlight\s*\{[^}]*grid-column:\s*1;[^}]*grid-row:\s*1/s);
   assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-column:\s*1 \/ -1/s);
-  assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*0\.58fr\) minmax\(260px,\s*0\.42fr\)/s);
+  assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*0\.54fr\) minmax\(260px,\s*0\.46fr\)/s);
+});
+
+test('chapter shelves collapse long game lists behind an accessible toggle', () => {
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
+  const chapter = {
+    id: 'systems',
+    title: 'Systems I Learned From',
+    description: 'A long chapter with enough games to collapse.',
+    games: Array.from({ length: 9 }, (_, index) => ({
+      title: `Game ${index + 1}`,
+      image: `https://example.com/game-${index + 1}.jpg`,
+      imageSource: 'Example',
+      reflection: `Reflection ${index + 1}`,
+      tags: ['Systems'],
+    })),
+  };
+  const markup = createChapterMarkup(chapter, 2);
+
+  assert.equal((markup.match(/journey-card--feature/g) || []).length, 1);
+  assert.equal((markup.match(/data-shelf-extra/g) || []).length, 3);
+  assert.match(markup, /data-shelf-toggle/);
+  assert.match(markup, /aria-expanded="false"/);
+  assert.match(markup, /Show all 8 games/);
+  assert.match(markup, /Show curated set/);
+  assert.match(css, /\.journey-card\[hidden\]\s*\{[^}]*display:\s*none\s*!important;/s);
+});
+
+test('gamepage includes a design-principles summary before the full shelves', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'gamepage.html'), 'utf8');
+  const markup = createPrinciplesMarkup();
+
+  assert.match(html, /journey-principles/);
+  assert.match(html, /What these games trained me to notice/);
+  assert.equal((html.match(/journey-principles__item/g) || []).length, 5);
+  assert.match(markup, /World texture/);
+  assert.match(markup, /Player trust/);
+  assert.match(html, /media="\(prefers-color-scheme: dark\)" content="#10111c"/);
 });
 
 test('journey index renders chapter navigation and progress affordance', () => {
@@ -173,7 +235,8 @@ test('journey index renders chapter navigation and progress affordance', () => {
   assert.match(css, /\.journey-index__progress\s*\{[^}]*height:\s*var\(--journey-progress,\s*0%\)/s);
   assert.match(css, /\.journey-index__link\.is-active\s*\{[^}]*background:\s*color-mix\(in srgb,\s*var\(--chapter-accent\)\s*14%,\s*transparent\)/s);
   assert.match(css, /\.journey-index__title\s*\{[^}]*white-space:\s*normal/s);
-  assert.match(css, /@media \(max-width:\s*1540px\)\s*\{[^}]*\.journey-index\s*\{[^}]*display:\s*none/s);
+  assert.match(css, /@media \(max-width:\s*1540px\)\s*\{[^}]*\.journey-index\s*\{[^}]*position:\s*sticky/s);
+  assert.doesNotMatch(css, /@media \(max-width:\s*1540px\)\s*\{[^}]*\.journey-index\s*\{[^}]*display:\s*none/s);
 });
 
 test('gamepage uses the chapter-led journey shell instead of tier list filters', () => {
@@ -401,8 +464,11 @@ test('gamepage follows the shared light and dark color scheme tokens', () => {
   assert.match(css, /--journey-line:\s*var\(--stroke-elements\);/);
   assert.match(css, /\[color-scheme=light\]\s*\{/);
   assert.match(css, /\[color-scheme=dark\]\s*\{/);
-  assert.match(css, /linear-gradient\(180deg,\s*var\(--journey-hero-wash\),\s*var\(--journey-bg\)\s+38rem\)/);
+  assert.match(css, /linear-gradient\(180deg,\s*var\(--journey-hero-wash\),\s*var\(--journey-bg\)\s+34rem\)/);
+  assert.match(css, /font-family:\s*var\(--_font-default\),\s*system-ui,\s*sans-serif/);
   assert.doesNotMatch(css, /--journey-bg:\s*#08080a/);
+  assert.doesNotMatch(css, /--journey-orb-secondary:\s*rgba\(255,\s*107,\s*222/);
+  assert.doesNotMatch(css, /--journey-tag-bg:\s*rgba\(255,\s*107,\s*222/);
   assert.doesNotMatch(css, /rgba\(8,\s*8,\s*10/);
 });
 
@@ -412,7 +478,7 @@ test('gamepage reuses the main gradient ambience behind the journey content', ()
 
   assert.match(html, /<div class="gradient-background journey-gradient-background" aria-hidden="true">\s*<div class="blur"><\/div>\s*<div class="blur"><\/div>\s*<div class="blur"><\/div>\s*<\/div>/);
   assert.match(css, /\.journey-gradient-background\s*\{[^}]*position:\s*fixed;[^}]*z-index:\s*0;[^}]*pointer-events:\s*none/s);
-  assert.match(css, /\.journey-gradient-background \.blur\s*\{[^}]*opacity:\s*var\(--journey-ambient-opacity\);[^}]*filter:\s*blur\(clamp\(70px,\s*9vw,\s*130px\)\)/s);
+  assert.match(css, /\.journey-gradient-background \.blur\s*\{[^}]*opacity:\s*var\(--journey-ambient-opacity\);[^}]*filter:\s*blur\(clamp\(56px,\s*7vw,\s*104px\)\)/s);
   assert.match(css, /\.journey-gradient-background \.blur:nth-of-type\(1\)\s*\{[^}]*background:\s*var\(--gradient-one\)/s);
   assert.match(css, /\.journey-gradient-background \.blur:nth-of-type\(2\)\s*\{[^}]*background:\s*var\(--gradient-two\)/s);
   assert.match(css, /\.journey-gradient-background \.blur:nth-of-type\(3\)\s*\{[^}]*background:\s*var\(--gradient-three\)/s);
@@ -426,10 +492,15 @@ test('gaming journey layout keeps review feedback on scale and image framing', (
   assert.match(html, /class="back-to-home btn btn-default btn-hover btn-hover-outline"/);
   assert.match(html, /<span class="btn-caption">Trang chủ<\/span>/);
 
-  assert.match(css, /\.journey-hero__lead\s*\{[^}]*font-size:\s*clamp\(1\.25rem,\s*1\.9vw,\s*1\.85rem\)/s);
-  assert.match(css, /\.journey-intro p\s*\{[^}]*font-size:\s*clamp\(1\.18rem,\s*1\.65vw,\s*1\.55rem\)/s);
+  assert.match(css, /\.journey-hero\s*\{[^}]*grid-template-columns:\s*minmax\(280px,\s*0\.45fr\) minmax\(420px,\s*0\.55fr\)/s);
+  assert.match(css, /\.journey-hero__strip\s*\{[^}]*height:\s*clamp\(360px,\s*48vh,\s*540px\)/s);
+  assert.match(css, /\.journey-hero h1\s*\{[^}]*max-width:\s*13ch/s);
+  assert.match(css, /\.journey-hero__lead\s*\{[^}]*font-size:\s*clamp\(1\.08rem,\s*1\.45vw,\s*1\.36rem\)/s);
+  assert.match(css, /\.journey-intro p\s*\{[^}]*font-size:\s*clamp\(1\.08rem,\s*1\.35vw,\s*1\.32rem\)/s);
+  assert.match(css, /\.journey-principles__item span\s*\{[^}]*font-size:\s*clamp\(1\.32rem,\s*1\.05vw,\s*1\.5rem\)/s);
+  assert.match(css, /\.journey-principles__item p\s*\{[^}]*font-size:\s*clamp\(1\.16rem,\s*0\.9vw,\s*1\.28rem\)/s);
   assert.match(css, /\.journey-chapter__kicker\s*\{[^}]*font-size:\s*clamp\(0\.82rem,\s*0\.9vw,\s*0\.92rem\)/s);
-  assert.match(css, /\.journey-chapter__header h2\s*\{[^}]*font-size:\s*clamp\(2\.65rem,\s*4\.2vw,\s*4\.6rem\)/s);
+  assert.match(css, /\.journey-chapter__header h2\s*\{[^}]*font-size:\s*clamp\(2\.35rem,\s*3\.5vw,\s*4\.05rem\)/s);
   assert.match(css, /\.journey-chapter__header p:last-child\s*\{[^}]*font-size:\s*clamp\(1rem,\s*1\.12vw,\s*1\.2rem\)/s);
   assert.match(css, /\.journey-card__title\s*\{[^}]*font-size:\s*clamp\(1\.18rem,\s*1vw,\s*1\.3rem\)/s);
   assert.match(css, /\.journey-card__reflection\s*\{[^}]*font-size:\s*clamp\(0\.96rem,\s*0\.88vw,\s*1\.02rem\)/s);
@@ -440,6 +511,21 @@ test('gaming journey layout keeps review feedback on scale and image framing', (
   assert.match(css, /\.journey-card__media\s*\{[^}]*aspect-ratio:\s*16 \/ 9/s);
   assert.match(css, /\.journey-card__media img\s*\{[^}]*object-fit:\s*cover/s);
   assert.match(css, /\.journey-hero__tile img\s*\{[^}]*object-fit:\s*cover/s);
+});
+
+test('gaming journey motion uses section batching and reduced-motion fallbacks', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'gaming-journey.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
+
+  assert.match(source, /prefers-reduced-motion:\s*reduce/);
+  assert.match(source, /function setupJourneyMotion/);
+  assert.match(source, /IntersectionObserver/);
+  assert.match(source, /function setupChapterShelves/);
+  assert.match(source, /requestAnimationFrame/);
+  assert.match(source, /animate\(/);
+  assert.match(css, /\.journey-motion-item/);
+  assert.match(css, /\.journey-motion-item\.is-visible/);
+  assert.match(css, /@media \(prefers-reduced-motion:\s*reduce\)/);
 });
 
 test('hero strip mixes portrait and landscape artwork instead of loose numbered tiles', () => {

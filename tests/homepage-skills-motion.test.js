@@ -32,3 +32,15 @@ test('homepage skills styles live in the dedicated stylesheet only', () => {
   assert.match(skillsCss, /\.skills-section\s*\{/);
   assert.match(skillsCss, /\.skills-detail__proof\s*\{/);
 });
+
+test('homepage skills board stays compact instead of stretching into empty panels', () => {
+  const skillsCss = fs.readFileSync(path.join(__dirname, '..', 'css', 'homepage-skills.css'), 'utf8');
+
+  assert.match(skillsCss, /\.skills-section\s*\{[\s\S]*?align-items:\s*start;/);
+  assert.match(skillsCss, /\.skills-card\s*\{[\s\S]*?min-height:\s*7\.6rem;/);
+  assert.match(skillsCss, /\.skills-section__detail\s*\{[\s\S]*?align-self:\s*start;/);
+  assert.doesNotMatch(skillsCss, /\.skills-section__detail\s*\{[\s\S]*?min-height:\s*100%;/);
+  assert.match(skillsCss, /\.skills-detail__media\s*\{[\s\S]*?min-height:\s*10\.8rem;/);
+  assert.match(skillsCss, /\.skills-detail__proof\s*\{[\s\S]*?border-radius:\s*1\.4rem;/);
+  assert.match(skillsCss, /\.skills-supporting\s*\{[\s\S]*?padding:\s*1rem;/);
+});

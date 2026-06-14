@@ -268,12 +268,158 @@
     };
   }
 
+  function getProjectPresentationMode(project) {
+    const descriptor = [
+      project && project.type,
+      project && project.status,
+      project && project.title,
+    ].map(normalizeText).join(" ").toLowerCase();
+
+    if (descriptor.includes("archive")) {
+      return "archive";
+    }
+
+    if (descriptor.includes("unannounced")) {
+      return "confidential";
+    }
+
+    return "case";
+  }
+
+  function getProjectAccentTone(project) {
+    const mode = getProjectPresentationMode(project);
+
+    if (mode === "archive" || mode === "confidential") {
+      return mode;
+    }
+
+    const descriptor = [
+      project && project.type,
+      project && project.status,
+      project && project.tagline,
+      project && project.summary,
+    ].map(normalizeText).join(" ").toLowerCase();
+
+    if (
+      descriptor.includes("prototype")
+      || descriptor.includes("playable")
+      || descriptor.includes("combat")
+      || descriptor.includes("action")
+    ) {
+      return "prototype";
+    }
+
+    return "case";
+  }
+
+  function getProjectModeLabel(project) {
+    const mode = getProjectPresentationMode(project);
+
+    if (mode === "archive") {
+      return "Archive note";
+    }
+
+    if (mode === "confidential") {
+      return "Confidential brief";
+    }
+
+    return "Playable case study";
+  }
+
+  function truncateProjectBriefText(value, maxLength) {
+    const text = normalizeText(value);
+    const limit = Number(maxLength) || 180;
+
+    if (text.length <= limit) {
+      return text;
+    }
+
+    const clipped = text.slice(0, Math.max(0, limit - 3));
+    const lastSpace = clipped.lastIndexOf(" ");
+
+    return (lastSpace > 80 ? clipped.slice(0, lastSpace) : clipped).trim() + "...";
+  }
+
+  function getProjectRoleSummary(project) {
+    return getRenderableTextList(project && project.role).join(" / ")
+      || normalizeText(project && project.role)
+      || "Design ownership pending";
+  }
+
+  function getProjectReviewerBriefItems(project) {
+    const mode = getProjectPresentationMode(project);
+    const contributions = getRenderableTextList(project && project.contributions);
+    const systems = getRenderableSystems(project && project.systems);
+    const results = getRenderableTextList(project && project.results);
+    const roleSummary = getProjectRoleSummary(project);
+    const challengeText = normalizeText(project && project.problem)
+      || normalizeText(project && project.summary)
+      || normalizeText(project && project.tagline)
+      || "Project context is being organized for the shared case-study format.";
+    const proofText = results[0]
+      || contributions[0]
+      || (systems[0] && systems[0].items[0])
+      || normalizeText(project && project.summary)
+      || "Public proof is limited to the available project snapshot.";
+
+    return [
+      {
+        label: "Role",
+        title: mode === "archive" ? "Archive ownership" : "My ownership",
+        body: truncateProjectBriefText(roleSummary, 180),
+      },
+      {
+        label: "Challenge",
+        title: mode === "confidential" ? "Public context" : "Design problem",
+        body: truncateProjectBriefText(challengeText, 180),
+      },
+      {
+        label: "Proof",
+        title: mode === "archive" ? "Available evidence" : "Design signal",
+        body: truncateProjectBriefText(proofText, 180),
+      },
+    ];
+  }
+
+  function getProjectGalleryItemCount(galleryModel) {
+    if (!galleryModel || galleryModel.mode === "empty") {
+      return 0;
+    }
+
+    if (galleryModel.mode === "grouped") {
+      return asArray(galleryModel.groups).reduce((total, group) => total + asArray(group && group.items).length, 0);
+    }
+
+    return asArray(galleryModel.items).length;
+  }
+
+  function getProjectGalleryPreviewSummary(project) {
+    const galleryModel = getProjectGalleryModel(project);
+    const mode = getProjectPresentationMode(project);
+    const totalCount = getProjectGalleryItemCount(galleryModel);
+    const previewLimit = 12;
+    const isCurated = mode === "archive" && totalCount > previewLimit;
+    const visibleCount = isCurated ? previewLimit : totalCount;
+
+    return {
+      mode,
+      isCurated,
+      totalCount,
+      visibleCount,
+      hiddenCount: Math.max(0, totalCount - visibleCount),
+    };
+  }
+
   const projectPageApi = {
     findProjectBySlug,
+    getProjectAccentTone,
     getProjectGalleryModel,
+    getProjectGalleryPreviewSummary,
     getProjectSectionVisibility,
     getGalleryImageOrientation,
     getGalleryLayoutVariant,
+    getProjectPresentationMode,
+    getProjectReviewerBriefItems,
     getRenderableGallery,
     getRenderableLinks,
     getRenderableSystems,
@@ -338,6 +484,7 @@
       .toArray(".project-system-card, .project-gallery-item, .project-related-card")
       .filter(isElementVisibleForMotion);
     const heroContentItems = gsap.utils.toArray(".project-hero__content > *").filter(isElementVisibleForMotion);
+    const reviewerBriefItems = gsap.utils.toArray(".project-review-brief__item").filter(isElementVisibleForMotion);
     const heroFactItems = gsap.utils.toArray(".project-fact").filter(isElementVisibleForMotion);
 
     if (typeof ScrollTrigger.batch === "function" && sectionShells.length > 0) {
@@ -348,15 +495,14 @@
           setMotionReady(batch, true);
           gsap.fromTo(
             batch,
-            { y: 36, autoAlpha: 0 },
+            { y: 16 },
             {
               y: 0,
-              autoAlpha: 1,
-              duration: 0.64,
-              stagger: 0.08,
+              duration: 0.46,
+              stagger: 0.05,
               ease: "power2.out",
               overwrite: true,
-              clearProps: "transform,opacity,visibility",
+              clearProps: "transform",
               onComplete: () => setMotionReady(batch, false),
             }
           );
@@ -372,15 +518,14 @@
           setMotionReady(batch, true);
           gsap.fromTo(
             batch,
-            { y: 24, autoAlpha: 0 },
+            { y: 12 },
             {
               y: 0,
-              autoAlpha: 1,
-              duration: 0.42,
-              stagger: 0.06,
+              duration: 0.34,
+              stagger: 0.04,
               ease: "power2.out",
               overwrite: true,
-              clearProps: "transform,opacity,visibility",
+              clearProps: "transform",
               onComplete: () => setMotionReady(batch, false),
             }
           );
@@ -392,15 +537,14 @@
       setMotionReady(heroContentItems, true);
       gsap.fromTo(
         heroContentItems,
-        { y: 22, autoAlpha: 0 },
+        { y: 10 },
         {
           y: 0,
-          autoAlpha: 1,
-          duration: 0.64,
-          stagger: 0.07,
+          duration: 0.42,
+          stagger: 0.05,
           ease: "power3.out",
           overwrite: true,
-          clearProps: "transform,opacity,visibility",
+          clearProps: "transform",
           onComplete: () => setMotionReady(heroContentItems, false),
           scrollTrigger: {
             trigger: ".project-page__hero",
@@ -415,18 +559,39 @@
       setMotionReady(heroFactItems, true);
       gsap.fromTo(
         heroFactItems,
-        { y: 14, autoAlpha: 0 },
+        { y: 8 },
         {
           y: 0,
-          autoAlpha: 1,
-          duration: 0.42,
-          stagger: 0.07,
+          duration: 0.32,
+          stagger: 0.04,
           ease: "power2.out",
           overwrite: true,
-          clearProps: "transform,opacity,visibility",
+          clearProps: "transform",
           onComplete: () => setMotionReady(heroFactItems, false),
           scrollTrigger: {
             trigger: ".project-snapshot",
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    if (reviewerBriefItems.length > 0) {
+      setMotionReady(reviewerBriefItems, true);
+      gsap.fromTo(
+        reviewerBriefItems,
+        { y: 8 },
+        {
+          y: 0,
+          duration: 0.32,
+          stagger: 0.04,
+          ease: "power2.out",
+          overwrite: true,
+          clearProps: "transform",
+          onComplete: () => setMotionReady(reviewerBriefItems, false),
+          scrollTrigger: {
+            trigger: ".project-review-brief",
             start: "top 88%",
             toggleActions: "play none none none",
           },
@@ -581,6 +746,39 @@
     sectionNav.style.display = visibleLinks.length === 0 ? "none" : "";
   }
 
+  function renderProjectReviewerBrief(root, items) {
+    if (!root) {
+      return;
+    }
+
+    const briefItems = asArray(items).filter((item) => item && item.label && item.body);
+    root.innerHTML = "";
+    root.hidden = briefItems.length === 0;
+    root.style.display = briefItems.length === 0 ? "none" : "";
+
+    briefItems.forEach((item) => {
+      const article = document.createElement("article");
+      article.className = "project-review-brief__item";
+
+      const label = document.createElement("span");
+      label.className = "project-review-brief__label";
+      label.textContent = item.label;
+      article.appendChild(label);
+
+      const title = document.createElement("h3");
+      title.className = "project-review-brief__title";
+      title.textContent = item.title || item.label;
+      article.appendChild(title);
+
+      const body = document.createElement("p");
+      body.className = "project-review-brief__body";
+      body.textContent = item.body;
+      article.appendChild(body);
+
+      root.appendChild(article);
+    });
+  }
+
   function createGalleryFigure(item, projectTitle) {
     const figure = document.createElement("figure");
     figure.className = "project-gallery-item gallery__item";
@@ -659,6 +857,49 @@
     return figure;
   }
 
+  function getLimitedGalleryModel(galleryModel, maxItems) {
+    const limit = Math.max(0, Number(maxItems) || 0);
+
+    if (!galleryModel || limit === 0 || galleryModel.mode === "empty") {
+      return { mode: "empty", groups: [], items: [] };
+    }
+
+    if (galleryModel.mode === "grouped") {
+      let remaining = limit;
+      const sourceGroups = asArray(galleryModel.groups);
+      const groups = [];
+
+      sourceGroups.forEach((group, index) => {
+        const groupItems = asArray(group && group.items);
+
+        if (remaining <= 0 || groupItems.length === 0) {
+          return;
+        }
+
+        const laterRenderableGroups = sourceGroups
+          .slice(index + 1)
+          .filter((entry) => asArray(entry && entry.items).length > 0).length;
+        const reservedForLaterGroups = Math.min(laterRenderableGroups, Math.max(0, remaining - 1));
+        const takeCount = Math.min(groupItems.length, Math.max(1, remaining - reservedForLaterGroups));
+
+        groups.push({
+          title: group.title,
+          intro: group.intro,
+          items: groupItems.slice(0, takeCount),
+        });
+        remaining -= takeCount;
+      });
+
+      return { mode: groups.length > 0 ? "grouped" : "empty", groups, items: [] };
+    }
+
+    return {
+      mode: galleryModel.mode,
+      groups: [],
+      items: asArray(galleryModel.items).slice(0, limit),
+    };
+  }
+
   function createGalleryGrid(items, projectTitle) {
     const grid = document.createElement("div");
     grid.className = "project-gallery-grid my-gallery";
@@ -672,14 +913,7 @@
     return grid;
   }
 
-  function renderGallery(root, projectTitle, galleryModel) {
-    if (!root) {
-      return;
-    }
-
-    root.innerHTML = "";
-    root.setAttribute("data-gallery-mode", galleryModel.mode);
-
+  function renderGalleryContents(root, projectTitle, galleryModel) {
     if (galleryModel.mode === "grouped") {
       galleryModel.groups.forEach((group) => {
         const article = document.createElement("article");
@@ -710,6 +944,72 @@
     if (galleryModel.mode === "flat") {
       root.appendChild(createGalleryGrid(galleryModel.items, projectTitle));
     }
+  }
+
+  function refreshGalleryPlugins() {
+    if (typeof global.initPhotoSwipeFromDOM === "function") {
+      global.initPhotoSwipeFromDOM(".my-gallery", { refreshOnly: true });
+    }
+
+    if (typeof ScrollTrigger !== "undefined" && typeof ScrollTrigger.refresh === "function") {
+      ScrollTrigger.refresh();
+    }
+  }
+
+  function renderGallery(root, projectTitle, galleryModel, previewSummary) {
+    if (!root) {
+      return;
+    }
+
+    const summary = previewSummary || {
+      isCurated: false,
+      totalCount: getProjectGalleryItemCount(galleryModel),
+      visibleCount: getProjectGalleryItemCount(galleryModel),
+      hiddenCount: 0,
+    };
+    const activeGalleryModel = summary.isCurated
+      ? getLimitedGalleryModel(galleryModel, summary.visibleCount)
+      : galleryModel;
+
+    root.innerHTML = "";
+    root.setAttribute("data-gallery-mode", galleryModel.mode);
+    root.setAttribute("data-gallery-curated", summary.isCurated ? "true" : "false");
+    root.setAttribute("data-gallery-overflow-count", String(summary.hiddenCount));
+    root.setAttribute("data-gallery-expanded", summary.isCurated ? "false" : "true");
+
+    renderGalleryContents(root, projectTitle, activeGalleryModel);
+
+    if (!summary.isCurated || summary.hiddenCount <= 0) {
+      return;
+    }
+
+    const revealWrap = document.createElement("div");
+    revealWrap.className = "project-gallery-reveal-wrap";
+
+    const revealButton = document.createElement("button");
+    revealButton.className = "project-gallery-reveal btn btn-default btn-hover btn-hover-accent";
+    revealButton.type = "button";
+    revealButton.innerHTML = '<span class="btn-caption">View full archive</span><i class="ph-bold ph-images-square"></i>';
+    revealButton.setAttribute(
+      "aria-label",
+      "View all " + summary.totalCount + " project archive images"
+    );
+
+    const revealNote = document.createElement("p");
+    revealNote.className = "project-gallery-reveal__note";
+    revealNote.textContent = summary.hiddenCount + " more visuals are kept collapsed so the case study stays readable.";
+
+    revealButton.addEventListener("click", () => {
+      root.innerHTML = "";
+      root.setAttribute("data-gallery-expanded", "true");
+      root.setAttribute("data-gallery-overflow-count", "0");
+      renderGalleryContents(root, projectTitle, galleryModel);
+      refreshGalleryPlugins();
+    });
+
+    revealWrap.appendChild(revealButton);
+    revealWrap.appendChild(revealNote);
+    root.appendChild(revealWrap);
   }
 
   (async function () {
@@ -748,8 +1048,11 @@
       const results = getRenderableTextList(project.results);
       const links = getRenderableLinks(project.links);
       const galleryModel = getProjectGalleryModel(project);
+      const galleryPreviewSummary = getProjectGalleryPreviewSummary(project);
       const heroImage = normalizeText(project.heroImage) || fallbackImage;
       const visibility = getProjectSectionVisibility(project);
+      const presentationMode = getProjectPresentationMode(project);
+      const accentTone = getProjectAccentTone(project);
 
       const titleText = (normalizeText(project.title) || "Untitled Project") + " | Tran Hoang Kiet Portfolio";
       const descriptionMeta = document.querySelector('meta[name="description"]');
@@ -780,7 +1083,9 @@
         urlMeta.setAttribute("content", new URL(projectUrl(project.slug), window.location.href).href);
       }
 
-      document.getElementById("project-back-link").setAttribute("href", "index.html#portfolio");
+      pageRoot.setAttribute("data-case-mode", presentationMode);
+      pageRoot.setAttribute("data-project-accent", accentTone);
+
       setTextContent("project-type", project.type, "Project");
       setTextContent("project-year", project.year, "Year");
       setTextContent("project-status", project.status, "Status");
@@ -792,6 +1097,11 @@
       setTextContent("project-team", project.teamSize, "TBD");
       setTextContent("project-tools", toolsSummary, "TBD");
       setTextContent("project-problem", visibility.overview ? project.problem : "", "");
+      setTextContent("project-mode-label", getProjectModeLabel(project), "Project brief");
+      renderProjectReviewerBrief(
+        document.getElementById("project-review-brief"),
+        getProjectReviewerBriefItems(project)
+      );
 
       setSectionVisibility("project-overview", visibility.overview);
       setSectionVisibility("project-video-wrap", visibility.video);
@@ -838,6 +1148,11 @@
           const article = document.createElement("article");
           article.className = "project-system-card";
 
+          const label = document.createElement("span");
+          label.className = "project-system-card__label";
+          label.textContent = "Design Decision";
+          article.appendChild(label);
+
           const title = document.createElement("h4");
           title.textContent = system.title;
           article.appendChild(title);
@@ -879,7 +1194,7 @@
         });
       }
 
-      renderGallery(document.getElementById("project-gallery-grid"), project.title, galleryModel);
+      renderGallery(document.getElementById("project-gallery-grid"), project.title, galleryModel, galleryPreviewSummary);
 
       if (typeof global.initPhotoSwipeFromDOM === "function") {
         global.initPhotoSwipeFromDOM(".my-gallery", { refreshOnly: true });
