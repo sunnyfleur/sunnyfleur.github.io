@@ -24,6 +24,24 @@
 - If a project has a matching folder under `img/ExampleImages/<ProjectName>/`, keep the detail `gallery` or grouped `galleryGroups[*].items` synced to the real folder contents instead of curating only one or two images.
 - Update `links` for playable builds, docs, CV downloads, or external videos.
 
+## Bilingual Writing Rules
+
+- Maintain both English and Vietnamese public copy when adding or rewriting visible content.
+- English should be short, active, and reviewer-facing: focus on feature ownership, specs, playtests, implementation coordination, and tuning evidence.
+- Vietnamese should sound like a person in the game industry wrote it, not a word-by-word translation.
+- Keep common industry terms when they are clearer than forced translation: Gameplay Designer, feature, prototype, playtest, KPI, core loop, combat feel.
+- Translate meaning, not syntax. For example, `own gameplay features` should become `phụ trách feature gameplay`, not `own gameplay feature`.
+- Keep KPI and data analysis as supporting evidence for tuning decisions, not the headline identity of the portfolio.
+
+## Public Copy Guardrails
+
+- Do not expose internal production or content states in public copy. Avoid labels such as `TBD`, `draft pending`, `archive refresh pending`, `being rebuilt`, or similar internal tracking language.
+- If a team size or production detail is not public, use `Not public` in English and `Không công khai` in Vietnamese where that field is shown.
+- If a case study is incomplete, write it as an evidence archive: describe what material is available and what the reviewer can evaluate now.
+- Do not describe public pages as filler, temporary copy, or a placeholder. If an image is only a fallback visual, name it as a fallback visual and explain the available evidence honestly.
+- Archive copy should state the available proof: screenshots, board captures, specs, spreadsheets, key art, flow notes, or public-safe role scope.
+- Do not invent metrics, shipped outcomes, team sizes, or confidential feature details when the source material does not support them.
+
 ## Homepage Explorer And Spotlight
 
 - Set `featured: true` only if you want to preserve featured metadata for future spotlight or curation needs.
@@ -68,7 +86,7 @@ If `video` is empty or unsupported, the homepage card will stay on its poster im
 - Use `img/og-image.png` only as a temporary fallback.
 - If a project has a dedicated image folder, keep `thumbnail` as a lightweight optimized asset under `img/ExampleImages/Thumbs/` and keep `heroImage` pointed at the fuller presentation image.
 - For screenshot-heavy project galleries, keep optimized gallery thumbnails in a local `Thumbs/` folder and keep `fullImage` pointed at the original screenshot.
-- If a project has no polished gallery yet, keep one placeholder image and write that status clearly in `description`.
+- If a project has no polished gallery yet, keep one temporary fallback visual and write the evidence status clearly in `description`.
 
 ## Legacy Pages
 

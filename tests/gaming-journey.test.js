@@ -490,7 +490,7 @@ test('gaming journey layout keeps review feedback on scale and image framing', (
   const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'gaming-journey.css'), 'utf8');
 
   assert.match(html, /class="back-to-home btn btn-default btn-hover btn-hover-outline"/);
-  assert.match(html, /<span class="btn-caption">Trang chủ<\/span>/);
+  assert.match(html, /<span class="btn-caption" data-i18n="journey\.backHome">Home<\/span>/);
 
   assert.match(css, /\.journey-hero\s*\{[^}]*grid-template-columns:\s*minmax\(280px,\s*0\.45fr\) minmax\(420px,\s*0\.55fr\)/s);
   assert.match(css, /\.journey-hero__strip\s*\{[^}]*height:\s*clamp\(360px,\s*48vh,\s*540px\)/s);

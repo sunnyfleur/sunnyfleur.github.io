@@ -1,0 +1,867 @@
+{
+  "chapters": {
+    "worlds": {
+      "title": "Những thế giới tôi vẫn nhớ",
+      "kicker": "Chương 01",
+      "description": "Các game định hình gu của tôi về atmosphere, exploration và cảm giác thật sự sống trong một nơi chốn.",
+      "stamps": [
+        "World texture",
+        "Exploration",
+        "Atmosphere"
+      ]
+    },
+    "stories": {
+      "title": "Những câu chuyện còn ở lại",
+      "kicker": "Chương 02",
+      "description": "Những game đặt nhân vật làm trung tâm và nâng tiêu chuẩn của tôi về tone, pacing và emotional payoff.",
+      "stamps": [
+        "Character arc",
+        "Routine",
+        "Emotional payoff"
+      ]
+    },
+    "loops": {
+      "title": "Những loop tôi quay lại nhiều lần",
+      "kicker": "Chương 03",
+      "description": "Các game khiến tôi chú ý đến core loop, reward cadence và cảm giác muốn chơi thêm một lượt nữa.",
+      "stamps": [
+        "Core loop",
+        "Replay",
+        "Reward cadence"
+      ]
+    },
+    "systems": {
+      "title": "Những system tôi học được",
+      "kicker": "Chương 04",
+      "description": "Các game cho tôi nhiều bài học về progression, economy, risk, tradeoff và cách player đọc system.",
+      "stamps": [
+        "Progression",
+        "Economy",
+        "Tradeoff"
+      ]
+    },
+    "nostalgia": {
+      "title": "Nostalgia và milestone",
+      "kicker": "Chương 05",
+      "description": "Những mốc chơi game định hình ký ức, thẩm mỹ và cách tôi nhận ra sức mạnh của player fantasy.",
+      "stamps": [
+        "Milestone",
+        "Fantasy",
+        "Memory"
+      ]
+    },
+    "friction": {
+      "title": "Bài học từ friction",
+      "kicker": "Chương 06",
+      "description": "Những trải nghiệm chưa hoàn hảo nhưng giúp tôi hiểu rõ hơn về feedback, fairness và player trust.",
+      "stamps": [
+        "Friction",
+        "Fairness",
+        "Trust"
+      ]
+    }
+  },
+  "games": {
+    "Red Dead Redemption 2": {
+      "reflection": "RDR2 dạy tôi rằng thế giới sống động không chỉ đến từ map lớn, mà từ nhịp di chuyển chậm, việc nhỏ trên đường và cảm giác nơi chốn có ký ức.",
+      "tags": [
+        "Worldbuilding",
+        "Pacing",
+        "Atmosphere"
+      ],
+      "imageAlt": "Red Dead Redemption 2 artwork"
+    },
+    "Elden Ring": {
+      "reflection": "Elden Ring cho tôi thấy mystery mạnh nhất khi game tin người chơi tự đọc địa hình, nguy hiểm và phần thưởng thay vì giải thích mọi đường đi.",
+      "tags": [
+        "Exploration",
+        "Mystery",
+        "World Structure"
+      ],
+      "imageAlt": "Elden Ring artwork"
+    },
+    "Witcher 3": {
+      "reflection": "Witcher 3 là bài học về side quest có trọng lượng: local stakes, nhân vật và ngữ cảnh thế giới khiến nhiệm vụ phụ vẫn đáng nhớ.",
+      "tags": [
+        "Quest Design",
+        "Worldbuilding",
+        "Narrative"
+      ],
+      "imageAlt": "Witcher 3 artwork"
+    },
+    "Persona 5 Royal": {
+      "reflection": "Persona 5 Royal đặt chuẩn rất cao cho việc dùng UI, routine, âm nhạc và character arc để cùng đẩy một fantasy nhất quán.",
+      "tags": [
+        "Style",
+        "Routine",
+        "Character"
+      ],
+      "imageAlt": "Persona 5 Royal artwork"
+    },
+    "Persona 3 Reload": {
+      "reflection": "Persona 3 Reload nhắc tôi rằng giới hạn thời gian và các quyết định lặp lại mỗi ngày có thể tạo sức nặng cảm xúc rất lớn.",
+      "tags": [
+        "Mood",
+        "Schedule",
+        "Emotional Pacing"
+      ],
+      "imageAlt": "Persona 3 Reload artwork"
+    },
+    "L.A. Noire": {
+      "reflection": "L.A. Noire đáng nhớ ở detective fantasy: facial performance, clue framing và khoảng lệch giữa drama được viết sẵn với cách người chơi diễn giải.",
+      "tags": [
+        "Performance",
+        "Investigation",
+        "Tone"
+      ],
+      "imageAlt": "L.A. Noire artwork"
+    },
+    "Plants vs. Zombies GOTY Edition": {
+      "reflection": "Plants vs. Zombies là ví dụ sạch về casual strategy: lane rõ, escalation dễ đọc và reward timing đủ đơn giản để ai cũng bắt đầu được.",
+      "tags": [
+        "Readable Goals",
+        "Escalation",
+        "Casual Strategy"
+      ],
+      "imageAlt": "Plants vs. Zombies GOTY Edition artwork"
+    },
+    "The Elder Scrolls V: Skyrim": {
+      "reflection": "Skyrim khiến việc đi lang thang trở thành mục tiêu hợp lệ, nhờ curiosity, landmark và phần thưởng nhỏ luôn kéo người chơi sang hướng khác.",
+      "tags": [
+        "Exploration",
+        "Modding",
+        "Milestone"
+      ],
+      "imageAlt": "The Elder Scrolls V: Skyrim artwork"
+    },
+    "Assassin's Creed Black Flag": {
+      "reflection": "Black Flag cho thấy secondary loop có thể trở thành ký ức chính của game khi travel fantasy và nhịp naval đủ mạnh.",
+      "tags": [
+        "Traversal",
+        "Naval Loop",
+        "Freedom"
+      ],
+      "imageAlt": "Assassin's Creed Black Flag artwork"
+    },
+    "Far Cry Primal": {
+      "reflection": "Far Cry Primal là case tốt về theme carrying systems: cùng cấu trúc quen thuộc nhưng survival dressing và readability môi trường tạo cảm giác khác.",
+      "tags": [
+        "Survival Texture",
+        "Theme",
+        "Readable World"
+      ],
+      "imageAlt": "Far Cry Primal artwork"
+    },
+    "Assassin's Creed Odyssey": {
+      "reflection": "Odyssey giúp tôi nhìn rõ mặt mạnh và rủi ro của open-world density: nhiều điểm đến tạo động lực, nhưng map pressure dễ làm loãng fantasy.",
+      "tags": [
+        "Scale",
+        "Historical Fantasy",
+        "Map Design"
+      ],
+      "imageAlt": "Assassin's Creed Odyssey artwork"
+    },
+    "Ori and the Blind Forest": {
+      "reflection": "Ori nhắc tôi rằng movement, màu sắc và âm nhạc có thể khiến một thế giới nhỏ vẫn có cảm xúc rất chính xác.",
+      "tags": [
+        "Mood",
+        "Traversal",
+        "World Feel"
+      ],
+      "imageAlt": "Ori and the Blind Forest artwork"
+    },
+    "Sleeping Dogs": {
+      "reflection": "Sleeping Dogs sống trong ký ức nhờ martial arts fantasy, texture đường phố và pacing open world gọn hơn nhiều game cùng loại.",
+      "tags": [
+        "City Texture",
+        "Combat Fantasy",
+        "Pacing"
+      ],
+      "imageAlt": "Sleeping Dogs artwork"
+    },
+    "God of War 4": {
+      "reflection": "God of War 4 là bài học về camera thân mật, combat có trọng lượng và character growth được giữ tiết chế.",
+      "tags": [
+        "Camera",
+        "Character",
+        "Combat Weight"
+      ],
+      "imageAlt": "God of War 4 artwork"
+    },
+    "Mafia II": {
+      "reflection": "Mafia II cho tôi thấy city atmosphere có thể phục vụ một câu chuyện tuyến tính mà không cần biến thành checklist open world.",
+      "tags": [
+        "Crime Drama",
+        "Pacing",
+        "Atmosphere"
+      ],
+      "imageAlt": "Mafia II artwork"
+    },
+    "Valiant Hearts": {
+      "reflection": "Valiant Hearts chứng minh illustration, puzzle pacing và tone lịch sử có thể tạo cảm xúc mạnh mà không cần mechanic phức tạp.",
+      "tags": [
+        "Tone",
+        "Puzzle Pacing",
+        "Emotion"
+      ],
+      "imageAlt": "Valiant Hearts artwork"
+    },
+    "Persona 4 Golden": {
+      "reflection": "Persona 4 Golden dùng calendar pressure và routine thị trấn nhỏ để biến social link thành cảm giác gắn bó thật.",
+      "tags": [
+        "Routine",
+        "Mystery",
+        "Social Links"
+      ],
+      "imageAlt": "Persona 4 Golden artwork"
+    },
+    "Yakuza: Like a Dragon": {
+      "reflection": "Yakuza: Like a Dragon giữ được sự chân thành dù rất absurd, nhờ party identity rõ và side story có chất người.",
+      "tags": [
+        "Tone Range",
+        "Party Identity",
+        "Side Stories"
+      ],
+      "imageAlt": "Yakuza: Like a Dragon artwork"
+    },
+    "Heavy Rain": {
+      "reflection": "Heavy Rain là case hữu ích về authored tension: khi input vụng về, nó vừa tăng drama vừa có thể làm lộ giới hạn của interaction.",
+      "tags": [
+        "Interactive Drama",
+        "Tension",
+        "Choice"
+      ],
+      "imageAlt": "Heavy Rain artwork"
+    },
+    "Assassin's Creed III": {
+      "reflection": "Assassin's Creed III giúp tôi học từ ambition lớn, historical framing mạnh và pacing không đều.",
+      "tags": [
+        "Historical Drama",
+        "Pacing",
+        "Ambition"
+      ],
+      "imageAlt": "Assassin's Creed III artwork"
+    },
+    "Batman: Arkham Knight": {
+      "reflection": "Arkham Knight là reference mạnh cho superhero embodiment, city mood và combat readability ngay cả khi spectacle rất dày.",
+      "tags": [
+        "Embodiment",
+        "Combat Flow",
+        "Spectacle"
+      ],
+      "imageAlt": "Batman: Arkham Knight artwork"
+    },
+    "Castlevania: Lords of Shadow": {
+      "reflection": "Castlevania: Lords of Shadow để lại bài học về gothic mood, scale và cách boss framing có thể gánh nhiều cảm xúc.",
+      "tags": [
+        "Gothic Mood",
+        "Boss Framing",
+        "Action"
+      ],
+      "imageAlt": "Castlevania: Lords of Shadow artwork"
+    },
+    "Naruto Shippuden: Ultimate Ninja Storm 4": {
+      "reflection": "Ultimate Ninja Storm 4 chuyển anime spectacle thành input khá dễ đọc, một ví dụ tốt về fan-service có nhịp combat rõ.",
+      "tags": [
+        "Adaptation",
+        "Spectacle",
+        "Combat Readability"
+      ],
+      "imageAlt": "Naruto Shippuden: Ultimate Ninja Storm 4 artwork"
+    },
+    "Dead Cells": {
+      "reflection": "Dead Cells làm rõ giá trị của restart nhanh, combat readable và progression giảm đau thất bại mà không xóa căng thẳng.",
+      "tags": [
+        "Roguelite Loop",
+        "Combat Feel",
+        "Restart Flow"
+      ],
+      "imageAlt": "Dead Cells artwork"
+    },
+    "Hades 2": {
+      "reflection": "Hades 2 cho thấy writing và mechanical repetition có thể hỗ trợ nhau, khiến mỗi run lặp lại vẫn có lý do để quay lại.",
+      "tags": [
+        "Run Structure",
+        "Dialogue",
+        "Meta Progression"
+      ],
+      "imageAlt": "Hades 2 artwork"
+    },
+    "Left 4 Dead 2": {
+      "reflection": "Left 4 Dead 2 là loop co-op rất sạch: pressure pacing, vai trò dễ đọc và biến cố phát sinh trong bộ rule đơn giản.",
+      "tags": [
+        "Co-op Loop",
+        "Pacing",
+        "Readable Roles"
+      ],
+      "imageAlt": "Left 4 Dead 2 artwork"
+    },
+    "One Piece: Pirate Warriors 4": {
+      "reflection": "Pirate Warriors 4 là comfort loop nơi spectacle, input đơn giản và việc mở khóa nhân vật tạo nhịp chơi ổn định.",
+      "tags": [
+        "Power Fantasy",
+        "Session Loop",
+        "Adaptation"
+      ],
+      "imageAlt": "One Piece: Pirate Warriors 4 artwork"
+    },
+    "Dead Island": {
+      "reflection": "Dead Island lộn xộn nhưng đáng nhớ vì loot, co-op friction và survival mood vô tình tạo nhiều câu chuyện riêng.",
+      "tags": [
+        "Co-op",
+        "Loot Loop",
+        "Survival"
+      ],
+      "imageAlt": "Dead Island artwork"
+    },
+    "Civilization VI": {
+      "reflection": "Civilization VI là bài học rõ về decision compounding, tradeoff dễ đọc và sức hút nguy hiểm của one-more-turn.",
+      "tags": [
+        "Strategy",
+        "Tradeoffs",
+        "Progression"
+      ],
+      "imageAlt": "Civilization VI artwork"
+    },
+    "Total War: Three Kingdoms": {
+      "reflection": "Three Kingdoms kết hợp campaign relationship, battlefield spectacle và căng thẳng giữa loyalty với ambition rất đáng học.",
+      "tags": [
+        "Strategy",
+        "Relationships",
+        "Spectacle"
+      ],
+      "imageAlt": "Total War: Three Kingdoms artwork"
+    },
+    "Total War: Warhammer": {
+      "reflection": "Total War: Warhammer cho thấy asymmetric faction mạnh nhất khi rule không chỉ cân bằng, mà còn thể hiện fantasy identity.",
+      "tags": [
+        "Faction Design",
+        "Strategy",
+        "Asymmetry"
+      ],
+      "imageAlt": "Total War: Warhammer artwork"
+    },
+    "Kingdom Come: Deliverance": {
+      "reflection": "Kingdom Come dạy tôi rằng friction có thể là identity, miễn là progression khiến người chơi chấp nhận cảm giác yếu ban đầu.",
+      "tags": [
+        "Simulation",
+        "Role-play",
+        "Progression"
+      ],
+      "imageAlt": "Kingdom Come: Deliverance artwork"
+    },
+    "Assassin's Creed Unity": {
+      "reflection": "Unity là case về ambition kỹ thuật: crowd density và parkour hấp dẫn, nhưng feedback không ổn sẽ bào mòn player trust.",
+      "tags": [
+        "Crowds",
+        "Traversal",
+        "Technical Risk"
+      ],
+      "imageAlt": "Assassin's Creed Unity artwork"
+    },
+    "Pokemon Emerald": {
+      "reflection": "Pokemon Emerald là ký ức đầu về collection, party identity và cảm giác ownership đến từ những lựa chọn nhỏ.",
+      "tags": [
+        "Collection",
+        "Party Identity",
+        "Milestone"
+      ],
+      "imageAlt": "Pokemon Emerald artwork"
+    },
+    "Pokemon Black and White": {
+      "reflection": "Black and White giữ sức hút nhờ creature design, journey structure rõ và comfort của progression dễ hiểu.",
+      "tags": [
+        "Creature Design",
+        "Progression",
+        "Memory"
+      ],
+      "imageAlt": "Pokemon Black and White artwork"
+    },
+    "Dynasty Warriors 8": {
+      "reflection": "Dynasty Warriors 8 cho tôi thấy repetition vẫn hấp dẫn khi power fantasy, roster breadth và spectacle đúng kỳ vọng.",
+      "tags": [
+        "Power Fantasy",
+        "Roster",
+        "Comfort Loop"
+      ],
+      "imageAlt": "Dynasty Warriors 8 artwork"
+    },
+    "Dynasty Warriors 7": {
+      "reflection": "Dynasty Warriors 7 là comfort play rõ rệt: historical melodrama, spectacle đơn giản và nhịp chơi dễ quay lại.",
+      "tags": [
+        "Spectacle",
+        "Comfort",
+        "Milestone"
+      ],
+      "imageAlt": "Dynasty Warriors 7 artwork"
+    },
+    "Far Cry 3": {
+      "reflection": "Far Cry 3 là milestone về outpost loop, villain presence và chaos phát sinh từ các system chồng lên nhau.",
+      "tags": [
+        "Outposts",
+        "Chaos",
+        "Milestone"
+      ],
+      "imageAlt": "Far Cry 3 artwork"
+    },
+    "Assassin's Creed II": {
+      "reflection": "Assassin's Creed II dạy tôi sức mạnh của movement fantasy, không gian lịch sử và protagonist đủ rõ để kéo cả hành trình dài.",
+      "tags": [
+        "Traversal",
+        "Historical Fantasy",
+        "Character"
+      ],
+      "imageAlt": "Assassin's Creed II artwork"
+    },
+    "League of Legends": {
+      "reflection": "League of Legends là bài học dài hạn về mastery pressure, team dynamics và cách live game trở thành thói quen xã hội.",
+      "tags": [
+        "Live Game",
+        "Mastery",
+        "Team Dynamics"
+      ],
+      "imageAlt": "League of Legends artwork"
+    },
+    "Dynasty Warriors 9": {
+      "reflection": "Dynasty Warriors 9 là case friction khi đổi công thức quá rộng mà chưa bảo vệ đủ thứ người chơi cũ thật sự trân trọng.",
+      "tags": [
+        "Formula Shift",
+        "Scope",
+        "Player Trust"
+      ],
+      "imageAlt": "Dynasty Warriors 9 artwork"
+    },
+    "Watch Dogs": {
+      "reflection": "Watch Dogs nhắc tôi rằng fantasy và marketing promise phải khớp với mật độ interaction, nếu không kỳ vọng sẽ phản tác dụng.",
+      "tags": [
+        "Expectation",
+        "System Promise",
+        "Open World"
+      ],
+      "imageAlt": "Watch Dogs artwork"
+    },
+    "Grand Theft Auto: The Trilogy DE": {
+      "reflection": "GTA Trilogy DE là bài học về remaster: nâng cấp hình ảnh không đủ nếu làm mất visual identity và cảm giác gốc.",
+      "tags": [
+        "Remaster",
+        "Preservation",
+        "Expectation"
+      ],
+      "imageAlt": "Grand Theft Auto: The Trilogy DE artwork"
+    },
+    "Cyberpunk 2077 (PS4/XOne)": {
+      "reflection": "Cyberpunk 2077 bản PS4/XOne cho thấy launch context có thể định hình ký ức mạnh ngang ambition của chính game.",
+      "tags": [
+        "Expectation",
+        "Immersion",
+        "Launch Risk"
+      ],
+      "imageAlt": "Cyberpunk 2077 (PS4/XOne) artwork"
+    },
+    "Ni no Kuni II: Revenant Kingdom": {
+      "reflection": "Ni no Kuni II là reference sáng về fairy-tale tone, stakes mềm và progression ở quy mô vương quốc.",
+      "tags": [
+        "World Tone",
+        "Kingdom Building",
+        "Whimsy"
+      ],
+      "imageAlt": "Ni no Kuni II: Revenant Kingdom artwork"
+    },
+    "Marvel's Spider-Man 2": {
+      "reflection": "Spider-Man 2 nhắc tôi rằng traversal có thể tự gánh fantasy, trước cả combat hay mission structure.",
+      "tags": [
+        "Traversal",
+        "City Feel",
+        "Power Fantasy"
+      ],
+      "imageAlt": "Marvel's Spider-Man 2 artwork"
+    },
+    "Prototype": {
+      "reflection": "Prototype đáng nhớ vì readable chaos và mobility mạnh, cho người chơi cảm giác nguy hiểm gần như ngay lập tức.",
+      "tags": [
+        "Mobility",
+        "Power Curve",
+        "Chaos"
+      ],
+      "imageAlt": "Prototype artwork"
+    },
+    "Dave the Diver": {
+      "reflection": "Dave the Diver xây place identity bằng routine, bất ngờ nhỏ và escalation nhẹ, rất đáng học cho pacing casual.",
+      "tags": [
+        "Place Identity",
+        "Routine",
+        "Escalation"
+      ],
+      "imageAlt": "Dave the Diver artwork"
+    },
+    "Uncharted: Legacy of Thieves Collection": {
+      "reflection": "Uncharted nhắc tôi rằng spectacle thuyết phục nhất khi geography, performance và pacing cùng khớp.",
+      "tags": [
+        "Set Piece",
+        "Pacing",
+        "Adventure"
+      ],
+      "imageAlt": "Uncharted: Legacy of Thieves Collection artwork"
+    },
+    "God of War Ragnarok": {
+      "reflection": "Ragnarok là reference mạnh cho emotional escalation, companion dialogue và cách mythic closure cần nhịp nghỉ.",
+      "tags": [
+        "Character Arc",
+        "Companion Design",
+        "Payoff"
+      ],
+      "imageAlt": "God of War Ragnarok artwork"
+    },
+    "The Last of Us Part I": {
+      "reflection": "The Last of Us Part I đặt chuẩn về restraint, environmental storytelling và niềm tin mong manh giữa nhân vật.",
+      "tags": [
+        "Restraint",
+        "Environmental Story",
+        "Trust"
+      ],
+      "imageAlt": "The Last of Us Part I artwork"
+    },
+    "Dispatch": {
+      "reflection": "Dispatch cho thấy workplace rhythm và choice pressure có thể tạo character drama mà không cần scope quá lớn.",
+      "tags": [
+        "Choice Pressure",
+        "Workplace Drama",
+        "Tone"
+      ],
+      "imageAlt": "Dispatch artwork"
+    },
+    "The Wolf Among Us": {
+      "reflection": "The Wolf Among Us là bài học về noir mood, dialogue tension và mystery như lực kéo chính của progression.",
+      "tags": [
+        "Noir",
+        "Dialogue",
+        "Mystery"
+      ],
+      "imageAlt": "The Wolf Among Us artwork"
+    },
+    "To the Moon": {
+      "reflection": "To the Moon chứng minh mechanic ít vẫn có thể tạo emotional arc mạnh nếu premise và payoff đủ rõ.",
+      "tags": [
+        "Emotional Arc",
+        "Minimalism",
+        "Premise"
+      ],
+      "imageAlt": "To the Moon artwork"
+    },
+    "Sherlock Holmes: The Devil's Daughter": {
+      "reflection": "The Devil's Daughter hữu ích để nhìn investigation flow, clue framing và những điểm deduction fantasy bị gãy.",
+      "tags": [
+        "Investigation",
+        "Deduction",
+        "Case Flow"
+      ],
+      "imageAlt": "Sherlock Holmes: The Devil's Daughter artwork"
+    },
+    "Sherlock Holmes: Crimes & Punishments": {
+      "reflection": "Crimes & Punishments rõ hơn ở branching conclusion, cho người chơi cảm giác diễn giải cũng là gameplay.",
+      "tags": [
+        "Branching",
+        "Deduction",
+        "Consequences"
+      ],
+      "imageAlt": "Sherlock Holmes: Crimes & Punishments artwork"
+    },
+    "NieR:Automata": {
+      "reflection": "NieR:Automata dạy tôi cách repetition, đổi perspective và system có thể làm ý nghĩa câu chuyện sâu hơn.",
+      "tags": [
+        "Perspective",
+        "Repetition",
+        "Theme"
+      ],
+      "imageAlt": "NieR:Automata artwork"
+    },
+    "Plants vs. Zombies 2": {
+      "reflection": "Plants vs. Zombies 2 mở rộng content nhưng vẫn giữ variation dễ đọc, một bài học tốt cho casual live structure.",
+      "tags": [
+        "Casual Strategy",
+        "Readable Variation",
+        "Return Loop"
+      ],
+      "imageAlt": "Plants vs. Zombies 2 artwork"
+    },
+    "It Takes Two": {
+      "reflection": "It Takes Two làm tốt co-op pacing bằng cách refresh interaction liên tục trước khi loop kịp cũ.",
+      "tags": [
+        "Co-op",
+        "Variety",
+        "Pacing"
+      ],
+      "imageAlt": "It Takes Two artwork"
+    },
+    "Split Fiction": {
+      "reflection": "Split Fiction nhấn mạnh mechanical remixing như spectacle chính, nơi điều mới tiếp theo là phần thưởng.",
+      "tags": [
+        "Co-op",
+        "Remix",
+        "Spectacle"
+      ],
+      "imageAlt": "Split Fiction artwork"
+    },
+    "Stick War: Legacy": {
+      "reflection": "Stick War: Legacy là strategy nhỏ gọn với unit identity rõ, pressure đơn giản và readability rất nhanh.",
+      "tags": [
+        "Mobile Strategy",
+        "Unit Identity",
+        "Readability"
+      ],
+      "imageAlt": "Stick War: Legacy artwork"
+    },
+    "Goods Sort Puzzle": {
+      "reflection": "Goods Sort Puzzle hữu ích cho tactile sorting, session ngắn và cảm giác dọn sạch visual ngay lập tức.",
+      "tags": [
+        "Sorting",
+        "Casual Puzzle",
+        "Short Session"
+      ],
+      "imageAlt": "Goods Sort Puzzle artwork"
+    },
+    "Screw Jam": {
+      "reflection": "Screw Jam xoay quanh constraint clarity, thao tác vật thể và restart nhanh để giữ puzzle energy gọn.",
+      "tags": [
+        "Constraint",
+        "Tactile Puzzle",
+        "Restart"
+      ],
+      "imageAlt": "Screw Jam artwork"
+    },
+    "Where's My Water?": {
+      "reflection": "Where's My Water? cho mục tiêu rõ trước cả khi chạm màn hình, một chuẩn tốt cho physics puzzle casual.",
+      "tags": [
+        "Physics Puzzle",
+        "Clarity",
+        "Touch Design"
+      ],
+      "imageAlt": "Where's My Water? artwork"
+    },
+    "Temple Run": {
+      "reflection": "Temple Run là landmark endless runner: input rõ, fail feedback tức thì và nhịp one-more-run rất mạnh.",
+      "tags": [
+        "Endless Runner",
+        "Input Feel",
+        "Retry"
+      ],
+      "imageAlt": "Temple Run artwork"
+    },
+    "Pokemon Unite": {
+      "reflection": "Pokemon Unite nén áp lực MOBA vào match length dễ tiếp cận, nhờ objective loop rõ và vai trò dễ hiểu.",
+      "tags": [
+        "Team Objective",
+        "Match Length",
+        "Accessible MOBA"
+      ],
+      "imageAlt": "Pokemon Unite artwork"
+    },
+    "Stardew Valley": {
+      "reflection": "Stardew Valley bền vì daily choice, comfort và long-term goal luôn đỡ nhau thay vì cạnh tranh.",
+      "tags": [
+        "Routine",
+        "Comfort",
+        "Long Tail"
+      ],
+      "imageAlt": "Stardew Valley artwork"
+    },
+    "Have a Nice Death": {
+      "reflection": "Have a Nice Death đáng học ở combat snappy, office-themed identity và texture đủ khác cho repeat run.",
+      "tags": [
+        "Roguelite",
+        "Combat Feel",
+        "Theme"
+      ],
+      "imageAlt": "Have a Nice Death artwork"
+    },
+    "Dead by Daylight": {
+      "reflection": "Dead by Daylight cho thấy asymmetric loop mạnh khi role fantasy, tension và player-made drama xuất hiện cùng lúc.",
+      "tags": [
+        "Asymmetry",
+        "Tension",
+        "Role Fantasy"
+      ],
+      "imageAlt": "Dead by Daylight artwork"
+    },
+    "Don't Starve": {
+      "reflection": "Don't Starve khiến routine sinh tồn mong manh nhờ scarcity, discovery và hậu quả rõ ràng.",
+      "tags": [
+        "Survival",
+        "Scarcity",
+        "Discovery"
+      ],
+      "imageAlt": "Don't Starve artwork"
+    },
+    "Ninja Gaiden 4": {
+      "reflection": "Ninja Gaiden 4 là reference action tốc độ cao về precision, punishment và đọc nguy hiểm dưới áp lực.",
+      "tags": [
+        "Precision",
+        "Action Combat",
+        "Pressure"
+      ],
+      "imageAlt": "Ninja Gaiden 4 artwork"
+    },
+    "DNF Duel": {
+      "reflection": "DNF Duel làm matchup identity rất dễ đọc nhờ kit được phóng đại và visual language mạnh.",
+      "tags": [
+        "Fighting Game",
+        "Matchup",
+        "Character Kit"
+      ],
+      "imageAlt": "DNF Duel artwork"
+    },
+    "The First Berserker: Khazan": {
+      "reflection": "Khazan đáng học ở combat weight, timing window và cách giữ aggression trong ruleset khắc nghiệt.",
+      "tags": [
+        "Combat Timing",
+        "Weight",
+        "Aggression"
+      ],
+      "imageAlt": "The First Berserker: Khazan artwork"
+    },
+    "Divinity: Original Sin 2": {
+      "reflection": "Divinity: Original Sin 2 mở encounter bằng elemental surface, party creativity và permissive problem solving.",
+      "tags": [
+        "CRPG",
+        "Elemental Systems",
+        "Player Creativity"
+      ],
+      "imageAlt": "Divinity: Original Sin 2 artwork"
+    },
+    "Baldur's Gate 3": {
+      "reflection": "Baldur's Gate 3 là benchmark cho choice density, systemic reactivity và role-play kéo cách giải quyết vấn đề.",
+      "tags": [
+        "Choice Density",
+        "Reactivity",
+        "Role-play"
+      ],
+      "imageAlt": "Baldur's Gate 3 artwork"
+    },
+    "Clair Obscur: Expedition 33": {
+      "reflection": "Clair Obscur dùng timing, style và presentation để làm turn-based input quen thuộc thấy sắc hơn.",
+      "tags": [
+        "Turn-based",
+        "Timing",
+        "Presentation"
+      ],
+      "imageAlt": "Clair Obscur: Expedition 33 artwork"
+    },
+    "Nine Sols": {
+      "reflection": "Nine Sols là bài học về parry rhythm, map pressure và escalation chính xác trong combat structure.",
+      "tags": [
+        "Parry",
+        "Metroidvania",
+        "Escalation"
+      ],
+      "imageAlt": "Nine Sols artwork"
+    },
+    "No Rest for the Wicked": {
+      "reflection": "No Rest for the Wicked cho tôi nhìn rõ action-RPG weight, resource pressure và quyết định build dưới friction.",
+      "tags": [
+        "Action RPG",
+        "Resource Pressure",
+        "Buildcraft"
+      ],
+      "imageAlt": "No Rest for the Wicked artwork"
+    },
+    "The Incredible Adventures of Van Helsing": {
+      "reflection": "Van Helsing hữu ích ở class fantasy, companion texture và progression hook gọn trong loot-action.",
+      "tags": [
+        "Loot",
+        "Class Fantasy",
+        "Companion"
+      ],
+      "imageAlt": "The Incredible Adventures of Van Helsing artwork"
+    },
+    "Teamfight Tactics": {
+      "reflection": "Teamfight Tactics là live-system reference về economy tension, draft adaptation và strategic pivot dễ đọc.",
+      "tags": [
+        "Auto Battler",
+        "Economy",
+        "Adaptation"
+      ],
+      "imageAlt": "Teamfight Tactics artwork"
+    },
+    "Wo Long: Fallen Dynasty": {
+      "reflection": "Wo Long đặt deflection làm trung tâm, nơi morale, timing và aggression cùng định hình encounter flow.",
+      "tags": [
+        "Deflection",
+        "Morale",
+        "Encounter Flow"
+      ],
+      "imageAlt": "Wo Long: Fallen Dynasty artwork"
+    },
+    "Stellar Blade": {
+      "reflection": "Stellar Blade đáng học ở animation clarity, enemy tell và spectacle vẫn phải phản hồi nhanh.",
+      "tags": [
+        "Action Combat",
+        "Animation",
+        "Spectacle"
+      ],
+      "imageAlt": "Stellar Blade artwork"
+    },
+    "Pokemon Scarlet and Violet": {
+      "reflection": "Scarlet/Violet là milestone về Pokemon open-ended, collection flow và ambition không đồng đều.",
+      "tags": [
+        "Collection",
+        "Open Structure",
+        "Milestone"
+      ],
+      "imageAlt": "Pokemon Scarlet and Violet artwork"
+    },
+    "Pokemon Omega Ruby": {
+      "reflection": "Omega Ruby gắn với comfort của remake: region identity quen, team building rõ và nhịp hành trình dễ trở lại.",
+      "tags": [
+        "Remake",
+        "Collection",
+        "Comfort"
+      ],
+      "imageAlt": "Pokemon Omega Ruby artwork"
+    },
+    "Dynasty Warriors 7: Xtreme Legends": {
+      "reflection": "Dynasty Warriors 7: Xtreme Legends là expansion ký ức về spectacle density, roster attachment và power fantasy đơn giản.",
+      "tags": [
+        "Musou",
+        "Roster",
+        "Power Fantasy"
+      ],
+      "imageAlt": "Dynasty Warriors 7: Xtreme Legends artwork"
+    },
+    "Dynasty Warriors: Origins": {
+      "reflection": "Dynasty Warriors: Origins giúp tôi so sánh scale và feel của một comfort series qua nhiều thời kỳ.",
+      "tags": [
+        "Series Evolution",
+        "Musou",
+        "Scale"
+      ],
+      "imageAlt": "Dynasty Warriors: Origins artwork"
+    },
+    "Naruto Mobile": {
+      "reflection": "Naruto Mobile cho thấy familiarity, collection và combat burst ngắn có thể đỡ retention trên mobile.",
+      "tags": [
+        "Mobile Action",
+        "Collection",
+        "Anime"
+      ],
+      "imageAlt": "Naruto Mobile artwork"
+    },
+    "Jump Force": {
+      "reflection": "Jump Force đáng nhớ vì dream roster energy, đồng thời nhắc rằng roster fantasy không thay thế được structure tốt.",
+      "tags": [
+        "Crossover",
+        "Roster Fantasy",
+        "Spectacle"
+      ],
+      "imageAlt": "Jump Force artwork"
+    },
+    "Naruto: Ultimate Ninja Storm Series": {
+      "reflection": "Ultimate Ninja Storm Series là memory cấp franchise về anime combat cinematic, timing spectacle và fan-service pacing.",
+      "tags": [
+        "Anime Combat",
+        "Franchise",
+        "Spectacle"
+      ],
+      "imageAlt": "Naruto: Ultimate Ninja Storm Series artwork"
+    }
+  }
+}

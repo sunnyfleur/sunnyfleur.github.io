@@ -194,6 +194,7 @@
   const filtersRoot = document.getElementById('portfolio-filters');
   const spotlightRoot = document.getElementById('portfolio-spotlight');
   const cardGridRoot = document.getElementById('portfolio-card-grid');
+  const i18n = global.PortfolioI18n;
   const resolveMediaSource = global.PortfolioMediaSource && global.PortfolioMediaSource.resolveMediaSource;
   const getResolvedMedia = getResolvedMediaFactory(resolveMediaSource);
   const hasExplorer = Boolean(explorerRoot && filtersRoot && spotlightRoot && cardGridRoot);
@@ -212,6 +213,36 @@
         event.currentTarget.src = fallbackImage;
       }, { once: true });
     });
+  }
+
+  function translate(key, fallback, params) {
+    return i18n && typeof i18n.t === 'function'
+      ? i18n.t(key, fallback, params)
+      : fallback;
+  }
+
+  function localizeInternalUrl(url) {
+    return i18n && typeof i18n.localizeUrl === 'function'
+      ? i18n.localizeUrl(url, i18n.getLanguage && i18n.getLanguage())
+      : url;
+  }
+
+  function localizedProjectUrl(slug) {
+    return localizeInternalUrl(projectUrl(slug));
+  }
+
+  function localizedFilterLabel(filterOption) {
+    const keyByValue = {
+      all: 'portfolio.allProjects',
+      featured: 'portfolio.featured',
+      archive: 'portfolio.archive',
+      mobile: 'portfolio.mobile',
+      prototype: 'portfolio.prototype',
+      unannounced: 'portfolio.unannounced',
+      'case-study': 'portfolio.caseStudy',
+    };
+
+    return translate(keyByValue[filterOption.value], filterOption.label);
   }
 
   function buildSpotlightMediaTemplate(project, isPlaying) {
@@ -233,7 +264,7 @@
             allowfullscreen
             loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"></iframe>
-          <button class="portfolio-feature-card__stop" type="button" data-stop-preview="${escapeHtml(slug)}" aria-label="Stop preview for ${escapeHtml(title)}">
+          <button class="portfolio-feature-card__stop" type="button" data-stop-preview="${escapeHtml(slug)}" aria-label="${escapeHtml(translate('portfolio.stopPreview', 'Stop preview for {title}', { title }))}">
             <i class="ph-bold ph-x"></i>
           </button>
         </div>
@@ -251,7 +282,7 @@
             allowfullscreen
             loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"></iframe>
-          <button class="portfolio-feature-card__stop" type="button" data-stop-preview="${escapeHtml(slug)}" aria-label="Stop preview for ${escapeHtml(title)}">
+          <button class="portfolio-feature-card__stop" type="button" data-stop-preview="${escapeHtml(slug)}" aria-label="${escapeHtml(translate('portfolio.stopPreview', 'Stop preview for {title}', { title }))}">
             <i class="ph-bold ph-x"></i>
           </button>
         </div>
@@ -270,7 +301,7 @@
             loop
             playsinline
             preload="metadata"></video>
-          <button class="portfolio-feature-card__stop" type="button" data-stop-preview="${escapeHtml(slug)}" aria-label="Stop preview for ${escapeHtml(title)}">
+          <button class="portfolio-feature-card__stop" type="button" data-stop-preview="${escapeHtml(slug)}" aria-label="${escapeHtml(translate('portfolio.stopPreview', 'Stop preview for {title}', { title }))}">
             <i class="ph-bold ph-x"></i>
           </button>
         </div>
@@ -281,7 +312,7 @@
       <div class="portfolio-spotlight__poster-wrap">
         <img class="portfolio-spotlight__image" src="${escapeHtml(poster)}" alt="${escapeHtml(title)} spotlight" loading="eager" decoding="async" fetchpriority="high">
         ${isPlayableMedia(resolvedMedia) ? `
-          <button class="portfolio-feature-card__play-button" type="button" data-play-preview="${escapeHtml(slug)}" aria-label="Play preview for ${escapeHtml(title)}">
+          <button class="portfolio-feature-card__play-button" type="button" data-play-preview="${escapeHtml(slug)}" aria-label="${escapeHtml(translate('portfolio.playPreview', 'Play preview for {title}', { title }))}">
             <span class="portfolio-feature-card__play-icon"><i class="ph-fill ph-play"></i></span>
           </button>
         ` : ''}
@@ -316,21 +347,21 @@
         <p class="portfolio-spotlight__summary">${escapeHtml(summary)}</p>
         <dl class="portfolio-facts">
           <div class="portfolio-fact">
-            <dt class="portfolio-fact__label">Platform</dt>
+            <dt class="portfolio-fact__label">${escapeHtml(translate('portfolio.platform', 'Platform'))}</dt>
             <dd class="portfolio-fact__value">${escapeHtml(platform)}</dd>
           </div>
           <div class="portfolio-fact">
-            <dt class="portfolio-fact__label">Role</dt>
+            <dt class="portfolio-fact__label">${escapeHtml(translate('portfolio.role', 'Role'))}</dt>
             <dd class="portfolio-fact__value">${escapeHtml(role)}</dd>
           </div>
           <div class="portfolio-fact">
-            <dt class="portfolio-fact__label">Status</dt>
+            <dt class="portfolio-fact__label">${escapeHtml(translate('portfolio.status', 'Status'))}</dt>
             <dd class="portfolio-fact__value">${escapeHtml(status)}</dd>
           </div>
         </dl>
         <div class="portfolio-spotlight__actions">
-          <a class="btn btn-default btn-hover btn-hover-accent" href="${escapeHtml(projectUrl(slug))}" aria-label="Open case study for ${escapeHtml(title)}">
-            <span class="btn-caption">Open Case Study</span>
+          <a class="btn btn-default btn-hover btn-hover-accent" href="${escapeHtml(localizedProjectUrl(slug))}" aria-label="${escapeHtml(translate('portfolio.openCaseFor', 'Open case study for {title}', { title }))}">
+            <span class="btn-caption">${escapeHtml(translate('portfolio.openCaseStudy', 'Open Case Study'))}</span>
             <i class="ph-bold ph-arrow-up-right"></i>
           </a>
         </div>
@@ -350,7 +381,7 @@
 
     return `
       <article class="portfolio-card${isActive ? ' is-active' : ''}" data-portfolio-project="${escapeHtml(slug)}">
-        <a class="portfolio-card__link" href="${escapeHtml(projectUrl(slug))}" aria-label="Open case study for ${escapeHtml(title)}">
+        <a class="portfolio-card__link" href="${escapeHtml(localizedProjectUrl(slug))}" aria-label="${escapeHtml(translate('portfolio.openCaseFor', 'Open case study for {title}', { title }))}">
           <div class="portfolio-card__media">
             <img class="portfolio-card__image" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(title)} thumbnail" loading="lazy" decoding="async" fetchpriority="low">
           </div>
@@ -365,7 +396,7 @@
             </div>
             <p class="portfolio-card__description">${escapeHtml(summary)}</p>
             <span class="portfolio-card__cta">
-              <span>Open project</span>
+              <span>${escapeHtml(translate('portfolio.openProject', 'Open project'))}</span>
               <i class="ph-bold ph-arrow-right"></i>
             </span>
           </div>
@@ -533,13 +564,20 @@
   }
 
   try {
-    fetch('projects.json')
+    const ready = i18n && typeof i18n.whenReady === 'function' ? i18n.whenReady() : Promise.resolve();
+
+    ready.then(() => fetch('projects.json'))
       .then((response) => {
         if (!response.ok) {
           throw new Error('Unable to fetch project data: ' + response.status);
         }
 
         return response.json();
+      })
+      .then((payload) => {
+        return i18n && typeof i18n.getLocalizedProjectPayload === 'function'
+          ? i18n.getLocalizedProjectPayload(payload)
+          : payload;
       })
       .then((payload) => {
         const allProjects = getPortfolioProjects(payload && payload.projects);
@@ -567,7 +605,7 @@
           if (!projects.length || !spotlightProject) {
             spotlightSlug = '';
             playingSlug = '';
-            spotlightRoot.innerHTML = '<div class="portfolio-empty">No projects match this filter yet.</div>';
+            spotlightRoot.innerHTML = '<div class="portfolio-empty">' + escapeHtml(translate('portfolio.noProjects', 'No projects match this filter yet.')) + '</div>';
             return;
           }
 
@@ -583,7 +621,7 @@
 
         function renderCards(projects) {
           if (!projects.length) {
-            cardGridRoot.innerHTML = '<div class="portfolio-empty">No projects match this filter yet.</div>';
+            cardGridRoot.innerHTML = '<div class="portfolio-empty">' + escapeHtml(translate('portfolio.noProjects', 'No projects match this filter yet.')) + '</div>';
             return;
           }
 
@@ -602,7 +640,7 @@
                   type="button"
                   data-portfolio-filter="${escapeHtml(filterOption.value)}"
                   aria-pressed="${isActive ? 'true' : 'false'}">
-                  ${escapeHtml(filterOption.label)}
+                  ${escapeHtml(localizedFilterLabel(filterOption))}
                 </button>
               `;
             })
@@ -747,7 +785,7 @@
       .catch((error) => {
         console.error('Unable to load homepage portfolio data.', error);
         filtersRoot.innerHTML = '';
-        spotlightRoot.innerHTML = '<div class="portfolio-empty">The project explorer could not be loaded right now.</div>';
+        spotlightRoot.innerHTML = '<div class="portfolio-empty">' + escapeHtml(translate('portfolio.loadError', 'The project explorer could not be loaded right now.')) + '</div>';
         cardGridRoot.innerHTML = '';
       });
   } catch (error) {

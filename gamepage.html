@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games That Shaped My Taste - SunnyFleur</title>
-    <meta name="description" content="A personal game journey and inspiration map from SunnyFleur, organized by memory, design lessons, and player experience.">
+    <title data-i18n="meta.journey.title">Games That Shaped My Taste - SunnyFleur</title>
+    <meta name="description" content="A personal game journey and inspiration map from SunnyFleur, organized by memory, design lessons, and player experience." data-i18n-attr="content:meta.journey.description">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efff">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#10111c">
     <script>
@@ -17,7 +17,7 @@
         })();
     </script>
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=20260615-i18n">
     <link rel="stylesheet" type="text/css" href="css/gaming-journey.css">
 </head>
 <body>
@@ -27,22 +27,26 @@
         <div class="blur"></div>
     </div>
 
-    <aside class="journey-index" data-gaming-journey-index aria-label="Game journey chapters"></aside>
+    <aside class="journey-index" data-gaming-journey-index aria-label="Game journey chapters" data-i18n-attr="aria-label:journey.journeyMap"></aside>
 
     <main class="game-container">
         <nav class="journey-nav" aria-label="Game journey navigation">
             <a href="index.html" class="back-to-home btn btn-default btn-hover btn-hover-outline">
                 <i class="ph-bold ph-house-simple" aria-hidden="true"></i>
-                <span class="btn-caption">Trang chủ</span>
+                <span class="btn-caption" data-i18n="journey.backHome">Home</span>
             </a>
-            <p class="journey-nav__note">A personal inspiration map, not a ranking board.</p>
+            <div class="language-toggle journey-language" data-language-toggle aria-label="Language">
+                <button type="button" data-language-option="en" aria-pressed="true">EN</button>
+                <button type="button" data-language-option="vi" aria-pressed="false">VI</button>
+            </div>
+            <p class="journey-nav__note" data-i18n="journey.navNote">A personal inspiration map, not a ranking board.</p>
         </nav>
 
         <header class="journey-hero">
             <div class="journey-hero__copy">
-                <p class="journey-eyebrow">Gaming journey</p>
-                <h1>Games That Shaped My Taste</h1>
-                <p class="journey-hero__lead">
+                <p class="journey-eyebrow" data-i18n="journey.eyebrow">Gaming journey</p>
+                <h1 data-i18n="journey.heroTitle">Games That Shaped My Taste</h1>
+                <p class="journey-hero__lead" data-i18n="journey.heroLead">
                     A curated map of games that influenced how I think about worlds, stories,
                     systems, player feeling, and the lessons that come from friction.
                 </p>
@@ -51,57 +55,58 @@
         </header>
 
         <section class="journey-intro" aria-label="Collection framing">
-            <p>
+            <p data-i18n="journey.intro">
                 This page is not a tier list. It is a set of editorial shelves: games I lived in,
                 stories that stayed with me, loops I kept returning to, systems I learned from,
                 milestones that shaped my taste, and flawed experiences that still taught useful design lessons.
             </p>
             <div class="journey-intro__stat">
                 <strong>6</strong>
-                <span>memory chapters</span>
+                <span data-i18n="journey.memoryChapters">memory chapters</span>
             </div>
         </section>
 
         <section class="journey-principles" aria-labelledby="journey-principles-title">
             <div class="journey-principles__header" data-journey-motion>
-                <p class="journey-eyebrow">Design takeaways</p>
-                <h2 id="journey-principles-title">What these games trained me to notice</h2>
+                <p class="journey-eyebrow" data-i18n="journey.takeaways">Design takeaways</p>
+                <h2 id="journey-principles-title" data-i18n="journey.principlesTitle">What these games trained me to notice</h2>
             </div>
             <div class="journey-principles__grid">
                 <article class="journey-principles__item" data-journey-motion>
-                    <span>World texture</span>
-                    <p>Small travel beats, local stakes, and environmental memory make a place feel authored.</p>
+                    <span data-i18n="journey.principles.0.title">World texture</span>
+                    <p data-i18n="journey.principles.0.body">Small travel beats, local stakes, and environmental memory make a place feel authored.</p>
                 </article>
                 <article class="journey-principles__item" data-journey-motion>
-                    <span>Readable goals</span>
-                    <p>Strong loops keep the next useful action clear without flattening discovery.</p>
+                    <span data-i18n="journey.principles.1.title">Readable goals</span>
+                    <p data-i18n="journey.principles.1.body">Strong loops keep the next useful action clear without flattening discovery.</p>
                 </article>
                 <article class="journey-principles__item" data-journey-motion>
-                    <span>System tension</span>
-                    <p>Good progression asks the player to trade comfort, risk, economy, and timing.</p>
+                    <span data-i18n="journey.principles.2.title">System tension</span>
+                    <p data-i18n="journey.principles.2.body">Good progression asks the player to trade comfort, risk, economy, and timing.</p>
                 </article>
                 <article class="journey-principles__item" data-journey-motion>
-                    <span>Style as function</span>
-                    <p>UI, music, routine, and pacing work best when they reinforce the same fantasy.</p>
+                    <span data-i18n="journey.principles.3.title">Style as function</span>
+                    <p data-i18n="journey.principles.3.body">UI, music, routine, and pacing work best when they reinforce the same fantasy.</p>
                 </article>
                 <article class="journey-principles__item" data-journey-motion>
-                    <span>Player trust</span>
-                    <p>Friction is useful when it teaches; it becomes noise when feedback feels unfair.</p>
+                    <span data-i18n="journey.principles.4.title">Player trust</span>
+                    <p data-i18n="journey.principles.4.body">Friction is useful when it teaches; it becomes noise when feedback feels unfair.</p>
                 </article>
             </div>
         </section>
 
         <div data-gaming-journey>
-            <p class="journey-empty">Loading game memories...</p>
+            <p class="journey-empty" data-i18n="journey.loading">Loading game memories...</p>
         </div>
 
         <footer class="journey-footer">
-            <span>Image sources are credited on each card.</span>
-            <span>Game screenshots and cover art belong to their respective publishers.</span>
+            <span data-i18n="journey.footerCredit">Image sources are credited on each card.</span>
+            <span data-i18n="journey.footerRights">Game screenshots and cover art belong to their respective publishers.</span>
         </footer>
     </main>
 
-    <script src="js/gaming-journey.js"></script>
+    <script src="js/i18n.js?v=20260615-i18n"></script>
+    <script src="js/gaming-journey.js?v=20260615-i18n"></script>
     <script>
         window.GamingJourney.loadGamingJourney({
             dataUrl: 'gaming-journey.json',

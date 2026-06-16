@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Runner Game</title>
+    <title data-i18n="meta.runner.title">Portfolio Runner Game</title>
+    <meta name="description" content="A small browser runner game for Tran Hoang Kiet's portfolio." data-i18n-attr="content:meta.runner.description">
     <style>
         body {
             margin: 0;
@@ -12,97 +13,98 @@
             align-items: center;
             min-height: 100vh;
             background-color: #1a1a1a;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             overflow: hidden;
         }
-        
+
         #game-container {
             position: relative;
-            width: 800px;
-            height: 400px;
+            width: min(800px, calc(100vw - 32px));
+            height: min(400px, calc(100vh - 32px));
+            min-height: 320px;
             border: 4px solid rgba(245, 169, 5, 0.5);
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.32);
         }
-        
+
         #game-canvas {
-            background-color: #121212;
-        }
-        
-        #start-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
+            display: block;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #121212;
+        }
+
+        #start-screen,
+        #game-over-screen {
+            position: absolute;
+            inset: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
+            background-color: rgba(0, 0, 0, 0.72);
             z-index: 10;
+            text-align: center;
+            padding: 24px;
         }
-        
+
         #game-over-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
             display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            z-index: 10;
         }
-        
+
         #skill-popup {
             position: absolute;
             top: 50px;
             right: 50px;
-            background-color: rgba(245, 169, 5, 0.9);
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 250px;
             display: none;
-            z-index: 5;
-            font-size: 14px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .button {
-            background-color: #f5a905;
+            max-width: 250px;
+            padding: 15px;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            background-color: rgba(245, 169, 5, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 14px;
+            z-index: 5;
+        }
+
+        .button {
             margin: 10px;
+            padding: 10px 20px;
+            border: 0;
             border-radius: 5px;
+            color: white;
+            background-color: #f5a905;
             cursor: pointer;
             font-size: 16px;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        
+
         .button:hover {
-            transform: scale(1.1);
+            transform: scale(1.06);
             background-color: #ff8c00;
         }
-        
+
         h1 {
+            margin: 0 0 10px;
             color: #f5a905;
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: clamp(28px, 7vw, 36px);
         }
-        
+
         h2 {
+            margin: 0 0 20px;
             color: white;
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: clamp(18px, 4vw, 24px);
         }
-        
+
+        p {
+            max-width: 80%;
+            margin: 0 auto 15px;
+            color: #ddd;
+            font-size: 14px;
+        }
+
         #score-display {
             position: absolute;
             top: 10px;
@@ -111,36 +113,70 @@
             font-size: 20px;
             z-index: 5;
         }
-        
+
         .pixel-art {
             image-rendering: pixelated;
             image-rendering: crisp-edges;
         }
+
+        .game-language-toggle {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 20;
+            display: inline-flex;
+            gap: 4px;
+            padding: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 999px;
+            background: rgba(18, 18, 18, 0.72);
+            backdrop-filter: blur(14px);
+        }
+
+        .game-language-toggle button {
+            min-width: 40px;
+            height: 32px;
+            border: 0;
+            border-radius: 999px;
+            color: rgba(255, 255, 255, 0.72);
+            background: transparent;
+            font: 700 12px Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .game-language-toggle button.is-active {
+            color: #140b20;
+            background: #f5a905;
+        }
     </style>
 </head>
 <body>
+    <div class="game-language-toggle" data-language-toggle aria-label="Language">
+        <button type="button" data-language-option="en" aria-pressed="true">EN</button>
+        <button type="button" data-language-option="vi" aria-pressed="false">VI</button>
+    </div>
+
     <div id="game-container">
         <canvas id="game-canvas" width="800" height="400" class="pixel-art"></canvas>
-        
-        <div id="score-display">Điểm: 0</div>
-        
+        <div id="score-display">Score: 0</div>
         <div id="skill-popup"></div>
-        
+
         <div id="start-screen">
             <h1>PORTFOLIO RUNNER</h1>
-            <h2>Khám phá kỹ năng và thành tựu của tôi</h2>
-            <p>Nhấn Space hoặc Click để nhảy. Double-click để nhảy cao hơn.</p>
-            <button id="start-button" class="button">BẮT ĐẦU CHẠY</button>
+            <h2 id="runner-subtitle">Explore my skills and achievements</h2>
+            <p id="runner-instructions">Press Space or click to jump. Double-click to jump higher.</p>
+            <button id="start-button" class="button" type="button">START RUNNING</button>
         </div>
-        
+
         <div id="game-over-screen">
-            <h1>GAME OVER</h1>
-            <h2 id="final-score">Điểm: 0</h2>
-            <button id="restart-button" class="button">CHƠI LẠI</button>
-            <button id="portfolio-button" class="button">XEM PORTFOLIO</button>
+            <h1 id="game-over-title">GAME OVER</h1>
+            <h2 id="final-score">Score: 0</h2>
+            <button id="restart-button" class="button" type="button">PLAY AGAIN</button>
+            <button id="portfolio-button" class="button" type="button">VIEW PORTFOLIO</button>
         </div>
     </div>
 
-    <script src="js/game.js"></script>
+    <script src="js/i18n.js?v=20260615-i18n"></script>
+    <script src="js/game.js?v=20260615-i18n"></script>
 </body>
-</html> 
+</html>

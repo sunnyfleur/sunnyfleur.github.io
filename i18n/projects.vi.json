@@ -1,0 +1,318 @@
+{
+  "projects": {
+    "huli": {
+      "tagline": "Dự án action chưa công bố với phạm vi công khai về gameplay, combat, content và camera design.",
+      "summary": "HULI là dự án action dark-fantasy chưa công bố, lấy cảm hứng từ Phong Thần Diễn Nghĩa. Phần có thể công khai của tôi nằm ở gameplay, combat, content và camera design, nên nội dung được giữ ở mức cao và không tiết lộ chi tiết production.",
+      "cardSummary": "Dự án action chưa công bố, tập trung vào gameplay, combat, content và camera design trong bối cảnh dark fantasy.",
+      "type": "Dự án chưa công bố",
+      "status": "Chưa công bố",
+      "role": [
+        "Gameplay Designer"
+      ],
+      "homepageMeta": {
+        "linkLabel": "Case Study"
+      },
+      "contributions": [
+        "Đóng góp vào gameplay, combat, content và camera design trong phạm vi có thể công khai.",
+        "Viết design document và làm prototype để làm rõ intent của feature trước khi trao đổi triển khai.",
+        "Phối hợp với team để refine system dựa trên playtest feedback và ràng buộc production."
+      ],
+      "problem": "Vì dự án chưa công bố, case study cần thể hiện phạm vi vai trò mà không lộ system, content hoặc kết quả production chưa được phép chia sẻ.",
+      "systems": [
+        {
+          "title": "Phạm vi công khai",
+          "items": [
+            "Gameplay và combat design được mô tả ở mức role scope.",
+            "Content và camera design được trình bày mà không lộ chi tiết chưa công bố.",
+            "Documentation và prototype hỗ trợ định hướng feature."
+          ]
+        }
+      ],
+      "results": [
+        "Giữ entry chính xác trong giới hạn bảo mật của dự án.",
+        "Làm rõ phạm vi đóng góp mà không bịa metric hoặc outcome chưa công bố."
+      ],
+      "teamSize": "Không công khai"
+    },
+    "space-conqueror": {
+      "tagline": "Prototype voxel combat với pacing single-player và multiplayer hooks.",
+      "summary": "Space Conqueror là prototype action chủ đề không gian, nơi tôi khám phá combat feel, enemy behavior, encounter pacing và các system kỹ thuật cần cho cả solo play lẫn networked play.",
+      "cardSummary": "Prototype combat không gian tập trung vào encounter pacing, enemy behavior và system sẵn sàng mở rộng multiplayer.",
+      "type": "Dự án cá nhân",
+      "status": "Playable Prototype",
+      "role": [
+        "Game Designer",
+        "Unity Developer"
+      ],
+      "problem": "Tôi muốn tạo một portfolio piece cho thấy mình không chỉ làm phần trình bày: combat tuning, AI behavior, resource management và nền tảng multiplayer cần kết hợp thành một case study dễ đọc.",
+      "contributions": [
+        "Thiết kế core combat loop và enemy encounter structure.",
+        "Xây dựng và iterate level flow, pacing và prototype layout.",
+        "Implement enemy AI bằng finite state machine.",
+        "Thêm object pooling, tối ưu URP và hỗ trợ cross-platform.",
+        "Tích hợp multiplayer bằng Photon PUN và player services qua PlayFab."
+      ],
+      "systems": [
+        {
+          "title": "Combat và Encounter Design",
+          "items": [
+            "Định nghĩa enemy composition, wave structure và các nhịp retreat hoặc pressure.",
+            "Cân bằng movement và survivability quanh readability tốc độ cao.",
+            "Dùng bố cục không gian như một phần của difficulty shaping, không chỉ là visual dressing."
+          ]
+        },
+        {
+          "title": "Technical Implementation",
+          "items": [
+            "Implement enemy state logic bằng finite state machine.",
+            "Dùng object pooling để giảm allocation spike khi runtime.",
+            "Chuẩn bị prototype cho PC và WebGL delivery."
+          ]
+        },
+        {
+          "title": "Online Systems",
+          "items": [
+            "Tích hợp Photon PUN cho realtime multiplayer support.",
+            "Kết nối player-facing services với Azure PlayFab.",
+            "Dùng project để nối design intention với engineering constraints."
+          ]
+        }
+      ],
+      "results": [
+        "Tạo portfolio project thể hiện cả design thinking và implementation depth.",
+        "Tạo reusable case-study structure cho các dự án gameplay-heavy sau này.",
+        "Hiểu rõ hơn multiplayer complexity thay đổi scope và design priority từ rất sớm."
+      ],
+      "links": [
+        {
+          "label": "Tải Design Docs"
+        }
+      ]
+    },
+    "lunarfall-pixel-strategy": {
+      "tagline": "Archive tư liệu pixel-strategy kết hợp dark-fantasy mockup và system planning.",
+      "summary": "Lunarfall được trình bày như một archive tư liệu dựa trên pixel-art mockup, economy planning và unit design material hiện có. Entry giữ dự án chính xác trong portfolio, đồng thời để phần system note sâu hơn cho một bản write-up đầy đủ sau này.",
+      "cardSummary": "Concept pixel strategy dark-fantasy được document bằng interface mockup và systems spreadsheet.",
+      "type": "Archive",
+      "status": "Archive tư liệu",
+      "role": [
+        "Game Designer"
+      ],
+      "problem": "Dự án cần được kết nối lại với asset và material thiết kế của chính Lunarfall để reviewer đọc đúng bối cảnh, thay vì cảm giác như một trang tái dùng từ project khác.",
+      "contributions": [
+        "Dựng lại entry quanh visual, economy note và unit-planning material riêng của Lunarfall.",
+        "Giữ dự án trong shared browse flow với nhãn archive tư liệu rõ ràng.",
+        "Chuẩn bị cấu trúc để sau này bổ sung combat system, progression và production note."
+      ],
+      "systems": [
+        {
+          "title": "Archive tư liệu hiện tại",
+          "items": [
+            "Dùng pixel-art mockup hiện có làm hero visual để dự án đọc đúng ngay từ đầu.",
+            "Giữ economy và unit-design spreadsheet như supporting documentation.",
+            "Chừa chỗ để mở rộng entry thành systems breakdown đầy đủ hơn."
+          ]
+        }
+      ],
+      "results": [
+        "Sửa lại narrative của portfolio bằng cách kết nối Lunarfall với asset đúng của dự án.",
+        "Tạo trạng thái archive trung thực, có thể mở rộng thành systems breakdown đầy đủ hơn."
+      ],
+      "teamSize": "Không công khai"
+    },
+    "farm-match": {
+      "tagline": "Archive tư liệu merge puzzle chủ đề animal, dựa trên portrait-mobile board capture.",
+      "summary": "FarmMatch được trình bày như một archive tư liệu từ title screen và board-layout capture hiện có. Entry tập trung vào phần có thể xem ngay: flow matching trên mobile dọc, board state dễ đọc và cách trình bày merge puzzle.",
+      "cardSummary": "Archive merge puzzle chủ đề animal, giữ lại visual và gameplay capture để reviewer hiểu loop chính.",
+      "type": "Archive",
+      "status": "Archive tư liệu",
+      "role": [
+        "Game Designer"
+      ],
+      "problem": "Material hiện có cho thấy puzzle loop và board layout, còn progression note và bối cảnh production sâu hơn chưa nằm trong phạm vi công khai.",
+      "contributions": [
+        "Đưa dự án vào shared portfolio để không chỉ nằm trong folder capture rời.",
+        "Kết nối title screen và in-game board thành một archive tư liệu dễ đọc.",
+        "Chuẩn bị cấu trúc để bổ sung level design, progression và production learning khi có thêm note công khai."
+      ],
+      "systems": [
+        {
+          "title": "Archive Presentation",
+          "items": [
+            "Lead bằng branded hero art để project đọc rõ trong browse view.",
+            "Dùng gameplay captures làm evidence chính thay vì copy giả định.",
+            "Giữ case-study shell sẵn sàng cho write-up production sau này."
+          ]
+        }
+      ],
+      "results": [
+        "Giữ FarmMatch xuất hiện trong main project flow bằng capture thật.",
+        "Tạo một archive trung thực, có thể mở rộng khi có thêm design note được phép công khai."
+      ],
+      "teamSize": "Không công khai"
+    },
+    "good-sort": {
+      "tagline": "Sorting puzzle mobile dọc, tập trung vào board readability, cảm giác sắp xếp và pacing level.",
+      "summary": "GoodSort là sorting puzzle trên mobile dọc, nơi trọng tâm nằm ở việc làm shelf layout dễ đọc, tương tác sắp xếp có cảm giác thỏa mãn và progression có thể mở rộng qua nhiều biến thể level. Dự án giữ core loop đơn giản, rồi tăng độ sâu bằng blocker placement, board composition và pacing content.",
+      "cardSummary": "Sorting puzzle mobile dọc xoay quanh board dễ đọc, cảm giác sắp xếp thỏa mãn và level variation có thể mở rộng.",
+      "type": "Archive",
+      "status": "Archive tài liệu",
+      "role": [
+        "Game Designer"
+      ],
+      "problem": "GoodSort cần một sorting loop đọc được ngay trên màn hình điện thoại, nhưng vẫn đủ chỗ cho blocker variety, level escalation và progression phục vụ nhiều content hơn.",
+      "contributions": [
+        "Định nghĩa core shelf-sorting loop quanh visual grouping nhanh và tương tác dọc ít ma sát.",
+        "Cải thiện board readability qua nhóm item rõ hơn, blocker placement và level composition.",
+        "Giữ puzzle rule dễ tiếp cận nhưng vẫn có không gian cho progression pacing sâu hơn."
+      ],
+      "systems": [
+        {
+          "title": "Gallery-first Archive",
+          "items": [
+            "Dùng capture thật làm proof chính.",
+            "Giữ hero, status và summary rõ ràng để tránh overclaim.",
+            "Chuẩn bị chỗ cho future breakdown về level sequencing và tuning."
+          ]
+        }
+      ],
+      "results": [
+        "Xác nhận GoodSort là sorting concept rõ, dễ tiếp cận và đủ nền để iterate tiếp.",
+        "Tạo foundation tốt hơn cho level variety, progression pacing và content volume."
+      ],
+      "teamSize": "Không công khai"
+    },
+    "satisdom": {
+      "tagline": "Archive tư liệu mini-game thỏa mãn, tập trung vào interaction thư giãn, beauty care và micro-task casual.",
+      "summary": "Satisdom được trình bày như một archive tư liệu từ sketch, flow note, audio-review sheet và content-planning material. Entry tập trung vào interaction feel và cách đóng gói micro-task casual mà không phóng đại những chi tiết chưa công khai.",
+      "cardSummary": "Archive thiết kế interaction, giữ lại sketch, spreadsheet và reference để chuẩn bị full breakdown.",
+      "type": "Archive",
+      "status": "Archive tư liệu",
+      "role": [
+        "Game Designer"
+      ],
+      "problem": "Dự án có nhiều concept và production reference hữu ích, nhưng câu chuyện thiết kế còn nằm rải rác giữa sketch, sound-review sheet và implementation note.",
+      "contributions": [
+        "Đưa Satisdom vào shared portfolio để reviewer có thể thấy bằng chứng hiện có.",
+        "Dùng concept sketch và spreadsheet capture để frame hướng interaction và content planning.",
+        "Chuẩn bị entry cho pass sau về mini-game selection, interaction feel và audio feedback."
+      ],
+      "systems": [
+        {
+          "title": "Archive Consolidation",
+          "items": [
+            "Tách material hiện có thành evidence thay vì coi như case study hoàn chỉnh.",
+            "Giữ entry đủ ngắn để reviewer hiểu trạng thái thật.",
+            "Chuẩn bị nền cho future mini-game and interaction breakdown."
+          ]
+        }
+      ],
+      "results": [
+        "Giữ Satisdom hiện diện mà không nói quá mức hoàn thiện của write-up.",
+        "Tạo cấu trúc archive có thể bổ sung gameplay, UX và sound detail về sau."
+      ],
+      "teamSize": "Không công khai"
+    },
+    "screw": {
+      "tagline": "Archive tư liệu mobile puzzle kiểu unscrew, xoay quanh color logic và board level gọn.",
+      "summary": "Screw được trình bày như một archive tư liệu từ branded key art và bộ level screenshot hiện có. Entry nhấn vào color logic, board readability và cách trình bày puzzle gọn trên mobile.",
+      "cardSummary": "Archive puzzle mobile với branded hero art và level capture làm evidence chính.",
+      "type": "Archive",
+      "status": "Archive tư liệu",
+      "role": [
+        "Game Designer"
+      ],
+      "problem": "Screw đã có key art dễ nhận diện và nhiều level capture, nhưng material công khai hiện phù hợp với archive tư liệu hơn là một breakdown hoàn chỉnh.",
+      "contributions": [
+        "Đưa Screw vào data-driven portfolio để có thể browse cùng các project khác.",
+        "Dùng key art và level screenshot hiện có để frame evidence về puzzle readability.",
+        "Chuẩn bị cấu trúc cho các note sau về puzzle rule, level sequencing và UX clarity."
+      ],
+      "systems": [
+        {
+          "title": "Puzzle Archive View",
+          "items": [
+            "Lead bằng key art để project đọc rõ trong portfolio browse.",
+            "Dùng level screenshots làm evidence thay vì mô tả quá mức.",
+            "Giữ shell case-study sẵn sàng cho breakdown về puzzle logic và level pacing."
+          ]
+        }
+      ],
+      "results": [
+        "Giữ Screw trong portfolio mà không cần tạo thêm standalone detail page.",
+        "Tạo archive tư liệu ổn định, có thể phát triển thành case study đầy đủ hơn."
+      ],
+      "teamSize": "Không công khai"
+    },
+    "tank": {
+      "tagline": "Archive tư liệu arcade tank-brawler, dựa trên title art hiện có.",
+      "summary": "Tank được trình bày như một archive tư liệu nhẹ, dùng title art hiện có làm bằng chứng chính. Entry giữ dự án trong shared portfolio trong khi gameplay capture và documentation sâu hơn chưa nằm trong public write-up.",
+      "cardSummary": "Arcade tank battle concept được thể hiện bằng title art và archive note ở mức công khai.",
+      "type": "Archive",
+      "status": "Archive tư liệu",
+      "role": [
+        "Game Designer"
+      ],
+      "problem": "Tank có branding rõ nhưng chưa đủ material gameplay công khai cho một case study hoàn chỉnh. Cách trung thực hơn là label dự án như archive thay vì tự thêm chi tiết chưa có bằng chứng.",
+      "contributions": [
+        "Đưa Tank vào shared project list để dự án xuất hiện trong homepage explorer.",
+        "Dùng title art hiện có làm evidence hero cho entry công khai hiện tại.",
+        "Chuẩn bị entry để sau này bổ sung mode, combat và progression detail khi sẵn sàng chia sẻ."
+      ],
+      "systems": [
+        {
+          "title": "Lightweight Archive",
+          "items": [
+            "Dùng title art làm visual anchor.",
+            "Giữ copy ngắn và không overclaim.",
+            "Đặt nền cho future documentation pass."
+          ]
+        }
+      ],
+      "results": [
+        "Tank không bị bỏ khỏi portfolio chỉ vì public case-study package còn giới hạn.",
+        "Tạo trạng thái archive sạch để có thể nâng cấp khi có material gameplay mạnh hơn."
+      ],
+      "teamSize": "Không công khai"
+    },
+    "horror-carnival": {
+      "tagline": "Archive tư liệu atmosphere-first quanh tension, pacing và không gian carnival.",
+      "summary": "Horror Carnival được trình bày như một archive tư liệu cho concept đặt atmosphere lên trước. Entry giữ dự án discoverable, đồng thời tập trung vào material công khai có thể hỗ trợ tone, pacing và framing không gian attraction.",
+      "cardSummary": "Concept atmosphere-first xoay quanh tension, pacing và không gian carnival.",
+      "type": "Archive",
+      "status": "Archive tư liệu",
+      "role": [
+        "Game Designer"
+      ],
+      "problem": "Material công khai hiện phù hợp với một archive gọn hơn là case study đầy đủ. Entry cần giữ được context mà không dùng copy yếu hoặc gây hiểu nhầm.",
+      "contributions": [
+        "Giữ dự án trong portfolio browse flow.",
+        "Định nghĩa presentation nhẹ hơn cho project mới có một phần documentation.",
+        "Chuẩn bị data structure để sau này có thể thêm write-up đầy đủ mà không cần đổi cấu trúc page."
+      ],
+      "systems": [
+        {
+          "title": "Archive tư liệu hiện tại",
+          "items": [
+            "Giữ project visible bằng material hiện có.",
+            "Frame summary trung thực quanh độ sâu documentation hiện tại.",
+            "Chừa cấu trúc để entry có thể mở rộng từng bước."
+          ]
+        }
+      ],
+      "results": [
+        "Giảm friction khi bảo trì các project mới có một phần tài liệu công khai.",
+        "Tạo hướng public-safe để cải thiện presentation mà không dùng copy gây hiểu nhầm."
+      ],
+      "gallery": [
+        {
+          "image": "img/og-image.png",
+          "fullImage": "img/og-image.png",
+          "title": "Archive visual",
+          "description": "Visual tạm thời trong lúc chuẩn bị gallery material mạnh hơn cho Horror Carnival."
+        }
+      ],
+      "teamSize": "Không công khai"
+    }
+  }
+}

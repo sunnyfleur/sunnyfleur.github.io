@@ -90,7 +90,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Red Dead Redemption 2 landscape artwork",
-      "reflection": "A benchmark for world texture, quiet pacing, and how small travel moments can make a place feel lived in.",
+      "reflection": "A benchmark for world texture: slow travel, small interruptions, and ordinary moments make the frontier feel lived in.",
       "tags": [
         "Worldbuilding",
         "Pacing",
@@ -107,7 +107,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Elden Ring landscape artwork",
-      "reflection": "A strong memory of mystery, danger, and discovery pulling the player forward without over-explaining the path.",
+      "reflection": "A strong lesson in mystery and trust, letting danger, geography, and reward pull the player forward without explaining every path.",
       "tags": [
         "Exploration",
         "Mystery",
@@ -141,7 +141,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Persona 5 Royal key artwork",
-      "reflection": "A personal standard for how style, routine, UI identity, and character arcs can reinforce each other.",
+      "reflection": "A personal standard for style as function, where UI, routine, music, and character arcs all reinforce the same fantasy.",
       "tags": [
         "Style",
         "Routine",
@@ -304,7 +304,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "God of War artwork",
-      "reflection": "A reference for intimate camera, restrained character growth, and combat weight supporting emotional tone.",
+      "reflection": "A reference for intimate camera work, restrained character growth, and combat weight that supports the emotional tone.",
       "tags": [
         "Camera",
         "Character",
@@ -544,7 +544,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/289070/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Civilization VI artwork",
-      "reflection": "A systems reference for compounding decisions, readable tradeoffs, and the danger of one-more-turn pacing.",
+      "reflection": "A systems lesson in compounding decisions, readable tradeoffs, and the dangerous pull of one-more-turn pacing.",
       "tags": [
         "Strategy",
         "Tradeoffs",
@@ -592,7 +592,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/379430/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Kingdom Come Deliverance artwork",
-      "reflection": "A reference for grounded role-play, friction as identity, and progression that asks the player to inhabit weakness first.",
+      "reflection": "A reference for grounded role-play, where friction becomes identity because progression asks the player to inhabit weakness first.",
       "tags": [
         "Simulation",
         "Role-play",
@@ -784,7 +784,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Cyberpunk 2077 city artwork",
-      "reflection": "A useful case study in ambition, expectation, immersion breaks, and how launch context can define memory.",
+      "reflection": "A useful case in ambition, expectation, immersion breaks, and how launch context can define the memory of a game.",
       "tags": [
         "Expectation",
         "Immersion",

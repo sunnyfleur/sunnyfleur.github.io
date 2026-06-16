@@ -38,6 +38,32 @@
     },
   ];
 
+  function getI18n() {
+    return typeof window !== 'undefined' ? window.PortfolioI18n : null;
+  }
+
+  function translate(key, fallback, params) {
+    const i18n = getI18n();
+    const value = i18n && typeof i18n.t === 'function'
+      ? i18n.t(key, fallback, params)
+      : fallback;
+
+    if (!params || value == null) {
+      return value;
+    }
+
+    return String(value).replace(/\{(\w+)\}/g, (match, token) => (
+      Object.prototype.hasOwnProperty.call(params, token) ? params[token] : match
+    ));
+  }
+
+  function localizeInternalUrl(url) {
+    const i18n = getI18n();
+    return i18n && typeof i18n.localizeUrl === 'function'
+      ? i18n.localizeUrl(url, i18n.getLanguage && i18n.getLanguage())
+      : url;
+  }
+
   function escapeHtml(value) {
     return String(value == null ? '' : value)
       .replace(/&/g, '&amp;')
@@ -85,7 +111,7 @@
 
     return `
         <div class="journey-chapter__transition" aria-hidden="true">
-          <span>Memory stop ${chapterNumber}</span>
+          <span>${escapeHtml(translate('journey.memoryStop', 'Memory stop'))} ${chapterNumber}</span>
           <span class="journey-chapter__transition-line"></span>
           <span>${escapeHtml(transitionLabel)}</span>
         </div>
@@ -116,7 +142,7 @@
   function createMetaMarkup(game) {
     return [
       game.platform,
-      game.hours ? `${game.hours} hours` : '',
+      game.hours ? `${game.hours} ${translate('journey.hours', 'hours')}` : '',
       game.year,
     ]
       .filter(Boolean)
@@ -129,7 +155,7 @@
 
     return `
           <p class="journey-card__lesson">
-            <span>Design lesson</span>
+            <span>${escapeHtml(translate('journey.designLesson', 'Design lesson'))}</span>
             ${escapeHtml(lesson)}
           </p>
     `;
@@ -197,7 +223,7 @@
       }))
       .join('');
     const shelfToggle = hiddenCount
-      ? `<button class="journey-shelf__toggle" type="button" data-shelf-toggle aria-expanded="false" data-collapsed-label="Show all ${shelfList.length} games" data-expanded-label="Show curated set">Show all ${shelfList.length} games</button>`
+      ? `<button class="journey-shelf__toggle" type="button" data-shelf-toggle aria-expanded="false" data-collapsed-label="${escapeHtml(translate('journey.showAll', 'Show all {count} games', { count: shelfList.length }))}" data-expanded-label="${escapeHtml(translate('journey.showCurated', 'Show curated set'))}">${escapeHtml(translate('journey.showAll', 'Show all {count} games', { count: shelfList.length }))}</button>`
       : '';
 
     return `
@@ -209,7 +235,7 @@
               <span class="journey-chapter__rail-line"></span>
               <span class="journey-chapter__rail-dot"></span>
               <span class="journey-chapter__rail-number">${chapterNumber}</span>
-              <span class="journey-chapter__rail-label">Memory stop</span>
+              <span class="journey-chapter__rail-label">${escapeHtml(translate('journey.memoryStop', 'Memory stop'))}</span>
             </div>
             <p class="journey-chapter__kicker">${escapeHtml(label)}</p>
             <h2>${escapeHtml(chapter.title)}</h2>
@@ -222,8 +248,8 @@
         </div>
         <div class="journey-shelf-shell" data-collapsible-shelf>
           <div class="journey-shelf__header">
-            <p>Curated shelf</p>
-            <span>${shelfList.length} references</span>
+            <p>${escapeHtml(translate('journey.curatedShelf', 'Curated shelf'))}</p>
+            <span>${shelfList.length} ${escapeHtml(translate('journey.references', 'references'))}</span>
           </div>
           <div class="journey-shelf">
             ${shelfGames}
@@ -247,8 +273,8 @@
     return `
       <section class="journey-principles" aria-labelledby="journey-principles-title">
         <div class="journey-principles__header" data-journey-motion>
-          <p class="journey-eyebrow">Design takeaways</p>
-          <h2 id="journey-principles-title">What these games trained me to notice</h2>
+          <p class="journey-eyebrow">${escapeHtml(translate('journey.takeaways', 'Design takeaways'))}</p>
+          <h2 id="journey-principles-title">${escapeHtml(translate('journey.principlesTitle', 'What these games trained me to notice'))}</h2>
         </div>
         <div class="journey-principles__grid">
           ${items}
@@ -280,8 +306,8 @@
       .join('');
 
     return `
-      <nav class="journey-index__panel" aria-label="Game journey chapters">
-        <span class="journey-index__eyebrow">Journey map</span>
+      <nav class="journey-index__panel" aria-label="${escapeHtml(translate('journey.journeyMap', 'Game journey chapters'))}">
+        <span class="journey-index__eyebrow">${escapeHtml(translate('journey.journeyMap', 'Journey map'))}</span>
         <div class="journey-index__body">
           <span class="journey-index__track" aria-hidden="true">
             <span class="journey-index__progress" data-gaming-journey-progress></span>
@@ -526,7 +552,7 @@
     }
 
     if (!chapters.length) {
-      rootElement.innerHTML = '<p class="journey-empty">No game memories are ready to show yet.</p>';
+      rootElement.innerHTML = '<p class="journey-empty">' + escapeHtml(translate('journey.empty', 'No game memories are ready to show yet.')) + '</p>';
       if (indexElement) {
         indexElement.innerHTML = '';
       }
@@ -548,19 +574,27 @@
     const rootElement = document.querySelector(rootSelector);
 
     try {
+      const i18n = getI18n();
+      if (i18n && typeof i18n.whenReady === 'function') {
+        await i18n.whenReady();
+      }
+
       const response = await fetch(dataUrl);
       if (!response.ok) {
         throw new Error(`Failed to load ${dataUrl}: ${response.status}`);
       }
 
-      const data = await response.json();
+      const baseData = await response.json();
+      const data = i18n && typeof i18n.getLocalizedGamingJourneyData === 'function'
+        ? await i18n.getLocalizedGamingJourneyData(baseData)
+        : baseData;
       renderGamingJourney(data, options);
     } catch (error) {
       if (rootElement) {
         rootElement.innerHTML = `
           <div class="journey-error">
-            <h2>Game journey unavailable</h2>
-            <p>The collection data could not be loaded. Please try again later.</p>
+            <h2>${escapeHtml(translate('journey.errorTitle', 'Game journey unavailable'))}</h2>
+            <p>${escapeHtml(translate('journey.errorText', 'The collection data could not be loaded. Please try again later.'))}</p>
           </div>
         `;
       }

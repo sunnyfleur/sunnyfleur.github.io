@@ -440,8 +440,22 @@
     return;
   }
 
+  const i18n = global.PortfolioI18n;
+
+  function translate(key, fallback, params) {
+    return i18n && typeof i18n.t === "function"
+      ? i18n.t(key, fallback, params)
+      : fallback;
+  }
+
+  function localizeInternalUrl(url) {
+    return i18n && typeof i18n.localizeUrl === "function"
+      ? i18n.localizeUrl(url, i18n.getLanguage && i18n.getLanguage())
+      : url;
+  }
+
   function projectUrl(slug) {
-    return "project.html?slug=" + encodeURIComponent(slug);
+    return localizeInternalUrl("project.html?slug=" + encodeURIComponent(slug));
   }
 
   function prefersReducedMotion() {
@@ -756,18 +770,32 @@
     root.hidden = briefItems.length === 0;
     root.style.display = briefItems.length === 0 ? "none" : "";
 
+    const labelKeys = {
+      Role: "project.roleLabel",
+      Challenge: "project.challengeLabel",
+      Proof: "project.proofLabel",
+    };
+    const titleKeys = {
+      "Archive ownership": "project.archiveOwnership",
+      "My ownership": "project.myOwnership",
+      "Public context": "project.publicContext",
+      "Design problem": "project.designProblem",
+      "Available evidence": "project.availableEvidence",
+      "Design signal": "project.designSignal",
+    };
+
     briefItems.forEach((item) => {
       const article = document.createElement("article");
       article.className = "project-review-brief__item";
 
       const label = document.createElement("span");
       label.className = "project-review-brief__label";
-      label.textContent = item.label;
+      label.textContent = translate(labelKeys[item.label], item.label);
       article.appendChild(label);
 
       const title = document.createElement("h3");
       title.className = "project-review-brief__title";
-      title.textContent = item.title || item.label;
+      title.textContent = translate(titleKeys[item.title], item.title || item.label);
       article.appendChild(title);
 
       const body = document.createElement("p");
@@ -843,12 +871,12 @@
     caption.setAttribute("itemprop", "caption description");
 
     const heading = document.createElement("h5");
-    heading.textContent = item.title || "Gallery Image";
+    heading.textContent = item.title || translate("project.galleryImage", "Gallery Image");
     caption.appendChild(heading);
 
     const description = document.createElement("p");
     description.className = "small";
-    description.textContent = item.description || "Visual reference from the project.";
+    description.textContent = item.description || translate("project.galleryReference", "Visual reference from the project.");
     caption.appendChild(description);
 
     figure.appendChild(link);
@@ -989,15 +1017,15 @@
     const revealButton = document.createElement("button");
     revealButton.className = "project-gallery-reveal btn btn-default btn-hover btn-hover-accent";
     revealButton.type = "button";
-    revealButton.innerHTML = '<span class="btn-caption">View full archive</span><i class="ph-bold ph-images-square"></i>';
+    revealButton.innerHTML = '<span class="btn-caption">' + translate("project.viewArchive", "View full archive") + '</span><i class="ph-bold ph-images-square"></i>';
     revealButton.setAttribute(
       "aria-label",
-      "View all " + summary.totalCount + " project archive images"
+      translate("project.viewAllArchive", "View all {count} project archive images", { count: summary.totalCount })
     );
 
     const revealNote = document.createElement("p");
     revealNote.className = "project-gallery-reveal__note";
-    revealNote.textContent = summary.hiddenCount + " more visuals are kept collapsed so the case study stays readable.";
+    revealNote.textContent = translate("project.archiveNote", "{count} more visuals are kept collapsed so the case study stays readable.", { count: summary.hiddenCount });
 
     revealButton.addEventListener("click", () => {
       root.innerHTML = "";
@@ -1020,20 +1048,26 @@
     }
 
     try {
-      const response = await fetch("projects.json?v=20260504-gallery-thumbs");
+      const ready = i18n && typeof i18n.whenReady === "function" ? i18n.whenReady() : Promise.resolve();
+      await ready;
+
+      const response = await fetch("projects.json?v=20260615-content-rewrite");
 
       if (!response.ok) {
         throw new Error("Unable to fetch project data: " + response.status);
       }
 
-      const payload = await response.json();
+      const basePayload = await response.json();
+      const payload = i18n && typeof i18n.getLocalizedProjectPayload === "function"
+        ? await i18n.getLocalizedProjectPayload(basePayload)
+        : basePayload;
       const projects = asArray(payload.projects);
       const params = new URLSearchParams(window.location.search);
       const requestedSlug = params.get("slug");
       const project = findProjectBySlug(projects, requestedSlug);
 
       if (!project) {
-        pageRoot.innerHTML = '<p class="portfolio-empty">No project data found.</p>';
+        pageRoot.innerHTML = '<p class="portfolio-empty">' + translate("project.noData", "No project data found.") + '</p>';
         return;
       }
 
@@ -1041,8 +1075,9 @@
         window.history.replaceState({}, "", projectUrl(project.slug));
       }
 
-      const roleSummary = getRenderableTextList(project.role).join(" / ") || normalizeText(project.role) || "TBD";
-      const toolsSummary = getRenderableTextList(project.tools).join(", ") || normalizeText(project.tools) || "TBD";
+      const publicFallback = translate("project.notPublic", "Not public");
+      const roleSummary = getRenderableTextList(project.role).join(" / ") || normalizeText(project.role) || publicFallback;
+      const toolsSummary = getRenderableTextList(project.tools).join(", ") || normalizeText(project.tools) || publicFallback;
       const contributions = getRenderableTextList(project.contributions);
       const systems = getRenderableSystems(project.systems);
       const results = getRenderableTextList(project.results);
@@ -1092,12 +1127,18 @@
       setTextContent("project-title", project.title, "Untitled Project");
       setOptionalTextContent("project-tagline", project.tagline);
       setOptionalTextContent("project-summary", project.summary);
-      setTextContent("project-platform", project.platform, "TBD");
-      setTextContent("project-role", roleSummary, "TBD");
-      setTextContent("project-team", project.teamSize, "TBD");
-      setTextContent("project-tools", toolsSummary, "TBD");
+      setTextContent("project-platform", project.platform, publicFallback);
+      setTextContent("project-role", roleSummary, publicFallback);
+      setTextContent("project-team", project.teamSize, publicFallback);
+      setTextContent("project-tools", toolsSummary, publicFallback);
       setTextContent("project-problem", visibility.overview ? project.problem : "", "");
-      setTextContent("project-mode-label", getProjectModeLabel(project), "Project brief");
+      const modeLabelKeys = {
+        "Archive note": "project.archiveMode",
+        "Confidential brief": "project.confidentialMode",
+        "Playable case study": "project.caseMode",
+      };
+      const modeLabel = getProjectModeLabel(project);
+      setTextContent("project-mode-label", translate(modeLabelKeys[modeLabel], modeLabel), translate("project.projectBrief", "Project brief"));
       renderProjectReviewerBrief(
         document.getElementById("project-review-brief"),
         getProjectReviewerBriefItems(project)
@@ -1150,7 +1191,7 @@
 
           const label = document.createElement("span");
           label.className = "project-system-card__label";
-          label.textContent = "Design Decision";
+          label.textContent = translate("project.designDecision", "Design Decision");
           article.appendChild(label);
 
           const title = document.createElement("h4");
@@ -1218,12 +1259,12 @@
             <div class="project-related-card__body">
               <div class="portfolio-meta-row">
                 <span class="portfolio-pill">${entry.type || "Project"}</span>
-                <span class="portfolio-pill">${entry.year || "TBD"}</span>
+                <span class="portfolio-pill">${entry.year || publicFallback}</span>
               </div>
               <h4 class="project-related-card__title">${entry.title || "Untitled Project"}</h4>
-              <p class="project-related-card__summary">${entry.tagline || "Open this project to read the full case study."}</p>
+              <p class="project-related-card__summary">${entry.tagline || translate("project.relatedFallback", "Open this project to read the available project details.")}</p>
               <span class="project-related-card__cta">
-                <span>Open project</span>
+                <span>${translate("project.openProject", "Open project")}</span>
                 <i class="ph-bold ph-arrow-right"></i>
               </span>
             </div>
@@ -1290,10 +1331,10 @@
       pageRoot.innerHTML = `
       <section class="project-section">
         <div class="project-section__panel">
-          <h1>Project details could not be loaded</h1>
-          <p class="project-section__lead">Try returning to the portfolio explorer and opening the case study again.</p>
-          <a class="btn btn-default btn-hover btn-hover-accent" href="index.html#portfolio">
-            <span class="btn-caption">Back to portfolio</span>
+          <h1>${translate("project.loadFailTitle", "Project details could not be loaded")}</h1>
+          <p class="project-section__lead">${translate("project.loadFailText", "Try returning to the portfolio explorer and opening the case study again.")}</p>
+          <a class="btn btn-default btn-hover btn-hover-accent" href="${localizeInternalUrl("index.html#portfolio")}">
+            <span class="btn-caption">${translate("project.backToPortfolio", "Back to portfolio")}</span>
             <i class="ph-bold ph-arrow-left"></i>
           </a>
         </div>

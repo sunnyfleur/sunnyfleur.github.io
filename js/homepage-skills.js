@@ -1,4 +1,5 @@
 (() => {
+  function initializeSkills() {
   const root = document.querySelector(".skills-section");
   const cards = root ? Array.from(root.querySelectorAll(".skills-card")) : [];
   const detail = root?.querySelector(".skills-section__detail");
@@ -130,4 +131,9 @@
 
   const defaultCard = cards.find((card) => card.classList.contains("is-active")) || cards[0];
   setActive(defaultCard);
+  }
+
+  const i18n = window.PortfolioI18n;
+  const ready = i18n && typeof i18n.whenReady === "function" ? i18n.whenReady() : Promise.resolve();
+  ready.then(initializeSkills);
 })();

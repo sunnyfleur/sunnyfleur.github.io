@@ -299,6 +299,10 @@ body {
   margin-right: 0.6rem;
 }
 
+.journey-language {
+  flex: 0 0 auto;
+}
+
 .journey-nav__note {
   margin: 0;
   color: var(--journey-faint);

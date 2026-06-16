@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "index": {
+      "title": "Tran Hoang Kiet | Gameplay Designer Portfolio",
+      "description": "Portfolio of Tran Hoang Kiet, a Gameplay Designer focused on feature ownership, gameplay feel, combat readability, prototypes, and KPI-informed iteration.",
+      "ogDescription": "Gameplay design portfolio covering shipped work, prototypes, feature specs, combat feel, and case studies by Tran Hoang Kiet."
+    },
+    "project": {
+      "title": "Project | Tran Hoang Kiet Portfolio",
+      "description": "Project detail page for Tran Hoang Kiet's portfolio."
+    },
+    "journey": {
+      "title": "Games That Shaped My Taste - SunnyFleur",
+      "description": "A personal game journey and inspiration map from SunnyFleur, organized by memory, design lessons, and player experience."
+    },
+    "runner": {
+      "title": "Portfolio Runner Game",
+      "description": "A small browser runner game for Tran Hoang Kiet's portfolio."
+    }
+  },
+  "controls": {
+    "languageLabel": "Language",
+    "themeLabel": "light/dark mode",
+    "letsTalk": "Let's Talk"
+  },
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About Me",
+    "resume": "Resume",
+    "contact": "Contact",
+    "overview": "Overview",
+    "systems": "Systems",
+    "gallery": "Gallery",
+    "moreWork": "More Work"
+  },
+  "avatar": {
+    "specialization": "Specialization:",
+    "role": "Gameplay Designer",
+    "basedIn": "Based in:",
+    "location": "Ho Chi Minh City, Viet Nam",
+    "cta": "Let's Work Together!"
+  },
+  "home": {
+    "subtitle": "Gameplay design & feature ownership",
+    "title": "I'm Tran Hoang Kiet\nGameplay Designer.",
+    "works": "My Works",
+    "downloadCv": "Download CV",
+    "scroll": "Scroll for More * Scroll for More *"
+  },
+  "about": {
+    "eyebrow": "About Me",
+    "title": "Gameplay designer with technical production sense",
+    "projects": "Projects and Prototypes",
+    "years": "Years of experience",
+    "commercial": "Participated in Commercial Projects",
+    "lead": "I design gameplay features from intent and prototype through specs, playtests, implementation coordination, and production tuning.",
+    "leadHtml": "I am a <span class=\"highlight-text\">Gameplay Designer</span> who can move features from design intent through prototype, specs, playtests, implementation coordination, and production tuning.",
+    "featureLabel": "Feature ownership",
+    "featureText": "I define the intent, write the spec, support implementation, review playtest signals, and tune the feature until it is ready for production.",
+    "feelLabel": "Player-facing feel",
+    "feelText": "I focus on core loops, combat feel, encounter pacing, and feedback so player actions stay readable and satisfying.",
+    "dataLabel": "Data-informed support",
+    "dataText": "KPI dashboards and playtest notes help validate tuning decisions, but the design goal stays grounded in player feel.",
+    "gameCollection": "Explore My Game Collection",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location"
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "title": "Selected gameplay work",
+    "text": "A focused set of shipped work, prototypes, and evidence archives showing gameplay design, feature ownership, and iteration.",
+    "explorerTitle": "Project explorer",
+    "explorerText": "Filter by project type or focus area, then open the case study or archive with the clearest evidence.",
+    "filtersLabel": "Project filters",
+    "allProjects": "All Projects",
+    "featured": "Featured",
+    "archive": "Archive",
+    "mobile": "Mobile",
+    "prototype": "Prototype",
+    "unannounced": "Unannounced",
+    "caseStudy": "Case Study",
+    "platform": "Platform",
+    "role": "Role",
+    "status": "Status",
+    "openCaseStudy": "Open Case Study",
+    "openProject": "Open project",
+    "noProjects": "No projects match this filter yet.",
+    "loadError": "The project explorer could not be loaded right now.",
+    "playPreview": "Play preview for {title}",
+    "stopPreview": "Stop preview for {title}",
+    "openCaseFor": "Open case study for {title}"
+  },
+  "resume": {
+    "eyebrow": "Resume",
+    "title": "Education and practical experience",
+    "text": "My path combines Software Engineering, Unity development, and gameplay-focused design. I use that technical base to write specs, coordinate implementation, run playtest iteration, and tune features with KPI support.",
+    "educationTitle": "Education & design training",
+    "workTitle": "Work experience",
+    "skillsTitle": "Core Skills",
+    "educationFocus": "Education focus",
+    "roleScope": "Role scope",
+    "courseBy": "Course by",
+    "certificateBy": "Certificate by",
+    "bachelorBy": "Bachelor Degree by",
+    "inThe": "in the",
+    "gameStudio": "game studio",
+    "branchStudio": "branch studio"
+  },
+  "skills": {
+    "supporting": "Supporting skills",
+    "advanced": "Advanced",
+    "gameplayTitle": "Gameplay Design",
+    "gameplayDescription": "Design mechanics, core loops, progression, and feedback that make player intent readable in play.",
+    "gameplayProof": "Prototype breakdowns, combat readability notes, and case-study decisions focused on player feel.",
+    "ownershipTitle": "Feature Ownership",
+    "ownershipDescription": "Own gameplay features from design intent through specs, implementation coordination, playtest iteration, and production tuning.",
+    "ownershipProof": "Feature specs, handoff notes, tuning passes, and cross-functional coordination.",
+    "combatTitle": "Combat Design",
+    "combatDescription": "Shape combat feel, enemy behavior, boss mechanics, and encounter structure around readable player action.",
+    "combatProof": "Boss mechanics, enemy behavior notes, and encounter readability work.",
+    "docsTitle": "Design Documentation",
+    "docsDescription": "Write design documentation that turns ideas into specs, content plans, and implementation tasks.",
+    "docsProof": "GDD-style specs, content plans, and developer-facing handoff notes."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk gameplay design",
+    "lead": "Open to gameplay design roles where I can own features, write specs, iterate prototypes, and tune production gameplay.",
+    "scopeLabel": "Gameplay design scope",
+    "systems": "Gameplay systems",
+    "ownership": "Feature ownership",
+    "unity": "Unity implementation literacy",
+    "kpi": "KPI-informed tuning",
+    "routesLabel": "Direct contact routes",
+    "location": "Location",
+    "formTitle": "Send a short brief",
+    "formText": "Tell me what feature, prototype, or gameplay challenge needs support.",
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "required": "Required",
+    "optional": "Optional",
+    "submit": "Send Message",
+    "done": "Done!",
+    "thanks": "Thanks for your message. I'll get back as soon as possible."
+  },
+  "project": {
+    "loadingTitle": "Loading project...",
+    "loadingSummary": "Please wait while the case study is loaded.",
+    "missionBrief": "Mission Brief",
+    "caseFile": "Case File",
+    "projectBrief": "Project brief",
+    "platform": "Platform",
+    "role": "Role",
+    "teamSize": "Team Size",
+    "tools": "Tools",
+    "sections": {
+      "overview": "Overview",
+      "systems": "Systems",
+      "gallery": "Gallery",
+      "context": "Context and design challenge",
+      "video": "Video and interaction context",
+      "owned": "What I owned",
+      "decisions": "Key systems and decisions",
+      "results": "Results and learnings",
+      "galleryTitle": "Browse images without losing context",
+      "related": "Other projects in this portfolio"
+    },
+    "galleryLead": "Open any image in the lightbox, then jump back into the case study where you left off.",
+    "galleryImage": "Gallery Image",
+    "galleryReference": "Visual reference from the project.",
+    "designDecision": "Design Decision",
+    "viewArchive": "View full archive",
+    "archiveNote": "{count} more visuals are kept collapsed so the case study stays readable.",
+    "viewAllArchive": "View all {count} project archive images",
+    "relatedFallback": "Open this project to read the available project details.",
+    "openProject": "Open project",
+    "noData": "No project data found.",
+    "loadFailTitle": "Project details could not be loaded",
+    "loadFailText": "Try returning to the portfolio explorer and opening the case study again.",
+    "backToPortfolio": "Back to portfolio",
+    "roleLabel": "Role",
+    "challengeLabel": "Challenge",
+    "proofLabel": "Proof",
+    "archiveOwnership": "Archive ownership",
+    "myOwnership": "My ownership",
+    "publicContext": "Public context",
+    "designProblem": "Design problem",
+    "availableEvidence": "Available evidence",
+    "designSignal": "Design signal",
+    "archiveMode": "Archive note",
+    "confidentialMode": "Confidential brief",
+    "caseMode": "Playable case study",
+    "notPublic": "Not public"
+  },
+  "journey": {
+    "backHome": "Home",
+    "navNote": "A personal inspiration map, not a ranking board.",
+    "eyebrow": "Gaming journey",
+    "heroTitle": "Games That Shaped My Taste",
+    "heroLead": "A curated map of games that influenced how I think about worlds, stories, systems, player feeling, and the lessons that come from friction.",
+    "intro": "This page is not a tier list. It is a set of editorial shelves: games I lived in, stories that stayed with me, loops I kept returning to, systems I learned from, milestones that shaped my taste, and flawed experiences that still taught useful design lessons.",
+    "memoryChapters": "memory chapters",
+    "takeaways": "Design takeaways",
+    "principlesTitle": "What these games trained me to notice",
+    "journeyMap": "Journey map",
+    "memoryStop": "Memory stop",
+    "curatedShelf": "Curated shelf",
+    "references": "references",
+    "showAll": "Show all {count} games",
+    "showCurated": "Show curated set",
+    "designLesson": "Design lesson",
+    "hours": "hours",
+    "empty": "No game memories are ready to show yet.",
+    "loading": "Loading game memories...",
+    "errorTitle": "Game journey unavailable",
+    "errorText": "The collection data could not be loaded. Please try again later.",
+    "footerCredit": "Image sources are credited on each card.",
+    "footerRights": "Game screenshots and cover art belong to their respective publishers.",
+    "principles": [
+      {
+        "title": "World texture",
+        "body": "Small travel beats, local stakes, and environmental memory make a place feel authored."
+      },
+      {
+        "title": "Readable goals",
+        "body": "Strong loops keep the next useful action clear without flattening discovery."
+      },
+      {
+        "title": "System tension",
+        "body": "Good progression asks the player to trade comfort, risk, economy, and timing."
+      },
+      {
+        "title": "Style as function",
+        "body": "UI, music, routine, and pacing work best when they reinforce the same fantasy."
+      },
+      {
+        "title": "Player trust",
+        "body": "Friction is useful when it teaches; it becomes noise when feedback feels unfair."
+      }
+    ]
+  },
+  "runner": {
+    "score": "Score: {score}",
+    "subtitle": "Explore my skills and achievements",
+    "instructions": "Press Space or click to jump. Double-click to jump higher.",
+    "start": "START RUNNING",
+    "gameOver": "GAME OVER",
+    "restart": "PLAY AGAIN",
+    "portfolio": "VIEW PORTFOLIO"
+  }
+}

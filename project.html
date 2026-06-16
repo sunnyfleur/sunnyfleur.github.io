@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
 
-    <title>Project | Tran Hoang Kiet Portfolio</title>
+    <title data-i18n="meta.project.title">Project | Tran Hoang Kiet Portfolio</title>
 
-    <meta name="description" content="Project detail page for Tran Hoang Kiet's portfolio.">
+    <meta name="description" content="Project detail page for Tran Hoang Kiet's portfolio." data-i18n-attr="content:meta.project.description">
     <meta name="keywords" content="game design, portfolio, case study">
     <meta name="author" content="Tran Hoang Kiet">
 
@@ -19,14 +19,14 @@
 
     <meta property="og:image:height" content="1200">
     <meta property="og:image:width" content="1200">
-    <meta property="og:title" content="Project | Tran Hoang Kiet Portfolio">
-    <meta property="og:description" content="Project detail page for Tran Hoang Kiet's portfolio.">
+    <meta property="og:title" content="Project | Tran Hoang Kiet Portfolio" data-i18n-attr="content:meta.project.title">
+    <meta property="og:description" content="Project detail page for Tran Hoang Kiet's portfolio." data-i18n-attr="content:meta.project.description">
     <meta property="og:url" content="https://sunnyfleur.github.io/project.html">
     <meta property="og:image" content="https://sunnyfleur.github.io/img/og-image.png">
 
     <link rel="stylesheet" href="css/loaders/loader.css">
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css?v=20260611-deep-palette">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=20260615-i18n">
     <link rel="stylesheet" type="text/css" href="css/portfolio-ux.css?v=20260614-project-hero-contrast">
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efff">
@@ -49,31 +49,31 @@
           <ul class="menu__list d-flex justify-content-start">
             <li class="menu__item">
               <a class="menu__link btn" href="index.html">
-                <span class="menu__caption">Home</span>
+                <span class="menu__caption" data-i18n="nav.home">Home</span>
                 <i class="ph-bold ph-house-simple"></i>
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link btn" href="#project-overview">
-                <span class="menu__caption">Overview</span>
+                <span class="menu__caption" data-i18n="nav.overview">Overview</span>
                 <i class="ph-bold ph-user"></i>
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link btn" href="#project-systems-anchor">
-                <span class="menu__caption">Systems</span>
+                <span class="menu__caption" data-i18n="nav.systems">Systems</span>
                 <i class="ph-bold ph-stack"></i>
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link btn" href="#project-gallery">
-                <span class="menu__caption">Gallery</span>
+                <span class="menu__caption" data-i18n="nav.gallery">Gallery</span>
                 <i class="ph-bold ph-images"></i>
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link btn" href="#project-related">
-                <span class="menu__caption">More Work</span>
+                <span class="menu__caption" data-i18n="nav.moreWork">More Work</span>
                 <i class="ph-bold ph-arrow-bend-up-right"></i>
               </a>
             </li>
@@ -82,9 +82,13 @@
       </div>
 
       <div class="header__controls d-flex justify-content-end">
-        <button id="color-switcher" class="color-switcher header__switcher btn" type="button" role="switch" aria-label="light/dark mode" aria-checked="true"></button>
+        <button id="color-switcher" class="color-switcher header__switcher btn" type="button" role="switch" aria-label="light/dark mode" aria-checked="true" data-i18n-attr="aria-label:controls.themeLabel"></button>
+        <div class="language-toggle header__language" data-language-toggle aria-label="Language">
+          <button type="button" data-language-option="en" aria-pressed="true">EN</button>
+          <button type="button" data-language-option="vi" aria-pressed="false">VI</button>
+        </div>
         <a id="notify-trigger" class="header__trigger btn" href="mailto:tranhoangkiet1312@gmail.com?subject=Message%20from%20your%20site">
-          <span class="trigger__caption">Let's Talk</span>
+          <span class="trigger__caption" data-i18n="controls.letsTalk">Let's Talk</span>
           <i class="ph-bold ph-chat-dots"></i>
         </a>
       </div>
@@ -108,43 +112,43 @@
                   <span id="project-year" class="project-pill">Year</span>
                   <span id="project-status" class="project-pill">Status</span>
                 </div>
-                <p class="project-hero__eyebrow">Mission Brief</p>
-                <h1 id="project-title" class="project-hero__title">Loading project...</h1>
-                <p id="project-tagline" class="project-hero__summary">Please wait while the case study is loaded.</p>
+                <p class="project-hero__eyebrow" data-i18n="project.missionBrief">Mission Brief</p>
+                <h1 id="project-title" class="project-hero__title" data-i18n="project.loadingTitle">Loading project...</h1>
+                <p id="project-tagline" class="project-hero__summary" data-i18n="project.loadingSummary">Please wait while the case study is loaded.</p>
                 <p id="project-summary" class="project-hero__summary"></p>
                 <div id="project-actions" class="project-hero__actions"></div>
               </div>
             </div>
 
-            <div id="project-review-brief" class="project-review-brief" aria-label="Reviewer summary"></div>
+            <div id="project-review-brief" class="project-review-brief" aria-label="Reviewer summary" data-i18n-attr="aria-label:project.projectBrief"></div>
 
             <aside class="project-snapshot">
               <div class="project-snapshot__header">
-                <span class="project-snapshot__label">Case File</span>
-                <p id="project-mode-label" class="project-snapshot__mode">Project brief</p>
+                <span class="project-snapshot__label" data-i18n="project.caseFile">Case File</span>
+                <p id="project-mode-label" class="project-snapshot__mode" data-i18n="project.projectBrief">Project brief</p>
               </div>
               <div class="project-facts">
                 <div class="project-fact">
-                  <span class="project-fact__label">Platform</span>
+                  <span class="project-fact__label" data-i18n="project.platform">Platform</span>
                   <p id="project-platform" class="project-fact__value"></p>
                 </div>
                 <div class="project-fact">
-                  <span class="project-fact__label">Role</span>
+                  <span class="project-fact__label" data-i18n="project.role">Role</span>
                   <p id="project-role" class="project-fact__value"></p>
                 </div>
                 <div class="project-fact">
-                  <span class="project-fact__label">Team Size</span>
+                  <span class="project-fact__label" data-i18n="project.teamSize">Team Size</span>
                   <p id="project-team" class="project-fact__value"></p>
                 </div>
                 <div class="project-fact">
-                  <span class="project-fact__label">Tools</span>
+                  <span class="project-fact__label" data-i18n="project.tools">Tools</span>
                   <p id="project-tools" class="project-fact__value"></p>
                 </div>
               </div>
-              <nav class="project-section-nav" aria-label="Project sections">
-                <a class="project-section-nav__link" href="#project-overview">Overview</a>
-                <a class="project-section-nav__link" href="#project-systems-anchor">Systems</a>
-                <a class="project-section-nav__link" href="#project-gallery">Gallery</a>
+              <nav class="project-section-nav" aria-label="Project sections" data-i18n-attr="aria-label:project.projectBrief">
+                <a class="project-section-nav__link" href="#project-overview" data-i18n="project.sections.overview">Overview</a>
+                <a class="project-section-nav__link" href="#project-systems-anchor" data-i18n="project.sections.systems">Systems</a>
+                <a class="project-section-nav__link" href="#project-gallery" data-i18n="project.sections.gallery">Gallery</a>
               </nav>
             </aside>
           </section>
@@ -153,7 +157,7 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <h2>Context and design challenge</h2>
+                  <h2 data-i18n="project.sections.context">Context and design challenge</h2>
                 </div>
                 <div class="project-section__body">
                   <p id="project-problem" class="project-section__lead"></p>
@@ -166,7 +170,7 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <h2>Video and interaction context</h2>
+                  <h2 data-i18n="project.sections.video">Video and interaction context</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
                   <div class="ratio ratio-16x9">
@@ -181,7 +185,7 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <h2>What I owned</h2>
+                  <h2 data-i18n="project.sections.owned">What I owned</h2>
                 </div>
                 <div class="project-section__body">
                   <ul id="project-contributions" class="project-list"></ul>
@@ -194,7 +198,7 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <h2>Key systems and decisions</h2>
+                  <h2 data-i18n="project.sections.decisions">Key systems and decisions</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
                   <div id="project-systems" class="project-system-grid"></div>
@@ -207,7 +211,7 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <h2>Results and learnings</h2>
+                  <h2 data-i18n="project.sections.results">Results and learnings</h2>
                 </div>
                 <div class="project-section__body">
                   <ul id="project-results" class="project-list"></ul>
@@ -220,10 +224,10 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <h2>Browse images without losing context</h2>
+                  <h2 data-i18n="project.sections.galleryTitle">Browse images without losing context</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
-                  <p class="project-section__lead">Open any image in the lightbox, then jump back into the case study where you left off.</p>
+                  <p class="project-section__lead" data-i18n="project.galleryLead">Open any image in the lightbox, then jump back into the case study where you left off.</p>
                   <div id="project-gallery-grid" class="project-gallery-groups"></div>
                 </div>
               </div>
@@ -234,7 +238,7 @@
             <div class="project-section__panel">
               <div class="project-section__shell">
                 <div class="project-section__header">
-                  <h2>Other projects in this portfolio</h2>
+                  <h2 data-i18n="project.sections.related">Other projects in this portfolio</h2>
                 </div>
                 <div class="project-section__body project-section__body--wide">
                   <div id="project-related-grid" class="project-related-grid"></div>
@@ -366,6 +370,7 @@
         reducedMotionQuery.addEventListener("change", initAmbientBlurs);
       }
     </script>
+    <script src="js/i18n.js?v=20260615-i18n"></script>
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js?v=20260405-gallery-groups"></script>
     <script src="js/page-transition.js"></script>

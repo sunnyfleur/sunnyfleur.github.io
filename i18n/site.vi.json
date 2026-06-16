@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "index": {
+      "title": "Tran Hoang Kiet | Portfolio Gameplay Designer",
+      "description": "Portfolio của Tran Hoang Kiet, Gameplay Designer tập trung vào phụ trách feature, cảm giác chơi, combat feel, prototype và iteration có hỗ trợ từ KPI.",
+      "ogDescription": "Portfolio gameplay design với dự án đã tham gia, prototype, feature spec, combat feel và case study của Tran Hoang Kiet."
+    },
+    "project": {
+      "title": "Dự án | Portfolio Tran Hoang Kiet",
+      "description": "Trang chi tiết dự án trong portfolio của Tran Hoang Kiet."
+    },
+    "journey": {
+      "title": "Những trò chơi định hình gu thiết kế - SunnyFleur",
+      "description": "Bản đồ game cá nhân của SunnyFleur, sắp xếp theo ký ức, bài học thiết kế và trải nghiệm người chơi."
+    },
+    "runner": {
+      "title": "Portfolio Runner Game",
+      "description": "Mini game runner nhỏ trong portfolio của Tran Hoang Kiet."
+    }
+  },
+  "controls": {
+    "languageLabel": "Ngôn ngữ",
+    "themeLabel": "chế độ sáng/tối",
+    "letsTalk": "Liên hệ"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "portfolio": "Portfolio",
+    "about": "Giới thiệu",
+    "resume": "Hồ sơ",
+    "contact": "Liên hệ",
+    "overview": "Tổng quan",
+    "systems": "Systems",
+    "gallery": "Gallery",
+    "moreWork": "Dự án khác"
+  },
+  "avatar": {
+    "specialization": "Định hướng:",
+    "role": "Gameplay Designer",
+    "basedIn": "Đang ở:",
+    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "cta": "Cùng làm việc!"
+  },
+  "home": {
+    "subtitle": "Thiết kế gameplay và phụ trách feature",
+    "title": "Tôi là Tran Hoang Kiet\nGameplay Designer.",
+    "works": "Xem dự án",
+    "downloadCv": "Tải CV",
+    "scroll": "Xem thêm * Xem thêm *"
+  },
+  "about": {
+    "eyebrow": "Giới thiệu",
+    "title": "Gameplay Designer có nền tảng technical",
+    "projects": "Dự án và prototype",
+    "years": "Năm kinh nghiệm",
+    "commercial": "Dự án thương mại đã tham gia",
+    "lead": "Tôi thiết kế feature gameplay từ ý tưởng, prototype và spec đến playtest, phối hợp triển khai và tuning trước khi đưa vào production.",
+    "leadHtml": "Tôi là <span class=\"highlight-text\">Gameplay Designer</span> có thể đưa feature từ ý tưởng, prototype và spec đến playtest, phối hợp triển khai và tuning trước khi đưa vào production.",
+    "featureLabel": "Phụ trách feature",
+    "featureText": "Tôi xác định intent, viết spec, phối hợp với developer, đọc tín hiệu playtest và tuning feature đến mức có thể đưa vào production.",
+    "feelLabel": "Cảm giác chơi",
+    "feelText": "Tôi tập trung vào core loop, combat feel, nhịp encounter và feedback để hành động của người chơi rõ ràng, dễ đọc và đã tay.",
+    "dataLabel": "Dữ liệu hỗ trợ tuning",
+    "dataText": "KPI dashboard và ghi chú playtest giúp kiểm chứng tuning decision, nhưng mục tiêu chính vẫn là cảm giác chơi.",
+    "gameCollection": "Xem bộ sưu tập game",
+    "name": "Tên",
+    "phone": "Số điện thoại",
+    "email": "Email",
+    "location": "Địa điểm"
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "title": "Các dự án gameplay tiêu biểu",
+    "text": "Tập hợp dự án đã tham gia, prototype và archive tư liệu thể hiện gameplay design, phụ trách feature và quá trình iteration.",
+    "explorerTitle": "Project explorer",
+    "explorerText": "Lọc theo loại dự án hoặc focus area, rồi mở case study hoặc archive có bằng chứng rõ nhất.",
+    "filtersLabel": "Bộ lọc dự án",
+    "allProjects": "Tất cả dự án",
+    "featured": "Nổi bật",
+    "archive": "Archive",
+    "mobile": "Mobile",
+    "prototype": "Prototype",
+    "unannounced": "Chưa công bố",
+    "caseStudy": "Case Study",
+    "platform": "Nền tảng",
+    "role": "Vai trò",
+    "status": "Trạng thái",
+    "openCaseStudy": "Mở Case Study",
+    "openProject": "Mở dự án",
+    "noProjects": "Không có dự án phù hợp bộ lọc này.",
+    "loadError": "Hiện chưa tải được project explorer.",
+    "playPreview": "Phát preview cho {title}",
+    "stopPreview": "Dừng preview cho {title}",
+    "openCaseFor": "Mở case study của {title}"
+  },
+  "resume": {
+    "eyebrow": "Hồ sơ",
+    "title": "Đào tạo và kinh nghiệm thực tế",
+    "text": "Nền tảng của tôi kết hợp Software Engineering, kinh nghiệm Unity và gameplay design. Tôi dùng hiểu biết technical để viết spec, phối hợp triển khai, tổ chức playtest và tuning feature với dữ liệu hỗ trợ.",
+    "educationTitle": "Đào tạo & thực hành thiết kế",
+    "workTitle": "Kinh nghiệm làm việc",
+    "skillsTitle": "Kỹ năng chính",
+    "educationFocus": "Trọng tâm đào tạo",
+    "roleScope": "Phạm vi vai trò",
+    "courseBy": "Khóa học bởi",
+    "certificateBy": "Chứng chỉ bởi",
+    "bachelorBy": "Bằng cử nhân bởi",
+    "inThe": "tại",
+    "gameStudio": "game studio",
+    "branchStudio": "branch studio"
+  },
+  "skills": {
+    "supporting": "Kỹ năng hỗ trợ",
+    "advanced": "Mạnh",
+    "gameplayTitle": "Gameplay Design",
+    "gameplayDescription": "Thiết kế mechanic, core loop, progression và feedback để ý định của người chơi trở thành tương tác rõ ràng trong gameplay.",
+    "gameplayProof": "Prototype breakdown, ghi chú combat readability và quyết định case study tập trung vào cảm giác chơi.",
+    "ownershipTitle": "Phụ trách feature",
+    "ownershipDescription": "Theo sát feature gameplay từ intent, prototype và spec đến phối hợp triển khai, playtest và tuning.",
+    "ownershipProof": "Feature spec, handoff note, tuning pass và phối hợp với team triển khai.",
+    "combatTitle": "Combat Design",
+    "combatDescription": "Định hình combat feel, enemy behavior, boss mechanics và encounter structure quanh hành động dễ đọc của người chơi.",
+    "combatProof": "Boss mechanics, enemy behavior note và phần tinh chỉnh encounter readability.",
+    "docsTitle": "Tài liệu thiết kế",
+    "docsDescription": "Viết design document để chuyển ý tưởng thành spec, content plan và task triển khai rõ ràng.",
+    "docsProof": "GDD-style spec, content plan và handoff note cho developer."
+  },
+  "contact": {
+    "eyebrow": "Liên hệ",
+    "title": "Cùng trao đổi về gameplay design",
+    "lead": "Tôi sẵn sàng cho các vai trò gameplay design cần phụ trách feature, viết spec, iterate prototype và tuning gameplay.",
+    "scopeLabel": "Phạm vi gameplay design",
+    "systems": "Gameplay system",
+    "ownership": "Phụ trách feature",
+    "unity": "Unity implementation literacy",
+    "kpi": "Tuning có hỗ trợ từ KPI",
+    "routesLabel": "Kênh liên hệ trực tiếp",
+    "location": "Địa điểm",
+    "formTitle": "Gửi brief ngắn",
+    "formText": "Cho tôi biết feature, prototype hoặc thử thách gameplay bạn cần hỗ trợ.",
+    "name": "Tên",
+    "company": "Công ty",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "message": "Nội dung",
+    "required": "Bắt buộc",
+    "optional": "Không bắt buộc",
+    "submit": "Gửi tin nhắn",
+    "done": "Đã gửi!",
+    "thanks": "Cảm ơn bạn đã gửi tin nhắn. Tôi sẽ phản hồi sớm nhất có thể."
+  },
+  "project": {
+    "loadingTitle": "Đang tải dự án...",
+    "loadingSummary": "Vui lòng đợi trong lúc case study được tải.",
+    "missionBrief": "Mission Brief",
+    "caseFile": "Case File",
+    "projectBrief": "Project brief",
+    "platform": "Nền tảng",
+    "role": "Vai trò",
+    "teamSize": "Quy mô team",
+    "tools": "Công cụ",
+    "sections": {
+      "overview": "Tổng quan",
+      "systems": "Systems",
+      "gallery": "Gallery",
+      "context": "Bối cảnh và thử thách thiết kế",
+      "video": "Video và ngữ cảnh tương tác",
+      "owned": "Phần tôi phụ trách",
+      "decisions": "Systems và quyết định chính",
+      "results": "Kết quả và bài học",
+      "galleryTitle": "Xem hình ảnh mà không mất ngữ cảnh",
+      "related": "Dự án khác trong portfolio"
+    },
+    "galleryLead": "Mở bất kỳ hình nào trong lightbox, rồi quay lại case study đúng vị trí bạn đang đọc.",
+    "galleryImage": "Hình ảnh dự án",
+    "galleryReference": "Visual reference từ dự án.",
+    "designDecision": "Design Decision",
+    "viewArchive": "Xem toàn bộ archive",
+    "archiveNote": "{count} visual khác đang được thu gọn để case study vẫn dễ đọc.",
+    "viewAllArchive": "Xem tất cả {count} hình archive của dự án",
+    "relatedFallback": "Mở dự án này để đọc phần thông tin hiện có.",
+    "openProject": "Mở dự án",
+    "noData": "Không tìm thấy dữ liệu dự án.",
+    "loadFailTitle": "Không tải được chi tiết dự án",
+    "loadFailText": "Hãy quay lại portfolio explorer và mở case study lần nữa.",
+    "backToPortfolio": "Quay lại portfolio",
+    "roleLabel": "Vai trò",
+    "challengeLabel": "Thử thách",
+    "proofLabel": "Bằng chứng",
+    "archiveOwnership": "Archive ownership",
+    "myOwnership": "Phần tôi phụ trách",
+    "publicContext": "Ngữ cảnh công khai",
+    "designProblem": "Vấn đề thiết kế",
+    "availableEvidence": "Evidence hiện có",
+    "designSignal": "Design signal",
+    "archiveMode": "Archive note",
+    "confidentialMode": "Confidential brief",
+    "caseMode": "Playable case study",
+    "notPublic": "Không công khai"
+  },
+  "journey": {
+    "backHome": "Trang chủ",
+    "navNote": "Bản đồ cảm hứng cá nhân, không phải bảng xếp hạng.",
+    "eyebrow": "Gaming journey",
+    "heroTitle": "Những trò chơi định hình gu thiết kế của tôi",
+    "heroLead": "Một bản đồ tuyển chọn các trò chơi ảnh hưởng đến cách tôi nghĩ về thế giới, câu chuyện, systems, cảm giác người chơi và bài học từ friction.",
+    "intro": "Trang này không phải tier list. Đây là những kệ editorial: các game tôi từng sống trong đó, câu chuyện còn ở lại, loop tôi quay lại nhiều lần, system tôi học được, milestone định hình gu thiết kế và cả trải nghiệm chưa hoàn hảo nhưng vẫn cho bài học hữu ích.",
+    "memoryChapters": "chương ký ức",
+    "takeaways": "Bài học thiết kế",
+    "principlesTitle": "Những game này rèn cho tôi chú ý điều gì",
+    "journeyMap": "Bản đồ hành trình",
+    "memoryStop": "Điểm dừng ký ức",
+    "curatedShelf": "Kệ tuyển chọn",
+    "references": "tham chiếu",
+    "showAll": "Xem tất cả {count} game",
+    "showCurated": "Thu gọn danh sách",
+    "designLesson": "Bài học thiết kế",
+    "hours": "giờ",
+    "empty": "Chưa có game memory nào sẵn sàng hiển thị.",
+    "loading": "Đang tải game memories...",
+    "errorTitle": "Không tải được game journey",
+    "errorText": "Không tải được dữ liệu bộ sưu tập. Vui lòng thử lại sau.",
+    "footerCredit": "Nguồn hình ảnh được ghi trên từng card.",
+    "footerRights": "Screenshot và cover art thuộc về publisher tương ứng.",
+    "principles": [
+      {
+        "title": "Cảm giác thế giới",
+        "body": "Những nhịp di chuyển nhỏ, mục tiêu địa phương và ký ức môi trường khiến một thế giới có chất riêng."
+      },
+      {
+        "title": "Mục tiêu dễ đọc",
+        "body": "Loop tốt giúp người chơi hiểu hành động hữu ích tiếp theo mà vẫn giữ cảm giác khám phá."
+      },
+      {
+        "title": "Áp lực từ system",
+        "body": "Progression hay thường buộc người chơi cân nhắc rủi ro, tài nguyên, thời điểm và mức an toàn."
+      },
+      {
+        "title": "Style phục vụ gameplay",
+        "body": "UI, âm nhạc, routine và pacing mạnh nhất khi cùng đẩy một fantasy rõ ràng."
+      },
+      {
+        "title": "Niềm tin của người chơi",
+        "body": "Friction hữu ích khi nó dạy người chơi điều gì đó; nó trở thành nhiễu khi feedback tạo cảm giác thiếu công bằng."
+      }
+    ]
+  },
+  "runner": {
+    "score": "Điểm: {score}",
+    "subtitle": "Khám phá kỹ năng và thành tựu của tôi",
+    "instructions": "Nhấn Space hoặc click để nhảy. Double-click để nhảy cao hơn.",
+    "start": "Bắt đầu chạy",
+    "gameOver": "Game Over",
+    "restart": "Chơi lại",
+    "portfolio": "Xem portfolio"
+  }
+}
