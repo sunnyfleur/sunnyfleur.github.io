@@ -119,7 +119,7 @@ test('portfolio explorer uses the View Transition API for spotlight changes', ()
 
 test('portfolio hover spotlight changes do not trigger root view transitions', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'portfolio-index.js'), 'utf8');
-  const updateMatch = source.match(/function updateSpotlightFromCard\(card\) \{([\s\S]*?)\n        \}\n\n        filtersRoot/);
+  const updateMatch = source.match(/function updateSpotlightFromCard\(card\) \{([\s\S]*?)\r?\n        \}\r?\n\r?\n        filtersRoot/);
 
   assert.ok(updateMatch, 'Expected updateSpotlightFromCard to exist.');
   assert.doesNotMatch(updateMatch[1], /runPortfolioViewTransition/);

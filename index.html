@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" color-scheme="light">
 
   <head>
     <meta charset="UTF-8">
@@ -46,6 +46,17 @@
     <!-- Custom Browser Color Start -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efff">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#10111c">
+    <script>
+      // Light is the default theme; apply a saved choice before first paint.
+      (function () {
+        try {
+          var saved = localStorage.getItem('template.theme');
+          if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('color-scheme', saved);
+          }
+        } catch (error) {}
+      })();
+    </script>
     <meta name="msapplication-navbutton-color" content="#10111c">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1190,7 +1201,7 @@
       });
     </script>
     <script src="js/i18n.js?v=20260615-i18n"></script>
-    <script src="js/app.js?v=20261026-refine"></script>
+    <script src="js/app.js?v=20261027-light"></script>
     <script src="js/gallery-init.js"></script>
     <script src="js/media-source.js"></script>
     <script src="js/portfolio-index.js?v=20261026-nav"></script>

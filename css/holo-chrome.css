@@ -332,6 +332,96 @@ h2 {
   }
 }
 
+/* ---- Project case file + brief: one rounded facts panel, then two aligned cards ---- */
+
+.project-snapshot {
+  gap: 1.8rem;
+  padding: clamp(1.8rem, 2.2vw, 2.4rem) clamp(1.8rem, 2.6vw, 2.8rem);
+  border-radius: 2.4rem;
+}
+
+.project-snapshot__header {
+  align-items: center;
+  padding: 0;
+}
+
+.project-snapshot__mode {
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+}
+
+body .project-facts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6rem 2.4rem;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+body .project-fact {
+  padding: 0;
+  border: 0;
+}
+
+.project-fact__label {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+}
+
+.project-fact__value {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.project-section-nav {
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+body .project-review-brief {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body .project-review-brief__item {
+  align-content: start;
+  gap: 0.9rem;
+  padding: clamp(1.8rem, 2.2vw, 2.4rem) clamp(1.8rem, 2.6vw, 2.8rem);
+  border-radius: 2.4rem;
+}
+
+.project-review-brief__title {
+  font-size: clamp(1.8rem, 1.5vw, 2.2rem);
+}
+
+.project-review-brief__body {
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  body .project-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body .project-review-brief {
+    grid-template-columns: 1fr;
+  }
+
+  body .project-review-brief__item {
+    flex: none;
+  }
+}
+
 /* ---- Reduced transparency: fall back to solid surfaces ---- */
 
 @media (prefers-reduced-transparency: reduce) {

@@ -506,7 +506,8 @@ $(function() {
 const themeBtn = document.querySelector('.color-switcher');
 
 function getCurrentTheme(){
-  let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Light by default; only a saved choice from the switcher changes it.
+  let theme = 'light';
   localStorage.getItem('template.theme') ? theme = localStorage.getItem('template.theme') : null;
   return theme;
 }

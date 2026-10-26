@@ -781,7 +781,8 @@
       return;
     }
 
-    const briefItems = asArray(items).filter((item) => item && item.label && item.body);
+    // Role is already listed in the case file, so the brief keeps only Challenge and Proof.
+    const briefItems = asArray(items).filter((item) => item && item.label && item.body && item.label !== "Role");
     root.innerHTML = "";
     root.hidden = briefItems.length === 0;
     root.style.display = briefItems.length === 0 ? "none" : "";
