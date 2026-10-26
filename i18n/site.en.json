@@ -46,7 +46,9 @@
     "title": "I'm Tran Hoang Kiet\nGameplay Designer.",
     "works": "My Works",
     "downloadCv": "Download CV",
-    "scroll": "Scroll for More * Scroll for More *"
+    "scroll": "Scroll for More * Scroll for More *",
+    "nowLabel": "Now",
+    "nowText": "· unannounced action project"
   },
   "about": {
     "eyebrow": "About Me",
@@ -86,12 +88,16 @@
     "role": "Role",
     "status": "Status",
     "openCaseStudy": "Open Case Study",
+    "transitionBadge": "Case study",
+    "transitionOpening": "Opening case study",
     "openProject": "Open project",
     "noProjects": "No projects match this filter yet.",
     "loadError": "The project explorer could not be loaded right now.",
     "playPreview": "Play preview for {title}",
     "stopPreview": "Stop preview for {title}",
-    "openCaseFor": "Open case study for {title}"
+    "openCaseFor": "Open case study for {title}",
+    "inSpotlight": "In spotlight",
+    "showAll": "Show all {count} projects"
   },
   "resume": {
     "eyebrow": "Resume",
@@ -196,7 +202,9 @@
     "archiveMode": "Archive note",
     "confidentialMode": "Confidential brief",
     "caseMode": "Playable case study",
-    "notPublic": "Not public"
+    "notPublic": "Not public",
+    "notFoundTitle": "Project not found",
+    "notFoundText": "This project link is out of date or the project was removed. Browse the current work instead."
   },
   "journey": {
     "backHome": "Home",

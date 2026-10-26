@@ -46,25 +46,25 @@ $(function() {
   const loader = document.getElementById("loader");
   const loaderContent = document.getElementById("loaderContent");
   const criticalImage = document.querySelector(".avatar__image img");
-  const loaderTimeout = 1200;
+  const loaderTimeout = 600;
   let loaderFinished = false;
 
   function startHeadlineAnimation() {
-    gsap.set(".animate-headline", {y: 50, opacity: 0});
+    gsap.set(".animate-headline", {y: 24, opacity: 0});
     ScrollTrigger.batch(".animate-headline", {
       interval: 0.1,
       batchMax: 4,
-      duration: 6,
       onEnter: batch => gsap.to(batch, {
-        opacity: 1, 
+        opacity: 1,
         y: 0,
-        ease: 'sine',
-        stagger: {each: 0.15, grid: [1, 4]}, 
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: {each: 0.08, grid: [1, 4]},
         overwrite: true
       }),
       onLeave: batch => gsap.set(batch, {opacity: 1, y: 0, overwrite: true}),
       onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
-      onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 50, overwrite: true})
+      onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 24, overwrite: true})
     });
   }
 
@@ -104,7 +104,7 @@ $(function() {
   // --------------------------------------------- //
   const scrollSpy = new bootstrap.ScrollSpy(document.body, {
     target: '#menu',
-    smoothScroll: true,
+    smoothScroll: false,
     rootMargin: '0px 0px -40%',
   });
   // --------------------------------------------- //
@@ -114,15 +114,101 @@ $(function() {
   // --------------------------------------------- //
   // Lenis Scroll Plugin Start
   // --------------------------------------------- //
-  const lenis = new Lenis()
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const lenis = typeof Lenis !== "undefined" && !prefersReducedMotion.matches
+    ? new Lenis({
+      lerp: 0.09,
+      smoothWheel: true,
+      syncTouch: false
+    })
+    : null;
+
+  if (lenis) {
+    window.siteLenis = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
   }
-  requestAnimationFrame(raf)
   // --------------------------------------------- //
   // Lenis Scroll Plugin End
   // --------------------------------------------- //
+
+  function getFixedHeaderOffset() {
+    const header = document.querySelector(".header");
+
+    if (!header || !window.matchMedia("(min-width: 992px)").matches) {
+      return 0;
+    }
+
+    return -(header.getBoundingClientRect().height + 32);
+  }
+
+  function focusScrollTarget(target) {
+    if (!target) {
+      return;
+    }
+
+    if (!target.hasAttribute("tabindex")) {
+      target.setAttribute("tabindex", "-1");
+    }
+
+    try {
+      target.focus({ preventScroll: true });
+    } catch (error) {
+      target.focus();
+    }
+  }
+
+  function scrollToTargetElement(targetElement, options = {}) {
+    const offset = getFixedHeaderOffset();
+    const immediate = Boolean(options.immediate || prefersReducedMotion.matches);
+
+    if (lenis) {
+      lenis.scrollTo(targetElement, {
+        offset,
+        immediate,
+        duration: immediate ? undefined : 0.9,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        onComplete: () => {
+          if (options.focus !== false) {
+            focusScrollTarget(targetElement);
+          }
+        }
+      });
+      return;
+    }
+
+    window.scrollTo({
+      top: Math.max(0, targetElement.getBoundingClientRect().top + window.scrollY + offset),
+      behavior: immediate ? "auto" : "smooth"
+    });
+
+    if (options.focus !== false) {
+      window.setTimeout(() => focusScrollTarget(targetElement), immediate ? 0 : 500);
+    }
+  }
+
+  function getHashTarget(hash) {
+    if (!hash || hash === "#" || hash === "#0") {
+      return null;
+    }
+
+    try {
+      const target = $(hash);
+      if (target.length) {
+        return target[0];
+      }
+    } catch (error) {
+    }
+
+    const id = decodeURIComponent(hash.slice(1));
+    return document.getElementById(id) || document.querySelector('[name="' + CSS.escape(id) + '"]');
+  }
 
   // ------------------------------------------------------------------------------ //
   // Parallax (apply parallax effect to any element with a data-speed attribute) Start
@@ -149,12 +235,14 @@ $(function() {
   animateInUp.forEach((element) => {
     gsap.fromTo(element, {
       opacity: 0,
-      y: 50,
-      ease: 'sine',
+      y: 24,
     }, {
       y: 0,
       opacity: 1,
+      duration: 0.5,
+      ease: 'power2.out',
       scrollTrigger: {
+        start: 'top 92%',
         trigger: element,
         toggleActions: 'play none none reverse',
       }
@@ -179,7 +267,8 @@ $(function() {
   });
 
   // Animation Cards Stack
-  // Grid 2x
+  // Grid 2x (no .animate-card-2 elements on the homepage right now, so skip to avoid GSAP null-target warnings)
+  if (document.querySelector(".animate-card-2")) {
   gsap.set(".animate-card-2", {y: 100, opacity: 0});
   ScrollTrigger.batch(".animate-card-2", {
     interval: 0.1,
@@ -196,6 +285,8 @@ $(function() {
     onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
     onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
   });
+  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-2", {y: 0, opacity: 1}));
+  }
 
   // Grid 3x
   gsap.set(".animate-card-3", {y: 50, opacity: 0});
@@ -233,7 +324,6 @@ $(function() {
     onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 50, overwrite: true})
   });
 
-  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-2", {y: 0, opacity: 1}));
   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-3", {y: 0, opacity: 1}));
   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-5", {y: 0, opacity: 1}));
   // --------------------------------------------- //
@@ -248,21 +338,28 @@ $(function() {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
+        const targetElement = target[0];
         event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000, function() {
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) {
-            return false;
-          } else {
-            $target.attr('tabindex','-1');
-            $target.focus();
-          };
-        });
+        scrollToTargetElement(targetElement);
       }
     }
+  });
+
+  window.addEventListener("load", () => {
+    const targetElement = getHashTarget(window.location.hash);
+
+    if (!targetElement) {
+      return;
+    }
+
+    window.setTimeout(() => {
+      scrollToTargetElement(targetElement, {
+        immediate: true,
+        focus: false
+      });
+      ScrollTrigger.refresh();
+      scrollSpy.refresh();
+    }, 120);
   });
   // --------------------------------------------- //
   // Smooth Scrolling End
@@ -361,20 +458,6 @@ $(function() {
   };
   // --------------------------------------------- //
   // Modernizr SVG Fallback End
-  // --------------------------------------------- //
-
-  // --------------------------------------------- //
-  // Chrome Smooth Scroll Start
-  // --------------------------------------------- //
-  try {
-    $.browserSelector();
-    if($("html").hasClass("chrome")) {
-      $.smoothScroll();
-    }
-  } catch(err) {
-  };
-  // --------------------------------------------- //
-  // Chrome Smooth Scroll End
   // --------------------------------------------- //
 
   // --------------------------------------------- //

@@ -46,7 +46,9 @@
     "title": "Tôi là Tran Hoang Kiet\nGameplay Designer.",
     "works": "Xem dự án",
     "downloadCv": "Tải CV",
-    "scroll": "Xem thêm * Xem thêm *"
+    "scroll": "Xem thêm * Xem thêm *",
+    "nowLabel": "Hiện tại",
+    "nowText": "· dự án action chưa công bố"
   },
   "about": {
     "eyebrow": "Giới thiệu",
@@ -86,12 +88,16 @@
     "role": "Vai trò",
     "status": "Trạng thái",
     "openCaseStudy": "Mở Case Study",
+    "transitionBadge": "Dự án",
+    "transitionOpening": "Đang mở dự án",
     "openProject": "Mở dự án",
     "noProjects": "Không có dự án phù hợp bộ lọc này.",
     "loadError": "Hiện chưa tải được project explorer.",
     "playPreview": "Phát preview cho {title}",
     "stopPreview": "Dừng preview cho {title}",
-    "openCaseFor": "Mở case study của {title}"
+    "openCaseFor": "Mở case study của {title}",
+    "inSpotlight": "Đang xem",
+    "showAll": "Xem tất cả {count} dự án"
   },
   "resume": {
     "eyebrow": "Hồ sơ",
@@ -196,7 +202,9 @@
     "archiveMode": "Archive note",
     "confidentialMode": "Confidential brief",
     "caseMode": "Playable case study",
-    "notPublic": "Không công khai"
+    "notPublic": "Không công khai",
+    "notFoundTitle": "Không tìm thấy dự án",
+    "notFoundText": "Liên kết dự án này đã cũ hoặc dự án đã bị gỡ. Hãy xem các dự án hiện có."
   },
   "journey": {
     "backHome": "Trang chủ",

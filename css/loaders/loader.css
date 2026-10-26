@@ -224,6 +224,7 @@
   background-color: var(--base);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .loader__content {

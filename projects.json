@@ -48,8 +48,8 @@
         }
       ],
       "results": [
-        "Kept the portfolio entry accurate while respecting confidentiality limits.",
-        "Made the contribution scope readable without inventing metrics or unreleased outcomes."
+        "Combat, content, and camera intent was documented and prototyped before implementation started.",
+        "Feature designs were refined against playtest feedback and production constraints."
       ],
       "links": [],
       "gallery": [],
@@ -126,16 +126,10 @@
       ],
       "results": [
         "Produced a portfolio project that demonstrates both design thinking and implementation depth.",
-        "Created a reusable case study structure for future gameplay-heavy projects.",
+        "Finished a playable build with a recorded gameplay demo.",
         "Learned where multiplayer complexity changes scope and design priorities early."
       ],
-      "links": [
-        {
-          "label": "Download Design Docs",
-          "url": "CV/CV_Tran Hoang Kiet_Game Designer.pdf",
-          "kind": "download"
-        }
-      ],
+      "links": [],
       "gallery": [
         {
           "image": "img/ExampleImages/IM_SpaceConqueror.jpg",
@@ -148,8 +142,8 @@
     {
       "slug": "lunarfall-pixel-strategy",
       "title": "Lunarfall",
-      "tagline": "Pixel-strategy evidence archive combining dark-fantasy mockups with systems planning.",
-      "summary": "Lunarfall is presented as an evidence archive built from available pixel-art mockups, economy planning, and unit design material. The entry keeps the project accurate while deeper systems notes are organized for a fuller write-up.",
+      "tagline": "Dark-fantasy pixel strategy that fuses real-time strategy with action combat.",
+      "summary": "Lunarfall: Pixel Strategy is an ongoing personal project that blends RTS production and unit control with action combat. The design lives in a spreadsheet GDD: unit roles and unlock conditions, combat stats, and a currency economy mapped by sources, sinks, and caps, alongside pixel-art town and menu mockups.",
       "type": "Archive",
       "status": "Evidence Archive",
       "featured": true,
@@ -171,34 +165,41 @@
         "pixel-art"
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_Lunarfall.jpg",
-      "heroImage": "img/ExampleImages/Lunarfall/Screenshot 2024-03-16 001810.png",
-      "cardSummary": "Dark-fantasy pixel strategy concept documented through interface mockups and systems spreadsheets.",
+      "heroImage": "img/ExampleImages/Lunarfall/Hero_Screenshot_2024-03-16_001810.jpg",
+      "cardSummary": "RTS-meets-action pixel strategy concept designed through a spreadsheet GDD, unit balance sheets, and economy planning.",
       "homepageMeta": {
         "duration": "2024",
         "linkLabel": "Case Study"
       },
       "video": "https://drive.google.com/file/d/1N4Ryn2aHSxY8MjsaYakjZF5pea7STXYI/preview",
-      "problem": "The project needed to be reconnected to its own assets and design material so reviewers could read it as Lunarfall, not as a recycled page from another game.",
+      "problem": "Mixing RTS and action asks one player to be both commander and fighter. The design has to keep production planning and moment-to-moment combat readable on a small screen without one loop starving the other.",
       "contributions": [
-        "Rebuilt the entry around Lunarfall-specific visuals, economy notes, and unit-planning material.",
-        "Kept the project in the shared browse flow with a clear evidence-archive label.",
-        "Prepared the entry to expand later with combat systems, progression, and production notes."
+        "Wrote the sample GDD as a structured spreadsheet covering units, combat attributes, and progression.",
+        "Defined unit roles, unlock conditions, and combat behaviors across the roster.",
+        "Planned the progression economy with explicit currency sources, sinks, and caps.",
+        "Mocked up the town hub and menu screens in pixel art to test tone and information layout."
       ],
       "systems": [
         {
-          "title": "Evidence archive view",
+          "title": "Units and Economy",
           "items": [
-            "Uses the existing pixel-art mockup as the hero visual so the project reads correctly at a glance.",
-            "Keeps the economy and unit-design spreadsheets visible as supporting documentation.",
-            "Leaves room to expand this entry into a deeper systems breakdown without another standalone HTML page."
+            "The roster splits production and melee roles, each with unlock states and combat attributes.",
+            "The currency sheet tracks where each resource enters and leaves the economy, with caps to stop hoarding.",
+            "Balance values live in one sheet so every tuning pass stays traceable."
           ]
         }
       ],
       "results": [
-        "Corrected the portfolio narrative by reconnecting Lunarfall to its own assets.",
-        "Created a public-safe archive state that can grow into a fuller systems breakdown later."
+        "A working GDD that defines the roster, combat stats, and economy before production code.",
+        "A clear base for the next step: prototyping the RTS-action combat loop."
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "Sample GDD (Google Sheets)",
+          "url": "https://docs.google.com/spreadsheets/d/1uhwZpm8y9tKClSkJMmyAEBBIG85002tWlS3QHlntdhA/edit?gid=1785426463#gid=1785426463",
+          "kind": "external"
+        }
+      ],
       "gallery": [
         {
           "image": "img/ExampleImages/Lunarfall/Screenshot 2024-03-16 001810.png",
@@ -232,8 +233,8 @@
     {
       "slug": "farm-match",
       "title": "FarmMatch",
-      "tagline": "Animal-themed merge puzzle archive built from portrait-mobile board captures.",
-      "summary": "FarmMatch is presented as an evidence archive built from title-screen and board-layout captures. The entry focuses on what can be shown now: portrait-mobile matching flow, readable board state, and merge puzzle presentation.",
+      "tagline": "Cute animal matching puzzle for portrait mobile, with boards built around blockers and level goals.",
+      "summary": "FarmMatch is a casual animal-matching puzzle for portrait mobile. The board captures show the level design work: arrangements of animal pieces, blockers, and goals that change from level to level to keep a simple matching loop fresh.",
       "type": "Archive",
       "status": "Evidence Archive",
       "featured": false,
@@ -253,32 +254,32 @@
         "match"
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_FarmMatch.jpg",
-      "heroImage": "img/ExampleImages/IM_FarmMatch.png",
+      "heroImage": "img/ExampleImages/Hero_IM_FarmMatch.jpg",
       "cardSummary": "Cute animal matching project with portrait-mobile puzzle boards and a bright casual presentation.",
       "homepageMeta": {
         "duration": "2024",
         "linkLabel": "Case Study"
       },
       "video": "https://drive.google.com/file/d/19SgqRr6oOtx2y5FhDHgH9FDQ3AhO8jeF/preview",
-      "problem": "The available material shows the puzzle loop and board layout, while deeper progression notes and production context are not public yet.",
+      "problem": "A matching puzzle repeats one action thousands of times. Variety has to come from the board itself: where blockers sit, which goals are set, and how pieces are arranged, while the screen stays readable at a glance.",
       "contributions": [
-        "Added the project to the shared portfolio so it no longer exists only as local captures.",
-        "Connected the title screen and in-game boards into one readable evidence archive.",
-        "Prepared the structure for future notes on level design, progression, and production learnings."
+        "Designed board layouts that combine animal pieces, blockers, and level goals.",
+        "Varied goals and blocker placement to pace difficulty across the level set.",
+        "Kept boards readable in portrait so players can spot matches quickly."
       ],
       "systems": [
         {
-          "title": "Evidence archive view",
+          "title": "Board and Level Design",
           "items": [
-            "Leads with the logo art so the project has immediate recognition in the homepage explorer.",
-            "Includes gameplay board captures to show the actual merge puzzle loop rather than only key art.",
-            "Keeps the public copy focused on the evidence that can be reviewed now."
+            "Blockers decide which matches are open on each board.",
+            "Every level has a clear goal, so players always know what clears it.",
+            "Bright, distinct animal pieces keep matches easy to read on a phone."
           ]
         }
       ],
       "results": [
-        "Kept FarmMatch visible in the main project flow through real captures.",
-        "Established a truthful archive state that can expand when more design notes are public."
+        "A level set where boards and goals change steadily from level to level.",
+        "Practice pacing a simple loop through level design instead of adding new rules."
       ],
       "links": [],
       "gallery": [
@@ -413,7 +414,7 @@
         "sorting"
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_GoodSort.jpg",
-      "heroImage": "img/ExampleImages/IM_GoodSort.png",
+      "heroImage": "img/ExampleImages/Hero_IM_GoodSort.jpg",
       "cardSummary": "Portrait shelf-sorting puzzle built around readable boards, satisfying organization, and scalable level variation.",
       "homepageMeta": {
         "duration": "2024",
@@ -837,8 +838,8 @@
     {
       "slug": "satisdom",
       "title": "Satisdom",
-      "tagline": "Satisfying mini-game evidence archive focused on relaxing interactions, beauty care, and casual micro-tasks.",
-      "summary": "Satisdom is presented as an evidence archive built from sketches, flow notes, audio-review sheets, and content-planning material. The entry focuses on interaction feel and casual micro-task framing without overstating unpublished details.",
+      "tagline": "Relaxing satisfying-game concept built from bite-size beauty-care and tidy-up interactions.",
+      "summary": "Satisdom is a mobile satisfying-game concept made of short, relaxing micro-tasks. The design work runs from hand-drawn before-and-after concept frames to mini-game flow notes, content planning sheets, and sound-feedback reviews, so every action lands with a satisfying payoff.",
       "type": "Archive",
       "status": "Evidence Archive",
       "featured": false,
@@ -859,32 +860,33 @@
         "satisfying"
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_Satisdom.jpg",
-      "heroImage": "img/ExampleImages/IM_Satisdom.png",
-      "cardSummary": "Relaxing mini-game concept documented through sketches, flow notes, and content-planning sheets.",
+      "heroImage": "img/ExampleImages/Hero_IM_Satisdom.jpg",
+      "cardSummary": "Satisfying micro-task concept designed through before-and-after sketches, flow notes, and sound-feedback reviews.",
       "homepageMeta": {
         "duration": "2024",
         "linkLabel": "Case Study"
       },
       "video": "https://drive.google.com/file/d/1_thUFjzXz22vo3iAT_d92b5mwvyZyK8r/preview",
-      "problem": "The project had useful concept and production references, but the story was split across sketches, sound-review sheets, and implementation notes instead of one readable portfolio entry.",
+      "problem": "Satisfying games have almost no challenge, so the feeling is the product. Each micro-task needs a clear before state, a tactile action, and a visible, audible payoff, all within a few seconds.",
       "contributions": [
-        "Added the project to the shared portfolio so it can be discovered through available evidence.",
-        "Used concept sketches and spreadsheet captures to frame the interaction and content-planning direction.",
-        "Prepared the entry for a later pass on mini-game selection, interaction feel, and audio feedback."
+        "Sketched before-and-after concept frames for each relaxing interaction.",
+        "Mapped mini-game flows so every task has a clear start, action, and payoff.",
+        "Planned the content list and task variety in spreadsheets.",
+        "Reviewed sound effects against each action to strengthen the feedback."
       ],
       "systems": [
         {
-          "title": "Current Archive View",
+          "title": "Interaction Feel",
           "items": [
-            "Shows the concept sketch first so the beauty-care interaction direction is readable immediately.",
-            "Keeps spreadsheet captures as supporting material for the current archive state.",
-            "Avoids overstating implementation depth while preserving the project for later expansion."
+            "Each task shows the mess first, so the cleanup reads as progress.",
+            "Short actions keep sessions relaxing and easy to repeat.",
+            "Audio cues are checked against each interaction so the payoff feels physical."
           ]
         }
       ],
       "results": [
-        "Kept Satisdom visible without overstating the completeness of the write-up.",
-        "Created an archive structure that can absorb future gameplay, UX, and sound details."
+        "A documented set of micro-task interactions ready for prototyping.",
+        "A repeatable sketch, flow, and sound process for designing satisfying moments."
       ],
       "links": [],
       "gallery": [
@@ -1076,8 +1078,8 @@
     {
       "slug": "screw",
       "title": "Screw",
-      "tagline": "Unscrew-style mobile puzzle archive built around readable color logic and compact level boards.",
-      "summary": "Screw is presented as an evidence archive built from branded key art and a broad set of level screenshots. The entry highlights color logic, board readability, and compact mobile puzzle presentation.",
+      "tagline": "Unscrew-style color puzzle: level design, difficulty ramp, and data-driven balancing for a live mobile title.",
+      "summary": "Screw is a mobile unscrew puzzle I worked on as a Game Designer at Rainbow 5s. My work covered level design, screw-color sequencing and the difficulty ramp across the level set, and tracking sheets used to audit coverage, surface outlier levels, and plan batch balancing passes.",
       "type": "Archive",
       "status": "Evidence Archive",
       "featured": false,
@@ -1097,32 +1099,33 @@
         "puzzle"
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_ScrewJam.jpg",
-      "heroImage": "img/ExampleImages/IM_ScrewJam.png",
-      "cardSummary": "Unscrew-style color puzzle project supported by key art and an extensive level screenshot archive.",
+      "heroImage": "img/ExampleImages/Hero_IM_ScrewJam.jpg",
+      "cardSummary": "Unscrew-style color puzzle with designed level boards and tracking sheets used to rebalance difficulty in batches.",
       "homepageMeta": {
         "duration": "2024",
         "linkLabel": "Case Study"
       },
       "video": "https://drive.google.com/file/d/1geeP1Pt799AA4Ft5yttBh_3b4RN94lKz/preview",
-      "problem": "Screw already has recognizable key art and many level captures, but the available public material is stronger as an evidence archive than as a complete written breakdown.",
+      "problem": "Unscrew puzzles depend on readability: players must see which screws pin which plates and which colors come next. The level set needed a steady difficulty ramp that kept sessions satisfying while supporting rewarded-ad and retention goals.",
       "contributions": [
-        "Added Screw to the data-driven portfolio so it can be browsed alongside the rest of the work.",
-        "Used existing key art and level screenshots to frame the puzzle readability evidence.",
-        "Prepared the structure for later notes on puzzle rules, level sequencing, and UX clarity."
+        "Designed level boards, composing plates, screws, and color order to shape each puzzle.",
+        "Sequenced screw colors and overlaps to build a deliberate difficulty ramp across the level set.",
+        "Built tracking sheets to audit level coverage and flag outliers for rebalancing.",
+        "Used A/B tests and player metrics to tune balance between batches."
       ],
       "systems": [
         {
-          "title": "Current Archive View",
+          "title": "Level Design and Balancing",
           "items": [
-            "Leads with branded hero art so the project reads clearly in portfolio browse views.",
-            "Keeps one puzzle screenshot in the gallery to show the actual board logic and interaction style.",
-            "Stays intentionally lightweight until the full design write-up is ready."
+            "Board composition controls how deeply each screw color is buried.",
+            "Difficulty ramps through color count, overlap depth, and how many moves stay open.",
+            "Balancing passes are planned in batches from tracked data, not one-off tweaks."
           ]
         }
       ],
       "results": [
-        "Preserved Screw in the portfolio without needing another standalone detail page.",
-        "Created a stable evidence archive that can evolve into a fuller case study later."
+        "A level set with a readable, gradual difficulty curve.",
+        "A repeatable data-review process for rebalancing levels in batches."
       ],
       "links": [],
       "gallery": [],
@@ -1354,8 +1357,8 @@
     {
       "slug": "tank",
       "title": "Tank",
-      "tagline": "Arcade tank-brawler evidence archive built from available title art.",
-      "summary": "Tank is presented as a lightweight evidence archive using the available title art. The entry keeps the project in the shared portfolio while gameplay captures and deeper documentation remain outside the public write-up.",
+      "tagline": "Arcade tank battler for mobile, tuned for rewarded ads, revenue, and retention.",
+      "summary": "Tank is an arcade tank-battle mobile game I worked on as a Game Designer at Rainbow 5s. My work focused on improvements aimed at rewarded-ad engagement, revenue, and retention, plus level design and balance tuning informed by A/B tests and player metrics.",
       "type": "Archive",
       "status": "Evidence Archive",
       "featured": false,
@@ -1375,32 +1378,32 @@
         "arcade"
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_Tank.jpg",
-      "heroImage": "img/ExampleImages/IM_Tank.png",
-      "cardSummary": "Arcade tank battle concept represented through available title art and public-safe archive notes.",
+      "heroImage": "img/ExampleImages/Hero_IM_Tank.jpg",
+      "cardSummary": "Arcade mobile tank battler where I worked on retention, rewarded-ad improvements, and balance tuning.",
       "homepageMeta": {
         "duration": "2024",
         "linkLabel": "Case Study"
       },
       "video": "https://drive.google.com/file/d/1PZ-nOokK5GFMqcGRFyBDOBkFMTXnVgWl/preview",
-      "problem": "Tank has clear branding but not enough public gameplay material for a complete case study. The honest move is to label it as an archive instead of inventing detail.",
+      "problem": "A live arcade game has to earn from rewarded ads without breaking the fun of the fight. Every ad offer needs to feel like a reward the player wants, and balance changes need proof before they ship.",
       "contributions": [
-        "Added Tank to the shared project list so the work is visible in the homepage explorer.",
-        "Used the available title art as the hero evidence for the current public entry.",
-        "Prepared the entry to expand later with mode, combat, and progression details once they are ready to share."
+        "Proposed improvements to raise rewarded-ad engagement, revenue, and retention.",
+        "Designed and tuned levels for the live game.",
+        "Ran A/B tests and analyzed metrics to adjust game balance."
       ],
       "systems": [
         {
-          "title": "Current Archive View",
+          "title": "Live Optimization",
           "items": [
-            "Uses the existing title art as both hero and gallery media until gameplay captures are added.",
-            "Keeps the project visible without inventing unsupported production detail.",
-            "Leaves room for a future rewrite once the rest of the asset set is gathered."
+            "Rewarded-ad offers sit at moments where players already want a boost.",
+            "Balance changes are tested with A/B splits before they roll out.",
+            "Results are read against retention and revenue goals."
           ]
         }
       ],
       "results": [
-        "Prevented Tank from being omitted simply because the public case-study package is limited.",
-        "Created a clean archive state that can be upgraded when stronger gameplay material is available."
+        "Contributed improvements aimed at rewarded-ad, revenue, and retention metrics.",
+        "Hands-on experience running A/B tests on a live mobile title."
       ],
       "links": [],
       "gallery": [
@@ -1415,8 +1418,8 @@
     {
       "slug": "horror-carnival",
       "title": "Horror Carnival",
-      "tagline": "Atmosphere-first evidence archive built around tension, pacing, and attraction spaces.",
-      "summary": "Horror Carnival is presented as an evidence archive for an atmosphere-first concept. The entry keeps the project discoverable while focusing on the public materials that can support tone, pacing, and attraction-space framing.",
+      "tagline": "Horror carnival puzzle prototype built in Unity, inspired by Goods Master.",
+      "summary": "Horror Carnival Puzzle is a personal prototype from September 2024, inspired by Goods Master and set in a creepy carnival. Levels are split into haunted rooms with ally and enemy characters, a round timer, and a booster to call in more allies. I built it in Unity and recorded a gameplay demo.",
       "type": "Archive",
       "status": "Evidence Archive",
       "featured": false,
@@ -1436,39 +1439,45 @@
         "case-study",
         "horror"
       ],
-      "thumbnail": "img/ExampleImages/Thumbs/OG.jpg",
-      "heroImage": "img/og-image.png",
-      "video": "",
-      "problem": "The available public material supports a compact archive better than a full breakdown. The entry preserves context without copying weak or misleading draft language.",
+      "thumbnail": "img/ExampleImages/Thumbs/IM_HorrorCarnival.jpg",
+      "heroImage": "img/ExampleImages/IM_HorrorCarnival.jpg",
+      "video": "https://www.youtube.com/embed/FCufmh2zXm8",
+      "problem": "Puzzle games in the Goods Master mold are calm and tidy, while a horror carnival is tense and busy. The prototype had to bring in that mood without making the board harder to read.",
       "contributions": [
-        "Preserved the project in the portfolio browse flow.",
-        "Defined a lighter archive presentation for partially documented work.",
-        "Prepared the data structure so a fuller write-up can be added without changing page structure."
+        "Designed the puzzle levels and the haunted carnival room layout.",
+        "Built the prototype in Unity, including ally and enemy characters and the level flow.",
+        "Recorded a gameplay demo of the finished prototype."
       ],
       "systems": [
         {
-          "title": "Evidence archive view",
+          "title": "Puzzle and Theme",
           "items": [
-            "Keeps the project visible in browse and filter flows.",
-            "Frames the summary honestly around the current documentation depth.",
-            "Allows the entry to expand incrementally without new page scaffolding."
+            "Each level splits the board into carnival rooms, so the layout reads at a glance.",
+            "A round timer and an ally booster add pressure and a way out.",
+            "The horror theme sets the mood without changing how the puzzle reads."
           ]
         }
       ],
       "results": [
-        "Reduced maintenance friction for partially documented work.",
-        "Created a public-safe path to improve presentation without publishing misleading copy."
+        "A playable five-level prototype with a recorded demo.",
+        "Practice turning a proven puzzle reference into a themed prototype of my own."
       ],
       "links": [],
       "gallery": [
         {
-          "image": "img/og-image.png",
-          "fullImage": "img/og-image.png",
-          "title": "Archive Visual",
-          "description": "Temporary visual marker while stronger Horror Carnival gallery material is prepared for public review."
+          "image": "img/ExampleImages/Thumbs/IM_HorrorCarnival.jpg",
+          "fullImage": "img/ExampleImages/IM_HorrorCarnival.jpg",
+          "title": "Gameplay View",
+          "description": "Haunted carnival rooms with allies, enemies, the round timer, and the ally booster."
+        },
+        {
+          "image": "img/ExampleImages/IM_HorrorCarnival_Editor.jpg",
+          "fullImage": "img/ExampleImages/IM_HorrorCarnival_Editor.jpg",
+          "title": "Unity Project",
+          "description": "The prototype running in the Unity editor, with its five level scenes and character prefabs."
         }
       ],
-      "cardSummary": "Atmosphere-first project framing built around tension, pacing, and attraction spaces."
+      "cardSummary": "Horror-themed Unity puzzle prototype inspired by Goods Master, with haunted carnival rooms and a recorded demo."
     }
   ]
 }

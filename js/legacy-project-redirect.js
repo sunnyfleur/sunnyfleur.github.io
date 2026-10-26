@@ -6,8 +6,10 @@
   }
 
   const slug = currentScript.getAttribute("data-project-slug");
+  // Retired projects point at a page of their own instead of a case study.
+  const redirectPage = currentScript.getAttribute("data-redirect-page");
 
-  if (!slug) {
+  if (!slug && !redirectPage) {
     return;
   }
 
@@ -16,12 +18,18 @@
   const language = params.get("lang")
     || (i18n && typeof i18n.getLanguage === "function" ? i18n.getLanguage() : "");
   const targetParams = new URLSearchParams();
-  targetParams.set("slug", slug);
+
+  if (!redirectPage) {
+    targetParams.set("slug", slug);
+  }
 
   if (/^(en|vi)$/i.test(language)) {
     targetParams.set("lang", language.toLowerCase());
   }
 
-  const target = "project.html?" + targetParams.toString() + window.location.hash;
+  const query = targetParams.toString();
+  const page = redirectPage || "project.html";
+  const hash = currentScript.getAttribute("data-redirect-hash") || window.location.hash;
+  const target = page + (query ? "?" + query : "") + hash;
   window.location.replace(target);
 })();

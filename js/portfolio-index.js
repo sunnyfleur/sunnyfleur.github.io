@@ -380,7 +380,7 @@
     const isActive = slug === activeSlug;
 
     return `
-      <article class="portfolio-card${isActive ? ' is-active' : ''}" data-portfolio-project="${escapeHtml(slug)}">
+      <article class="portfolio-card${isActive ? ' is-active' : ''}" data-portfolio-project="${escapeHtml(slug)}" data-spotlight-label="${escapeHtml(translate('portfolio.inSpotlight', 'In spotlight'))}">
         <a class="portfolio-card__link" href="${escapeHtml(localizedProjectUrl(slug))}" aria-label="${escapeHtml(translate('portfolio.openCaseFor', 'Open case study for {title}', { title }))}">
           <div class="portfolio-card__media">
             <img class="portfolio-card__image" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(title)} thumbnail" loading="lazy" decoding="async" fetchpriority="low">
@@ -443,6 +443,13 @@
     return !prefersReducedMotion()
       && typeof global.gsap !== 'undefined'
       && typeof global.gsap.timeline === 'function';
+  }
+
+  // Lets page-transition.js restore the scroll position on Back once the explorer has its final height.
+  function dispatchExplorerRendered() {
+    if (typeof global.dispatchEvent === 'function' && typeof global.CustomEvent === 'function') {
+      global.dispatchEvent(new CustomEvent('portfolio:explorer-rendered'));
+    }
   }
 
   function refreshPortfolioMotion() {
@@ -587,6 +594,9 @@
         let playingSlug = '';
         let hoverIntentTimer = 0;
         let hoverIntentSlug = '';
+        // Keep the homepage short: show a few cards first, the rest behind "Show all".
+        const collapsedCardCount = 4;
+        let showAllCards = false;
 
         function getFilteredProjects() {
           return allProjects.filter((project) => projectMatchesFilter(project, activeFilter));
@@ -625,7 +635,20 @@
             return;
           }
 
-          cardGridRoot.innerHTML = projects.map((project) => buildCardTemplate(project, spotlightSlug)).join('');
+          // Featured work leads the grid so it is never hidden behind "Show all".
+          const orderedProjects = projects.filter((project) => project.featured)
+            .concat(projects.filter((project) => !project.featured));
+          const visibleProjects = showAllCards ? orderedProjects : orderedProjects.slice(0, collapsedCardCount);
+          const showAllButton = visibleProjects.length < projects.length
+            ? `
+              <button class="portfolio-show-all" type="button" data-portfolio-show-all>
+                <span>${escapeHtml(translate('portfolio.showAll', 'Show all {count} projects', { count: projects.length }))}</span>
+                <i class="ph-bold ph-caret-down" aria-hidden="true"></i>
+              </button>
+            `
+            : '';
+
+          cardGridRoot.innerHTML = visibleProjects.map((project) => buildCardTemplate(project, spotlightSlug)).join('') + showAllButton;
           attachImageFallbacks(cardGridRoot, '.portfolio-card__image');
           syncActiveCards();
         }
@@ -721,6 +744,27 @@
           });
         });
 
+        cardGridRoot.addEventListener('click', (event) => {
+          const showAllButton = event.target && typeof event.target.closest === 'function'
+            ? event.target.closest('[data-portfolio-show-all]')
+            : null;
+
+          if (!showAllButton) {
+            return;
+          }
+
+          const firstHiddenIndex = cardGridRoot.querySelectorAll('[data-portfolio-project]').length;
+          showAllCards = true;
+          renderCards(getFilteredProjects());
+          refreshPortfolioMotion();
+
+          // Keyboard activation (detail === 0): move focus to the first revealed card so the user keeps their place.
+          const revealedCard = cardGridRoot.querySelectorAll('.portfolio-card__link')[firstHiddenIndex];
+          if (revealedCard && event.detail === 0) {
+            revealedCard.focus({ preventScroll: true });
+          }
+        });
+
         cardGridRoot.addEventListener('pointerenter', (event) => {
           const card = closestProjectCard(event.target);
           const previousCard = closestProjectCard(event.relatedTarget);
@@ -781,12 +825,14 @@
         });
 
         renderExplorer({ animate: true, includeFilters: true });
+        dispatchExplorerRendered();
       })
       .catch((error) => {
         console.error('Unable to load homepage portfolio data.', error);
         filtersRoot.innerHTML = '';
         spotlightRoot.innerHTML = '<div class="portfolio-empty">' + escapeHtml(translate('portfolio.loadError', 'The project explorer could not be loaded right now.')) + '</div>';
         cardGridRoot.innerHTML = '';
+        dispatchExplorerRendered();
       });
   } catch (error) {
     console.error('Unable to initialize homepage portfolio.', error);

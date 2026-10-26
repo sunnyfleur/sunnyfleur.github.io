@@ -1,0 +1,360 @@
+/* ------------------------------------------------*/
+/* Holo-Chrome Theme                                */
+/* Frosted glass surfaces, chrome accents and       */
+/* prismatic light over a softly blurred art layer. */
+/* Load after main.css / portfolio-ux.css; remove   */
+/* the <link> to return to the previous palette.    */
+/* ------------------------------------------------*/
+
+/* ---- Palette tokens (raw values feed main.css light/dark switching) ---- */
+
+:root {
+  --base--dark: #211e36;
+  --base-tint--dark: rgba(255, 255, 255, 0.07);
+  --base-shade--dark: #161427;
+  --accent--dark: #ece9ff;
+  --secondary--dark: #a49de0;
+  --secondary-rgba--dark: rgba(164, 157, 224, 0.24);
+  --accent-contrast--dark: #1b1830;
+  --stroke-controls--dark: rgba(255, 255, 255, 0.3);
+  --stroke-controls-neutral--dark: rgba(255, 255, 255, 0.24);
+  --stroke-elements--dark: rgba(255, 255, 255, 0.14);
+  --t-bright--dark: #ffffff;
+  --t-medium--dark: #dcd8f0;
+  --t-muted--dark: #b4afd2;
+  --t-accent--dark: #ffffff;
+  --t-secondary--dark: #e9e2ff;
+  --text-gradient-mid--dark: #b7b2de;
+  --t-disabled--dark: #8e89ae;
+  --t-placeholder--dark: #7c779c;
+  --base-opp--dark: #f4f2ff;
+  --t-opp-bright--dark: #1b1830;
+  --t-opp-medium--dark: #3f3a62;
+  --t-opp-muted--dark: #615c86;
+  --background-blob-opacity--dark: 0.85;
+
+  --base--light: #e8e6f3;
+  --base-tint--light: rgba(255, 255, 255, 0.5);
+  --base-shade--light: #cfcbe3;
+  --accent--light: #3f3a78;
+  --secondary--light: #7d76c2;
+  --secondary-rgba--light: rgba(125, 118, 194, 0.22);
+  --accent-contrast--light: #ffffff;
+  --stroke-controls--light: rgba(48, 42, 96, 0.26);
+  --stroke-controls-neutral--light: rgba(27, 24, 48, 0.2);
+  --stroke-elements--light: rgba(48, 42, 96, 0.14);
+  --t-bright--light: #1b1830;
+  --t-medium--light: #3c3860;
+  --t-muted--light: #5c5882;
+  --t-accent--light: #26214c;
+  --t-secondary--light: #3a3472;
+  --text-gradient-mid--light: #706aa8;
+  --t-disabled--light: #8a86a8;
+  --t-placeholder--light: #a29ebf;
+  --base-opp--light: #1b1830;
+  --t-opp-bright--light: #f4f2ff;
+  --t-opp-medium--light: #d6d2ee;
+  --t-opp-muted--light: #b4afd2;
+  --background-blob-opacity--light: 0.55;
+
+  /* Glass + chrome recipes (dark defaults) */
+  --glass-fill: linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  --glass-shadow: 0 22px 50px rgba(9, 7, 28, 0.38);
+  --glass-blur: blur(18px) saturate(140%);
+  --chrome: linear-gradient(135deg, #ffffff 0%, #dcd8f2 26%, #a9a3d4 50%, #f3f1ff 72%, #bfb9e4 100%);
+  --chrome-ink: #1b1830;
+  --holo: linear-gradient(100deg,
+    rgba(255, 128, 191, 0) 0%,
+    rgba(255, 158, 128, 0.55) 18%,
+    rgba(255, 233, 140, 0.55) 34%,
+    rgba(132, 255, 206, 0.5) 50%,
+    rgba(128, 184, 255, 0.55) 66%,
+    rgba(196, 140, 255, 0.5) 82%,
+    rgba(196, 140, 255, 0) 100%);
+  --page-art: url("../img/ExampleImages/Thumbs/IM_SpaceConqueror.jpg");
+  --nav-active-fill: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.1));
+  --nav-active-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 4px 14px rgba(9, 7, 28, 0.25);
+}
+
+[color-scheme=light] {
+  --nav-active-fill: #ffffff;
+  --nav-active-shadow: inset 0 -1px 0 rgba(48, 42, 96, 0.08), 0 4px 14px rgba(48, 42, 96, 0.14);
+  --glass-fill: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.38) 100%);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(48, 42, 96, 0.06);
+  --glass-shadow: 0 22px 50px rgba(48, 42, 96, 0.16);
+  --chrome: linear-gradient(135deg, #4a4486 0%, #2c275a 40%, #6a63ad 70%, #3a3474 100%);
+  --chrome-ink: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([color-scheme=dark]) {
+    --nav-active-fill: #ffffff;
+    --nav-active-shadow: inset 0 -1px 0 rgba(48, 42, 96, 0.08), 0 4px 14px rgba(48, 42, 96, 0.14);
+    --glass-fill: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.38) 100%);
+    --glass-border: rgba(255, 255, 255, 0.85);
+    --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(48, 42, 96, 0.06);
+    --glass-shadow: 0 22px 50px rgba(48, 42, 96, 0.16);
+    --chrome: linear-gradient(135deg, #4a4486 0%, #2c275a 40%, #6a63ad 70%, #3a3474 100%);
+    --chrome-ink: #ffffff;
+  }
+}
+
+/* --base-tint is translucent in this theme, so the loader needs an opaque backdrop */
+.loader {
+  background-color: var(--base);
+}
+
+/* ---- Background: blurred art wash + prismatic light beams ---- */
+
+.gradient-background {
+  background-color: var(--base);
+}
+
+.gradient-background::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background: var(--page-art) center / cover no-repeat;
+  filter: blur(34px) saturate(0.75) hue-rotate(10deg);
+  opacity: 0.38;
+}
+
+[color-scheme=light] .gradient-background::before {
+  opacity: 0.3;
+  filter: blur(34px) saturate(0.5) brightness(1.5);
+}
+
+/* Large translucent panes, like light falling through glass */
+.gradient-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 0 22%, rgba(255, 255, 255, 0.07) 22% 34%, transparent 34% 100%),
+    linear-gradient(115deg, transparent 0 58%, rgba(255, 255, 255, 0.05) 58% 66%, transparent 66% 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%);
+  pointer-events: none;
+}
+
+/* The three blobs become thin iridescent beams */
+.gradient-background .blur {
+  z-index: 2;
+  border-radius: 0;
+  background: var(--holo);
+  mix-blend-mode: screen;
+  filter: blur(10px);
+  opacity: var(--background-blob-opacity);
+}
+
+[color-scheme=light] .gradient-background .blur {
+  mix-blend-mode: multiply;
+  opacity: 0.32;
+}
+
+.gradient-background .blur:nth-of-type(1) {
+  width: 95vw;
+  height: 7rem;
+  top: 18vh;
+  right: -20vw;
+  transform: rotate(-32deg);
+}
+
+.gradient-background .blur:nth-of-type(2) {
+  width: 70vw;
+  height: 3.6rem;
+  top: 52vh;
+  right: -10vw;
+  transform: rotate(-32deg);
+  opacity: calc(var(--background-blob-opacity) * 0.7);
+}
+
+.gradient-background .blur:nth-of-type(3) {
+  width: 60vw;
+  height: 10rem;
+  top: 70vh;
+  left: -20vw;
+  transform: rotate(-32deg);
+  opacity: calc(var(--background-blob-opacity) * 0.55);
+}
+
+/* ---- Frosted glass surfaces ---- */
+
+.avatar__container::before,
+.portfolio-spotlight,
+.portfolio-card,
+.project-related-card,
+.contact-pitch,
+.contact-form-panel,
+.achievements__card,
+.resume-priority-summary__item,
+.skills-card,
+.skills-detail,
+.project-hero__panel,
+.project-review-brief__item,
+.project-snapshot,
+.portfolio-show-all {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+          backdrop-filter: var(--glass-blur);
+}
+
+/* Phones/tablets: one glass bottom bar on every page (desktop bars come from portfolio-ux.css) */
+@media only screen and (max-width: 991px) {
+  .header {
+    background: var(--glass-fill);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-highlight), var(--glass-shadow);
+    -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
+  }
+}
+
+/* Cards: iridescent sheen sweeps across the border area on hover */
+.portfolio-card:hover,
+.portfolio-card:focus-within,
+.project-related-card:hover,
+.project-related-card:focus-within {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: var(--glass-highlight), 0 0 0 1px rgba(255, 255, 255, 0.08), 0 28px 60px rgba(9, 7, 28, 0.45);
+}
+
+.portfolio-card-grid .portfolio-card.is-active {
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Small glass chips */
+.portfolio-pill,
+.project-pill,
+.portfolio-filter,
+.headline__subtitle,
+.intro-art__caption,
+.h2__subtitle,
+.experience-tag,
+.contact-scope-list span,
+.language-toggle,
+.color-switcher,
+.resume-lines__category {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+[color-scheme=light] .portfolio-pill,
+[color-scheme=light] .project-pill,
+[color-scheme=light] .portfolio-filter,
+[color-scheme=light] .headline__subtitle,
+[color-scheme=light] .intro-art__caption,
+[color-scheme=light] .h2__subtitle,
+[color-scheme=light] .experience-tag,
+[color-scheme=light] .contact-scope-list span,
+[color-scheme=light] .language-toggle,
+[color-scheme=light] .color-switcher,
+[color-scheme=light] .resume-lines__category {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* ---- Chrome accents ---- */
+
+.btn-hover-accent::before,
+.btn-accent,
+.header__trigger::before,
+.portfolio-filter.is-active,
+.language-toggle button.is-active,
+.project-meta-row .project-pill:first-child,
+.portfolio-card-grid .portfolio-card.is-active::before {
+  background: var(--chrome);
+  color: var(--chrome-ink);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -2px 4px rgba(27, 24, 48, 0.18), 0 6px 18px rgba(9, 7, 28, 0.28);
+}
+
+.btn-hover-accent i,
+.btn-hover-accent span {
+  text-shadow: 0 0 var(--chrome-ink), 0 5rem var(--chrome-ink);
+}
+
+@media only screen and (min-width: 1200px) {
+  .no-touch .btn-hover-accent:hover i,
+  .no-touch .btn-hover-accent:hover span {
+    text-shadow: 0 -5rem var(--chrome-ink), 0 0 var(--chrome-ink);
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .btn-hover-accent i,
+  .btn-hover-accent span {
+    text-shadow: 0 0 var(--chrome-ink), 0 6rem var(--chrome-ink);
+  }
+
+  .no-touch .btn-hover-accent:hover i,
+  .no-touch .btn-hover-accent:hover span {
+    text-shadow: 0 -6rem var(--chrome-ink), 0 0 var(--chrome-ink);
+  }
+}
+
+.portfolio-filter.is-active,
+.language-toggle button.is-active {
+  color: var(--chrome-ink);
+}
+
+/* Chrome headings: soft glow like light catching polished metal */
+h1,
+h2 {
+  filter: drop-shadow(0 0 18px rgba(214, 208, 255, 0.28));
+}
+
+[color-scheme=light] h1,
+[color-scheme=light] h2 {
+  filter: none;
+}
+
+/* Project hero titles sit on dark key art in both themes, so they always use light chrome */
+.project-hero__content .project-hero__title {
+  background: linear-gradient(15deg, #ffffff 0%, #d8d3f4 50%, #ffffff 95%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.45));
+}
+
+/* ---- Hero art: a soft radial mask dissolves the render's lavender studio backdrop into the page ---- */
+
+@media only screen {
+  .intro-art__image {
+    -webkit-mask-image: radial-gradient(ellipse 50% 42% at 48% 55%, #000 58%, transparent 100%);
+            mask-image: radial-gradient(ellipse 50% 42% at 48% 55%, #000 58%, transparent 100%);
+  }
+}
+
+/* ---- Reduced transparency: fall back to solid surfaces ---- */
+
+@media (prefers-reduced-transparency: reduce) {
+  .gradient-background::before,
+  .gradient-background::after,
+  .gradient-background .blur {
+    display: none;
+  }
+
+  .avatar__container::before,
+  .portfolio-spotlight,
+  .portfolio-card,
+  .project-related-card,
+  .contact-pitch,
+  .contact-form-panel,
+  .project-hero__panel,
+  .project-snapshot {
+    background: var(--base-shade);
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+}
+
+/* ------------------------------------------------*/
+/* Holo-Chrome Theme End                            */
+/* ------------------------------------------------*/

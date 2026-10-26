@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   body.appendChild(cursorOuter);
   body.appendChild(cursorInner);
   body.appendChild(cursorToggle);
+  // Stay hidden until the first mousemove so the cursor never sits parked mid-screen.
+  body.classList.add("cursor-hidden");
 
   let isEnabled = localStorage.getItem("cursorEnabled") !== "false";
   let currentState = "";
@@ -209,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("focus", function () {
-    if (isEnabled) {
+    if (isEnabled && hasPointerPosition) {
       body.classList.remove("cursor-hidden");
     }
   });

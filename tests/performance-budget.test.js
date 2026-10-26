@@ -34,6 +34,28 @@ test('homepage loader no longer waits for every body image', () => {
   assert.doesNotMatch(appScript, /imagesLoaded\(\s*content\s*\)/);
 });
 
+test('homepage hash navigation uses one smooth-scroll path', () => {
+  const appScript = readProjectFile('js/app.js');
+
+  assert.match(appScript, /smoothScroll:\s*false/);
+  assert.match(appScript, /window\.siteLenis\s*=\s*lenis/);
+  assert.match(appScript, /preventScroll:\s*true/);
+  assert.match(appScript, /getHashTarget\(window\.location\.hash\)/);
+  assert.doesNotMatch(appScript, /normalizeWheel:\s*true/);
+  assert.doesNotMatch(appScript, /\$\(['"]html,\s*body['"]\)\.animate/);
+  assert.doesNotMatch(appScript, /\$\.smoothScroll\(/);
+});
+
+test('loaded page overlay does not intercept scroll or pointer input', () => {
+  const loaderCss = readProjectFile('css/loaders/loader.css');
+
+  assert.match(
+    loaderCss,
+    /\.loader\.loaded\s*\{[\s\S]*pointer-events:\s*none;/,
+    'Hidden loader overlay must not stay above the page as a wheel/click target.'
+  );
+});
+
 test('about banner is lazy loaded on the homepage', () => {
   const homepage = readProjectFile('index.html');
   const aboutImageMatch = homepage.match(/<img[^>]+src="img\/about-me-banner\.jpg"[^>]*>/);

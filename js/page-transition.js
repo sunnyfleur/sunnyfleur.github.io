@@ -1,8 +1,17 @@
 (function (global) {
   const transitionKey = "portfolio.projectTransition";
+  const returnScrollKey = "portfolio.returnScroll";
   const maxStateAge = 12000;
+  const maxReturnScrollAge = 30 * 60 * 1000;
+  // Navigate even if the exit animation never completes (background tab, stalled frames).
+  const exitFallbackDelay = 1200;
   let isTransitioning = false;
   let entryAnimationStarted = false;
+  let navigationStarted = false;
+  let exitTimeline = null;
+  let exitFallbackTimer = 0;
+  let exitOverlay = null;
+  let exitPageShell = null;
 
   function prefersReducedMotion() {
     return typeof global.matchMedia === "function"
@@ -42,6 +51,11 @@
     const path = destination.pathname.replace(/\/+$/, "");
     return path.endsWith("/project.html")
       && Boolean(destination.searchParams.get("slug"));
+  }
+
+  function translate(key, fallback) {
+    const i18n = global.PortfolioI18n;
+    return i18n && typeof i18n.t === "function" ? i18n.t(key, fallback) : fallback;
   }
 
   function getImageSource(image) {
@@ -86,8 +100,9 @@
     const card = link.closest("[data-portfolio-project]");
     const relatedCard = link.closest(".project-related-card");
     const spotlight = link.closest(".portfolio-spotlight");
-    const root = card || relatedCard || spotlight || link;
-    const image = root.querySelector(".portfolio-card__image, .project-related-card__image, .portfolio-spotlight__image, img");
+    const introArt = link.closest(".intro-art");
+    const root = card || relatedCard || spotlight || introArt || link;
+    const image = root.querySelector(".portfolio-card__image, .project-related-card__image, .portfolio-spotlight__image, .intro-art__image, img");
     const titleElement = root.querySelector(".portfolio-card__title, .project-related-card__title, .portfolio-spotlight__title");
     const rect = getSafeRect(image) || getSafeRect(root) || {
       left: global.innerWidth / 2 - 120,
@@ -101,7 +116,8 @@
       image,
       rect,
       title: titleElement ? titleElement.textContent.trim() : link.textContent.trim(),
-      imageSrc: getImageSource(image),
+      // Links without their own art (the hero "Now" chip) name the project art to fly instead.
+      imageSrc: link.getAttribute("data-transition-image") || getImageSource(image),
     };
   }
 
@@ -121,9 +137,9 @@
     image.decoding = "async";
     image.src = source.imageSrc || "img/og-image.png";
     badge.className = "page-transition-card__badge";
-    badge.textContent = "Case study";
+    badge.textContent = translate("portfolio.transitionBadge", "Case study");
     label.className = "page-transition-card__label";
-    label.textContent = source.title ? source.title : "Opening case study";
+    label.textContent = source.title ? source.title : translate("portfolio.transitionOpening", "Opening case study");
 
     card.style.left = targetRect.left + "px";
     card.style.top = targetRect.top + "px";
@@ -180,6 +196,102 @@
     return state;
   }
 
+  function setScrollRestoration(mode) {
+    if (global.history && "scrollRestoration" in global.history) {
+      global.history.scrollRestoration = mode;
+    }
+  }
+
+  function storeReturnScroll() {
+    // The browser records this mode on the history entry being left, so it has to be set before navigating.
+    // On Back, restoreReturnScroll() then puts the reader back once the async content has rendered.
+    setScrollRestoration("manual");
+
+    const positions = readReturnScrollMap();
+    positions[getReturnScrollPath()] = {
+      y: Math.round(global.scrollY || global.pageYOffset || 0),
+      createdAt: Date.now(),
+    };
+    writeReturnScrollMap(positions);
+  }
+
+  // Positions are kept per page so homepage -> project -> related project -> Back -> Back still lands right.
+  function getReturnScrollPath() {
+    return global.location.pathname + global.location.search;
+  }
+
+  function readReturnScrollMap() {
+    let positions = null;
+
+    try {
+      positions = JSON.parse(sessionStorage.getItem(returnScrollKey) || "null");
+    } catch (error) {
+      positions = null;
+    }
+
+    return positions && typeof positions === "object" && !Array.isArray(positions) ? positions : {};
+  }
+
+  function writeReturnScrollMap(positions) {
+    try {
+      sessionStorage.setItem(returnScrollKey, JSON.stringify(positions));
+    } catch (error) {
+      return;
+    }
+  }
+
+  function readReturnScroll() {
+    const state = readReturnScrollMap()[getReturnScrollPath()];
+
+    if (!state || typeof state.y !== "number" || !state.createdAt || Date.now() - state.createdAt > maxReturnScrollAge) {
+      return null;
+    }
+
+    return state;
+  }
+
+  function clearReturnScroll() {
+    const positions = readReturnScrollMap();
+    delete positions[getReturnScrollPath()];
+    writeReturnScrollMap(positions);
+  }
+
+  function finishExitTransition(destination) {
+    if (navigationStarted) {
+      return;
+    }
+
+    navigationStarted = true;
+    global.clearTimeout(exitFallbackTimer);
+    location.href = destination.href;
+  }
+
+  // Undo everything the exit transition left behind, for pages restored from the back/forward cache.
+  function resetExitTransition() {
+    global.clearTimeout(exitFallbackTimer);
+    exitFallbackTimer = 0;
+
+    if (exitTimeline) {
+      exitTimeline.kill();
+      exitTimeline = null;
+    }
+
+    if (exitOverlay && exitOverlay.parentNode) {
+      exitOverlay.parentNode.removeChild(exitOverlay);
+    }
+
+    if (exitPageShell && typeof global.gsap !== "undefined") {
+      global.gsap.set(exitPageShell, { clearProps: "opacity,visibility,transform" });
+    }
+
+    exitOverlay = null;
+    exitPageShell = null;
+    isTransitioning = false;
+    navigationStarted = false;
+    setScrollRestoration("auto");
+    document.body.classList.remove("page-transition-active");
+  }
+
   function runProjectExitTransition(event, link) {
     if (isTransitioning) {
       event.preventDefault();
@@ -196,9 +308,10 @@
 
     const source = getProjectSource(link);
     storeTransitionState(destination, source);
+    storeReturnScroll();
 
     if (!hasMotionSupport()) {
-      location.href = destination.href;
+      finishExitTransition(destination);
       return;
     }
 
@@ -213,9 +326,16 @@
     const tl = gsap.timeline({
       defaults: { ease: "power2.out" },
       onComplete: function () {
-        location.href = destination.href;
+        finishExitTransition(destination);
       },
     });
+
+    exitTimeline = tl;
+    exitOverlay = transition.overlay;
+    exitPageShell = pageShell;
+    exitFallbackTimer = global.setTimeout(function () {
+      finishExitTransition(destination);
+    }, exitFallbackDelay);
 
     gsap.set(transition.card, {
       x: startX,
@@ -387,9 +507,65 @@
     runProjectExitTransition(event, link);
   });
 
+  function scrollToReturnPosition(y) {
+    if (global.siteLenis && typeof global.siteLenis.scrollTo === "function") {
+      global.siteLenis.scrollTo(y, { immediate: true, force: true });
+    } else {
+      global.scrollTo(0, y);
+    }
+  }
+
+  // Coming back to a page that renders its content asynchronously (homepage explorer, project page):
+  // the browser's own scroll restoration runs before that content exists, so restore after render.
+  function restoreReturnScroll() {
+    const navigation = typeof performance !== "undefined" && typeof performance.getEntriesByType === "function"
+      ? performance.getEntriesByType("navigation")[0]
+      : null;
+
+    const state = navigation && navigation.type === "back_forward" ? readReturnScroll() : null;
+
+    if (!state) {
+      setScrollRestoration("auto");
+      return;
+    }
+
+    clearReturnScroll();
+
+    const renderEvent = document.getElementById("portfolio-explorer")
+      ? "portfolio:explorer-rendered"
+      : document.querySelector("[data-project-page]")
+        ? "portfolio:project-rendered"
+        : "";
+    let restored = false;
+    const restore = function () {
+      if (restored) {
+        return;
+      }
+
+      restored = true;
+      // Not deferred to requestAnimationFrame: hidden/background tabs may never run it.
+      scrollToReturnPosition(state.y);
+      setScrollRestoration("auto");
+    };
+
+    if (renderEvent) {
+      global.addEventListener(renderEvent, restore, { once: true });
+      global.setTimeout(restore, 3000);
+    } else {
+      restore();
+    }
+  }
+
   global.addEventListener("portfolio:project-rendered", runProjectEntryTransition);
   global.setTimeout(runProjectEntryTransition, 0);
-  global.addEventListener("pageshow", function () {
+  global.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      resetExitTransition();
+      clearReturnScroll();
+      return;
+    }
+
     document.body.classList.remove("page-transition-active");
   });
+  restoreReturnScroll();
 })(typeof globalThis !== "undefined" ? globalThis : this);

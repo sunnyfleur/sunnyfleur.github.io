@@ -246,10 +246,11 @@
       return projectList[0];
     }
 
+    // An unknown slug returns null so the page can say "not found" instead of silently showing another project.
     return (
       projectList.find((entry) => normalizeText(entry && entry.slug) === normalizedSlug)
       || projectList.find((entry) => getLegacySlugs(entry).includes(normalizedSlug))
-      || projectList[0]
+      || null
     );
   }
 
@@ -456,6 +457,21 @@
 
   function projectUrl(slug) {
     return localizeInternalUrl("project.html?slug=" + encodeURIComponent(slug));
+  }
+
+  function renderProjectMessage(pageRoot, title, text) {
+    pageRoot.innerHTML = `
+      <section class="project-section project-message">
+        <div class="project-section__panel">
+          <h1>${title}</h1>
+          <p class="project-section__lead">${text}</p>
+          <a class="btn btn-default btn-hover btn-hover-accent" href="${localizeInternalUrl("index.html#portfolio")}">
+            <span class="btn-caption">${translate("project.backToPortfolio", "Back to portfolio")}</span>
+            <i class="ph-bold ph-arrow-left"></i>
+          </a>
+        </div>
+      </section>
+    `;
   }
 
   function prefersReducedMotion() {
@@ -1067,7 +1083,17 @@
       const project = findProjectBySlug(projects, requestedSlug);
 
       if (!project) {
-        pageRoot.innerHTML = '<p class="portfolio-empty">' + translate("project.noData", "No project data found.") + '</p>';
+        if (!projects.length) {
+          pageRoot.innerHTML = '<p class="portfolio-empty">' + translate("project.noData", "No project data found.") + '</p>';
+          return;
+        }
+
+        document.title = translate("project.notFoundTitle", "Project not found") + " | Tran Hoang Kiet Portfolio";
+        renderProjectMessage(
+          pageRoot,
+          translate("project.notFoundTitle", "Project not found"),
+          translate("project.notFoundText", "This project link is out of date or the project was removed. Browse the current work instead.")
+        );
         return;
       }
 
@@ -1328,18 +1354,11 @@
       }
     } catch (error) {
       console.error("Unable to load project page data.", error);
-      pageRoot.innerHTML = `
-      <section class="project-section">
-        <div class="project-section__panel">
-          <h1>${translate("project.loadFailTitle", "Project details could not be loaded")}</h1>
-          <p class="project-section__lead">${translate("project.loadFailText", "Try returning to the portfolio explorer and opening the case study again.")}</p>
-          <a class="btn btn-default btn-hover btn-hover-accent" href="${localizeInternalUrl("index.html#portfolio")}">
-            <span class="btn-caption">${translate("project.backToPortfolio", "Back to portfolio")}</span>
-            <i class="ph-bold ph-arrow-left"></i>
-          </a>
-        </div>
-      </section>
-    `;
+      renderProjectMessage(
+        pageRoot,
+        translate("project.loadFailTitle", "Project details could not be loaded"),
+        translate("project.loadFailText", "Try returning to the portfolio explorer and opening the case study again.")
+      );
     }
   })();
 })(typeof globalThis !== "undefined" ? globalThis : this);

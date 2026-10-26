@@ -29,8 +29,8 @@
         }
       ],
       "results": [
-        "Giữ entry chính xác trong giới hạn bảo mật của dự án.",
-        "Làm rõ phạm vi đóng góp mà không bịa metric hoặc outcome chưa công bố."
+        "Ý đồ thiết kế cho combat, content và camera được viết tài liệu và làm prototype trước khi bắt đầu implement.",
+        "Thiết kế feature được điều chỉnh theo feedback playtest và ràng buộc production."
       ],
       "teamSize": "Không công khai"
     },
@@ -79,75 +79,77 @@
         }
       ],
       "results": [
-        "Tạo portfolio project thể hiện cả design thinking và implementation depth.",
-        "Tạo reusable case-study structure cho các dự án gameplay-heavy sau này.",
-        "Hiểu rõ hơn multiplayer complexity thay đổi scope và design priority từ rất sớm."
+        "Tạo một dự án portfolio thể hiện cả tư duy thiết kế lẫn chiều sâu implementation.",
+        "Hoàn thiện bản build chơi được cùng video gameplay demo.",
+        "Hiểu sớm multiplayer làm thay đổi scope và thứ tự ưu tiên thiết kế như thế nào."
       ],
-      "links": [
-        {
-          "label": "Tải Design Docs"
-        }
-      ]
+      "links": []
     },
     "lunarfall-pixel-strategy": {
-      "tagline": "Archive tư liệu pixel-strategy kết hợp dark-fantasy mockup và system planning.",
-      "summary": "Lunarfall được trình bày như một archive tư liệu dựa trên pixel-art mockup, economy planning và unit design material hiện có. Entry giữ dự án chính xác trong portfolio, đồng thời để phần system note sâu hơn cho một bản write-up đầy đủ sau này.",
-      "cardSummary": "Concept pixel strategy dark-fantasy được document bằng interface mockup và systems spreadsheet.",
+      "tagline": "Game chiến thuật pixel dark-fantasy kết hợp real-time strategy với combat hành động.",
+      "summary": "Lunarfall: Pixel Strategy là dự án cá nhân đang phát triển, kết hợp sản xuất và điều quân kiểu RTS với combat hành động. Thiết kế nằm trong một GDD dạng spreadsheet: vai trò unit và điều kiện mở khóa, chỉ số combat, và hệ thống tiền tệ được map theo nguồn vào, nguồn tiêu và giới hạn, kèm mockup pixel-art cho town và menu.",
+      "cardSummary": "Concept chiến thuật pixel kết hợp RTS và hành động, thiết kế qua GDD spreadsheet, bảng cân bằng unit và kế hoạch economy.",
       "type": "Archive",
       "status": "Archive tư liệu",
       "role": [
         "Game Designer"
       ],
-      "problem": "Dự án cần được kết nối lại với asset và material thiết kế của chính Lunarfall để reviewer đọc đúng bối cảnh, thay vì cảm giác như một trang tái dùng từ project khác.",
+      "problem": "Kết hợp RTS và hành động buộc một người chơi vừa là chỉ huy vừa là chiến binh. Thiết kế phải giữ cho việc lên kế hoạch sản xuất và combat từng khoảnh khắc đều dễ đọc trên màn hình nhỏ, không để vòng lặp này lấn át vòng lặp kia.",
       "contributions": [
-        "Dựng lại entry quanh visual, economy note và unit-planning material riêng của Lunarfall.",
-        "Giữ dự án trong shared browse flow với nhãn archive tư liệu rõ ràng.",
-        "Chuẩn bị cấu trúc để sau này bổ sung combat system, progression và production note."
+        "Viết GDD mẫu dưới dạng spreadsheet có cấu trúc, bao gồm unit, chỉ số combat và progression.",
+        "Định nghĩa vai trò, điều kiện mở khóa và hành vi combat cho toàn bộ roster.",
+        "Lên kế hoạch economy cho progression với nguồn vào, nguồn tiêu và giới hạn rõ ràng cho từng loại tiền.",
+        "Làm mockup pixel-art cho town hub và menu để thử tone và cách bố trí thông tin."
       ],
       "systems": [
         {
-          "title": "Archive tư liệu hiện tại",
+          "title": "Unit và Economy",
           "items": [
-            "Dùng pixel-art mockup hiện có làm hero visual để dự án đọc đúng ngay từ đầu.",
-            "Giữ economy và unit-design spreadsheet như supporting documentation.",
-            "Chừa chỗ để mở rộng entry thành systems breakdown đầy đủ hơn."
+            "Roster chia thành unit sản xuất và unit cận chiến, mỗi unit có trạng thái mở khóa và chỉ số combat riêng.",
+            "Bảng tiền tệ theo dõi mỗi tài nguyên vào và ra khỏi economy ở đâu, có giới hạn để tránh tích trữ.",
+            "Giá trị cân bằng nằm chung một bảng nên mọi lần tuning đều truy lại được."
           ]
         }
       ],
       "results": [
-        "Sửa lại narrative của portfolio bằng cách kết nối Lunarfall với asset đúng của dự án.",
-        "Tạo trạng thái archive trung thực, có thể mở rộng thành systems breakdown đầy đủ hơn."
+        "Một GDD hoàn chỉnh định nghĩa roster, chỉ số combat và economy trước khi viết code production.",
+        "Nền tảng rõ ràng cho bước tiếp theo: prototype vòng lặp combat RTS kết hợp hành động."
       ],
-      "teamSize": "Không công khai"
+      "teamSize": "Không công khai",
+      "links": [
+        {
+          "label": "GDD mẫu (Google Sheets)"
+        }
+      ]
     },
     "farm-match": {
-      "tagline": "Archive tư liệu merge puzzle chủ đề animal, dựa trên portrait-mobile board capture.",
-      "summary": "FarmMatch được trình bày như một archive tư liệu từ title screen và board-layout capture hiện có. Entry tập trung vào phần có thể xem ngay: flow matching trên mobile dọc, board state dễ đọc và cách trình bày merge puzzle.",
+      "tagline": "Puzzle ghép động vật dễ thương cho mobile màn dọc, với board xoay quanh blocker và mục tiêu level.",
+      "summary": "FarmMatch là game puzzle ghép động vật casual cho mobile màn dọc. Các ảnh chụp board cho thấy phần level design: cách sắp xếp quân động vật, blocker và mục tiêu thay đổi qua từng level để vòng lặp ghép đơn giản luôn mới.",
       "cardSummary": "Archive merge puzzle chủ đề animal, giữ lại visual và gameplay capture để reviewer hiểu loop chính.",
       "type": "Archive",
       "status": "Archive tư liệu",
       "role": [
         "Game Designer"
       ],
-      "problem": "Material hiện có cho thấy puzzle loop và board layout, còn progression note và bối cảnh production sâu hơn chưa nằm trong phạm vi công khai.",
+      "problem": "Game ghép lặp lại một thao tác hàng nghìn lần. Sự đa dạng phải đến từ chính board: blocker đặt ở đâu, mục tiêu là gì, quân được xếp thế nào, trong khi màn hình vẫn phải dễ đọc chỉ trong một cái nhìn.",
       "contributions": [
-        "Đưa dự án vào shared portfolio để không chỉ nằm trong folder capture rời.",
-        "Kết nối title screen và in-game board thành một archive tư liệu dễ đọc.",
-        "Chuẩn bị cấu trúc để bổ sung level design, progression và production learning khi có thêm note công khai."
+        "Thiết kế layout board kết hợp quân động vật, blocker và mục tiêu level.",
+        "Thay đổi mục tiêu và vị trí blocker để điều chỉnh nhịp độ khó trong cả bộ level.",
+        "Giữ board dễ đọc ở màn dọc để người chơi nhận ra nước ghép nhanh."
       ],
       "systems": [
         {
-          "title": "Archive Presentation",
+          "title": "Board và Level Design",
           "items": [
-            "Lead bằng branded hero art để project đọc rõ trong browse view.",
-            "Dùng gameplay captures làm evidence chính thay vì copy giả định.",
-            "Giữ case-study shell sẵn sàng cho write-up production sau này."
+            "Blocker quyết định những nước ghép nào được mở trên mỗi board.",
+            "Mỗi level có mục tiêu rõ ràng để người chơi luôn biết cần làm gì để qua màn.",
+            "Quân động vật sáng màu, dễ phân biệt giúp nhận ra nước ghép trên điện thoại."
           ]
         }
       ],
       "results": [
-        "Giữ FarmMatch xuất hiện trong main project flow bằng capture thật.",
-        "Tạo một archive trung thực, có thể mở rộng khi có thêm design note được phép công khai."
+        "Một bộ level có board và mục tiêu thay đổi đều đặn qua từng màn.",
+        "Kinh nghiệm điều tiết nhịp độ của một vòng lặp đơn giản bằng level design thay vì thêm luật mới."
       ],
       "teamSize": "Không công khai"
     },
@@ -183,133 +185,137 @@
       "teamSize": "Không công khai"
     },
     "satisdom": {
-      "tagline": "Archive tư liệu mini-game thỏa mãn, tập trung vào interaction thư giãn, beauty care và micro-task casual.",
-      "summary": "Satisdom được trình bày như một archive tư liệu từ sketch, flow note, audio-review sheet và content-planning material. Entry tập trung vào interaction feel và cách đóng gói micro-task casual mà không phóng đại những chi tiết chưa công khai.",
-      "cardSummary": "Archive thiết kế interaction, giữ lại sketch, spreadsheet và reference để chuẩn bị full breakdown.",
+      "tagline": "Concept game satisfying thư giãn, gồm các tương tác chăm sóc sắc đẹp và dọn dẹp ngắn gọn.",
+      "summary": "Satisdom là concept game satisfying trên mobile, gồm các micro-task ngắn và thư giãn. Phần thiết kế đi từ concept frame vẽ tay trước và sau, ghi chú flow mini-game, bảng lên kế hoạch content đến review âm thanh feedback, để mỗi thao tác đều có cảm giác đã tay.",
+      "cardSummary": "Concept micro-task satisfying, thiết kế qua sketch trước và sau, ghi chú flow và review âm thanh feedback.",
       "type": "Archive",
       "status": "Archive tư liệu",
       "role": [
         "Game Designer"
       ],
-      "problem": "Dự án có nhiều concept và production reference hữu ích, nhưng câu chuyện thiết kế còn nằm rải rác giữa sketch, sound-review sheet và implementation note.",
+      "problem": "Game satisfying gần như không có thử thách, nên cảm giác chính là sản phẩm. Mỗi micro-task cần trạng thái ban đầu rõ ràng, thao tác có cảm giác chạm thật và phần thưởng nhìn thấy, nghe thấy được, tất cả chỉ trong vài giây.",
       "contributions": [
-        "Đưa Satisdom vào shared portfolio để reviewer có thể thấy bằng chứng hiện có.",
-        "Dùng concept sketch và spreadsheet capture để frame hướng interaction và content planning.",
-        "Chuẩn bị entry cho pass sau về mini-game selection, interaction feel và audio feedback."
+        "Vẽ concept frame trước và sau cho từng tương tác thư giãn.",
+        "Map flow mini-game để mỗi task có điểm bắt đầu, thao tác và phần thưởng rõ ràng.",
+        "Lên danh sách content và độ đa dạng của task trong spreadsheet.",
+        "Review hiệu ứng âm thanh theo từng thao tác để feedback rõ hơn."
       ],
       "systems": [
         {
-          "title": "Archive Consolidation",
+          "title": "Cảm giác tương tác",
           "items": [
-            "Tách material hiện có thành evidence thay vì coi như case study hoàn chỉnh.",
-            "Giữ entry đủ ngắn để reviewer hiểu trạng thái thật.",
-            "Chuẩn bị nền cho future mini-game and interaction breakdown."
+            "Mỗi task cho thấy sự bừa bộn trước, nên việc dọn dẹp được cảm nhận như tiến triển.",
+            "Thao tác ngắn giúp mỗi phiên chơi thư giãn và dễ chơi lại.",
+            "Hiệu ứng âm thanh được kiểm tra theo từng tương tác để phần thưởng có cảm giác vật lý."
           ]
         }
       ],
       "results": [
-        "Giữ Satisdom hiện diện mà không nói quá mức hoàn thiện của write-up.",
-        "Tạo cấu trúc archive có thể bổ sung gameplay, UX và sound detail về sau."
+        "Một bộ tương tác micro-task có tài liệu, sẵn sàng để làm prototype.",
+        "Quy trình sketch, flow và âm thanh có thể lặp lại để thiết kế các khoảnh khắc satisfying."
       ],
       "teamSize": "Không công khai"
     },
     "screw": {
-      "tagline": "Archive tư liệu mobile puzzle kiểu unscrew, xoay quanh color logic và board level gọn.",
-      "summary": "Screw được trình bày như một archive tư liệu từ branded key art và bộ level screenshot hiện có. Entry nhấn vào color logic, board readability và cách trình bày puzzle gọn trên mobile.",
-      "cardSummary": "Archive puzzle mobile với branded hero art và level capture làm evidence chính.",
+      "tagline": "Puzzle màu kiểu unscrew: level design, đường cong độ khó và cân bằng dựa trên dữ liệu cho một game mobile đang vận hành.",
+      "summary": "Screw là game puzzle unscrew trên mobile mà tôi tham gia với vai trò Game Designer tại Rainbow 5s. Công việc gồm level design, sắp thứ tự màu ốc và đường cong độ khó cho cả bộ level, cùng các bảng tracking dùng để kiểm tra độ phủ, phát hiện level bất thường và lên kế hoạch cân bằng theo đợt.",
+      "cardSummary": "Puzzle màu kiểu unscrew với các board level được thiết kế và bảng tracking dùng để cân bằng lại độ khó theo đợt.",
       "type": "Archive",
       "status": "Archive tư liệu",
       "role": [
         "Game Designer"
       ],
-      "problem": "Screw đã có key art dễ nhận diện và nhiều level capture, nhưng material công khai hiện phù hợp với archive tư liệu hơn là một breakdown hoàn chỉnh.",
+      "problem": "Puzzle unscrew phụ thuộc vào độ dễ đọc: người chơi phải thấy ốc nào đang giữ tấm nào và màu nào sắp đến. Bộ level cần đường cong độ khó đều đặn, giữ phiên chơi đã tay trong khi vẫn hỗ trợ mục tiêu rewarded ads và retention.",
       "contributions": [
-        "Đưa Screw vào data-driven portfolio để có thể browse cùng các project khác.",
-        "Dùng key art và level screenshot hiện có để frame evidence về puzzle readability.",
-        "Chuẩn bị cấu trúc cho các note sau về puzzle rule, level sequencing và UX clarity."
+        "Thiết kế board level, sắp xếp tấm, ốc và thứ tự màu để tạo hình từng câu đố.",
+        "Sắp thứ tự màu ốc và độ chồng lớp để xây dựng đường cong độ khó có chủ đích cho cả bộ level.",
+        "Xây dựng bảng tracking để kiểm tra độ phủ level và đánh dấu level bất thường cần cân bằng lại.",
+        "Dùng A/B test và metric người chơi để tinh chỉnh cân bằng giữa các đợt."
       ],
       "systems": [
         {
-          "title": "Puzzle Archive View",
+          "title": "Level Design và Cân bằng",
           "items": [
-            "Lead bằng key art để project đọc rõ trong portfolio browse.",
-            "Dùng level screenshots làm evidence thay vì mô tả quá mức.",
-            "Giữ shell case-study sẵn sàng cho breakdown về puzzle logic và level pacing."
+            "Bố cục board quyết định mỗi màu ốc bị che sâu đến mức nào.",
+            "Độ khó tăng dần qua số màu, độ chồng lớp và số nước đi còn mở.",
+            "Các đợt cân bằng được lên kế hoạch theo batch từ dữ liệu tracking, không chỉnh lẻ tẻ."
           ]
         }
       ],
       "results": [
-        "Giữ Screw trong portfolio mà không cần tạo thêm standalone detail page.",
-        "Tạo archive tư liệu ổn định, có thể phát triển thành case study đầy đủ hơn."
+        "Một bộ level có đường cong độ khó dễ đọc và tăng dần.",
+        "Quy trình review dữ liệu có thể lặp lại để cân bằng lại level theo đợt."
       ],
       "teamSize": "Không công khai"
     },
     "tank": {
-      "tagline": "Archive tư liệu arcade tank-brawler, dựa trên title art hiện có.",
-      "summary": "Tank được trình bày như một archive tư liệu nhẹ, dùng title art hiện có làm bằng chứng chính. Entry giữ dự án trong shared portfolio trong khi gameplay capture và documentation sâu hơn chưa nằm trong public write-up.",
-      "cardSummary": "Arcade tank battle concept được thể hiện bằng title art và archive note ở mức công khai.",
+      "tagline": "Game bắn tăng arcade trên mobile, được tối ưu cho rewarded ads, doanh thu và retention.",
+      "summary": "Tank là game bắn tăng arcade trên mobile mà tôi tham gia với vai trò Game Designer tại Rainbow 5s. Công việc tập trung vào các cải tiến nhằm tăng tương tác rewarded ads, doanh thu và retention, cùng level design và tinh chỉnh cân bằng dựa trên A/B test và metric người chơi.",
+      "cardSummary": "Game bắn tăng arcade trên mobile, nơi tôi làm về retention, cải tiến rewarded ads và tinh chỉnh cân bằng.",
       "type": "Archive",
       "status": "Archive tư liệu",
       "role": [
         "Game Designer"
       ],
-      "problem": "Tank có branding rõ nhưng chưa đủ material gameplay công khai cho một case study hoàn chỉnh. Cách trung thực hơn là label dự án như archive thay vì tự thêm chi tiết chưa có bằng chứng.",
+      "problem": "Một game arcade đang vận hành phải kiếm tiền từ rewarded ads mà không làm mất vui khi chiến đấu. Mỗi lời mời xem quảng cáo cần giống phần thưởng người chơi thật sự muốn, và mọi thay đổi cân bằng cần có bằng chứng trước khi phát hành.",
       "contributions": [
-        "Đưa Tank vào shared project list để dự án xuất hiện trong homepage explorer.",
-        "Dùng title art hiện có làm evidence hero cho entry công khai hiện tại.",
-        "Chuẩn bị entry để sau này bổ sung mode, combat và progression detail khi sẵn sàng chia sẻ."
+        "Đề xuất cải tiến để tăng tương tác rewarded ads, doanh thu và retention.",
+        "Thiết kế và tinh chỉnh level cho game đang vận hành.",
+        "Chạy A/B test và phân tích metric để điều chỉnh cân bằng game."
       ],
       "systems": [
         {
-          "title": "Lightweight Archive",
+          "title": "Tối ưu khi vận hành",
           "items": [
-            "Dùng title art làm visual anchor.",
-            "Giữ copy ngắn và không overclaim.",
-            "Đặt nền cho future documentation pass."
+            "Lời mời rewarded ads đặt ở thời điểm người chơi đang cần thêm sức mạnh.",
+            "Thay đổi cân bằng được thử bằng A/B split trước khi áp dụng rộng.",
+            "Kết quả được đối chiếu với mục tiêu retention và doanh thu."
           ]
         }
       ],
       "results": [
-        "Tank không bị bỏ khỏi portfolio chỉ vì public case-study package còn giới hạn.",
-        "Tạo trạng thái archive sạch để có thể nâng cấp khi có material gameplay mạnh hơn."
+        "Đóng góp các cải tiến hướng đến metric rewarded ads, doanh thu và retention.",
+        "Kinh nghiệm thực tế chạy A/B test trên một game mobile đang vận hành."
       ],
       "teamSize": "Không công khai"
     },
     "horror-carnival": {
-      "tagline": "Archive tư liệu atmosphere-first quanh tension, pacing và không gian carnival.",
-      "summary": "Horror Carnival được trình bày như một archive tư liệu cho concept đặt atmosphere lên trước. Entry giữ dự án discoverable, đồng thời tập trung vào material công khai có thể hỗ trợ tone, pacing và framing không gian attraction.",
-      "cardSummary": "Concept atmosphere-first xoay quanh tension, pacing và không gian carnival.",
+      "tagline": "Prototype puzzle lễ hội kinh dị làm bằng Unity, lấy cảm hứng từ Goods Master.",
+      "summary": "Horror Carnival Puzzle là prototype cá nhân từ tháng 9/2024, lấy cảm hứng từ Goods Master và đặt trong một lễ hội ma quái. Mỗi level chia thành các phòng bị ám với nhân vật đồng minh và kẻ địch, đồng hồ đếm ngược và booster gọi thêm đồng minh. Tôi làm prototype bằng Unity và quay video gameplay demo.",
+      "cardSummary": "Prototype puzzle Unity chủ đề kinh dị, lấy cảm hứng từ Goods Master, với các phòng lễ hội bị ám và video demo.",
       "type": "Archive",
       "status": "Archive tư liệu",
       "role": [
         "Game Designer"
       ],
-      "problem": "Material công khai hiện phù hợp với một archive gọn hơn là case study đầy đủ. Entry cần giữ được context mà không dùng copy yếu hoặc gây hiểu nhầm.",
+      "problem": "Game puzzle kiểu Goods Master thường nhẹ nhàng và gọn gàng, còn lễ hội kinh dị thì căng thẳng và rối mắt. Prototype phải mang được không khí đó vào mà không làm board khó đọc hơn.",
       "contributions": [
-        "Giữ dự án trong portfolio browse flow.",
-        "Định nghĩa presentation nhẹ hơn cho project mới có một phần documentation.",
-        "Chuẩn bị data structure để sau này có thể thêm write-up đầy đủ mà không cần đổi cấu trúc page."
+        "Thiết kế level puzzle và bố cục các phòng lễ hội bị ám.",
+        "Làm prototype bằng Unity, gồm nhân vật đồng minh, kẻ địch và flow level.",
+        "Quay video gameplay demo của prototype hoàn chỉnh."
       ],
       "systems": [
         {
-          "title": "Archive tư liệu hiện tại",
+          "title": "Puzzle và Chủ đề",
           "items": [
-            "Giữ project visible bằng material hiện có.",
-            "Frame summary trung thực quanh độ sâu documentation hiện tại.",
-            "Chừa cấu trúc để entry có thể mở rộng từng bước."
+            "Mỗi level chia board thành các phòng lễ hội nên bố cục dễ đọc ngay từ cái nhìn đầu.",
+            "Đồng hồ đếm ngược và booster đồng minh tạo áp lực và lối thoát.",
+            "Chủ đề kinh dị tạo không khí mà không thay đổi cách đọc câu đố."
           ]
         }
       ],
       "results": [
-        "Giảm friction khi bảo trì các project mới có một phần tài liệu công khai.",
-        "Tạo hướng public-safe để cải thiện presentation mà không dùng copy gây hiểu nhầm."
+        "Một prototype năm level chơi được, kèm video demo.",
+        "Kinh nghiệm biến một reference puzzle đã được chứng minh thành prototype có chủ đề riêng."
       ],
       "gallery": [
         {
-          "image": "img/og-image.png",
-          "fullImage": "img/og-image.png",
-          "title": "Archive visual",
-          "description": "Visual tạm thời trong lúc chuẩn bị gallery material mạnh hơn cho Horror Carnival."
+          "title": "Màn hình gameplay",
+          "description": "Các phòng lễ hội bị ám với đồng minh, kẻ địch, đồng hồ đếm ngược và booster đồng minh."
+        },
+        {
+          "title": "Project Unity",
+          "description": "Prototype chạy trong Unity editor, với năm scene level và các prefab nhân vật."
         }
       ],
       "teamSize": "Không công khai"
