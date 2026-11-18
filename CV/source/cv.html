@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tran Hoang Kiet - Gameplay Designer CV</title>
+  <!-- Source for the CV PDF. Print to A4 PDF with Edge or Chrome:
+       msedge --headless --print-to-pdf=out.pdf --no-pdf-header-footer cv.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    :root {
+      --red: #e60012;
+      --ink: #0d0d0d;
+      --text: #262626;
+      --muted: #5a5a5a;
+      --line: #d9d6d0;
+      --display: "Anton", "Arial Narrow", sans-serif;
+      --body: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: var(--text);
+      font: 400 9pt/1.36 var(--body);
+      -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      padding: 0 13mm 10mm;
+      overflow: hidden;
+    }
+
+    /* ---- Header: black band with a red slash ---- */
+    .head {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 30mm;
+      gap: 6mm;
+      align-items: center;
+      margin: 0 -13mm 5mm;
+      padding: 8mm 13mm 7mm;
+      background: var(--ink);
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .head::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 62mm;
+      background: var(--red);
+      clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .head > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .name {
+      margin: 0;
+      font: 400 30pt/1 var(--display);
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .role {
+      display: inline-block;
+      margin: 3mm 0 3.5mm;
+      padding: 1mm 4mm;
+      background: var(--red);
+      color: #ffffff;
+      font: 400 11pt/1.2 var(--display);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1mm 5mm;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 8.6pt;
+      color: #e6e6e6;
+    }
+
+    .contact a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .contact b {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .photo {
+      width: 30mm;
+      height: 30mm;
+      object-fit: cover;
+      object-position: 50% 30%;
+      border: 1mm solid #ffffff;
+      transform: rotate(2deg);
+    }
+
+    /* ---- Body ---- */
+    .summary {
+      margin: 0 0 4mm;
+      font-size: 9.3pt;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 56mm;
+      gap: 8mm;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+      margin: 0 0 2.5mm;
+      color: var(--ink);
+      font: 400 12pt/1 var(--display);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h2::before {
+      content: "";
+      width: 2.4mm;
+      height: 2.4mm;
+      background: var(--red);
+      transform: rotate(45deg);
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 0.5mm;
+      background: var(--ink);
+    }
+
+    section + section {
+      margin-top: 3.6mm;
+    }
+
+    .job + .job {
+      margin-top: 2.6mm;
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 3mm;
+      align-items: baseline;
+    }
+
+    .job-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: 10.4pt;
+      font-weight: 700;
+    }
+
+    .date {
+      flex: none;
+      color: var(--red);
+      font-size: 8.4pt;
+      font-weight: 600;
+    }
+
+    .org {
+      margin: 0.4mm 0 1.2mm;
+      color: var(--muted);
+      font-size: 8.8pt;
+    }
+
+    ul.points {
+      margin: 0;
+      padding-left: 4mm;
+    }
+
+    ul.points li {
+      margin: 0.3mm 0;
+    }
+
+    ul.points li::marker {
+      color: var(--red);
+    }
+
+    .project + .project {
+      margin-top: 1.8mm;
+    }
+
+    .project-name {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .project-meta {
+      color: var(--muted);
+      font-size: 8.4pt;
+    }
+
+    .project p {
+      margin: 0.4mm 0 0;
+    }
+
+    /* Side column */
+    .side-block {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .side-block li + li {
+      margin-top: 1.6mm;
+    }
+
+    .side-block .label {
+      display: block;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .side-block .sub {
+      display: block;
+      color: var(--muted);
+      font-size: 8.4pt;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3mm;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      padding: 0.7mm 2.2mm;
+      border: 0.3mm solid var(--ink);
+      color: var(--ink);
+      font-size: 8.2pt;
+      font-weight: 500;
+    }
+
+    .tags.strong li {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .foot {
+      position: absolute;
+      left: 13mm;
+      right: 13mm;
+      bottom: 6mm;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2mm;
+      border-top: 0.3mm solid var(--line);
+      color: var(--muted);
+      font-size: 7.8pt;
+    }
+
+    .foot b {
+      color: var(--red);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="head">
+      <div>
+        <h1 class="name">Tran Hoang Kiet</h1>
+        <div class="role">Gameplay Designer</div>
+        <ul class="contact">
+          <li><b>E</b> <a href="mailto:tranhoangkiet1312@gmail.com">tranhoangkiet1312@gmail.com</a></li>
+          <li><b>W</b> <a href="https://sunnyfleur.github.io/">sunnyfleur.github.io</a></li>
+          <li><b>in</b> <a href="https://www.linkedin.com/in/kiet-tran-hoang-60575b27b/">linkedin.com/in/kiet-tran-hoang-60575b27b</a></li>
+          <li><b>@</b> Ho Chi Minh City, Vietnam</li>
+        </ul>
+      </div>
+      <img class="photo" src="../../img/avatars/avatar.jpg" alt="Portrait of Tran Hoang Kiet">
+    </header>
+
+    <p class="summary">
+      Gameplay designer with two years in game studios, currently designing combat, content and camera
+      features for an unannounced dark-fantasy action game in Unreal Engine 5. I take features from design
+      intent through specs, prototypes and playtests to production tuning, and my software engineering
+      background lets me work closely with developers on implementation.
+    </p>
+
+    <div class="cols">
+      <main>
+        <section>
+          <h2>Experience</h2>
+
+          <div class="job">
+            <div class="job-top">
+              <h3 class="job-title">Gameplay Designer</h3>
+              <span class="date">02/2025 – Present</span>
+            </div>
+            <p class="org">Ather Labs · Ho Chi Minh City</p>
+            <ul class="points">
+              <li>Own combat, content and camera features on Huli, an unannounced dark-fantasy action game in Unreal Engine 5 inspired by Fengshen Yanyi.</li>
+              <li>Write feature specs and coordinate implementation with developers.</li>
+              <li>Prototype feature ideas to make design intent clear before implementation starts.</li>
+              <li>Run playtest passes and tune features with KPI and playtest data toward production quality.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-top">
+              <h3 class="job-title">Game Designer</h3>
+              <span class="date">09/2024 – 12/2024</span>
+            </div>
+            <p class="org">Rainbow 5s Co., Ltd · Mobile game studio</p>
+            <ul class="points">
+              <li>Improved rewarded-ad engagement, revenue and retention on live titles including Screw Nuts, Tanks Battle, Bubble Jam, Stick Battle, Tomb Color, Satis Home, Goods Master and Bomber Classic.</li>
+              <li>Designed and built levels and progression flow for multiple casual and puzzle projects.</li>
+              <li>Ran A/B tests and read KPI dashboards to find drop-off points and tune balance and pacing.</li>
+              <li>Created UI layouts for game tutorials.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-top">
+              <h3 class="job-title">Unity Developer Intern</h3>
+              <span class="date">03/2024 – 05/2024</span>
+            </div>
+            <p class="org">Mason Games Vietnam · Mobile game studio</p>
+            <ul class="points">
+              <li>Implemented and adjusted core puzzle mechanics in Unity, recreating systems from games such as Ropes and Blocks, Thieves Puzzle and Goods Master 3D.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Selected projects</h2>
+
+          <div class="project">
+            <span class="project-name">Lunarfall: Pixel Strategy</span>
+            <span class="project-meta"> · Personal · 11/2024 – Present</span>
+            <p>Real-time strategy fused with action combat. Wrote a spreadsheet GDD covering unit roles, unlock conditions, combat stats and a currency economy with sources, sinks and caps.</p>
+          </div>
+
+          <div class="project">
+            <span class="project-name">Space Conqueror</span>
+            <span class="project-meta"> · Personal · Unity, Photon PUN, PlayFab</span>
+            <p>3D space shooter with a single-player campaign and online multiplayer. Designed the combat loop and enemy waves; built enemy AI with a finite state machine and object pooling.</p>
+          </div>
+
+          <div class="project">
+            <span class="project-name">Horror Carnival Puzzle</span>
+            <span class="project-meta"> · Personal · 09/2024 · Unity</span>
+            <p>Five-level puzzle prototype inspired by Goods Master, set in haunted carnival rooms with allies, enemies, a round timer and a booster.</p>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section>
+          <h2>Skills</h2>
+          <ul class="tags strong">
+            <li>Gameplay design</li>
+            <li>Combat design</li>
+            <li>Feature ownership</li>
+            <li>Level design</li>
+            <li>Design docs &amp; specs</li>
+            <li>Playtesting</li>
+            <li>A/B testing</li>
+            <li>KPI analysis</li>
+            <li>Game balancing</li>
+            <li>Game economy</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Tools</h2>
+          <ul class="tags">
+            <li>Unreal Engine 5</li>
+            <li>Unity</li>
+            <li>C#</li>
+            <li>Git</li>
+            <li>Miro</li>
+            <li>Figma</li>
+            <li>Notion</li>
+            <li>Google Sheets</li>
+            <li>Photoshop</li>
+            <li>Aseprite</li>
+            <li>Spine</li>
+            <li>AI-assisted workflow</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <ul class="side-block">
+            <li>
+              <span class="label">B.Sc. Software Engineering</span>
+              <span class="sub">University of Economics Ho Chi Minh City · 2021 – 2025</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Training</h2>
+          <ul class="side-block">
+            <li>
+              <span class="label">Game Design</span>
+              <span class="sub">GAIA Academy · 2024</span>
+            </li>
+            <li>
+              <span class="label">Game Development with Unity</span>
+              <span class="sub">CodeGym · 2023</span>
+            </li>
+            <li>
+              <span class="label">2D Game Art</span>
+              <span class="sub">Digiart Academy · 2023</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Languages</h2>
+          <ul class="side-block">
+            <li>
+              <span class="label">Vietnamese</span>
+              <span class="sub">Native</span>
+            </li>
+            <li>
+              <span class="label">English</span>
+              <span class="sub">IELTS Academic 7.0</span>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="foot">
+      <span>Case studies, gameplay videos and design docs: <b>sunnyfleur.github.io</b></span>
+      <span>Updated 11/2026</span>
+    </footer>
+  </div>
+</body>
+</html>
