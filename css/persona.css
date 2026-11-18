@@ -1,0 +1,1234 @@
+/* ------------------------------------------------*/
+/* Persona Theme                                    */
+/* Red, black and white; hard edges, slanted        */
+/* panels and cut-out titles. Inspired by the       */
+/* Persona 5 interface, no Atlus assets used.       */
+/* Loaded by js/style-switch.js after holo-chrome;  */
+/* every rule is scoped to html[data-style=persona]. */
+/* ------------------------------------------------*/
+
+/* ---- Palette tokens ---- */
+
+html[data-style="persona"] {
+  --p-red: #e60012;
+  --p-red-deep: #a8000d;
+  --p-black: #0d0d0d;
+  --p-white: #ffffff;
+  --p-paper: #f2f0ec;
+  --p-ink: var(--p-black);
+  --p-panel: var(--p-white);
+  --p-panel-ink: var(--p-black);
+  --p-shard: var(--p-black);
+  --p-display: "Anton", "Arial Narrow", sans-serif;
+  --p-cut: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
+  --p-cut-soft: polygon(1.2% 0, 100% 0, 98.8% 100%, 0 100%);
+
+  --base--light: #f2f0ec;
+  --base-tint--light: #ffffff;
+  --base-shade--light: #e2ded8;
+  --accent--light: #e60012;
+  --secondary--light: #e60012;
+  --secondary-rgba--light: rgba(230, 0, 18, 0.14);
+  --accent-contrast--light: #ffffff;
+  --stroke-controls--light: #0d0d0d;
+  --stroke-controls-neutral--light: rgba(13, 13, 13, 0.4);
+  --stroke-elements--light: rgba(13, 13, 13, 0.18);
+  --t-bright--light: #0d0d0d;
+  --t-medium--light: #262626;
+  --t-muted--light: #4f4f4f;
+  --t-accent--light: #0d0d0d;
+  --t-secondary--light: #e60012;
+  --text-gradient-mid--light: #0d0d0d;
+  --t-disabled--light: #8a8a8a;
+  --t-placeholder--light: #8a8a8a;
+  --base-opp--light: #0d0d0d;
+  --t-opp-bright--light: #ffffff;
+  --t-opp-medium--light: #e6e6e6;
+  --t-opp-muted--light: #b3b3b3;
+
+  --base--dark: #0d0d0d;
+  --base-tint--dark: #181818;
+  --base-shade--dark: #000000;
+  --accent--dark: #ff1a2b;
+  --secondary--dark: #ff1a2b;
+  --secondary-rgba--dark: rgba(255, 26, 43, 0.2);
+  --accent-contrast--dark: #ffffff;
+  --stroke-controls--dark: #ffffff;
+  --stroke-controls-neutral--dark: rgba(255, 255, 255, 0.4);
+  --stroke-elements--dark: rgba(255, 255, 255, 0.18);
+  --t-bright--dark: #ffffff;
+  --t-medium--dark: #e6e6e6;
+  --t-muted--dark: #b3b3b3;
+  --t-accent--dark: #ffffff;
+  --t-secondary--dark: #ff1a2b;
+  --text-gradient-mid--dark: #ffffff;
+  --t-disabled--dark: #7a7a7a;
+  --t-placeholder--dark: #7a7a7a;
+  --base-opp--dark: #ffffff;
+  --t-opp-bright--dark: #0d0d0d;
+  --t-opp-medium--dark: #262626;
+  --t-opp-muted--dark: #4f4f4f;
+
+  /* Holo recipes become flat ink and a hard red offset shadow */
+  --glass-fill: var(--p-panel);
+  --glass-border: var(--p-ink);
+  --glass-highlight: 0 0 0 transparent;
+  --glass-shadow: 6px 6px 0 var(--p-red);
+  --glass-blur: none;
+  --chrome: var(--p-red);
+  --chrome-ink: #ffffff;
+  --holo: none;
+  --page-art: none;
+  --nav-active-fill: var(--p-red);
+  --nav-active-shadow: none;
+
+  --_radius-s: 0.2rem;
+  --_radius-m: 0.2rem;
+  --_radius-l: 0.3rem;
+  --_radius-xl: 0.4rem;
+  --portfolio-card-radius: 0.3rem;
+  --portfolio-shadow: 6px 6px 0 var(--p-red);
+  --portfolio-shadow-strong: 8px 8px 0 var(--p-red);
+  --project-accent: var(--p-red);
+  --project-accent-2: var(--p-red-deep);
+  --project-accent-contrast: #ffffff;
+}
+
+html[data-style="persona"][color-scheme="dark"] {
+  --p-ink: var(--p-white);
+  --p-panel: #161616;
+  --p-panel-ink: var(--p-white);
+  --p-shard: #1f1f1f;
+}
+
+html[data-style="persona"] .project-page[data-case-mode] {
+  --project-accent: var(--p-red);
+  --project-accent-2: var(--p-red-deep);
+  --project-accent-contrast: #ffffff;
+}
+
+/* ---- Background: paper, a red slash and a halftone corner ---- */
+
+html[data-style="persona"] .gradient-background {
+  background-color: var(--base);
+}
+
+html[data-style="persona"] .gradient-background .blur {
+  display: none;
+}
+
+/* The fixed layer keeps only a thin edge strip, so scrolling text never sits on red */
+html[data-style="persona"] .gradient-background::before {
+  inset: 0;
+  background: var(--p-red);
+  clip-path: polygon(97.5% 0, 100% 0, 100% 100%, 99% 100%);
+  filter: none;
+  opacity: 1;
+}
+
+/* The big slash belongs to the hero and scrolls away with it */
+html[data-style="persona"] .intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--p-red);
+  clip-path: polygon(72% 0, 100% 0, 100% 100%, 90% 100%);
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 991px) {
+  /* Keep the slash clear of the stacked hero text on small screens */
+  html[data-style="persona"] .intro::before {
+    clip-path: polygon(88% 0, 100% 0, 100% 100%, 95% 100%);
+  }
+
+  html[data-style="persona"] .btn-hover-outline-mobile::before {
+    border: 2px solid var(--p-ink);
+    border-radius: 0;
+  }
+}
+
+html[data-style="persona"] .highlight-text {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--p-red);
+  font-weight: 700;
+}
+
+html[data-style="persona"] .gradient-background::after {
+  background:
+    radial-gradient(circle, var(--p-shard) 1.2px, transparent 1.6px) 0 0 / 12px 12px;
+  clip-path: polygon(0 62%, 30% 100%, 0 100%);
+  opacity: 0.55;
+}
+
+/* ---- Typography: condensed display caps for headings ---- */
+
+html[data-style="persona"] h1,
+html[data-style="persona"] h2 {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--t-bright);
+  filter: none;
+}
+
+html[data-style="persona"] .headline__title,
+html[data-style="persona"] .h2__title,
+html[data-style="persona"] .h3__title,
+html[data-style="persona"] .section-h3,
+html[data-style="persona"] .project-hero__title,
+html[data-style="persona"] .project-section__panel h2,
+html[data-style="persona"] .portfolio-spotlight__title,
+html[data-style="persona"] .portfolio-card__title,
+html[data-style="persona"] .project-review-brief__title {
+  font-family: var(--p-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-style: oblique 8deg;
+}
+
+html[data-style="persona"] .headline__title {
+  line-height: 1.02;
+  color: var(--t-bright);
+}
+
+html[data-style="persona"] .h2__title,
+html[data-style="persona"] .project-section__panel h2 {
+  line-height: 1.02;
+}
+
+/* Two-tone gradient words become solid red */
+html[data-style="persona"] .gradient-fill,
+html[data-style="persona"] .h2__title span,
+html[data-style="persona"] .project-section__panel h2 span {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--p-red);
+}
+
+/* Cut-out letters on the hero name (built by js/persona.js) */
+html[data-style="persona"] .p-ransom-line {
+  font-size: 0.82em;
+}
+
+html[data-style="persona"] .p-ransom {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+html[data-style="persona"] .p-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+html[data-style="persona"] .p-ransom__char {
+  display: inline-block;
+  margin-right: 0.04em;
+  padding: 0 0.1em;
+  line-height: 1.08;
+  transform: rotate(var(--p-tilt, 0deg));
+}
+
+html[data-style="persona"] .p-ransom__char--ink {
+  background: var(--p-black);
+  color: var(--p-white);
+}
+
+html[data-style="persona"] .p-ransom__char--paper {
+  background: var(--p-white);
+  color: var(--p-black);
+  box-shadow: inset 0 0 0 0.05em var(--p-black);
+}
+
+html[data-style="persona"] .p-ransom__char--red {
+  background: var(--p-red);
+  color: var(--p-white);
+}
+
+html[data-style="persona"] .p-ransom__char--plain {
+  padding: 0 0.04em;
+  color: var(--t-bright);
+}
+
+html[data-style="persona"] .p-ransom__space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+/* ---- Chips and small labels: slanted tags ---- */
+
+html[data-style="persona"] .headline__subtitle,
+html[data-style="persona"] .intro-art__caption,
+html[data-style="persona"] .h2__subtitle,
+html[data-style="persona"] .portfolio-pill,
+html[data-style="persona"] .project-pill,
+html[data-style="persona"] .experience-tag,
+html[data-style="persona"] .resume-lines__category,
+html[data-style="persona"] .contact-scope-list span,
+html[data-style="persona"] .rounded-tag {
+  border: 0;
+  border-radius: 0;
+  background: var(--p-black);
+  color: var(--p-white);
+  box-shadow: none;
+  clip-path: var(--p-cut);
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+}
+
+html[data-style="persona"][color-scheme="dark"] .headline__subtitle,
+html[data-style="persona"][color-scheme="dark"] .h2__subtitle,
+html[data-style="persona"][color-scheme="dark"] .portfolio-pill,
+html[data-style="persona"][color-scheme="dark"] .experience-tag,
+html[data-style="persona"][color-scheme="dark"] .resume-lines__category,
+html[data-style="persona"][color-scheme="dark"] .contact-scope-list span,
+html[data-style="persona"][color-scheme="dark"] .rounded-tag {
+  background: var(--p-white);
+  color: var(--p-black);
+}
+
+html[data-style="persona"] .intro-art__caption,
+html[data-style="persona"] .project-meta-row .project-pill:first-child {
+  background: var(--p-red);
+  color: var(--p-white);
+}
+
+html[data-style="persona"] .intro-art__label {
+  color: var(--p-white);
+}
+
+html[data-style="persona"] .headline__subtitle svg,
+html[data-style="persona"] .h2__subtitle svg {
+  color: var(--p-red);
+}
+
+/* ---- Buttons: parallelograms that flip red on hover ---- */
+
+html[data-style="persona"] .btn-default,
+html[data-style="persona"] .header__trigger,
+html[data-style="persona"] .portfolio-show-all {
+  border-radius: 0;
+  clip-path: var(--p-cut);
+}
+
+html[data-style="persona"] .btn-default {
+  padding: 0 2.6rem;
+  font-family: var(--p-display);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+html[data-style="persona"] .btn-hover-accent::before,
+html[data-style="persona"] .btn-accent,
+html[data-style="persona"] .header__trigger::before,
+html[data-style="persona"] .portfolio-filter.is-active,
+html[data-style="persona"] .language-toggle button.is-active,
+html[data-style="persona"] .portfolio-card-grid .portfolio-card.is-active::before {
+  border-color: transparent;
+  border-radius: 0;
+  background: var(--p-red);
+  color: var(--p-white);
+  box-shadow: none;
+}
+
+html[data-style="persona"] .btn-hover-accent-mobile::before {
+  background: var(--p-red);
+}
+
+@media only screen and (min-width: 992px) {
+  html[data-style="persona"] .btn-hover-accent-mobile::before,
+  html[data-style="persona"] .btn-hover-outline-mobile::before {
+    border: 0;
+    border-radius: 0;
+    background: var(--p-black);
+  }
+
+  /* These buttons draw their label with text-shadows in --t-bright */
+  html[data-style="persona"] .btn-hover-accent-mobile,
+  html[data-style="persona"] .btn-hover-outline-mobile {
+    --t-bright: #ffffff;
+    --t-disabled: #ffffff;
+  }
+
+  html[data-style="persona"][color-scheme="dark"] .btn-hover-accent-mobile::before,
+  html[data-style="persona"][color-scheme="dark"] .btn-hover-outline-mobile::before {
+    background: var(--p-white);
+  }
+
+  html[data-style="persona"][color-scheme="dark"] .btn-hover-accent-mobile,
+  html[data-style="persona"][color-scheme="dark"] .btn-hover-outline-mobile {
+    --t-bright: #0d0d0d;
+    --t-disabled: #0d0d0d;
+  }
+
+  html[data-style="persona"].no-touch .btn-hover-accent-mobile:hover::before,
+  html[data-style="persona"].no-touch .btn-hover-outline-mobile:hover::before {
+    background: var(--p-red);
+  }
+}
+
+html[data-style="persona"] .portfolio-filter {
+  border: 2px solid var(--p-ink);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  clip-path: var(--p-cut);
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+}
+
+html[data-style="persona"] .portfolio-filter.is-active {
+  border-color: var(--p-red);
+}
+
+/* ---- About banner: keep its colours, but paste it in like a cut-out sticker ---- */
+
+html[data-style="persona"] .about-image-container {
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+html[data-style="persona"] .about-image {
+  border: 3px solid var(--p-ink);
+  border-radius: 0;
+  box-shadow: 8px 8px 0 var(--p-red);
+  transform: rotate(-1.2deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-style="persona"] .about-image {
+    transform: none;
+  }
+}
+
+/* ---- Resume and skills: replace the soft gradients with flat ink ---- */
+
+html[data-style="persona"] .resume-lines .resume-lines__item .resume-lines__category {
+  border: 0;
+  background: var(--p-black);
+  color: var(--p-white);
+}
+
+html[data-style="persona"] .resume-lines .resume-lines__item--primary .resume-lines__category {
+  background: var(--p-red);
+}
+
+html[data-style="persona"][color-scheme="dark"] .resume-lines .resume-lines__item .resume-lines__category {
+  background: var(--p-white);
+  color: var(--p-black);
+}
+
+html[data-style="persona"][color-scheme="dark"] .resume-lines .resume-lines__item--primary .resume-lines__category {
+  background: var(--p-red);
+  color: var(--p-white);
+}
+
+html[data-style="persona"] .resume-lines--experience .resume-lines__item--featured {
+  border: 2px solid var(--p-ink);
+  border-radius: 0;
+  background: var(--p-panel);
+  box-shadow: 6px 6px 0 var(--p-red);
+}
+
+html[data-style="persona"] .resume-lines--experience .resume-lines__item--featured::before {
+  background: var(--p-red);
+}
+
+html[data-style="persona"] .resume-lines--experience .resume-lines__item--featured .experience-tag {
+  background: var(--p-red);
+  color: var(--p-white);
+}
+
+html[data-style="persona"] .skills-detail__media {
+  border: 0;
+  background: var(--p-black);
+}
+
+html[data-style="persona"] .skills-detail__proof {
+  border: 0;
+  border-left: 4px solid var(--p-red);
+  background: color-mix(in srgb, var(--p-ink) 6%, transparent);
+}
+
+html[data-style="persona"] .skills-supporting {
+  border: 2px solid var(--p-ink);
+  background: var(--p-panel);
+  box-shadow: none;
+}
+
+html[data-style="persona"] .skills-supporting__badge {
+  border: 1px solid var(--p-ink);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Leftover rounded bits go square */
+html[data-style="persona"] .portfolio-card__cta,
+html[data-style="persona"] .resume-lines__date,
+html[data-style="persona"] .skills-supporting,
+html[data-style="persona"] .skills-supporting__badge,
+html[data-style="persona"] .skills-detail__media,
+html[data-style="persona"] .skills-detail__proof {
+  border-radius: 0;
+}
+
+html[data-style="persona"] .portfolio-card__cta {
+  border: 2px solid var(--p-ink);
+  clip-path: var(--p-cut);
+}
+
+/* ---- Surfaces: flat panels, ink border, hard red offset shadow ---- */
+
+html[data-style="persona"] .avatar__container::before,
+html[data-style="persona"] .portfolio-spotlight,
+html[data-style="persona"] .portfolio-card,
+html[data-style="persona"] .project-related-card,
+html[data-style="persona"] .contact-pitch,
+html[data-style="persona"] .contact-form-panel,
+html[data-style="persona"] .achievements__card,
+html[data-style="persona"] .resume-priority-summary__item,
+html[data-style="persona"] .skills-card,
+html[data-style="persona"] .skills-detail,
+html[data-style="persona"] .project-hero__panel,
+html[data-style="persona"] .project-review-brief__item,
+html[data-style="persona"] .project-snapshot,
+html[data-style="persona"] .portfolio-show-all,
+html[data-style="persona"] .project-section__shell {
+  border: 2px solid var(--p-ink);
+  border-radius: 0;
+  background: var(--p-panel);
+  box-shadow: 6px 6px 0 var(--p-red);
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+}
+
+html[data-style="persona"] .portfolio-card:hover,
+html[data-style="persona"] .portfolio-card:focus-within,
+html[data-style="persona"] .project-related-card:hover,
+html[data-style="persona"] .project-related-card:focus-within {
+  border-color: var(--p-red);
+  box-shadow: 8px 8px 0 var(--p-ink);
+}
+
+html[data-style="persona"] .portfolio-card-grid .portfolio-card.is-active {
+  border-color: var(--p-red);
+}
+
+/* The sidebar profile card turns into a black calling card */
+html[data-style="persona"] .avatar__container::before {
+  background: var(--p-black);
+  border-color: var(--p-black);
+}
+
+html[data-style="persona"][color-scheme="dark"] .avatar__container::before {
+  border-color: var(--p-white);
+}
+
+html[data-style="persona"] .avatar__container {
+  color: var(--p-white);
+  --t-bright: #ffffff;
+  --t-medium: #e6e6e6;
+  --t-muted: #b3b3b3;
+}
+
+html[data-style="persona"] .avatar__container > * {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-style="persona"] .avatar__container .avatar-socials-list,
+html[data-style="persona"] .avatar__container .avatar__socials {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: transparent;
+}
+
+/* ---- Header: black slanted bars with a red active tab ---- */
+
+@media only screen and (min-width: 992px) {
+  html[data-style="persona"] body .header .menu,
+  html[data-style="persona"] body .header .header__controls {
+    border: 0;
+    border-radius: 0;
+    background: var(--p-black);
+    box-shadow: 4px 4px 0 var(--p-red);
+    clip-path: var(--p-cut-soft);
+    padding: 0.4rem 1.6rem;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+
+  html[data-style="persona"] body .header .menu__link,
+  html[data-style="persona"] body .header .color-switcher,
+  html[data-style="persona"] body .header .language-toggle button {
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  html[data-style="persona"] body .header .menu__link {
+    font-family: var(--p-display);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  html[data-style="persona"].no-touch body .header .menu__link:hover,
+  html[data-style="persona"] body .header .menu__link:focus-visible {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  html[data-style="persona"] body .header .menu__link.active {
+    color: #ffffff;
+    background: var(--p-red);
+    clip-path: var(--p-cut);
+    transform: rotate(-3deg);
+  }
+
+  html[data-style="persona"] body .header .language-toggle {
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  html[data-style="persona"] body .header .header__trigger::before {
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  html[data-style="persona"] .header {
+    border: 0;
+    border-radius: 0;
+    background: var(--p-black);
+    box-shadow: 4px 4px 0 var(--p-red);
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+
+  html[data-style="persona"] .header .menu__link,
+  html[data-style="persona"] .header .color-switcher,
+  html[data-style="persona"] .header .language-toggle {
+    border-color: transparent;
+    border-radius: 0;
+    background: transparent;
+    color: #ffffff;
+    box-shadow: none;
+  }
+
+  html[data-style="persona"] .header .menu__link.active {
+    background: var(--p-red);
+  }
+
+  html[data-style="persona"] .header .language-toggle button {
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  html[data-style="persona"] .header .language-toggle button.is-active {
+    color: #ffffff;
+  }
+}
+
+/* ---- Hero art: the render gives way to a bold controller glyph (added by js/persona.js) ---- */
+
+html[data-style="persona"] .intro-art {
+  background: transparent;
+  overflow: visible;
+}
+
+html[data-style="persona"] .intro-art__image {
+  display: none;
+}
+
+html[data-style="persona"] .p-hero-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--p-black);
+  font-size: clamp(14rem, 44vw, 24rem);
+  line-height: 1;
+  text-shadow: 0.05em 0.05em 0 var(--p-red);
+  transform: translate(-50%, -50%) rotate(-14deg);
+}
+
+html[data-style="persona"][color-scheme="dark"] .p-hero-icon {
+  color: var(--p-white);
+}
+
+@media only screen and (min-width: 992px) {
+  html[data-style="persona"] .p-hero-icon {
+    top: 12%;
+    right: 7%;
+    left: auto;
+    font-size: clamp(18rem, 21vw, 30rem);
+    /* Half the glyph sits on the red slash, so the offset shadow is white there */
+    text-shadow: 0.05em 0.05em 0 var(--p-white);
+    transform: rotate(-14deg);
+  }
+
+  html[data-style="persona"][color-scheme="dark"] .p-hero-icon {
+    text-shadow: 0.05em 0.05em 0 var(--p-black);
+  }
+}
+
+/* ---- Project pages ---- */
+
+/* Sections were frameless before; the new frame needs inner spacing */
+html[data-style="persona"] .project-section__shell {
+  padding: clamp(2rem, 2.6vw, 3.2rem);
+}
+
+html[data-style="persona"] .project-related-card__cta {
+  border: 2px solid var(--p-ink);
+  border-radius: 0;
+  clip-path: var(--p-cut);
+}
+
+html[data-style="persona"] .project-related-card__title {
+  font-family: var(--p-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-style: oblique 8deg;
+}
+
+html[data-style="persona"] .project-hero__content .project-hero__title {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+  filter: none;
+  text-shadow: 4px 4px 0 var(--p-red);
+}
+
+html[data-style="persona"] .project-section-nav {
+  border-top-color: var(--p-ink);
+}
+
+html[data-style="persona"] .project-section-nav__link {
+  border: 2px solid var(--p-ink);
+  border-radius: 0;
+  clip-path: var(--p-cut);
+}
+
+html[data-style="persona"] .project-section-nav__link.is-active {
+  border-color: var(--p-red);
+  background: var(--p-red);
+  color: #ffffff;
+  transform: none;
+}
+
+html[data-style="persona"] .project-review-brief__label,
+html[data-style="persona"] .project-snapshot__label,
+html[data-style="persona"] .project-fact__label {
+  color: var(--p-red);
+}
+
+/* ---- Page transition: a red wipe with a black slash ---- */
+
+html[data-style="persona"] .page-transition-overlay {
+  background: var(--p-red);
+}
+
+html[data-style="persona"] .page-transition-overlay::before {
+  background: var(--p-black);
+  clip-path: polygon(0 58%, 100% 30%, 100% 46%, 0 74%);
+  opacity: 1;
+}
+
+html[data-style="persona"] .page-transition-card {
+  border: 3px solid var(--p-black);
+  border-radius: 0;
+  background: var(--p-white);
+  box-shadow: 10px 10px 0 var(--p-black);
+}
+
+html[data-style="persona"] .page-transition-card__badge {
+  border-radius: 0;
+  background: var(--p-black);
+  color: #ffffff;
+  clip-path: var(--p-cut);
+}
+
+/* ---- Loader ---- */
+
+html[data-style="persona"] .loader {
+  background-color: var(--p-red);
+}
+
+/* ---- Review fixes ---- */
+
+/* Project hero: plain black wash and a red top rule instead of the tinted glow */
+html[data-style="persona"] .project-hero__panel::after {
+  background: linear-gradient(180deg, var(--p-red) 0 4px, transparent 4px);
+  opacity: 1;
+}
+
+@media only screen and (min-width: 992px) {
+  /* Paper band behind the fixed header so scrolling headings never show
+     through the gaps around the bars. It fades in once the hero is left. */
+  html[data-style="persona"] body .header::before {
+    content: "";
+    position: absolute;
+    top: -6rem;
+    right: 0;
+    bottom: -1.4rem;
+    left: 0;
+    z-index: -1;
+    border-bottom: 2px solid var(--p-ink);
+    background: var(--base);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @supports (animation-timeline: scroll()) {
+    html[data-style="persona"] body .header::before {
+      animation: p-header-band linear both;
+      animation-timeline: scroll(root);
+      animation-range: 12rem 32rem;
+    }
+  }
+
+  /* Dark mode: white bars so the header stands off the black page */
+  html[data-style="persona"][color-scheme="dark"] body .header .menu,
+  html[data-style="persona"][color-scheme="dark"] body .header .header__controls {
+    background: var(--p-white);
+  }
+
+  html[data-style="persona"][color-scheme="dark"] body .header .menu__link,
+  html[data-style="persona"][color-scheme="dark"] body .header .color-switcher,
+  html[data-style="persona"][color-scheme="dark"] body .header .language-toggle button {
+    color: rgba(13, 13, 13, 0.72);
+  }
+
+  html[data-style="persona"][color-scheme="dark"].no-touch body .header .menu__link:hover,
+  html[data-style="persona"][color-scheme="dark"] body .header .menu__link:focus-visible {
+    color: var(--p-black);
+    background: rgba(13, 13, 13, 0.08);
+  }
+
+  html[data-style="persona"][color-scheme="dark"] body .header .menu__link.active,
+  html[data-style="persona"][color-scheme="dark"] body .header .language-toggle button.is-active {
+    color: #ffffff;
+  }
+
+  html[data-style="persona"][color-scheme="dark"] body .header .language-toggle {
+    background: rgba(13, 13, 13, 0.08);
+  }
+}
+
+@keyframes p-header-band {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ---- Gaming journey page: same ink-and-paper treatment ---- */
+
+html[data-style="persona"] {
+  --journey-hero-wash: transparent;
+  --journey-orb-primary: transparent;
+  --journey-orb-secondary: transparent;
+  --journey-card-bg: var(--p-panel);
+  --journey-card-bg-hover: var(--p-panel);
+  --journey-card-shadow: transparent;
+  --journey-credit-bg: var(--p-black);
+  --journey-credit-text: #ffffff;
+  --journey-tag-bg: transparent;
+  --journey-ambient-opacity: 0;
+  --journey-accent: var(--p-red);
+  --journey-warm: var(--p-red);
+  --journey-green: var(--p-red);
+  --journey-rose: var(--p-red);
+}
+
+html[data-style="persona"] .journey-hero h1,
+html[data-style="persona"] .journey-chapter h2,
+html[data-style="persona"] .journey-principles h2,
+html[data-style="persona"] [class^="journey-"] h2,
+html[data-style="persona"] [class^="journey-"] h3 {
+  font-family: var(--p-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-style: oblique 8deg;
+}
+
+html[data-style="persona"] .journey-index__panel,
+html[data-style="persona"] .journey-index__link,
+html[data-style="persona"] .journey-nav button,
+html[data-style="persona"] .journey-nav a,
+html[data-style="persona"] .journey-hero__tile,
+html[data-style="persona"] .journey-principles__item,
+html[data-style="persona"] .journey-stamp,
+html[data-style="persona"] .journey-card,
+html[data-style="persona"] .journey-card__source,
+html[data-style="persona"] .journey-card__lesson,
+html[data-style="persona"] .journey-tag,
+html[data-style="persona"] .journey-shelf__toggle {
+  border-radius: 0;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+}
+
+html[data-style="persona"] .journey-index__panel,
+html[data-style="persona"] .journey-principles__item,
+html[data-style="persona"] .journey-card {
+  border: 2px solid var(--p-ink);
+  background: var(--p-panel);
+  box-shadow: 5px 5px 0 var(--p-red);
+}
+
+html[data-style="persona"] .journey-hero__tile {
+  border: 2px solid var(--p-ink);
+  box-shadow: 5px 5px 0 var(--p-red);
+}
+
+/* Tags match the homepage chips: black slanted labels */
+html[data-style="persona"] .journey-tag,
+html[data-style="persona"] .journey-stamp {
+  border: 0;
+  background: var(--p-black);
+  color: var(--p-white);
+  clip-path: var(--p-cut);
+}
+
+html[data-style="persona"][color-scheme="dark"] .journey-tag,
+html[data-style="persona"][color-scheme="dark"] .journey-stamp {
+  background: var(--p-white);
+  color: var(--p-black);
+}
+
+html[data-style="persona"] .journey-shelf__toggle {
+  border: 2px solid var(--p-ink);
+  background: transparent;
+  color: var(--p-ink);
+  clip-path: var(--p-cut);
+}
+
+/* The lesson badge is the one red label on each card */
+html[data-style="persona"] .journey-card__lesson {
+  border: 0;
+  background: var(--p-red);
+  color: var(--p-white);
+  clip-path: var(--p-cut);
+}
+
+html[data-style="persona"] .journey-card__lesson * {
+  color: var(--p-white);
+}
+
+/* Small shelf cards show the lesson as plain red text, not a badge */
+html[data-style="persona"] .journey-card--compact .journey-card__lesson {
+  background: transparent;
+  color: var(--p-red);
+  clip-path: none;
+}
+
+html[data-style="persona"] .journey-card--compact .journey-card__lesson * {
+  color: var(--p-red);
+}
+
+html[data-style="persona"] .back-to-home {
+  color: var(--p-ink);
+}
+
+html[data-style="persona"] .journey-index__link.is-active,
+html[data-style="persona"] .journey-index__link[aria-current="true"] {
+  border-color: var(--p-red);
+  background: var(--p-red);
+  color: #ffffff;
+}
+
+/* Profile card logo: the favicon cat replaces the inline pixel mark */
+html[data-style="persona"] .avatar__logo .logo__image svg {
+  display: none;
+}
+
+html[data-style="persona"] .p-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--p-white);
+  object-fit: cover;
+}
+
+/* Each chapter sets its own accent colour inline; the theme allows only red */
+html[data-style="persona"] [style*="--chapter-accent"],
+html[data-style="persona"] .journey-chapter,
+html[data-style="persona"] .journey-index__link {
+  --chapter-accent: var(--p-red) !important;
+  --chapter-accent-soft: transparent !important;
+}
+
+/* ---- Gaming journey layout: same bars, labels and slash as the homepage ---- */
+
+/* Top row: black Home button, note, black language bar */
+html[data-style="persona"] .journey-nav {
+  justify-content: flex-start;
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+html[data-style="persona"] .journey-nav__note {
+  flex: 1;
+  order: 2;
+  color: var(--journey-muted);
+}
+
+html[data-style="persona"] .journey-language {
+  order: 3;
+  border: 0;
+  border-radius: 0;
+  background: var(--p-black);
+  box-shadow: 4px 4px 0 var(--p-red);
+  clip-path: none;
+}
+
+html[data-style="persona"] .journey-language button {
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+html[data-style="persona"] .journey-language button[aria-pressed="true"],
+html[data-style="persona"] .journey-language button.is-active {
+  background: var(--p-red);
+  color: #ffffff;
+}
+
+html[data-style="persona"] .back-to-home {
+  --t-bright: #ffffff;
+  color: #ffffff;
+}
+
+html[data-style="persona"] .journey-nav .back-to-home i,
+html[data-style="persona"] .journey-nav .back-to-home span {
+  color: #ffffff;
+  text-shadow: none;
+}
+
+html[data-style="persona"] .journey-nav .journey-language button {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+html[data-style="persona"] .journey-nav .journey-language button[aria-pressed="true"],
+html[data-style="persona"] .journey-nav .journey-language button.is-active {
+  color: #ffffff;
+}
+
+html[data-style="persona"] .back-to-home::before {
+  border: 0;
+  border-radius: 0;
+  background: var(--p-black);
+}
+
+html[data-style="persona"].no-touch .back-to-home:hover::before {
+  background: var(--p-red);
+}
+
+/* Chapter index: a black bar with a red active tab, like the site header */
+html[data-style="persona"] .journey-index__panel {
+  border: 0;
+  background: var(--p-black);
+  box-shadow: 4px 4px 0 var(--p-red);
+}
+
+html[data-style="persona"] .journey-index__eyebrow,
+html[data-style="persona"] .journey-index__link {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+html[data-style="persona"] .journey-index__number {
+  color: var(--p-red);
+}
+
+html[data-style="persona"] .journey-index__link.is-active,
+html[data-style="persona"] .journey-index__link[aria-current="true"] {
+  border-color: transparent;
+  background: var(--p-red);
+  color: #ffffff;
+  clip-path: var(--p-cut);
+}
+
+html[data-style="persona"] .journey-index__link.is-active .journey-index__number,
+html[data-style="persona"] .journey-index__link[aria-current="true"] .journey-index__number {
+  color: #ffffff;
+}
+
+html[data-style="persona"] .journey-index__track {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+html[data-style="persona"] .journey-index__progress {
+  background: var(--p-red);
+}
+
+/* Hero: red slash behind tilted cover tiles */
+html[data-style="persona"] .journey-hero {
+  position: relative;
+  min-height: clamp(440px, 60dvh, 640px);
+}
+
+html[data-style="persona"] .journey-hero::before {
+  content: "";
+  position: absolute;
+  inset: -4rem 0 0;
+  z-index: -1;
+  background: var(--p-red);
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 84% 100%);
+  pointer-events: none;
+}
+
+html[data-style="persona"] .journey-hero__tile {
+  border: 3px solid var(--p-white);
+  outline: 2px solid var(--p-black);
+  box-shadow: 6px 6px 0 var(--p-black);
+}
+
+html[data-style="persona"] .journey-hero__tile:nth-child(odd) {
+  transform: rotate(-1.5deg);
+}
+
+html[data-style="persona"] .journey-hero__tile:nth-child(even) {
+  transform: rotate(1.2deg);
+}
+
+html[data-style="persona"] .journey-hero h1 {
+  font-size: clamp(3.4rem, 7.4vw, 7.6rem);
+  line-height: 0.98;
+}
+
+/* Small labels become slanted tags, as on the homepage */
+html[data-style="persona"] .journey-eyebrow,
+html[data-style="persona"] .journey-chapter__kicker {
+  display: inline-block;
+  padding: 0.5em 1.1em;
+  background: var(--p-black);
+  color: var(--p-white);
+  clip-path: var(--p-cut);
+}
+
+html[data-style="persona"] .journey-chapter__kicker {
+  background: var(--p-red);
+}
+
+html[data-style="persona"][color-scheme="dark"] .journey-eyebrow {
+  background: var(--p-white);
+  color: var(--p-black);
+}
+
+html[data-style="persona"] .journey-intro {
+  border-top: 2px solid var(--p-ink);
+}
+
+html[data-style="persona"] .journey-intro__stat strong {
+  color: var(--p-red);
+  font-family: var(--p-display);
+  font-size: 6rem;
+  font-weight: 400;
+}
+
+/* Chapters: ink rule, outlined number, diamond marker */
+html[data-style="persona"] .journey-chapter {
+  border-top: 2px solid var(--p-ink);
+}
+
+html[data-style="persona"] .journey-chapter::before {
+  color: transparent;
+  font-family: var(--p-display);
+  font-style: oblique 8deg;
+  opacity: 0.55;
+  -webkit-text-stroke: 2px var(--p-red);
+}
+
+html[data-style="persona"] .journey-chapter::after {
+  top: -2px;
+  height: 6px;
+  background: var(--p-red);
+}
+
+html[data-style="persona"] .journey-chapter__transition {
+  color: var(--p-ink);
+}
+
+html[data-style="persona"] .journey-chapter__transition-line {
+  height: 2px;
+  background: var(--p-ink);
+}
+
+html[data-style="persona"] .journey-chapter__rail-line {
+  width: 2px;
+  background: var(--p-ink);
+}
+
+html[data-style="persona"] .journey-chapter__rail-dot {
+  border: 2px solid var(--p-white);
+  border-radius: 0;
+  background: var(--p-red);
+  box-shadow: 0 0 0 2px var(--p-black);
+  transform: rotate(45deg);
+}
+
+html[data-style="persona"] .journey-shelf__header p {
+  color: var(--p-ink);
+  font-family: var(--p-display);
+  font-size: 2rem;
+  font-style: oblique 8deg;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 760px) {
+  html[data-style="persona"] .journey-hero::before {
+    clip-path: polygon(86% 0, 100% 0, 100% 100%, 95% 100%);
+  }
+
+  html[data-style="persona"] .journey-nav__note {
+    display: none;
+  }
+
+  html[data-style="persona"] .journey-language {
+    margin-left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-style="persona"] .journey-hero__tile:nth-child(n) {
+    transform: none;
+  }
+}
+
+/* Vietnamese capitals stack accents above the letters, so headings need more leading */
+html[data-style="persona"][lang="vi"] .headline__title,
+html[data-style="persona"][lang="vi"] .h2__title,
+html[data-style="persona"][lang="vi"] .project-section__panel h2,
+html[data-style="persona"][lang="vi"] .project-hero__title,
+html[data-style="persona"][lang="vi"] .journey-hero h1,
+html[data-style="persona"][lang="vi"] [class^="journey-"] h2,
+html[data-style="persona"][lang="vi"] [class^="journey-"] h3 {
+  line-height: 1.24;
+}
+
+html[data-style="persona"][lang="vi"] .p-ransom__char {
+  line-height: 1.3;
+}
+
+/* ---- Reduced motion: keep the look, drop the tilt ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-style="persona"] .p-ransom__char,
+  html[data-style="persona"] body .header .menu__link.active {
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------*/
+/* Persona Theme End                                */
+/* ------------------------------------------------*/

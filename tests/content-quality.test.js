@@ -134,12 +134,12 @@ test('portfolio section copy is concise and naturally localized', () => {
   assert.equal(siteVi.portfolio.title, 'Các dự án gameplay tiêu biểu');
   assert.equal(
     siteVi.portfolio.text,
-    'Tập hợp dự án đã tham gia, prototype và archive tư liệu thể hiện gameplay design, phụ trách feature và quá trình iteration.'
+    'Những dự án đã làm, prototype và tư liệu lưu trữ cho thấy cách tôi thiết kế gameplay, phụ trách feature và cải tiến qua từng vòng.'
   );
   assert.equal(siteVi.portfolio.explorerTitle, 'Project explorer');
   assert.equal(
     siteVi.portfolio.explorerText,
-    'Lọc theo loại dự án hoặc focus area, rồi mở case study hoặc archive có bằng chứng rõ nhất.'
+    'Lọc theo loại dự án hoặc mảng chuyên môn, rồi mở case study hoặc kho tư liệu có bằng chứng rõ nhất.'
   );
 
   for (const awkward of [

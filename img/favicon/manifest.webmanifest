@@ -1,11 +1,11 @@
 {
-  "name": "Braxton - Personal Portfolio & Resume HTML Template",
-  "short_name": "CV/Resume",
+  "name": "Tran Hoang Kiet | Gameplay Designer Portfolio",
+  "short_name": "Hoang Kiet",
   "icons": [
     { "src": "/img/favicon/android-icon-192.png", "type": "image/png", "sizes": "192x192" },
     { "src": "/img/favicon/android-icon-512.png", "type": "image/png", "sizes": "512x512" }
   ],
-  "theme_color": "#efefef",
-  "background_color": "#efefef",
+  "theme_color": "#e60012",
+  "background_color": "#f2f0ec",
   "display": "standalone"
 }

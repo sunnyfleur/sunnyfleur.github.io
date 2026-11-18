@@ -426,24 +426,36 @@ $(function() {
   // --------------------------------------------- //
   // Contact Form Start
   // --------------------------------------------- //
-  $("#contact-form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-      $('.contact').find('.form').addClass('is-hidden');
-      $('.contact').find('.form__reply').addClass('is-visible');
-			setTimeout(function() {
-				// Done Functions
-        $('.contact').find('.form__reply').removeClass('is-visible');
-        $('.contact').find('.form').delay(300).removeClass('is-hidden');
-				th.trigger("reset");
-			}, 5000);
-		});
-		return false;
-	});
+  // GitHub Pages cannot run mail.php, so the form hands the message to the
+  // visitor's own email app as a ready-to-send draft.
+  $("#contact-form").submit(function() {
+    var th = $(this);
+    var field = function(name) {
+      return $.trim(th.find('[name="' + name + '"]').val() || "");
+    };
+    var lines = [
+      field("Message"),
+      "",
+      "Name: " + field("Name"),
+      "Email: " + field("E-mail")
+    ];
+
+    if (field("Company")) { lines.push("Company: " + field("Company")); }
+    if (field("Phone")) { lines.push("Phone: " + field("Phone")); }
+
+    var subject = field("form_subject") + " - " + field("Name");
+    window.location.href = "mailto:" + field("admin_email")
+      + "?subject=" + encodeURIComponent(subject)
+      + "&body=" + encodeURIComponent(lines.join("\n"));
+
+    $('.contact').find('.form').addClass('is-hidden');
+    $('.contact').find('.form__reply').addClass('is-visible');
+    setTimeout(function() {
+      $('.contact').find('.form__reply').removeClass('is-visible');
+      $('.contact').find('.form').delay(300).removeClass('is-hidden');
+    }, 9000);
+    return false;
+  });
   // --------------------------------------------- //
   // Contact Form End
   // --------------------------------------------- //

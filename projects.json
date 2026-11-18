@@ -5,7 +5,7 @@
       "title": "Huli",
       "tagline": "Unannounced action project with public scope around gameplay, combat, content, and camera design.",
       "summary": "HULI is an unannounced dark-fantasy action project inspired by Fengshen Yanyi. The public portfolio scope stays intentionally high level: gameplay, combat, content, and camera design work that can be discussed without revealing production details.",
-      "cardSummary": "Unannounced action project focused on gameplay, combat, content, and camera design within a dark fantasy setting.",
+      "cardSummary": "Dark-fantasy action game inspired by Fengshen Yanyi, built in Unreal Engine 5. I design combat, content, and camera features from spec to tuning.",
       "homepageMeta": {
         "duration": "2025",
         "linkLabel": "Case Study"
@@ -202,25 +202,25 @@
       ],
       "gallery": [
         {
-          "image": "img/ExampleImages/Lunarfall/Screenshot 2024-03-16 001810.png",
+          "image": "img/ExampleImages/Lunarfall/Thumbs/Screenshot 2024-03-16 001810.jpg",
           "fullImage": "img/ExampleImages/Lunarfall/Screenshot 2024-03-16 001810.png",
           "title": "Town Hub Mockup",
           "description": "Landscape pixel-art menu and town screen framing the game's dark-fantasy economy and progression."
         },
         {
-          "image": "img/ExampleImages/Lunarfall/Screenshot 2024-11-21 211030.png",
+          "image": "img/ExampleImages/Lunarfall/Thumbs/Screenshot 2024-11-21 211030.jpg",
           "fullImage": "img/ExampleImages/Lunarfall/Screenshot 2024-11-21 211030.png",
           "title": "Unit Roster Sheet",
           "description": "Spreadsheet view defining unit roles, unlock conditions, and combat behaviors across the roster."
         },
         {
-          "image": "img/ExampleImages/Lunarfall/Screenshot 2024-11-21 224958.png",
+          "image": "img/ExampleImages/Lunarfall/Thumbs/Screenshot 2024-11-21 224958.jpg",
           "fullImage": "img/ExampleImages/Lunarfall/Screenshot 2024-11-21 224958.png",
           "title": "Economy System Sheet",
           "description": "Currency planning sheet mapping sources, sinks, and caps for the project's progression economy."
         },
         {
-          "image": "img/ExampleImages/Lunarfall/Screenshot 2024-11-22 131902.png",
+          "image": "img/ExampleImages/Lunarfall/Thumbs/Screenshot 2024-11-22 131902.jpg",
           "fullImage": "img/ExampleImages/Lunarfall/Screenshot 2024-11-22 131902.png",
           "title": "Unit Stat Sheet",
           "description": "Detailed balancing sheet for production and melee units, including unlock states and combat attributes."
@@ -255,7 +255,7 @@
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_FarmMatch.jpg",
       "heroImage": "img/ExampleImages/Hero_IM_FarmMatch.jpg",
-      "cardSummary": "Cute animal matching project with portrait-mobile puzzle boards and a bright casual presentation.",
+      "cardSummary": "Seventeen board captures show how blockers and goals change from level to level to keep a simple matching loop fresh.",
       "homepageMeta": {
         "duration": "2024",
         "linkLabel": "Case Study"
@@ -415,7 +415,7 @@
       ],
       "thumbnail": "img/ExampleImages/Thumbs/IM_GoodSort.jpg",
       "heroImage": "img/ExampleImages/Hero_IM_GoodSort.jpg",
-      "cardSummary": "Portrait shelf-sorting puzzle built around readable boards, satisfying organization, and scalable level variation.",
+      "cardSummary": "Challenge comes from blocker placement and board composition, not extra rules, so the loop stays simple across many levels.",
       "homepageMeta": {
         "duration": "2024",
         "linkLabel": "Case Study"
@@ -444,391 +444,391 @@
       "links": [],
       "gallery": [
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-01 163257.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-01 163257.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-01 163257.png",
           "title": "Shelf Layout 01",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-01 174744.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-01 174744.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-01 174744.png",
           "title": "Shelf Layout 02",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-01 221747.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-01 221747.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-01 221747.png",
           "title": "Shelf Layout 03",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 100931.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 100931.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 100931.png",
           "title": "Shelf Layout 04",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 102525.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 102525.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 102525.png",
           "title": "Shelf Layout 05",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 102948.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 102948.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 102948.png",
           "title": "Shelf Layout 06",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 103914.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 103914.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 103914.png",
           "title": "Shelf Layout 07",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 111407.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 111407.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 111407.png",
           "title": "Shelf Layout 08",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 112535.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 112535.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 112535.png",
           "title": "Shelf Layout 09",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 112619.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 112619.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 112619.png",
           "title": "Shelf Layout 10",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 114407.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 114407.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 114407.png",
           "title": "Shelf Layout 11",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 120432.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 120432.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 120432.png",
           "title": "Shelf Layout 12",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 120523.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 120523.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 120523.png",
           "title": "Shelf Layout 13",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 121159.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 121159.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 121159.png",
           "title": "Shelf Layout 14",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 125851.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 125851.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 125851.png",
           "title": "Shelf Layout 15",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 130129.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 130129.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 130129.png",
           "title": "Shelf Layout 16",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 131919.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 131919.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 131919.png",
           "title": "Shelf Layout 17",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 135533.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 135533.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 135533.png",
           "title": "Shelf Layout 18",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 140237.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 140237.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 140237.png",
           "title": "Shelf Layout 19",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 140544.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 140544.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 140544.png",
           "title": "Shelf Layout 20",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 141156.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 141156.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 141156.png",
           "title": "Shelf Layout 21",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 151917.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 151917.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 151917.png",
           "title": "Shelf Layout 22",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 221249.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 221249.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 221249.png",
           "title": "Shelf Layout 23",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 233615.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 233615.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 233615.png",
           "title": "Shelf Layout 24",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 233635.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-02 233635.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-02 233635.png",
           "title": "Shelf Layout 25",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 151850.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-03 151850.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 151850.png",
           "title": "Shelf Layout 26",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 152849.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-03 152849.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 152849.png",
           "title": "Shelf Layout 27",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 153358.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-03 153358.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 153358.png",
           "title": "Shelf Layout 28",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 153421.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-03 153421.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 153421.png",
           "title": "Shelf Layout 29",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 153553.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-03 153553.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 153553.png",
           "title": "Shelf Layout 30",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 163442.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-03 163442.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-03 163442.png",
           "title": "Shelf Layout 31",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-10-11 214833.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-10-11 214833.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-10-11 214833.png",
           "title": "Shelf Layout 32",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-14 224612.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-14 224612.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-14 224612.png",
           "title": "Shelf Layout 33",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-15 140053.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-15 140053.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-15 140053.png",
           "title": "Shelf Layout 34",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-15 155245.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-15 155245.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-15 155245.png",
           "title": "Shelf Layout 35",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-18 150737.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-18 150737.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-18 150737.png",
           "title": "Shelf Layout 36",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-18 154751.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-18 154751.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-18 154751.png",
           "title": "Shelf Layout 37",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-18 171610.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-18 171610.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-18 171610.png",
           "title": "Shelf Layout 38",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-19 113913.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-19 113913.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-19 113913.png",
           "title": "Shelf Layout 39",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 140109.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-20 140109.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 140109.png",
           "title": "Shelf Layout 40",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 161955.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-20 161955.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 161955.png",
           "title": "Shelf Layout 41",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 173913.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-20 173913.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 173913.png",
           "title": "Shelf Layout 42",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 175043.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-20 175043.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-20 175043.png",
           "title": "Shelf Layout 43",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-21 133543.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-21 133543.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-21 133543.png",
           "title": "Shelf Layout 44",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-21 133610.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-21 133610.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-21 133610.png",
           "title": "Shelf Layout 45",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 094126.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 094126.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 094126.png",
           "title": "Shelf Layout 46",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 094339.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 094339.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 094339.png",
           "title": "Shelf Layout 47",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 094634.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 094634.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 094634.png",
           "title": "Shelf Layout 48",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 101153.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 101153.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 101153.png",
           "title": "Shelf Layout 49",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 101222.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 101222.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 101222.png",
           "title": "Shelf Layout 50",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 101236.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 101236.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 101236.png",
           "title": "Shelf Layout 51",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 104115.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 104115.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 104115.png",
           "title": "Shelf Layout 52",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 105859.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 105859.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 105859.png",
           "title": "Shelf Layout 53",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 105940.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 105940.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 105940.png",
           "title": "Shelf Layout 54",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 110822.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 110822.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 110822.png",
           "title": "Shelf Layout 55",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 112202.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 112202.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 112202.png",
           "title": "Shelf Layout 56",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 112606.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 112606.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 112606.png",
           "title": "Shelf Layout 57",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 112616.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 112616.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 112616.png",
           "title": "Shelf Layout 58",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 113842.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 113842.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 113842.png",
           "title": "Shelf Layout 59",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 143057.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 143057.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 143057.png",
           "title": "Shelf Layout 60",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 144849.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 144849.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 144849.png",
           "title": "Shelf Layout 61",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 145013.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 145013.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 145013.png",
           "title": "Shelf Layout 62",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 145020.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 145020.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 145020.png",
           "title": "Shelf Layout 63",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 145024.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 145024.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 145024.png",
           "title": "Shelf Layout 64",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
         },
         {
-          "image": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 160452.png",
+          "image": "img/ExampleImages/GoodSort/Thumbs/Screenshot 2024-11-25 160452.jpg",
           "fullImage": "img/ExampleImages/GoodSort/Screenshot 2024-11-25 160452.png",
           "title": "Shelf Layout 65",
           "description": "Portrait GoodSort level capture showing shelf arrangement, product grouping, and blocker placement."
@@ -891,181 +891,181 @@
       "links": [],
       "gallery": [
         {
-          "image": "img/ExampleImages/Satisdom/094409.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/094409.jpg",
           "fullImage": "img/ExampleImages/Satisdom/094409.png",
           "title": "Concept Frame 01",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/094716.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/094716.jpg",
           "fullImage": "img/ExampleImages/Satisdom/094716.png",
           "title": "Concept Frame 02",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/095105.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/095105.jpg",
           "fullImage": "img/ExampleImages/Satisdom/095105.png",
           "title": "Concept Frame 03",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/100652.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/100652.jpg",
           "fullImage": "img/ExampleImages/Satisdom/100652.png",
           "title": "Concept Frame 04",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/101051.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/101051.jpg",
           "fullImage": "img/ExampleImages/Satisdom/101051.png",
           "title": "Concept Frame 05",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/101832.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/101832.jpg",
           "fullImage": "img/ExampleImages/Satisdom/101832.png",
           "title": "Concept Frame 06",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/103101.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/103101.jpg",
           "fullImage": "img/ExampleImages/Satisdom/103101.png",
           "title": "Concept Frame 07",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/104022.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/104022.jpg",
           "fullImage": "img/ExampleImages/Satisdom/104022.png",
           "title": "Concept Frame 08",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/131054.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/131054.jpg",
           "fullImage": "img/ExampleImages/Satisdom/131054.png",
           "title": "Concept Frame 09",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/134033.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/134033.jpg",
           "fullImage": "img/ExampleImages/Satisdom/134033.png",
           "title": "Concept Frame 10",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/141029.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/141029.jpg",
           "fullImage": "img/ExampleImages/Satisdom/141029.png",
           "title": "Concept Frame 11",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/163304.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/163304.jpg",
           "fullImage": "img/ExampleImages/Satisdom/163304.png",
           "title": "Concept Frame 12",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/170704.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/170704.jpg",
           "fullImage": "img/ExampleImages/Satisdom/170704.png",
           "title": "Concept Frame 13",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/170709.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/170709.jpg",
           "fullImage": "img/ExampleImages/Satisdom/170709.png",
           "title": "Concept Frame 14",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/173048.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/173048.jpg",
           "fullImage": "img/ExampleImages/Satisdom/173048.png",
           "title": "Concept Frame 15",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/174707.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/174707.jpg",
           "fullImage": "img/ExampleImages/Satisdom/174707.png",
           "title": "Concept Frame 16",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/175047.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/175047.jpg",
           "fullImage": "img/ExampleImages/Satisdom/175047.png",
           "title": "Concept Frame 17",
           "description": "Hand-drawn concept frame exploring one relaxing interaction and its before-and-after state."
         },
         {
-          "image": "img/ExampleImages/Satisdom/im_perfecttidy_sb.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/im_perfecttidy_sb.jpg",
           "fullImage": "img/ExampleImages/Satisdom/im_perfecttidy_sb.png",
           "title": "Interaction Storyboard",
           "description": "Storyboard-style sequence sketch for one of the beauty-care interactions now folded into Satisdom."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 104642.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-01 104642.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 104642.png",
           "title": "Planning Sheet 01",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 105012.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-01 105012.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 105012.png",
           "title": "Planning Sheet 02",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 105141.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-01 105141.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 105141.png",
           "title": "Planning Sheet 03",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 112631.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-01 112631.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 112631.png",
           "title": "Planning Sheet 04",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 130801.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-01 130801.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-01 130801.png",
           "title": "Planning Sheet 05",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-04 094654.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-04 094654.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-04 094654.png",
           "title": "Planning Sheet 06",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-14 114452.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-14 114452.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-14 114452.png",
           "title": "Planning Sheet 07",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 093301.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-18 093301.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 093301.png",
           "title": "Planning Sheet 08",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 115158.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-18 115158.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 115158.png",
           "title": "Planning Sheet 09",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 121027.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-18 121027.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 121027.png",
           "title": "Planning Sheet 10",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 121142.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-18 121142.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-18 121142.png",
           "title": "Planning Sheet 11",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
         },
         {
-          "image": "img/ExampleImages/Satisdom/Screenshot 2024-11-25 174658.png",
+          "image": "img/ExampleImages/Satisdom/Thumbs/Screenshot 2024-11-25 174658.jpg",
           "fullImage": "img/ExampleImages/Satisdom/Screenshot 2024-11-25 174658.png",
           "title": "Planning Sheet 12",
           "description": "Reference sheet documenting Satisdom content cases, interaction notes, or audio planning for the mini-game set."
@@ -1135,181 +1135,181 @@
           "intro": "Board captures showing puzzle composition, screw-color sequencing, and difficulty ramp decisions across the level set.",
           "items": [
             {
-              "image": "img/ExampleImages/Screw/2024-10-23 135059.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-23 135059.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-23 135059.png",
               "title": "Puzzle Board 01",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-23 135144.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-23 135144.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-23 135144.png",
               "title": "Puzzle Board 02",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-23 163902.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-23 163902.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-23 163902.png",
               "title": "Puzzle Board 03",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-23 163955.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-23 163955.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-23 163955.png",
               "title": "Puzzle Board 04",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-23 164154.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-23 164154.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-23 164154.png",
               "title": "Puzzle Board 05",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-24 110917.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-24 110917.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-24 110917.png",
               "title": "Puzzle Board 06",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-24 114752.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-24 114752.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-24 114752.png",
               "title": "Puzzle Board 07",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-28 155136.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-28 155136.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-28 155136.png",
               "title": "Puzzle Board 08",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-28 155241.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-28 155241.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-28 155241.png",
               "title": "Puzzle Board 09",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-28 163106.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-28 163106.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-28 163106.png",
               "title": "Puzzle Board 10",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-28 163202.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-28 163202.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-28 163202.png",
               "title": "Puzzle Board 11",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-10-29 150709.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-10-29 150709.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-10-29 150709.png",
               "title": "Puzzle Board 12",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-06 170841.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-06 170841.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-06 170841.png",
               "title": "Puzzle Board 13",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-06 170850.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-06 170850.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-06 170850.png",
               "title": "Puzzle Board 14",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-08 150651.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-08 150651.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-08 150651.png",
               "title": "Puzzle Board 15",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-08 150655.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-08 150655.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-08 150655.png",
               "title": "Puzzle Board 16",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 102829.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 102829.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 102829.png",
               "title": "Puzzle Board 17",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 103018.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 103018.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 103018.png",
               "title": "Puzzle Board 18",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 104517.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 104517.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 104517.png",
               "title": "Puzzle Board 19",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 104700.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 104700.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 104700.png",
               "title": "Puzzle Board 20",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 104842.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 104842.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 104842.png",
               "title": "Puzzle Board 21",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 104943.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 104943.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 104943.png",
               "title": "Puzzle Board 22",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 104949.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 104949.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 104949.png",
               "title": "Puzzle Board 23",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 105059.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 105059.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 105059.png",
               "title": "Puzzle Board 24",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 105212.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 105212.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 105212.png",
               "title": "Puzzle Board 25",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-11 153652.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-11 153652.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-11 153652.png",
               "title": "Puzzle Board 26",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-14 152708.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-14 152708.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-14 152708.png",
               "title": "Puzzle Board 28",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-14 152804.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-14 152804.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-14 152804.png",
               "title": "Puzzle Board 29",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-14 222729.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-14 222729.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-14 222729.png",
               "title": "Puzzle Board 30",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-28 133245.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-28 133245.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-28 133245.png",
               "title": "Puzzle Board 35",
               "description": "Screw level capture showing plank layout, screw colors, and removal sequence setup."
@@ -1321,31 +1321,31 @@
           "intro": "Tracking sheets and audit captures used to review coverage, surface outliers, and plan batch balancing passes.",
           "items": [
             {
-              "image": "img/ExampleImages/Screw/2024-11-14 152244.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-14 152244.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-14 152244.png",
               "title": "Tracking Capture 01",
               "description": "Spreadsheet and audit capture used to review level coverage, note friction points, and batch balancing updates."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-14 223842.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-14 223842.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-14 223842.png",
               "title": "Tracking Capture 02",
               "description": "Spreadsheet and audit capture used to review level coverage, note friction points, and batch balancing updates."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-14 224559.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-14 224559.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-14 224559.png",
               "title": "Tracking Capture 03",
               "description": "Spreadsheet and audit capture used to review level coverage, note friction points, and batch balancing updates."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-15 090125.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-15 090125.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-15 090125.png",
               "title": "Tracking Capture 04",
               "description": "Spreadsheet and audit capture used to review level coverage, note friction points, and batch balancing updates."
             },
             {
-              "image": "img/ExampleImages/Screw/2024-11-15 090206.png",
+              "image": "img/ExampleImages/Screw/Thumbs/2024-11-15 090206.jpg",
               "fullImage": "img/ExampleImages/Screw/2024-11-15 090206.png",
               "title": "Tracking Capture 05",
               "description": "Spreadsheet and audit capture used to review level coverage, note friction points, and batch balancing updates."
@@ -1408,7 +1408,7 @@
       "links": [],
       "gallery": [
         {
-          "image": "img/ExampleImages/IM_Tank.png",
+          "image": "img/ExampleImages/Thumbs/Gallery_IM_Tank.jpg",
           "fullImage": "img/ExampleImages/IM_Tank.png",
           "title": "Title Art",
           "description": "Current branding art used to keep the Tank project visible while gameplay captures are still missing."
@@ -1477,7 +1477,7 @@
           "description": "The prototype running in the Unity editor, with its five level scenes and character prefabs."
         }
       ],
-      "cardSummary": "Horror-themed Unity puzzle prototype inspired by Goods Master, with haunted carnival rooms and a recorded demo."
+      "cardSummary": "Five levels of haunted rooms with allies, enemies, a round timer and an ally booster, plus a recorded gameplay demo."
     }
   ]
 }

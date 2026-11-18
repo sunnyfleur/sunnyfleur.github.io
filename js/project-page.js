@@ -276,11 +276,12 @@
       project && project.title,
     ].map(normalizeText).join(" ").toLowerCase();
 
-    if (descriptor.includes("archive")) {
+    // Type and status may arrive localized, so the Vietnamese labels count too.
+    if (descriptor.includes("archive") || descriptor.includes("lưu trữ")) {
       return "archive";
     }
 
-    if (descriptor.includes("unannounced")) {
+    if (descriptor.includes("unannounced") || descriptor.includes("chưa công bố")) {
       return "confidential";
     }
 
@@ -781,8 +782,9 @@
       return;
     }
 
-    // Role is already listed in the case file, so the brief keeps only Challenge and Proof.
-    const briefItems = asArray(items).filter((item) => item && item.label && item.body && item.label !== "Role");
+    // Role is already in the case file and Challenge repeats the Context section
+    // right below, so the brief keeps only the Proof line as a headline result.
+    const briefItems = asArray(items).filter((item) => item && item.label && item.body && item.label === "Proof");
     root.innerHTML = "";
     root.hidden = briefItems.length === 0;
     root.style.display = briefItems.length === 0 ? "none" : "";

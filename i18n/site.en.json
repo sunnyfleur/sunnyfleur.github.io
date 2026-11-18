@@ -152,8 +152,8 @@
     "required": "Required",
     "optional": "Optional",
     "submit": "Send Message",
-    "done": "Done!",
-    "thanks": "Thanks for your message. I'll get back as soon as possible."
+    "done": "Almost there",
+    "thanks": "Your email app should open with the message ready to send. If nothing opens, write to tranhoangkiet1312@gmail.com."
   },
   "project": {
     "loadingTitle": "Loading project...",
