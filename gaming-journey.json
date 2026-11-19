@@ -297,18 +297,19 @@
       ]
     },
     {
-      "title": "Stellar Blade",
+      "title": "Onimusha: Way of the Sword",
       "chapter": "combat",
-      "platform": "Console/PC",
-      "year": "2024",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3489700/header.jpg",
+      "platform": "PC",
+      "year": "2026",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2638890/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2638890/library_600x900.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Stellar Blade artwork",
-      "reflection": "Big, cinematic animations that still answer the button instantly. A reminder that spectacle must never cost responsiveness.",
+      "imageAlt": "Onimusha: Way of the Sword artwork",
+      "reflection": "Every clash is a duel: parries, perfect counters and the Issen flash reward reading the enemy over mashing. My reference for making a single sword feel deadly, where one well-timed cut can end a fight.",
       "tags": [
-        "Action Combat",
-        "Animation",
-        "Spectacle"
+        "Sword Duels",
+        "Parry",
+        "Counter Timing"
       ]
     },
     {
@@ -1495,6 +1496,22 @@
         "Franchise",
         "Spectacle"
       ]
+    },
+    {
+      "title": "Stellar Blade",
+      "chapter": "shelf",
+      "platform": "Console/PC",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3489700/header.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Stellar Blade artwork",
+      "reflection": "Big, cinematic animations that still answer the button instantly. A reminder that spectacle must never cost responsiveness.",
+      "tags": [
+        "Action Combat",
+        "Animation",
+        "Spectacle"
+      ],
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/3489700/library_600x900.jpg"
     }
   ]
 }
