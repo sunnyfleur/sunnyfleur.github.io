@@ -136,14 +136,16 @@ test('project presentation mode distinguishes case studies, archives, and confid
   const spaceConqueror = payload.projects.find((project) => project.slug === 'space-conqueror');
   const huli = payload.projects.find((project) => project.slug === 'huli');
   const screw = payload.projects.find((project) => project.slug === 'screw');
+  const lunarfall = payload.projects.find((project) => project.slug === 'lunarfall-pixel-strategy');
 
   assert.equal(getProjectPresentationMode(spaceConqueror), 'case');
   assert.equal(getProjectPresentationMode(huli), 'confidential');
-  assert.equal(getProjectPresentationMode(screw), 'archive');
+  assert.equal(getProjectPresentationMode(screw), 'case');
+  assert.equal(getProjectPresentationMode(lunarfall), 'archive');
 
   assert.equal(getProjectAccentTone(spaceConqueror), 'prototype');
   assert.equal(getProjectAccentTone(huli), 'confidential');
-  assert.equal(getProjectAccentTone(screw), 'archive');
+  assert.equal(getProjectAccentTone(lunarfall), 'archive');
 });
 
 test('project reviewer brief returns three scan-friendly case-file rows', () => {
@@ -163,7 +165,7 @@ test('project reviewer brief returns three scan-friendly case-file rows', () => 
   assert.ok(confidentialBrief.every((item) => item.title && item.body));
 });
 
-test('archive gallery preview limits initial image dump and records the hidden count', () => {
+test('long galleries open with a curated set and record the hidden count', () => {
   const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'projects.json'), 'utf8'));
   const screw = payload.projects.find((project) => project.slug === 'screw');
   const spaceConqueror = payload.projects.find((project) => project.slug === 'space-conqueror');
@@ -171,7 +173,7 @@ test('archive gallery preview limits initial image dump and records the hidden c
   const screwSummary = getProjectGalleryPreviewSummary(screw);
   const prototypeSummary = getProjectGalleryPreviewSummary(spaceConqueror);
 
-  assert.equal(screwSummary.mode, 'archive');
+  assert.equal(screwSummary.mode, 'case');
   assert.equal(screwSummary.isCurated, true);
   assert.equal(screwSummary.totalCount, 35);
   assert.equal(screwSummary.visibleCount, 12);

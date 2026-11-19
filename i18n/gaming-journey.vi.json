@@ -1,69 +1,78 @@
 {
   "chapters": {
-    "worlds": {
-      "title": "Những thế giới tôi vẫn nhớ",
+    "combat": {
+      "title": "Combat và cảm giác đánh",
       "kicker": "Chương 01",
-      "description": "Những game làm nên gu của tôi về không khí, khám phá và cảm giác được sống thật trong một nơi chốn.",
+      "description": "Những game hành động tôi mổ xẻ để học về game feel: đòn đánh có lực, kẻ địch telegraph rõ, timing chặt và camera giữ cho trận đánh dễ theo dõi.",
       "stamps": [
-        "Chất cảm thế giới",
+        "Combat Game Feel",
+        "Telegraph đòn đánh",
+        "Camera"
+      ]
+    },
+    "worlds": {
+      "title": "Những thế giới để khám phá",
+      "kicker": "Chương 02",
+      "description": "Những thế giới dạy tôi cách nhịp độ, điểm mốc và cách di chuyển khiến một nơi đáng để đi khám phá.",
+      "stamps": [
+        "Chất cảm của thế giới",
         "Khám phá",
-        "Không khí"
+        "Di chuyển"
       ]
     },
     "stories": {
-      "title": "Những câu chuyện còn ở lại",
-      "kicker": "Chương 02",
-      "description": "Những game lấy nhân vật làm trung tâm, đã nâng chuẩn của tôi về giọng kể, nhịp truyện và cao trào cảm xúc.",
+      "title": "Nhân vật và câu chuyện",
+      "kicker": "Chương 03",
+      "description": "Những game mà nhân vật, phần life sim và nhịp kể chuyện đã nâng chuẩn của tôi về những khoảnh khắc chạm tới cảm xúc.",
       "stamps": [
-        "Hành trình nhân vật",
-        "Nếp sinh hoạt",
+        "Character arc",
+        "Life sim",
         "Cao trào cảm xúc"
       ]
     },
     "loops": {
-      "title": "Những vòng lặp khiến tôi quay lại",
-      "kicker": "Chương 03",
-      "description": "Những game mà hành động lặp lại, phản hồi và mục tiêu ngắn hạn khiến tôi cứ muốn chơi thêm lượt nữa.",
+      "title": "Vòng lặp và giữ chân người chơi",
+      "kicker": "Chương 04",
+      "description": "Những vòng lặp có mục tiêu rõ và phiên chơi ngắn khiến người chơi muốn quay lại, gồm cả các game casual và puzzle gần với công việc của tôi ở studio.",
       "stamps": [
-        "Mục tiêu dễ đọc",
-        "Phản hồi",
-        "Vòng lặp quay lại"
+        "Mục tiêu rõ ràng",
+        "Phiên chơi ngắn",
+        "Lý do quay lại"
       ]
     },
     "systems": {
-      "title": "Những hệ thống tôi học được",
-      "kicker": "Chương 04",
-      "description": "Những hệ thống chiến thuật, tiến trình, kinh tế và combat mà tôi vẫn mở lại để tham khảo khi thiết kế.",
+      "title": "Hệ thống và kinh tế",
+      "kicker": "Chương 05",
+      "description": "Những hệ thống chiến thuật và RPG tôi hay mở lại để học về đánh đổi, áp lực kinh tế và các lựa chọn có hệ quả về sau.",
       "stamps": [
         "Đánh đổi",
-        "Tiến trình",
-        "Sức căng hệ thống"
-      ]
-    },
-    "nostalgia": {
-      "title": "Hoài niệm và những cột mốc",
-      "kicker": "Chương 05",
-      "description": "Những game gắn với từng quãng đời chơi game của tôi, dù bây giờ con mắt người làm thiết kế đã nhìn chúng khác đi.",
-      "stamps": [
-        "Cột mốc",
-        "Kệ ký ức",
-        "Gu thuở đầu"
+        "Kinh tế game",
+        "Lựa chọn có hệ quả"
       ]
     },
     "friction": {
       "title": "Bài học từ những chỗ vướng",
       "kicker": "Chương 06",
-      "description": "Những game chưa thật sự hợp với tôi, nhưng để lại các câu hỏi hữu ích về niềm tin của người chơi, cảm giác chơi, quy mô và kỳ vọng.",
+      "description": "Những game chưa thật sự hợp với tôi, nhưng để lại các câu hỏi đáng giá về niềm tin của người chơi, kỳ vọng và scope.",
       "stamps": [
         "Niềm tin người chơi",
-        "Cảm giác chơi",
-        "Quy mô"
+        "Kỳ vọng",
+        "Scope"
+      ]
+    },
+    "shelf": {
+      "title": "Kệ ký ức",
+      "kicker": "Cũng đã chơi",
+      "description": "Những game khác đã góp phần làm nên gu của tôi, từ những lượt Pokemon đầu tiên đến các đêm dài với Dynasty Warriors.",
+      "stamps": [
+        "Ký ức",
+        "Gu thuở đầu"
       ]
     }
   },
   "games": {
     "Red Dead Redemption 2": {
-      "reflection": "RDR2 dạy tôi rằng thế giới sống động không chỉ đến từ bản đồ lớn, mà từ nhịp di chuyển chậm, những việc nhỏ dọc đường và cảm giác nơi chốn có ký ức.",
+      "reflection": "RDR2 dạy tôi rằng thế giới sống động đến từ nhịp di chuyển chậm và những chuyện nhỏ bất chợt dọc đường. Khoảng lặng giữa các khoảnh khắc lớn cũng quan trọng như chính các khoảnh khắc đó.",
       "tags": [
         "Worldbuilding",
         "Pacing",
@@ -72,7 +81,7 @@
       "imageAlt": "Red Dead Redemption 2 artwork"
     },
     "Elden Ring": {
-      "reflection": "Elden Ring cho tôi thấy sự bí ẩn mạnh nhất khi game tin người chơi tự đọc địa hình, hiểm nguy và phần thưởng, thay vì chỉ sẵn mọi lối đi.",
+      "reflection": "Elden Ring tin người chơi tự đọc hiểm nguy và phần thưởng từ địa hình, gần như không cần chỉ đường. Tôi dùng nó để tự hỏi: không gian mình làm có tự kể được chuyện của nó không.",
       "tags": [
         "Exploration",
         "Mystery",
@@ -81,7 +90,7 @@
       "imageAlt": "Elden Ring artwork"
     },
     "Witcher 3": {
-      "reflection": "Witcher 3 là bài học về nhiệm vụ phụ có sức nặng: chuyện riêng của từng vùng, nhân vật và bối cảnh khiến chúng vẫn đáng nhớ.",
+      "reflection": "Nhiệm vụ phụ có sức nặng vì chúng xuất phát từ chính chuyện của từng vùng và những nhân vật có thật. Chuẩn mực cho nội dung được viết riêng cho nơi nó xuất hiện.",
       "tags": [
         "Quest Design",
         "Worldbuilding",
@@ -90,7 +99,7 @@
       "imageAlt": "Witcher 3 artwork"
     },
     "Persona 5 Royal": {
-      "reflection": "Persona 5 Royal đặt chuẩn rất cao cho việc để giao diện, nếp sinh hoạt hằng ngày, âm nhạc và hành trình nhân vật cùng nuôi một giấc mơ nhập vai nhất quán.",
+      "reflection": "UI, lịch sinh hoạt, âm nhạc và hành trình nhân vật cùng phục vụ một fantasy duy nhất. Đây là ví dụ tôi hay nhắc khi muốn phong cách phải làm việc cho gameplay, chứ không chỉ để trang trí.",
       "tags": [
         "Style",
         "Routine",
@@ -99,7 +108,7 @@
       "imageAlt": "Persona 5 Royal artwork"
     },
     "Persona 3 Reload": {
-      "reflection": "Persona 3 Reload nhắc tôi rằng thời gian có hạn và những quyết định lặp lại mỗi ngày có thể tạo ra sức nặng cảm xúc rất lớn.",
+      "reflection": "Một tờ lịch có hạn khiến những ngày bình thường cũng thành lựa chọn có sức nặng. Tôi nghĩ đến nó mỗi khi một lịch trình hay đồng hồ đếm ngược cần mang theo cảm xúc.",
       "tags": [
         "Mood",
         "Schedule",
@@ -117,7 +126,7 @@
       "imageAlt": "L.A. Noire artwork"
     },
     "Plants vs. Zombies GOTY Edition": {
-      "reflection": "Plants vs. Zombies là ví dụ gọn gàng về game chiến thuật nhẹ nhàng: làn đường rõ, độ khó tăng dễ đọc và phần thưởng đến đúng lúc, ai cũng bắt đầu được.",
+      "reflection": "Làn đường rõ ràng, mỗi màn thêm một ý tưởng mới, phần thưởng đến đúng lúc, nên ai cũng chơi được ngay. Tôi áp dụng đúng cách nghĩ này khi chia độ khó cho cả một bộ level puzzle.",
       "tags": [
         "Readable Goals",
         "Escalation",
@@ -126,7 +135,7 @@
       "imageAlt": "Plants vs. Zombies GOTY Edition artwork"
     },
     "The Elder Scrolls V: Skyrim": {
-      "reflection": "Skyrim biến việc đi lang thang thành một mục tiêu chính đáng, nhờ sự tò mò, các điểm mốc và những phần thưởng nhỏ luôn kéo người chơi rẽ sang hướng khác.",
+      "reflection": "Cứ vài phút lại có một điểm mốc kéo người chơi rẽ khỏi đường chính. Tôi mượn nhịp gợi tò mò đó khi rải nội dung trong một màn chơi.",
       "tags": [
         "Exploration",
         "Modding",
@@ -135,7 +144,7 @@
       "imageAlt": "The Elder Scrolls V: Skyrim artwork"
     },
     "Assassin's Creed Black Flag": {
-      "reflection": "Black Flag cho thấy một vòng lặp phụ có thể thành ký ức chính của cả game, khi giấc mơ rong ruổi và nhịp hải chiến đủ mạnh.",
+      "reflection": "Thứ người ta nhớ nhất lại là những chuyến ra khơi, hơn cả vòng lặp chính. Bài học về việc một hệ thống phụ có thể trở thành bản sắc của cả game.",
       "tags": [
         "Traversal",
         "Naval Loop",
@@ -180,7 +189,7 @@
       "imageAlt": "Sleeping Dogs artwork"
     },
     "God of War 4": {
-      "reflection": "God of War 4 là bài học về góc máy gần gũi, combat có sức nặng và sự trưởng thành của nhân vật được kể rất tiết chế.",
+      "reflection": "Camera đặt sát vai làm mỗi đòn đánh có lực, nhưng điều đó chỉ hiệu quả vì đòn của kẻ địch được telegraph vừa khung hình. Khi làm camera và combat cùng lúc, tôi luôn bắt đầu từ câu hỏi: người chơi cần thấy gì trước khi bị đánh trúng.",
       "tags": [
         "Camera",
         "Character",
@@ -216,7 +225,7 @@
       "imageAlt": "Persona 4 Golden artwork"
     },
     "Yakuza: Like a Dragon": {
-      "reflection": "Yakuza: Like a Dragon vẫn giữ được sự chân thành dù rất phi lý, nhờ cả nhóm có cá tính rõ và những câu chuyện phụ đầy tình người.",
+      "reflection": "Những side story vô lý mà vẫn chân thành, vì cả nhóm nhân vật đều có cá tính rõ. Bằng chứng rằng giọng kể có thể thay đổi rất mạnh, miễn là nhân vật luôn nhất quán.",
       "tags": [
         "Tone Range",
         "Party Identity",
@@ -243,7 +252,7 @@
       "imageAlt": "Assassin's Creed III artwork"
     },
     "Batman: Arkham Knight": {
-      "reflection": "Arkham Knight là mẫu mực về cảm giác hóa thân thành siêu anh hùng, không khí thành phố và combat vẫn dễ đọc dù màn trình diễn rất dày.",
+      "reflection": "Combat với đám đông vẫn dễ đọc nhờ một tín hiệu rõ ràng duy nhất: dấu hiệu phản đòn. Khi trận đánh trở nên rối, tôi tìm một tín hiệu duy nhất cho người chơi biết phải làm gì tiếp.",
       "tags": [
         "Embodiment",
         "Combat Flow",
@@ -270,7 +279,7 @@
       "imageAlt": "Naruto Shippuden: Ultimate Ninja Storm 4 artwork"
     },
     "Dead Cells": {
-      "reflection": "Dead Cells làm rõ giá trị của việc chơi lại thật nhanh, combat dễ đọc và một tiến trình xoa dịu thất bại mà không xóa đi sự căng thẳng.",
+      "reflection": "Chơi lại tức thì và meta progression làm thất bại bớt đau mà không mất đi sự căng thẳng. Tôi dùng nó để cân nhắc một lần thua nên khiến người chơi mất bao nhiêu.",
       "tags": [
         "Roguelite Loop",
         "Combat Feel",
@@ -279,7 +288,7 @@
       "imageAlt": "Dead Cells artwork"
     },
     "Hades 2": {
-      "reflection": "Hades 2 cho thấy lời thoại và sự lặp lại của cơ chế có thể nâng đỡ nhau, để mỗi lượt chơi lặp lại vẫn có lý do quay về.",
+      "reflection": "Mỗi lần chết vẫn đẩy câu chuyện đi tiếp, nên chơi lại không bao giờ thấy phí. Một ví dụ rõ về cách cho người chơi lý do bắt đầu thêm một run nữa.",
       "tags": [
         "Run Structure",
         "Dialogue",
@@ -315,7 +324,7 @@
       "imageAlt": "Dead Island artwork"
     },
     "Civilization VI": {
-      "reflection": "Civilization VI là bài học rõ ràng về các quyết định cộng dồn, những đánh đổi dễ đọc và sức hút nguy hiểm của câu thêm một lượt nữa thôi.",
+      "reflection": "Những quyết định nhỏ cộng dồn qua hàng trăm lượt, và mọi đánh đổi đều hiện rõ trước mắt. Tôi nhắm tới một nền kinh tế dễ đọc như vậy trong bảng tài nguyên của Lunarfall.",
       "tags": [
         "Strategy",
         "Tradeoffs",
@@ -324,7 +333,7 @@
       "imageAlt": "Civilization VI artwork"
     },
     "Total War: Three Kingdoms": {
-      "reflection": "Three Kingdoms kết hợp quan hệ giữa các nhân vật, chiến trường hoành tráng và giằng co giữa trung thành với tham vọng theo cách rất đáng học.",
+      "reflection": "Quan hệ giữa các tướng lĩnh điều khiển cả bản đồ chiến dịch, nên lòng trung thành và tham vọng trở thành chiến thuật. Bài học về cách gắn hệ thống với con người.",
       "tags": [
         "Strategy",
         "Relationships",
@@ -333,7 +342,7 @@
       "imageAlt": "Total War: Three Kingdoms artwork"
     },
     "Total War: Warhammer": {
-      "reflection": "Total War: Warhammer cho thấy các phe bất đối xứng mạnh nhất khi luật chơi không chỉ cân bằng mà còn thể hiện được bản sắc của từng phe.",
+      "reflection": "Mỗi phe chơi một kiểu, và chính luật chơi thể hiện bản sắc của từng phe. Ví dụ tôi hay dùng khi nói về thiết kế bất đối xứng.",
       "tags": [
         "Faction Design",
         "Strategy",
@@ -351,7 +360,7 @@
       "imageAlt": "Kingdom Come: Deliverance artwork"
     },
     "Assassin's Creed Unity": {
-      "reflection": "Unity là bài học về tham vọng kỹ thuật: đám đông dày đặc và parkour rất cuốn, nhưng phản hồi thiếu ổn định sẽ bào mòn niềm tin của người chơi.",
+      "reflection": "Đám đông khổng lồ và parkour rất ấn tượng, nhưng điều khiển thiếu ổn định đã bào mòn niềm tin của người chơi. Tham vọng chỉ thành công khi những thứ cơ bản đáng tin cậy.",
       "tags": [
         "Crowds",
         "Traversal",
@@ -423,7 +432,7 @@
       "imageAlt": "League of Legends artwork"
     },
     "Dynasty Warriors 9": {
-      "reflection": "Dynasty Warriors 9 là ví dụ về cái giá của việc đổi công thức quá rộng khi chưa giữ được những thứ người chơi cũ thật sự trân trọng.",
+      "reflection": "Chuyển sang open world làm loãng đúng thứ người hâm mộ yêu ở dòng game này. Bài học về việc giữ vững cốt lõi trước khi thay đổi công thức.",
       "tags": [
         "Formula Shift",
         "Scope",
@@ -432,7 +441,7 @@
       "imageAlt": "Dynasty Warriors 9 artwork"
     },
     "Watch Dogs": {
-      "reflection": "Watch Dogs nhắc tôi rằng giấc mơ nhập vai và lời hứa quảng bá phải khớp với mật độ tương tác thật, nếu không kỳ vọng sẽ quay lại hại chính game.",
+      "reflection": "Lời quảng bá hứa nhiều hơn những gì người chơi thật sự làm được trong thành phố. Lời nhắc rằng marketing đặt ra mức kỳ vọng mà hệ thống phải đáp ứng.",
       "tags": [
         "Expectation",
         "System Promise",
@@ -441,7 +450,7 @@
       "imageAlt": "Watch Dogs artwork"
     },
     "Grand Theft Auto: The Trilogy DE": {
-      "reflection": "GTA Trilogy DE là bài học về làm lại game cũ: nâng cấp hình ảnh là chưa đủ nếu đánh mất bản sắc thị giác và cảm giác gốc.",
+      "reflection": "Đồ họa mới làm mất đi diện mạo và cảm giác của bản gốc. Bằng chứng rằng làm remaster phải giữ được bản sắc, không chỉ tăng độ phân giải.",
       "tags": [
         "Remaster",
         "Preservation",
@@ -450,7 +459,7 @@
       "imageAlt": "Grand Theft Auto: The Trilogy DE artwork"
     },
     "Cyberpunk 2077 (PS4/XOne)": {
-      "reflection": "Cyberpunk 2077 bản PS4/XOne cho thấy hoàn cảnh lúc ra mắt có thể định hình ký ức mạnh ngang với tham vọng của chính game.",
+      "reflection": "Trên console đời cũ, lỗi kỹ thuật làm vỡ trải nghiệm và che lấp một thế giới rất hay. Hoàn cảnh lúc ra mắt có thể quyết định cách cả một game được nhớ đến.",
       "tags": [
         "Expectation",
         "Immersion",
@@ -468,7 +477,7 @@
       "imageAlt": "Ni no Kuni II: Revenant Kingdom artwork"
     },
     "Marvel's Spider-Man 2": {
-      "reflection": "Spider-Man 2 nhắc tôi rằng riêng việc di chuyển đã có thể gánh cả giấc mơ nhập vai, trước cả combat hay cấu trúc nhiệm vụ.",
+      "reflection": "Chỉ đu dây qua thành phố thôi đã vui, trước cả khi vào nhiệm vụ. Bằng chứng rằng riêng traversal cũng đủ sức gánh cả player fantasy.",
       "tags": [
         "Traversal",
         "City Feel",
@@ -504,7 +513,7 @@
       "imageAlt": "Uncharted: Legacy of Thieves Collection artwork"
     },
     "God of War Ragnarok": {
-      "reflection": "Ragnarok là mẫu mực về cảm xúc dâng dần, lời thoại của bạn đồng hành và việc một cái kết thần thoại cũng cần những nhịp nghỉ.",
+      "reflection": "Những câu thoại của bạn đồng hành trong lúc chơi xây dựng mối quan hệ còn nhiều hơn cả cutscene. Tham khảo tốt khi nội dung phải giữ được nhân vật giữa các cao trào lớn.",
       "tags": [
         "Character Arc",
         "Companion Design",
@@ -513,7 +522,7 @@
       "imageAlt": "God of War Ragnarok artwork"
     },
     "The Last of Us Part I": {
-      "reflection": "The Last of Us Part I đặt chuẩn về sự tiết chế, cách kể chuyện bằng môi trường và niềm tin mong manh giữa các nhân vật.",
+      "reflection": "Tiết chế ở mọi nơi: những căn phòng lặng, chi tiết nhỏ, niềm tin rạn dần giữa hai nhân vật. Nó cho thấy môi trường và nhịp độ có thể kể chuyện mà không cần cutscene.",
       "tags": [
         "Restraint",
         "Environmental Story",
@@ -567,7 +576,7 @@
       "imageAlt": "Sherlock Holmes: Crimes & Punishments artwork"
     },
     "NieR:Automata": {
-      "reflection": "NieR:Automata dạy tôi cách sự lặp lại, việc đổi góc nhìn và chính các hệ thống có thể làm ý nghĩa câu chuyện sâu thêm.",
+      "reflection": "Chơi lại cùng câu chuyện từ một góc nhìn khác làm ý nghĩa của nó thay đổi hẳn. Lời nhắc rằng cơ chế và cấu trúc game cũng truyền tải được chủ đề, không chỉ kịch bản.",
       "tags": [
         "Perspective",
         "Repetition",
@@ -612,7 +621,7 @@
       "imageAlt": "Stick War: Legacy artwork"
     },
     "Goods Sort Puzzle": {
-      "reflection": "Goods Sort Puzzle hữu ích để học về cảm giác chạm khi sắp xếp, những lượt chơi ngắn và niềm vui dọn sạch màn hình ngay tức thì.",
+      "reflection": "Phiên chơi ngắn, thao tác xếp đồ đã tay và màn hình gọn dần thấy rõ. Đó cũng là cảm giác tôi nhắm tới khi thiết kế bố cục kệ hàng cho GoodSort.",
       "tags": [
         "Sorting",
         "Casual Puzzle",
@@ -621,7 +630,7 @@
       "imageAlt": "Goods Sort Puzzle artwork"
     },
     "Screw Jam": {
-      "reflection": "Screw Jam xoay quanh những ràng buộc rõ ràng, thao tác với vật thể và việc chơi lại thật nhanh để giữ nhịp giải đố gọn gàng.",
+      "reflection": "Ràng buộc rõ ràng và chơi lại nhanh giữ cho nhịp giải đố luôn cuốn. Tham khảo trực tiếp cho phần level design của tôi ở Screw.",
       "tags": [
         "Constraint",
         "Tactile Puzzle",
@@ -639,7 +648,7 @@
       "imageAlt": "Where's My Water? artwork"
     },
     "Temple Run": {
-      "reflection": "Temple Run là cột mốc của dòng chạy vô tận: thao tác rõ, thất bại được báo ngay và nhịp muốn chạy thêm lần nữa rất mạnh.",
+      "reflection": "Một thao tác, thất bại được báo ngay và sức kéo muốn chạy thêm lần nữa rất mạnh. Bằng chứng đơn giản nhất rằng sự rõ ràng giữ chân người chơi.",
       "tags": [
         "Endless Runner",
         "Input Feel",
@@ -657,7 +666,7 @@
       "imageAlt": "Pokemon Unite artwork"
     },
     "Stardew Valley": {
-      "reflection": "Stardew Valley bền bỉ vì lựa chọn mỗi ngày, sự dễ chịu và mục tiêu dài hạn luôn nâng đỡ nhau thay vì giành giật nhau.",
+      "reflection": "Lựa chọn mỗi ngày, cảm giác thư giãn và mục tiêu dài hạn hỗ trợ nhau thay vì giành sự chú ý của nhau. Ví dụ điển hình cho một vòng lặp đủ sức kéo dài hàng trăm giờ.",
       "tags": [
         "Routine",
         "Comfort",
@@ -693,7 +702,7 @@
       "imageAlt": "Don't Starve artwork"
     },
     "Ninja Gaiden 4": {
-      "reflection": "Ninja Gaiden 4 là mẫu game hành động tốc độ cao về sự chính xác, cái giá của sai lầm và khả năng đọc hiểm nguy dưới áp lực.",
+      "reflection": "Tốc độ cao, phạt nặng, nhưng vẫn công bằng vì kẻ địch nào cũng lộ ý đồ trước khi ra đòn. Bài học tôi giữ lại: chỉ đẩy tốc độ lên đến mức người chơi vẫn còn đọc kịp telegraph.",
       "tags": [
         "Precision",
         "Action Combat",
@@ -711,7 +720,7 @@
       "imageAlt": "DNF Duel artwork"
     },
     "The First Berserker: Khazan": {
-      "reflection": "Khazan đáng học ở sức nặng của combat, những khoảng thời gian ra đòn và cách giữ lối đánh tấn công trong một bộ luật khắc nghiệt.",
+      "reflection": "Đòn nặng và timing hẹp thưởng cho người chơi dám lao vào thay vì đứng chờ. Tôi hay lấy nó làm ví dụ cho cách biến lựa chọn mạo hiểm thành lựa chọn vui nhất.",
       "tags": [
         "Combat Timing",
         "Weight",
@@ -720,7 +729,7 @@
       "imageAlt": "The First Berserker: Khazan artwork"
     },
     "Divinity: Original Sin 2": {
-      "reflection": "Divinity: Original Sin 2 mở rộng mỗi trận đánh bằng các bề mặt nguyên tố, sự sáng tạo của cả nhóm và lối giải quyết vấn đề rất phóng khoáng.",
+      "reflection": "Các bề mặt nguyên tố biến chiến trường thành một hộp đồ nghề. Lời nhắc rằng chỉ vài luật hệ thống cũng có thể mở ra rất nhiều cách giải.",
       "tags": [
         "CRPG",
         "Elemental Systems",
@@ -729,7 +738,7 @@
       "imageAlt": "Divinity: Original Sin 2 artwork"
     },
     "Baldur's Gate 3": {
-      "reflection": "Baldur's Gate 3 là chuẩn mực về mật độ lựa chọn, hệ thống biết phản ứng và việc nhập vai dẫn dắt cách giải quyết vấn đề.",
+      "reflection": "Gần như kế hoạch nào cũng làm được, và thế giới luôn phản hồi lại. Chuẩn mực cho những hệ thống thưởng cho cách giải quyết sáng tạo.",
       "tags": [
         "Choice Density",
         "Reactivity",
@@ -747,7 +756,7 @@
       "imageAlt": "Clair Obscur: Expedition 33 artwork"
     },
     "Nine Sols": {
-      "reflection": "Nine Sols là bài học về nhịp đỡ đòn, áp lực từ bản đồ và độ khó tăng rất chính xác trong cấu trúc combat.",
+      "reflection": "Cả trận đánh xoay quanh nhịp parry: boss dạy người chơi một pattern rồi biến tấu nó. Một cách gọn gàng để tăng độ khó mà không cần thêm luật mới.",
       "tags": [
         "Parry",
         "Metroidvania",
@@ -774,7 +783,7 @@
       "imageAlt": "The Incredible Adventures of Van Helsing artwork"
     },
     "Teamfight Tactics": {
-      "reflection": "Teamfight Tactics là mẫu game vận hành lâu dài về sức căng kinh tế, khả năng thích nghi khi chọn quân và những lần đổi chiến thuật dễ đọc.",
+      "reflection": "Vàng, cấp độ và reroll tạo áp lực kinh tế liên tục, nhưng mỗi lần đổi hướng đội hình vẫn dễ hiểu. Tham khảo tốt khi cân bằng một loại tài nguyên người chơi phải tiêu dưới áp lực.",
       "tags": [
         "Auto Battler",
         "Economy",
@@ -783,7 +792,7 @@
       "imageAlt": "Teamfight Tactics artwork"
     },
     "Wo Long: Fallen Dynasty": {
-      "reflection": "Wo Long đặt việc gạt đòn vào trung tâm, nơi sĩ khí, thời điểm và lối đánh tấn công cùng định hình nhịp của trận đấu.",
+      "reflection": "Gạt đòn nối phòng thủ với tấn công, còn chỉ số tinh thần biến mỗi trận thành một canh bạc nhỏ. Tham khảo tốt khi tôi muốn một hệ thống vừa cho người chơi sự an toàn, vừa kích thích họ liều.",
       "tags": [
         "Deflection",
         "Morale",
@@ -792,7 +801,7 @@
       "imageAlt": "Wo Long: Fallen Dynasty artwork"
     },
     "Stellar Blade": {
-      "reflection": "Stellar Blade đáng học ở hoạt ảnh rõ ràng, dấu hiệu ra đòn của kẻ địch và việc dù hoành tráng vẫn phải phản hồi thật nhanh.",
+      "reflection": "Animation hoành tráng, đậm chất điện ảnh mà vẫn phản hồi ngay khi bấm nút. Lời nhắc rằng không bao giờ được đổi độ nhạy lấy sự hoành tráng.",
       "tags": [
         "Action Combat",
         "Animation",

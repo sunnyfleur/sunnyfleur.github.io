@@ -53,9 +53,9 @@
   "about": {
     "eyebrow": "About Me",
     "title": "Gameplay designer with technical production sense",
-    "projects": "Projects and Prototypes",
+    "projects": "Game studios",
     "years": "Years of experience",
-    "commercial": "Participated in Commercial Projects",
+    "commercial": "Commercial titles",
     "lead": "I design gameplay features from intent and prototype through specs, playtests, implementation coordination, and production tuning.",
     "leadHtml": "I am a <span class=\"highlight-text\">Gameplay Designer</span> who can move features from design intent through prototype, specs, playtests, implementation coordination, and production tuning.",
     "featureLabel": "Feature ownership",
@@ -73,7 +73,7 @@
   "portfolio": {
     "eyebrow": "Portfolio",
     "title": "Selected gameplay work",
-    "text": "A focused set of shipped work, prototypes, and evidence archives showing gameplay design, feature ownership, and iteration.",
+    "text": "Studio work and personal projects showing combat, level and systems design, from first prototype to live tuning.",
     "explorerTitle": "Project explorer",
     "explorerText": "Filter by project type or focus area, then open the case study or archive with the clearest evidence.",
     "filtersLabel": "Project filters",
@@ -97,7 +97,13 @@
     "stopPreview": "Stop preview for {title}",
     "openCaseFor": "Open case study for {title}",
     "inSpotlight": "In spotlight",
-    "showAll": "Show all {count} projects"
+    "showAll": "Show all {count} projects",
+    "studio": "Studio work",
+    "personal": "Personal",
+    "combat": "Combat",
+    "levelDesign": "Level design",
+    "systems": "Systems & economy",
+    "liveOps": "Live ops"
   },
   "resume": {
     "eyebrow": "Resume",
@@ -120,16 +126,16 @@
     "advanced": "Advanced",
     "gameplayTitle": "Gameplay Design",
     "gameplayDescription": "Design mechanics, core loops, progression, and feedback that make player intent readable in play.",
-    "gameplayProof": "Prototype breakdowns, combat readability notes, and case-study decisions focused on player feel.",
+    "gameplayProof": "See it in Screw's level ramp and Space Conqueror's combat loop.",
     "ownershipTitle": "Feature Ownership",
     "ownershipDescription": "Own gameplay features from design intent through specs, implementation coordination, playtest iteration, and production tuning.",
-    "ownershipProof": "Feature specs, handoff notes, tuning passes, and cross-functional coordination.",
+    "ownershipProof": "Specs, prototypes and tuning passes on Huli at Ather Labs.",
     "combatTitle": "Combat Design",
     "combatDescription": "Shape combat feel, enemy behavior, boss mechanics, and encounter structure around readable player action.",
-    "combatProof": "Boss mechanics, enemy behavior notes, and encounter readability work.",
+    "combatProof": "Combat and camera features on Huli; enemy waves and AI in Space Conqueror.",
     "docsTitle": "Design Documentation",
     "docsDescription": "Write design documentation that turns ideas into specs, content plans, and implementation tasks.",
-    "docsProof": "GDD-style specs, content plans, and developer-facing handoff notes."
+    "docsProof": "The Lunarfall sample GDD and the Satisdom flow and content sheets."
   },
   "contact": {
     "eyebrow": "Contact",
@@ -137,7 +143,7 @@
     "lead": "Open to gameplay design roles where I can own features, write specs, iterate prototypes, and tune production gameplay.",
     "scopeLabel": "Gameplay design scope",
     "systems": "Gameplay systems",
-    "ownership": "Feature ownership",
+    "ownership": "Combat & camera design",
     "unity": "Unity implementation literacy",
     "kpi": "KPI-informed tuning",
     "routesLabel": "Direct contact routes",
@@ -201,7 +207,7 @@
     "designSignal": "Design signal",
     "archiveMode": "Archive note",
     "confidentialMode": "Confidential brief",
-    "caseMode": "Playable case study",
+    "caseMode": "Case study",
     "notPublic": "Not public",
     "notFoundTitle": "Project not found",
     "notFoundText": "This project link is out of date or the project was removed. Browse the current work instead."
@@ -251,7 +257,8 @@
         "title": "Player trust",
         "body": "Friction is useful when it teaches; it becomes noise when feedback feels unfair."
       }
-    ]
+    ],
+    "appliedIn": "Applied in"
   },
   "runner": {
     "score": "Score: {score}",

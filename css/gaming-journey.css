@@ -1,3 +1,4 @@
+/* rem values here assume the site root of 10px (html font-size 62.5%). */
 :root {
   --journey-bg: var(--base);
   --journey-surface: var(--base-tint);
@@ -68,7 +69,7 @@ body {
   margin: 0;
   color: var(--journey-text);
   background:
-    linear-gradient(180deg, var(--journey-hero-wash), var(--journey-bg) 34rem),
+    linear-gradient(180deg, var(--journey-hero-wash), var(--journey-bg) 54.4rem),
     var(--journey-bg);
   font-family: var(--_font-default), system-ui, sans-serif;
   overflow-x: hidden;
@@ -155,7 +156,7 @@ body {
   display: block;
   margin-bottom: 14px;
   color: var(--journey-faint);
-  font-size: 0.72rem;
+  font-size: 1.152rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   line-height: 1.1;
@@ -218,14 +219,14 @@ body {
 
 .journey-index__number {
   color: var(--chapter-accent, var(--journey-accent));
-  font-size: 0.86rem;
+  font-size: 1.376rem;
   font-weight: 800;
   line-height: 1.1;
 }
 
 .journey-index__title {
   overflow: visible;
-  font-size: 0.82rem;
+  font-size: 1.312rem;
   font-weight: 700;
   line-height: 1.26;
   text-overflow: clip;
@@ -296,7 +297,7 @@ body {
 
 .back-to-home i {
   margin-left: 0;
-  margin-right: 0.6rem;
+  margin-right: 0.96rem;
 }
 
 .journey-language {
@@ -306,7 +307,7 @@ body {
 .journey-nav__note {
   margin: 0;
   color: var(--journey-faint);
-  font-size: 0.88rem;
+  font-size: 1.408rem;
 }
 
 .journey-hero {
@@ -326,7 +327,7 @@ body {
 .journey-chapter__kicker {
   margin: 0 0 14px;
   color: var(--journey-warm);
-  font-size: 0.78rem;
+  font-size: 1.248rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -334,14 +335,14 @@ body {
 
 .journey-chapter__kicker {
   margin-bottom: 16px;
-  font-size: clamp(0.82rem, 0.9vw, 0.92rem);
+  font-size: clamp(1.312rem, 0.9vw, 1.472rem);
 }
 
 .journey-hero h1 {
   margin: 0;
   max-width: 13ch;
   color: var(--journey-text);
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(4.8rem, 7vw, 11.2rem);
   line-height: 0.92;
   letter-spacing: 0;
 }
@@ -350,7 +351,7 @@ body {
   max-width: 52ch;
   margin: 24px 0 0;
   color: var(--journey-muted);
-  font-size: clamp(1.08rem, 1.45vw, 1.36rem);
+  font-size: clamp(1.728rem, 1.45vw, 2.176rem);
   line-height: 1.5;
 }
 
@@ -423,7 +424,7 @@ body {
 .journey-intro p {
   margin: 0;
   color: var(--journey-muted);
-  font-size: clamp(1.08rem, 1.35vw, 1.32rem);
+  font-size: clamp(1.728rem, 1.35vw, 2.112rem);
   line-height: 1.58;
 }
 
@@ -432,21 +433,23 @@ body {
   gap: 8px;
   align-content: start;
   color: var(--journey-faint);
-  font-size: 0.88rem;
+  font-size: 1.408rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .journey-intro__stat strong {
   color: var(--journey-text);
-  font-size: 2.4rem;
+  font-size: 3.84rem;
   line-height: 1;
   letter-spacing: 0;
 }
 
+/* Heading on top and the five cards across the full width, so each card is
+   wide enough for its title */
 .journey-principles {
   display: grid;
-  grid-template-columns: minmax(240px, 0.34fr) minmax(0, 0.66fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(22px, 4vw, 48px);
   padding: clamp(34px, 5vw, 62px) 0 clamp(42px, 6vw, 72px);
   border-top: 1px solid var(--journey-line);
@@ -454,17 +457,17 @@ body {
 
 .journey-principles__header h2 {
   margin: 0;
-  max-width: 12ch;
+  max-width: 22ch;
   color: var(--journey-text);
-  font-size: clamp(2.2rem, 3.4vw, 4rem);
+  font-size: clamp(3.52rem, 3.4vw, 6.4rem);
   line-height: 0.98;
   letter-spacing: 0;
 }
 
 .journey-principles__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
 }
 
 .journey-principles__item {
@@ -478,16 +481,16 @@ body {
 .journey-principles__item span {
   display: block;
   color: var(--journey-text);
-  font-size: clamp(1.32rem, 1.05vw, 1.5rem);
-  font-weight: 800;
-  line-height: 1.16;
+  font-size: clamp(1.76rem, 1.2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .journey-principles__item p {
   margin: 12px 0 0;
   color: var(--journey-muted);
-  font-size: clamp(1.16rem, 0.9vw, 1.28rem);
-  line-height: 1.56;
+  font-size: clamp(1.5rem, 1vw, 1.6rem);
+  line-height: 1.6;
 }
 
 .journey-chapter {
@@ -512,7 +515,7 @@ body {
   top: 34px;
   z-index: 0;
   color: var(--chapter-accent);
-  font-size: clamp(9rem, 17vw, 18rem);
+  font-size: clamp(14.4rem, 17vw, 28.8rem);
   font-weight: 700;
   line-height: 0.8;
   opacity: 0.08;
@@ -557,7 +560,7 @@ body {
   gap: 12px;
   margin: -10px 0 18px;
   color: var(--journey-faint);
-  font-size: 0.74rem;
+  font-size: 1.184rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   line-height: 1.1;
@@ -657,18 +660,20 @@ body {
   left: 0;
   width: 28px;
   color: var(--chapter-accent);
-  font-size: 0.78rem;
+  font-size: 1.248rem;
   font-weight: 700;
   line-height: 1;
   text-align: center;
 }
 
+/* Decorative; the same "Memory stop" text already sits above each chapter */
 .journey-chapter__rail-label {
+  display: none;
   position: absolute;
   top: 58px;
   left: -5px;
   color: var(--journey-faint);
-  font-size: 0.62rem;
+  font-size: 0.992rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   line-height: 1;
@@ -679,7 +684,7 @@ body {
 .journey-chapter__header h2 {
   margin: 0;
   color: var(--journey-text);
-  font-size: clamp(2.35rem, 3.5vw, 4.05rem);
+  font-size: clamp(3.76rem, 3.5vw, 6.48rem);
   line-height: 0.96;
   letter-spacing: 0;
 }
@@ -687,7 +692,7 @@ body {
 .journey-chapter__header p:last-child {
   margin: 20px 0 0;
   color: var(--journey-muted);
-  font-size: clamp(1rem, 1.12vw, 1.2rem);
+  font-size: clamp(1.6rem, 1.12vw, 1.92rem);
   line-height: 1.62;
 }
 
@@ -707,7 +712,7 @@ body {
   border-radius: 999px;
   color: var(--journey-accent);
   background: var(--chapter-accent-soft);
-  font-size: 0.74rem;
+  font-size: 1.184rem;
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
@@ -729,7 +734,7 @@ body {
   gap: 18px;
   padding-top: 4px;
   color: var(--journey-faint);
-  font-size: 0.78rem;
+  font-size: 1.248rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   line-height: 1.1;
@@ -759,7 +764,7 @@ body {
   border-radius: 999px;
   color: var(--journey-text);
   background: color-mix(in srgb, var(--chapter-accent) 10%, transparent);
-  font: normal 800 0.78rem/1 var(--_font-default);
+  font: normal 800 1.248rem/1 var(--_font-default);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
@@ -864,9 +869,11 @@ body {
   transform: translateY(0);
 }
 
+/* Fills its grid cell: the column sets the width, the card sets the height */
 .journey-card--feature .journey-card__media {
+  width: 100%;
+  min-width: 0;
   min-height: clamp(240px, 24vw, 340px);
-  max-height: 360px;
   height: 100%;
   aspect-ratio: auto;
 }
@@ -879,7 +886,7 @@ body {
   color: var(--journey-credit-text);
   background: var(--journey-credit-bg);
   border-radius: 999px;
-  font-size: 0.68rem;
+  font-size: 1.088rem;
   line-height: 1.2;
 }
 
@@ -910,14 +917,14 @@ body {
   border-radius: 999px;
   color: var(--journey-text);
   background: color-mix(in srgb, var(--chapter-accent) 10%, transparent);
-  font-size: 0.76rem;
+  font-size: 1.216rem;
   font-weight: 800;
   line-height: 1.1;
 }
 
 .journey-card__lesson span {
   color: var(--journey-faint);
-  font-size: 0.62rem;
+  font-size: 0.992rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -928,7 +935,7 @@ body {
   border-radius: 0;
   color: var(--chapter-accent);
   background: transparent;
-  font-size: 0.72rem;
+  font-size: 1.152rem;
 }
 
 .journey-card--compact .journey-card__lesson span {
@@ -938,17 +945,17 @@ body {
 .journey-card__title {
   margin: 0;
   color: var(--journey-text);
-  font-size: clamp(1.18rem, 1vw, 1.3rem);
+  font-size: clamp(1.888rem, 1vw, 2.08rem);
   line-height: 1.25;
   letter-spacing: 0;
 }
 
 .journey-card--feature .journey-card__title {
-  font-size: clamp(1.45rem, 1.8vw, 2.1rem);
+  font-size: clamp(2.32rem, 1.8vw, 3.36rem);
 }
 
 .journey-card--compact .journey-card__title {
-  font-size: clamp(1rem, 0.92vw, 1.14rem);
+  font-size: clamp(1.6rem, 0.92vw, 1.824rem);
 }
 
 .journey-card__meta {
@@ -956,13 +963,13 @@ body {
   flex-wrap: wrap;
   gap: 8px 14px;
   color: var(--journey-faint);
-  font-size: 0.78rem;
+  font-size: 1.248rem;
 }
 
 .journey-card__reflection {
   margin: 2px 0 0;
   color: var(--journey-muted);
-  font-size: clamp(0.96rem, 0.88vw, 1.02rem);
+  font-size: clamp(1.536rem, 0.88vw, 1.632rem);
   line-height: 1.55;
   transition: color 180ms ease, transform 180ms ease;
 }
@@ -973,18 +980,15 @@ body {
 }
 
 .journey-card--feature .journey-card__reflection {
-  font-size: clamp(1rem, 1vw, 1.12rem);
+  font-size: clamp(1.6rem, 1vw, 1.792rem);
   line-height: 1.62;
 }
 
+/* The note is the point of each card, so it shows in full */
 .journey-card--compact .journey-card__reflection {
-  display: -webkit-box;
-  overflow: hidden;
-  color: color-mix(in srgb, var(--journey-muted) 88%, transparent);
-  font-size: 0.88rem;
-  line-height: 1.45;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  color: var(--journey-muted);
+  font-size: 1.408rem;
+  line-height: 1.5;
 }
 
 .journey-card__tags {
@@ -1009,7 +1013,7 @@ body {
   border-radius: 999px;
   color: var(--journey-accent);
   background: var(--journey-tag-bg);
-  font-size: 0.72rem;
+  font-size: 1.152rem;
   line-height: 1.2;
 }
 
@@ -1042,7 +1046,7 @@ body {
   padding-top: 44px;
   border-top: 1px solid var(--journey-line);
   color: var(--journey-faint);
-  font-size: 0.86rem;
+  font-size: 1.376rem;
 }
 
 @media (max-width: 980px) {
@@ -1054,7 +1058,7 @@ body {
   }
 
   .journey-hero h1 {
-    font-size: clamp(3rem, 6.2vw, 4.55rem);
+    font-size: clamp(4.8rem, 6.2vw, 7.28rem);
   }
 
   .journey-hero__strip {
@@ -1072,7 +1076,7 @@ body {
   }
 
   .journey-principles__grid {
-    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    grid-template-columns: repeat(5, minmax(220px, 1fr));
     overflow-x: auto;
     padding-bottom: 4px;
     scrollbar-width: none;
@@ -1127,8 +1131,8 @@ body {
   }
 
   .journey-card--feature .journey-card__media {
-    min-height: 0;
-    aspect-ratio: 16 / 9;
+    min-height: 220px;
+    aspect-ratio: auto;
   }
 }
 
@@ -1175,6 +1179,13 @@ body {
 
   .journey-card--feature {
     grid-template-columns: 1fr;
+  }
+
+  /* Stacked card: the image takes a 16:9 strip above the text */
+  .journey-card--feature .journey-card__media {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -1235,4 +1246,65 @@ body {
   .journey-gradient-background .blur {
     opacity: calc(var(--journey-ambient-opacity) * 0.72);
   }
+}
+
+/* ---- Applied-in link and memory shelf ---- */
+
+.journey-card__applied {
+  margin: 0;
+  color: var(--journey-muted);
+  font-size: 1.248rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.journey-card__applied a {
+  color: var(--journey-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.journey-memory {
+  display: block;
+  grid-template-columns: none;
+}
+
+.journey-memory__header {
+  max-width: 62ch;
+  margin-bottom: 24px;
+}
+
+.journey-memory__header h2 {
+  margin: 0 0 10px;
+}
+
+.journey-memory__header p:last-child {
+  margin: 0;
+  color: var(--journey-muted);
+}
+
+.journey-memory__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 14px;
+}
+
+.journey-memory__item {
+  margin: 0;
+}
+
+.journey-memory__item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 616 / 353;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.journey-memory__item figcaption {
+  margin-top: 6px;
+  color: var(--journey-muted);
+  font-size: 1.216rem;
+  line-height: 1.3;
 }

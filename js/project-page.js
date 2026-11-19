@@ -325,7 +325,7 @@
       return "Confidential brief";
     }
 
-    return "Playable case study";
+    return "Case study";
   }
 
   function truncateProjectBriefText(value, maxLength) {
@@ -400,7 +400,8 @@
     const mode = getProjectPresentationMode(project);
     const totalCount = getProjectGalleryItemCount(galleryModel);
     const previewLimit = 12;
-    const isCurated = mode === "archive" && totalCount > previewLimit;
+    // Any long gallery opens with a curated set; the rest stays one click away.
+    const isCurated = totalCount > previewLimit;
     const visibleCount = isCurated ? previewLimit : totalCount;
 
     return {
@@ -1164,7 +1165,7 @@
       const modeLabelKeys = {
         "Archive note": "project.archiveMode",
         "Confidential brief": "project.confidentialMode",
-        "Playable case study": "project.caseMode",
+        "Case study": "project.caseMode",
       };
       const modeLabel = getProjectModeLabel(project);
       setTextContent("project-mode-label", translate(modeLabelKeys[modeLabel], modeLabel), translate("project.projectBrief", "Project brief"));

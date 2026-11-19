@@ -127,14 +127,14 @@ test('portfolio section copy is concise and naturally localized', () => {
   assert.equal(siteEn.portfolio.title, 'Selected gameplay work');
   assert.equal(
     siteEn.portfolio.text,
-    'A focused set of shipped work, prototypes, and evidence archives showing gameplay design, feature ownership, and iteration.'
+    'Studio work and personal projects showing combat, level and systems design, from first prototype to live tuning.'
   );
   assert.equal(siteEn.portfolio.explorerTitle, 'Project explorer');
 
   assert.equal(siteVi.portfolio.title, 'Các dự án gameplay tiêu biểu');
   assert.equal(
     siteVi.portfolio.text,
-    'Những dự án đã làm, prototype và tư liệu lưu trữ cho thấy cách tôi thiết kế gameplay, phụ trách feature và cải tiến qua từng vòng.'
+    'Dự án ở studio và dự án cá nhân, cho thấy cách tôi thiết kế combat, level và hệ thống, từ prototype đầu tiên đến tinh chỉnh khi game vận hành.'
   );
   assert.equal(siteVi.portfolio.explorerTitle, 'Project explorer');
   assert.equal(

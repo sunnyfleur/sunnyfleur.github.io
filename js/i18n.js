@@ -8,7 +8,7 @@
   const STORAGE_KEY = "portfolio.language";
   const DEFAULT_LANGUAGE = "en";
   const SUPPORTED_LANGUAGES = ["en", "vi"];
-  const CACHE_VERSION = "20260615-i18n";
+  const CACHE_VERSION = "20261119-vi2";
   let activeLanguage = DEFAULT_LANGUAGE;
   let dictionary = {};
   let readyPromise = Promise.resolve(dictionary);

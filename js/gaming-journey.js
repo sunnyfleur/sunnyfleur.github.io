@@ -161,6 +161,48 @@
     `;
   }
 
+  // Links a reference game to the portfolio project where its lesson was used.
+  function createAppliedMarkup(game) {
+    const applied = game && game.appliedIn;
+    if (!applied || !applied.slug || !applied.title) {
+      return '';
+    }
+
+    const href = localizeInternalUrl(`project.html?slug=${encodeURIComponent(applied.slug)}`);
+    return `
+          <p class="journey-card__applied">
+            ${escapeHtml(translate('journey.appliedIn', 'Applied in'))}
+            <a href="${escapeHtml(href)}">${escapeHtml(applied.title)}</a>
+          </p>
+    `;
+  }
+
+  // The memory shelf lists the rest of the collection as covers only.
+  function createMemoryShelfMarkup(chapter, index) {
+    const chapterNumber = String(index + 1).padStart(2, '0');
+    const covers = asList(chapter.games)
+      .map((game) => `
+          <figure class="journey-memory__item">
+            <img src="${escapeHtml(game.image || FALLBACK_IMAGE)}" alt="${escapeHtml(game.imageAlt || game.title || 'Game')}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}'">
+            <figcaption>${escapeHtml(game.title || '')}</figcaption>
+          </figure>
+      `)
+      .join('');
+
+    return `
+      <section class="journey-chapter journey-memory" id="${escapeHtml(chapter.id)}" data-chapter-number="${chapterNumber}">
+        <div class="journey-memory__header">
+          <p class="journey-chapter__kicker">${escapeHtml(chapter.kicker || '')}</p>
+          <h2>${escapeHtml(chapter.title)}</h2>
+          <p>${escapeHtml(chapter.description || '')}</p>
+        </div>
+        <div class="journey-memory__grid">
+          ${covers}
+        </div>
+      </section>
+    `;
+  }
+
   function createGameCardMarkup(game, options) {
     const isFeatured = Boolean(options && options.featured);
     const isCompact = Boolean(options && options.compact);
@@ -195,6 +237,7 @@
           <h3 class="journey-card__title">${title}</h3>
           <div class="journey-card__meta">${createMetaMarkup(game)}</div>
           ${reflection ? `<p class="journey-card__reflection">${reflection}</p>` : ''}
+          ${createAppliedMarkup(game)}
           <div class="journey-card__tags">${createTagsMarkup(game.tags)}</div>
         </div>
       </article>
@@ -202,6 +245,10 @@
   }
 
   function createChapterMarkup(chapter, index) {
+    if (chapter && chapter.layout === 'shelf') {
+      return createMemoryShelfMarkup(chapter, index);
+    }
+
     const label = chapter.kicker || `Chapter ${String(index + 1).padStart(2, '0')}`;
     const chapterNumber = String(index + 1).padStart(2, '0');
     const chapterClass = index % 2 === 1

@@ -27,21 +27,21 @@ const sampleProjects = [
     title: 'Space Conqueror',
     featured: true,
     year: '2024',
-    filters: ['featured', 'prototype', 'unity'],
+    filters: ['featured', 'personal', 'combat', 'unity'],
   },
   {
     slug: 'farm-match',
     title: 'FarmMatch',
     featured: false,
     year: '2025',
-    filters: ['archive', 'mobile', 'match'],
+    filters: ['studio', 'level-design', 'match'],
   },
   {
     slug: 'huli',
     title: 'Huli',
     featured: true,
     year: '2025',
-    filters: ['featured', 'action'],
+    filters: ['featured', 'studio', 'combat'],
   },
 ];
 
@@ -65,19 +65,20 @@ test('getPortfolioFilters builds an all option plus curated filters only', () =>
     [
       { value: 'all', label: 'All Projects' },
       { value: 'featured', label: 'Featured' },
-      { value: 'archive', label: 'Archive' },
-      { value: 'mobile', label: 'Mobile' },
-      { value: 'prototype', label: 'Prototype' },
+      { value: 'studio', label: 'Studio work' },
+      { value: 'personal', label: 'Personal' },
+      { value: 'combat', label: 'Combat' },
+      { value: 'level-design', label: 'Level design' },
     ]
   );
 });
 
 test('projectMatchesFilter uses featured property and curated filter values only', () => {
   assert.equal(projectMatchesFilter(sampleProjects[2], 'featured'), true);
-  assert.equal(projectMatchesFilter(sampleProjects[2], 'archive'), false);
-  assert.equal(projectMatchesFilter(sampleProjects[0], 'prototype'), true);
+  assert.equal(projectMatchesFilter(sampleProjects[2], 'personal'), false);
+  assert.equal(projectMatchesFilter(sampleProjects[0], 'personal'), true);
   assert.equal(projectMatchesFilter(sampleProjects[0], 'unity'), false);
-  assert.equal(projectMatchesFilter(sampleProjects[1], 'mobile'), true);
+  assert.equal(projectMatchesFilter(sampleProjects[1], 'level-design'), true);
 });
 
 test('selectSpotlightProject falls back safely when the requested project is missing', () => {

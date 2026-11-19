@@ -168,7 +168,7 @@ test('education section prioritizes gameplay design credentials for hiring revie
   for (const copy of [
     'Practice turning game ideas into mechanics, player goals, and playable design briefs.',
     'Engine-focused training for prototyping gameplay logic and understanding implementation constraints.',
-    'Systems thinking, technical documentation, and implementation literacy for feature ownership.',
+    'Systems thinking, technical documentation and implementation literacy for designing gameplay features.',
     'English communication support for design documentation and cross-functional collaboration.',
     'Visual taste support for UI readability, composition, and game-art communication.'
   ]) {
@@ -225,9 +225,9 @@ test('work experience reads as production evidence instead of another education 
   }
 
   for (const tag of [
-    'Feature ownership',
-    'Production support',
-    'Combat systems',
+    'Combat design',
+    'Camera',
+    'Content design',
     'KPI-informed tuning',
     'Unity implementation'
   ]) {
@@ -294,7 +294,7 @@ test('contact section presents a gameplay design pitch beside a clear form panel
 
   for (const scope of [
     'Gameplay systems',
-    'Feature ownership',
+    'Combat &amp; camera design',
     'Unity implementation literacy',
     'KPI-informed tuning'
   ]) {

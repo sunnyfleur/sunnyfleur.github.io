@@ -1,10 +1,10 @@
 {
   "projects": {
     "huli": {
-      "tagline": "Dự án hành động chưa công bố; phần được chia sẻ gồm thiết kế gameplay, combat, nội dung và camera.",
-      "summary": "HULI là một game hành động dark-fantasy chưa công bố, lấy cảm hứng từ Phong Thần Diễn Nghĩa. Portfolio chỉ nói ở mức tổng quát về phần việc của tôi: thiết kế gameplay, combat, nội dung và camera, không đi vào chi tiết sản xuất.",
+      "tagline": "Game hành động dark-fantasy chưa công bố làm bằng Unreal Engine 5, nơi tôi thiết kế feature combat, nội dung và camera.",
+      "summary": "Huli là một game hành động dark-fantasy chưa công bố, lấy cảm hứng từ Phong Thần Diễn Nghĩa, đang được Ather Labs phát triển bằng Unreal Engine 5. Tôi thiết kế feature combat, nội dung và camera, đưa chúng đi từ spec và prototype đến playtest và tinh chỉnh. Chi tiết sản xuất được giữ kín cho đến khi game công bố.",
       "cardSummary": "Game hành động dark-fantasy lấy cảm hứng từ Phong Thần Diễn Nghĩa, làm bằng Unreal Engine 5. Tôi thiết kế feature combat, nội dung và camera, từ spec đến lúc tinh chỉnh.",
-      "type": "Dự án chưa công bố",
+      "type": "Ather Labs",
       "status": "Chưa công bố",
       "role": [
         "Gameplay Designer"
@@ -13,33 +13,46 @@
         "linkLabel": "Case study"
       },
       "contributions": [
-        "Tham gia thiết kế gameplay, combat, nội dung và camera trong phạm vi được phép chia sẻ.",
-        "Viết tài liệu thiết kế và làm prototype để làm rõ ý đồ của feature trước khi bàn chuyện triển khai.",
-        "Làm việc với các bộ phận khác để hoàn thiện hệ thống dựa trên phản hồi playtest và giới hạn sản xuất."
+        "Thiết kế feature combat, nội dung và camera ở vai trò gameplay designer của đội.",
+        "Viết spec và làm prototype để ý đồ thiết kế rõ ràng trước khi triển khai.",
+        "Phối hợp triển khai với lập trình viên và điều chỉnh thiết kế theo giới hạn sản xuất.",
+        "Chạy các vòng playtest và tinh chỉnh feature dựa trên dữ liệu playtest và KPI."
       ],
-      "problem": "Vì dự án chưa công bố, case study phải cho thấy phạm vi công việc của tôi mà không để lộ hệ thống, nội dung hay kết quả sản xuất chưa được phép chia sẻ.",
+      "problem": "Cận chiến phải luôn dễ đọc khi nhiều kẻ địch cùng áp sát: người chơi cần thấy ai sắp ra đòn và vì sao đòn trúng, trong khi camera phải giữ được cả mục tiêu lẫn mối đe dọa xung quanh trong khung hình. Nội dung phải tăng áp lực qua từng trận đánh mà không phá vỡ sự rõ ràng đó.",
       "systems": [
         {
-          "title": "Phạm vi công khai",
+          "title": "Combat dễ đọc",
           "items": [
-            "Phần thiết kế gameplay và combat được mô tả ở mức vai trò.",
-            "Phần thiết kế nội dung và camera được trình bày mà không lộ chi tiết chưa công bố.",
-            "Tài liệu và prototype hỗ trợ định hướng cho feature."
+            "Đòn đánh cần lấy đà và phản hồi khi trúng rõ ràng để người chơi đọc được hiểm nguy giữa đám đông.",
+            "Vai trò và khoảng cách của kẻ địch quyết định một trận đánh dồn áp lực lên người chơi đến đâu."
+          ]
+        },
+        {
+          "title": "Camera",
+          "items": [
+            "Camera phải giữ được mục tiêu hiện tại và các mối đe dọa gần đó khi cận chiến.",
+            "Quy tắc khung hình được thử trên prototype trước khi đưa vào bản build."
+          ]
+        },
+        {
+          "title": "Nhịp nội dung",
+          "items": [
+            "Các trận đánh tăng độ khó từng bước, để áp lực mới chỉ đến sau khi người chơi đã đọc được áp lực trước."
           ]
         }
       ],
       "results": [
-        "Ý đồ thiết kế cho combat, nội dung và camera được viết thành tài liệu và làm prototype trước khi bắt đầu triển khai.",
-        "Thiết kế của từng feature được điều chỉnh theo phản hồi playtest và giới hạn sản xuất."
+        "Ý đồ thiết kế cho combat, nội dung và camera được viết thành tài liệu và làm prototype trước khi triển khai.",
+        "Thiết kế được hoàn thiện qua các vòng playtest đều đặn trong giới hạn sản xuất."
       ],
       "teamSize": "Không công khai"
     },
     "space-conqueror": {
       "tagline": "Prototype bắn súng voxel có nhịp chơi đơn và sẵn nền cho chơi mạng.",
-      "summary": "Space Conqueror là một prototype hành động lấy bối cảnh không gian. Ở đây tôi thử nghiệm cảm giác combat, hành vi kẻ địch, nhịp độ các trận đánh và những hệ thống kỹ thuật cần cho cả chơi đơn lẫn chơi mạng.",
+      "summary": "Space Conqueror là game bắn súng không gian voxel 3D có chiến dịch chơi đơn và chơi mạng. Dự án bắt đầu từ loạt hướng dẫn Unity của Midnite Oil Software; tôi mở rộng nó bằng thiết kế combat và các đợt kẻ địch của riêng mình, AI kẻ địch, tối ưu hiệu năng và chơi mạng qua Photon PUN và PlayFab.",
       "cardSummary": "Prototype combat không gian, tập trung vào nhịp độ trận đánh, hành vi kẻ địch và các hệ thống sẵn sàng cho chơi mạng.",
       "type": "Dự án cá nhân",
-      "status": "Prototype chơi được",
+      "status": "Case study",
       "role": [
         "Game Designer",
         "Unity Developer"
@@ -79,8 +92,7 @@
         }
       ],
       "results": [
-        "Có một dự án portfolio thể hiện cả tư duy thiết kế lẫn khả năng triển khai.",
-        "Hoàn thành bản chơi được kèm video gameplay.",
+        "Một bản chơi được trên PC và WebGL kèm video gameplay.",
         "Hiểu sớm rằng chơi mạng làm thay đổi phạm vi và thứ tự ưu tiên thiết kế như thế nào."
       ],
       "links": []
@@ -89,8 +101,8 @@
       "tagline": "Game chiến thuật pixel dark-fantasy kết hợp chiến thuật thời gian thực với combat hành động.",
       "summary": "Lunarfall: Pixel Strategy là dự án cá nhân đang phát triển, kết hợp sản xuất và điều quân kiểu RTS với combat hành động. Thiết kế nằm trong một GDD dạng bảng tính: vai trò từng đơn vị quân và điều kiện mở khóa, chỉ số combat, và hệ thống tiền tệ được vạch theo nguồn vào, nguồn tiêu và giới hạn, kèm bản phác pixel-art cho thị trấn và menu.",
       "cardSummary": "Ý tưởng game chiến thuật pixel kết hợp RTS và hành động, thiết kế qua GDD dạng bảng tính, bảng cân bằng đơn vị quân và kế hoạch kinh tế.",
-      "type": "Lưu trữ",
-      "status": "Tư liệu lưu trữ",
+      "type": "Dự án cá nhân",
+      "status": "Lưu trữ",
       "role": [
         "Game Designer"
       ],
@@ -124,10 +136,10 @@
     },
     "farm-match": {
       "tagline": "Puzzle ghép động vật dễ thương cho mobile màn dọc, với board xoay quanh blocker và mục tiêu level.",
-      "summary": "FarmMatch là game puzzle ghép động vật casual cho mobile màn dọc. Các ảnh chụp board cho thấy phần level design: cách sắp xếp quân động vật, blocker và mục tiêu thay đổi qua từng level để vòng lặp ghép đơn giản luôn mới.",
+      "summary": "FarmMatch (phát hành với tên Bubble Jam) là game puzzle ghép động vật casual cho mobile màn dọc mà tôi làm tại Rainbow 5s. Các ảnh chụp board cho thấy phần level design: quân động vật, blocker và mục tiêu thay đổi qua từng level để vòng lặp ghép đơn giản luôn mới.",
       "cardSummary": "17 ảnh chụp board cho thấy blocker và mục tiêu thay đổi qua từng level để vòng lặp ghép đơn giản luôn mới.",
-      "type": "Lưu trữ",
-      "status": "Tư liệu lưu trữ",
+      "type": "Rainbow 5s",
+      "status": "Game đang vận hành",
       "role": [
         "Game Designer"
       ],
@@ -148,17 +160,17 @@
         }
       ],
       "results": [
-        "Một bộ level có board và mục tiêu thay đổi đều đặn qua từng màn.",
-        "Kinh nghiệm điều tiết nhịp độ của một vòng lặp đơn giản bằng level design thay vì thêm luật mới."
+        "17 ảnh chụp board cho thấy blocker và mục tiêu thay đổi thế nào qua cả bộ level.",
+        "Độ khó được điều tiết bằng bố cục board thay vì thêm luật mới."
       ],
       "teamSize": "Không công khai"
     },
     "good-sort": {
       "tagline": "Puzzle xếp hàng lên kệ cho mobile màn dọc, chú trọng độ dễ đọc, cảm giác ngăn nắp và nhịp độ level có thể mở rộng.",
-      "summary": "GoodSort là game puzzle xếp hàng trên mobile màn dọc. Tôi tập trung làm cho bố cục kệ dễ đọc ngay từ cái nhìn đầu, thao tác xếp có cảm giác đã tay, và tiến trình có thể mở rộng qua nhiều biến thể level. Dự án xoay quanh niềm vui sắp xếp gọn gàng, rồi tăng thử thách bằng vị trí blocker, bố cục board và nhịp độ nội dung thay vì làm rối vòng lặp chính.",
+      "summary": "GoodSort (phát hành với tên Goods Master) là game puzzle xếp hàng lên kệ cho mobile màn dọc mà tôi làm tại Rainbow 5s. Tôi tập trung vào board dễ đọc ngay từ cái nhìn đầu, thao tác xếp đã tay, và tiến trình lớn lên nhờ vị trí blocker, bố cục board và nhịp nội dung thay vì thêm luật.",
       "cardSummary": "Độ khó đến từ vị trí blocker và bố cục board chứ không phải luật mới, nên vòng lặp vẫn đơn giản qua nhiều level.",
-      "type": "Lưu trữ",
-      "status": "Tư liệu lưu trữ",
+      "type": "Rainbow 5s",
+      "status": "Game đang vận hành",
       "role": [
         "Game Designer"
       ],
@@ -179,17 +191,17 @@
         }
       ],
       "results": [
-        "Chứng minh GoodSort là một ý tưởng xếp hàng rõ ràng, dễ tiếp cận và đủ chiều sâu để làm tiếp.",
-        "Tạo nền thiết kế vững hơn để mở rộng độ đa dạng của level, nhịp độ tiến trình và lượng nội dung."
+        "65 ảnh chụp board cho thấy bố cục kệ, tổ hợp blocker và cách level tăng độ khó.",
+        "Giữ luật cốt lõi đơn giản để game lớn lên nhờ nội dung level."
       ],
       "teamSize": "Không công khai"
     },
     "satisdom": {
       "tagline": "Ý tưởng game satisfying thư giãn, gồm các tương tác chăm sóc sắc đẹp và dọn dẹp ngắn gọn.",
-      "summary": "Satisdom là ý tưởng game satisfying trên mobile, gồm các nhiệm vụ nhỏ, ngắn và thư giãn. Phần thiết kế đi từ khung phác thảo vẽ tay trước và sau, ghi chú luồng chơi của mini-game, bảng kế hoạch nội dung đến rà soát âm thanh phản hồi, để mỗi thao tác đều có cảm giác đã tay.",
+      "summary": "Satisdom (phát hành với tên Satis Home) là game satisfying trên mobile gồm các nhiệm vụ nhỏ, ngắn và thư giãn, mà tôi làm tại Rainbow 5s. Phần thiết kế của tôi đi từ khung phác thảo trước và sau vẽ tay đến luồng chơi của từng mini-game, bảng kế hoạch nội dung và rà soát âm thanh, để mỗi thao tác đều có cảm giác đã tay.",
       "cardSummary": "Ý tưởng game satisfying gồm các nhiệm vụ nhỏ, thiết kế qua bản phác trước và sau, ghi chú luồng chơi và rà soát âm thanh phản hồi.",
-      "type": "Lưu trữ",
-      "status": "Tư liệu lưu trữ",
+      "type": "Rainbow 5s",
+      "status": "Game đang vận hành",
       "role": [
         "Game Designer"
       ],
@@ -211,17 +223,17 @@
         }
       ],
       "results": [
-        "Một bộ tương tác cho các nhiệm vụ nhỏ có tài liệu, sẵn sàng để làm prototype.",
+        "30 bản phác và bảng kế hoạch trong phần hình ảnh ghi lại từng tương tác từ ý tưởng đến luồng chơi.",
         "Quy trình phác thảo, luồng chơi và âm thanh có thể lặp lại để thiết kế các khoảnh khắc satisfying."
       ],
       "teamSize": "Không công khai"
     },
     "screw": {
       "tagline": "Puzzle tháo ốc theo màu: level design, độ khó tăng dần và cân bằng dựa trên dữ liệu cho một game mobile đang vận hành.",
-      "summary": "Screw là game puzzle tháo ốc trên mobile tôi làm ở vị trí Game Designer tại Rainbow 5s. Tôi phụ trách level design, thứ tự màu ốc và độ khó tăng dần qua cả bộ level, cùng các bảng theo dõi dùng để rà soát độ phủ, tìm ra level lệch chuẩn và lên kế hoạch cân bằng theo từng đợt.",
+      "summary": "Screw (phát hành với tên Screw Nuts) là game puzzle tháo ốc đang vận hành trên mobile mà tôi làm ở vị trí Game Designer tại Rainbow 5s. Tôi thiết kế board level, sắp thứ tự màu ốc thành đường độ khó tăng đều qua cả bộ level, và lập các bảng theo dõi để rà soát độ phủ, tìm level lệch chuẩn và lên kế hoạch cân bằng theo từng đợt.",
       "cardSummary": "Puzzle tháo ốc theo màu với các board level được thiết kế và bảng theo dõi dùng để cân bằng lại độ khó theo đợt.",
-      "type": "Lưu trữ",
-      "status": "Tư liệu lưu trữ",
+      "type": "Rainbow 5s",
+      "status": "Game đang vận hành",
       "role": [
         "Game Designer"
       ],
@@ -243,17 +255,17 @@
         }
       ],
       "results": [
-        "Một bộ level có đường cong độ khó dễ đọc và tăng dần.",
-        "Quy trình rà soát dữ liệu có thể lặp lại để cân bằng lại level theo đợt."
+        "35 board level và bảng dữ liệu trong phần hình ảnh cho thấy độ khó được tạo hình và kiểm tra ra sao.",
+        "Một quy trình lặp lại được: theo dõi mọi level, đánh dấu level lệch chuẩn, cân bằng lại theo từng đợt."
       ],
       "teamSize": "Không công khai"
     },
     "tank": {
       "tagline": "Game bắn tăng arcade trên mobile, được tối ưu cho rewarded ads, doanh thu và retention.",
-      "summary": "Tank là game bắn tăng arcade trên mobile mà tôi tham gia với vai trò Game Designer tại Rainbow 5s. Công việc tập trung vào các cải tiến nhằm tăng tương tác rewarded ads, doanh thu và retention, cùng level design và tinh chỉnh cân bằng dựa trên A/B test và chỉ số người chơi.",
+      "summary": "Tank (phát hành với tên Tanks Battle) là game bắn tăng arcade đang vận hành mà tôi làm ở vị trí Game Designer tại Rainbow 5s. Công việc tập trung vào các cải tiến cho tương tác rewarded ads, doanh thu và retention, cùng level design và các thay đổi cân bằng được kiểm chứng bằng A/B test và chỉ số người chơi.",
       "cardSummary": "Game bắn tăng arcade trên mobile, nơi tôi làm về retention, cải tiến rewarded ads và tinh chỉnh cân bằng.",
-      "type": "Lưu trữ",
-      "status": "Tư liệu lưu trữ",
+      "type": "Rainbow 5s",
+      "status": "Game đang vận hành",
       "role": [
         "Game Designer"
       ],
@@ -274,8 +286,8 @@
         }
       ],
       "results": [
-        "Đóng góp các cải tiến hướng đến các chỉ số rewarded ads, doanh thu và retention.",
-        "Kinh nghiệm thực tế chạy A/B test trên một game mobile đang vận hành."
+        "Đưa vào game các cải tiến nhắm tới chỉ số rewarded ads, doanh thu và retention.",
+        "Thay đổi cân bằng chỉ được áp dụng sau khi A/B test cho thấy hiệu quả."
       ],
       "teamSize": "Không công khai"
     },
@@ -283,8 +295,8 @@
       "tagline": "Prototype puzzle lễ hội kinh dị làm bằng Unity, lấy cảm hứng từ Goods Master.",
       "summary": "Horror Carnival Puzzle là prototype cá nhân từ tháng 9/2024, lấy cảm hứng từ Goods Master và đặt trong một lễ hội ma quái. Mỗi level chia thành các phòng bị ám với nhân vật đồng minh và kẻ địch, đồng hồ đếm ngược và booster gọi thêm đồng minh. Tôi làm prototype bằng Unity và quay video gameplay.",
       "cardSummary": "Năm level phòng bị ám với đồng minh, kẻ địch, đồng hồ đếm ngược và booster đồng minh, kèm video gameplay.",
-      "type": "Lưu trữ",
-      "status": "Tư liệu lưu trữ",
+      "type": "Dự án cá nhân",
+      "status": "Lưu trữ",
       "role": [
         "Game Designer"
       ],

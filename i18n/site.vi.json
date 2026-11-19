@@ -53,9 +53,9 @@
   "about": {
     "eyebrow": "Giới thiệu",
     "title": "Gameplay designer hiểu kỹ thuật và quy trình sản xuất",
-    "projects": "Dự án và prototype",
+    "projects": "Studio game",
     "years": "Năm kinh nghiệm",
-    "commercial": "Dự án thương mại đã tham gia",
+    "commercial": "Game thương mại",
     "lead": "Tôi thiết kế feature gameplay từ ý đồ ban đầu và prototype, qua spec, playtest, phối hợp triển khai, cho đến khi tinh chỉnh xong để đưa vào sản xuất.",
     "leadHtml": "Tôi là <span class=\"highlight-text\">Gameplay Designer</span> có thể đưa một feature đi từ ý đồ thiết kế, qua prototype, spec, playtest, phối hợp triển khai, đến khi tinh chỉnh xong để đưa vào sản xuất.",
     "featureLabel": "Phụ trách feature",
@@ -73,7 +73,7 @@
   "portfolio": {
     "eyebrow": "Portfolio",
     "title": "Các dự án gameplay tiêu biểu",
-    "text": "Những dự án đã làm, prototype và tư liệu lưu trữ cho thấy cách tôi thiết kế gameplay, phụ trách feature và cải tiến qua từng vòng.",
+    "text": "Dự án ở studio và dự án cá nhân, cho thấy cách tôi thiết kế combat, level và hệ thống, từ prototype đầu tiên đến tinh chỉnh khi game vận hành.",
     "explorerTitle": "Project explorer",
     "explorerText": "Lọc theo loại dự án hoặc mảng chuyên môn, rồi mở case study hoặc kho tư liệu có bằng chứng rõ nhất.",
     "filtersLabel": "Bộ lọc dự án",
@@ -97,7 +97,13 @@
     "stopPreview": "Dừng bản xem trước của {title}",
     "openCaseFor": "Mở case study của {title}",
     "inSpotlight": "Đang xem",
-    "showAll": "Xem tất cả {count} dự án"
+    "showAll": "Xem tất cả {count} dự án",
+    "studio": "Ở studio",
+    "personal": "Cá nhân",
+    "combat": "Combat",
+    "levelDesign": "Level design",
+    "systems": "Hệ thống & kinh tế",
+    "liveOps": "Vận hành game"
   },
   "resume": {
     "eyebrow": "Hồ sơ",
@@ -120,16 +126,16 @@
     "advanced": "Mạnh",
     "gameplayTitle": "Thiết kế gameplay",
     "gameplayDescription": "Thiết kế cơ chế, vòng lặp cốt lõi, tiến trình và phản hồi để ý định của người chơi hiện ra rõ ràng khi chơi.",
-    "gameplayProof": "Phân tích prototype, ghi chú về độ dễ đọc của combat và các quyết định trong case study xoay quanh cảm giác chơi.",
+    "gameplayProof": "Thấy rõ ở đường độ khó của Screw và vòng lặp combat của Space Conqueror.",
     "ownershipTitle": "Phụ trách feature",
     "ownershipDescription": "Phụ trách feature gameplay từ ý đồ thiết kế, qua spec, phối hợp triển khai, các vòng playtest, đến khi tinh chỉnh cho bản chính thức.",
-    "ownershipProof": "Spec cho feature, ghi chú bàn giao, các đợt tinh chỉnh và phối hợp giữa các bộ phận.",
+    "ownershipProof": "Spec, prototype và các đợt tinh chỉnh cho Huli tại Ather Labs.",
     "combatTitle": "Thiết kế combat",
     "combatDescription": "Định hình cảm giác combat, hành vi kẻ địch, cơ chế boss và cấu trúc trận đánh quanh những hành động dễ đọc của người chơi.",
-    "combatProof": "Cơ chế boss, ghi chú hành vi kẻ địch và phần việc làm cho trận đánh dễ đọc hơn.",
+    "combatProof": "Feature combat và camera ở Huli; các đợt kẻ địch và AI trong Space Conqueror.",
     "docsTitle": "Tài liệu thiết kế",
     "docsDescription": "Viết tài liệu thiết kế biến ý tưởng thành spec, kế hoạch nội dung và đầu việc cho đội triển khai.",
-    "docsProof": "Spec kiểu GDD, kế hoạch nội dung và ghi chú bàn giao cho lập trình viên."
+    "docsProof": "GDD mẫu của Lunarfall và các bảng luồng chơi, nội dung của Satisdom."
   },
   "contact": {
     "eyebrow": "Liên hệ",
@@ -137,7 +143,7 @@
     "lead": "Tôi đang tìm vị trí gameplay design, nơi tôi được phụ trách feature, viết spec, thử nghiệm qua prototype và tinh chỉnh gameplay cho bản chính thức.",
     "scopeLabel": "Mảng tôi làm",
     "systems": "Hệ thống gameplay",
-    "ownership": "Phụ trách feature",
+    "ownership": "Thiết kế combat & camera",
     "unity": "Hiểu cách triển khai trên Unity",
     "kpi": "Tinh chỉnh dựa trên KPI",
     "routesLabel": "Kênh liên hệ trực tiếp",
@@ -201,7 +207,7 @@
     "designSignal": "Dấu ấn thiết kế",
     "archiveMode": "Tư liệu lưu trữ",
     "confidentialMode": "Thông tin bảo mật",
-    "caseMode": "Case study chơi được",
+    "caseMode": "Case study",
     "notPublic": "Không công khai",
     "notFoundTitle": "Không tìm thấy dự án",
     "notFoundText": "Liên kết dự án này đã cũ hoặc dự án đã bị gỡ. Hãy xem các dự án hiện có."
@@ -251,7 +257,8 @@
         "title": "Niềm tin của người chơi",
         "body": "Cái khó có ích khi nó dạy được điều gì đó; nó thành nhiễu khi phản hồi khiến người chơi thấy bất công."
       }
-    ]
+    ],
+    "appliedIn": "Đã áp dụng vào"
   },
   "runner": {
     "score": "Điểm: {score}",

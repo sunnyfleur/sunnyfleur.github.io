@@ -1,82 +1,95 @@
 {
   "chapters": [
     {
-      "id": "worlds",
-      "title": "Worlds I Still Remember",
+      "id": "combat",
+      "title": "Combat and Feel",
       "kicker": "Chapter 01",
-      "description": "Games that shaped my taste for atmosphere, exploration, and the feeling of inhabiting a place.",
-      "accent": "#e05a38",
-      "accentSoft": "rgba(224, 90, 56, 0.14)",
+      "description": "Action games I study for hit weight, readable enemies, timing windows and the camera that holds a fight together.",
+      "stamps": [
+        "Combat Game Feel",
+        "Enemy Tells",
+        "Camera"
+      ],
+      "accent": "#e60012",
+      "accentSoft": "rgba(230, 0, 18, 0.12)"
+    },
+    {
+      "id": "worlds",
+      "title": "Worlds and Traversal",
+      "kicker": "Chapter 02",
+      "description": "Worlds that taught me how pacing, landmarks and movement make a place worth exploring.",
       "stamps": [
         "World Texture",
         "Exploration",
-        "Atmosphere"
-      ]
+        "Traversal"
+      ],
+      "accent": "#e60012",
+      "accentSoft": "rgba(230, 0, 18, 0.12)"
     },
     {
       "id": "stories",
-      "title": "Stories That Stayed",
-      "kicker": "Chapter 02",
-      "description": "Character-driven games that changed my standards for tone, pacing, and emotional payoff.",
-      "accent": "#d84c5f",
-      "accentSoft": "rgba(216, 76, 95, 0.14)",
+      "title": "Characters and Story",
+      "kicker": "Chapter 03",
+      "description": "Games where character, routine and pacing changed my standard for emotional payoff.",
       "stamps": [
         "Character Arc",
         "Routine",
         "Emotional Payoff"
-      ]
+      ],
+      "accent": "#e60012",
+      "accentSoft": "rgba(230, 0, 18, 0.12)"
     },
     {
       "id": "loops",
-      "title": "Loops I Kept Returning To",
-      "kicker": "Chapter 03",
-      "description": "Games whose repeatable actions, feedback, and short-term goals made me keep coming back.",
-      "accent": "#4fbf7a",
-      "accentSoft": "rgba(79, 191, 122, 0.14)",
+      "title": "Loops and Retention",
+      "kicker": "Chapter 04",
+      "description": "Repeatable loops, short sessions and clear goals that keep players coming back, including the casual and puzzle games closest to my studio work.",
       "stamps": [
         "Readable Goals",
-        "Feedback",
+        "Short Sessions",
         "Return Loop"
-      ]
+      ],
+      "accent": "#e60012",
+      "accentSoft": "rgba(230, 0, 18, 0.12)"
     },
     {
       "id": "systems",
-      "title": "Systems I Learned From",
-      "kicker": "Chapter 04",
-      "description": "Strategy, progression, economy, and combat systems that I keep revisiting as design references.",
-      "accent": "#c9a24b",
-      "accentSoft": "rgba(201, 162, 75, 0.14)",
+      "title": "Systems and Economy",
+      "kicker": "Chapter 05",
+      "description": "Strategy and RPG systems I return to for tradeoffs, economy tension and choices that compound.",
       "stamps": [
         "Tradeoffs",
-        "Progression",
-        "System Tension"
-      ]
-    },
-    {
-      "id": "nostalgia",
-      "title": "Nostalgia & Milestones",
-      "kicker": "Chapter 05",
-      "description": "Games tied to specific moments in my gaming life, even when my designer brain sees them differently now.",
-      "accent": "#5c86d6",
-      "accentSoft": "rgba(92, 134, 214, 0.14)",
-      "stamps": [
-        "Milestone",
-        "Memory Shelf",
-        "Early Taste"
-      ]
+        "Economy",
+        "Reactivity"
+      ],
+      "accent": "#e60012",
+      "accentSoft": "rgba(230, 0, 18, 0.12)"
     },
     {
       "id": "friction",
       "title": "Lessons From Friction",
       "kicker": "Chapter 06",
-      "description": "Games that did not fully work for me, but still left useful questions about player trust, feel, scope, and expectation.",
-      "accent": "#f18f45",
-      "accentSoft": "rgba(241, 143, 69, 0.14)",
+      "description": "Games that did not fully land for me, and the questions they left about player trust, expectation and scope.",
       "stamps": [
         "Player Trust",
-        "Game Feel",
+        "Expectation",
         "Scope"
-      ]
+      ],
+      "accent": "#e60012",
+      "accentSoft": "rgba(230, 0, 18, 0.12)"
+    },
+    {
+      "id": "shelf",
+      "layout": "shelf",
+      "title": "Memory Shelf",
+      "kicker": "Also played",
+      "description": "Other games that shaped my taste along the way, from first Pokemon runs to long Dynasty Warriors nights.",
+      "stamps": [
+        "Memory",
+        "Early Taste"
+      ],
+      "accent": "#e60012",
+      "accentSoft": "rgba(230, 0, 18, 0.12)"
     }
   ],
   "games": [
@@ -90,7 +103,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Red Dead Redemption 2 landscape artwork",
-      "reflection": "A benchmark for world texture: slow travel, small interruptions, and ordinary moments make the frontier feel lived in.",
+      "reflection": "Slow travel and small interruptions on the road make the frontier feel lived in. It taught me that pacing between moments matters as much as the moments themselves.",
       "tags": [
         "Worldbuilding",
         "Pacing",
@@ -107,7 +120,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Elden Ring landscape artwork",
-      "reflection": "A strong lesson in mystery and trust, letting danger, geography, and reward pull the player forward without explaining every path.",
+      "reflection": "It trusts players to read danger and reward from the landscape, with almost no markers. I use it to check whether a space explains itself.",
       "tags": [
         "Exploration",
         "Mystery",
@@ -124,7 +137,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Witcher 3 landscape artwork",
-      "reflection": "A reminder that side content can feel meaningful when local stakes, character writing, and world context support it.",
+      "reflection": "Side quests matter because they grow out of local problems and real characters. A standard for content that feels written for its place.",
       "tags": [
         "Quest Design",
         "Worldbuilding",
@@ -141,7 +154,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Persona 5 Royal key artwork",
-      "reflection": "A personal standard for style as function, where UI, routine, music, and character arcs all reinforce the same fantasy.",
+      "reflection": "Interface, calendar, music and character arcs all push the same fantasy. My reference for style that does gameplay work instead of decorating it.",
       "tags": [
         "Style",
         "Routine",
@@ -158,7 +171,7 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2161700/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Persona 3 Reload key artwork",
-      "reflection": "A useful reference for atmosphere, limited time pressure, and the emotional weight of repeated daily decisions.",
+      "reflection": "A limited calendar turns ordinary days into choices with weight. I keep it in mind when a schedule or timer needs to carry emotion.",
       "tags": [
         "Mood",
         "Schedule",
@@ -167,7 +180,7 @@
     },
     {
       "title": "L.A. Noire",
-      "chapter": "stories",
+      "chapter": "shelf",
       "platform": "PC",
       "hours": "30+",
       "year": "2011",
@@ -192,11 +205,110 @@
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/3590/library_600x900.jpg",
       "imageSource": "Steam",
       "imageAlt": "Plants vs. Zombies artwork",
-      "reflection": "A clean reminder that casual strategy works when readability, escalation, and reward timing stay simple but expressive.",
+      "reflection": "Clear lanes, one new idea per level and rewards on time, so anyone can start. I used the same idea when pacing difficulty across a puzzle level set.",
       "tags": [
         "Readable Goals",
         "Escalation",
         "Casual Strategy"
+      ],
+      "appliedIn": {
+        "slug": "screw",
+        "title": "Screw"
+      }
+    },
+    {
+      "title": "God of War 4",
+      "chapter": "combat",
+      "platform": "Console",
+      "hours": "40+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "God of War artwork",
+      "reflection": "A close camera makes every hit feel heavy, but only because enemy attacks are telegraphed for that framing. When I design camera and combat together, I start from what the player must see before a hit lands.",
+      "tags": [
+        "Camera",
+        "Character",
+        "Combat Weight"
+      ],
+      "appliedIn": {
+        "slug": "huli",
+        "title": "Huli"
+      }
+    },
+    {
+      "title": "Ninja Gaiden 4",
+      "chapter": "combat",
+      "platform": "PC/Console",
+      "year": "2025",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2627260/header.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Ninja Gaiden 4 artwork",
+      "reflection": "Fast and punishing, yet fair, because every enemy shows its intent before it strikes. The lesson I take: raise speed only as far as the tells stay readable.",
+      "tags": [
+        "Precision",
+        "Action Combat",
+        "Pressure"
+      ]
+    },
+    {
+      "title": "The First Berserker: Khazan",
+      "chapter": "combat",
+      "platform": "PC/Console",
+      "year": "2025",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2680010/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "The First Berserker: Khazan artwork",
+      "reflection": "Heavy attacks and tight timing windows reward staying aggressive instead of waiting. I use it as a reference for making the risky choice the fun one.",
+      "tags": [
+        "Combat Timing",
+        "Weight",
+        "Aggression"
+      ]
+    },
+    {
+      "title": "Nine Sols",
+      "chapter": "combat",
+      "platform": "PC/Console",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1809540/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Nine Sols artwork",
+      "reflection": "Parry rhythm is the whole fight: bosses teach a pattern, then remix it. A clean model for escalating an encounter without adding new rules.",
+      "tags": [
+        "Parry",
+        "Metroidvania",
+        "Escalation"
+      ]
+    },
+    {
+      "title": "Wo Long: Fallen Dynasty",
+      "chapter": "combat",
+      "platform": "PC/Console",
+      "year": "2023",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1448440/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Wo Long: Fallen Dynasty artwork",
+      "reflection": "Deflection ties defence to offence, and morale makes every fight a small risk-reward choice. Useful when I want one system to carry both safety and greed.",
+      "tags": [
+        "Deflection",
+        "Morale",
+        "Encounter Flow"
+      ]
+    },
+    {
+      "title": "Stellar Blade",
+      "chapter": "combat",
+      "platform": "Console/PC",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3489700/header.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Stellar Blade artwork",
+      "reflection": "Big, cinematic animations that still answer the button instantly. A reminder that spectacle must never cost responsiveness.",
+      "tags": [
+        "Action Combat",
+        "Animation",
+        "Spectacle"
       ]
     },
     {
@@ -208,11 +320,26 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/489830/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Skyrim Special Edition artwork",
-      "reflection": "One of the games that made wandering feel like a valid goal, even before I had language for open-world structure.",
+      "reflection": "Landmarks pull the player off the path every few minutes. I borrow that rhythm of curiosity when spacing content in a level.",
       "tags": [
         "Exploration",
         "Modding",
         "Milestone"
+      ]
+    },
+    {
+      "title": "Marvel's Spider-Man 2",
+      "chapter": "worlds",
+      "platform": "Console/PC",
+      "year": "2023",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/header.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Marvel's Spider-Man 2 artwork",
+      "reflection": "Moving through the city is the fun before any mission starts. Proof that traversal alone can carry the fantasy.",
+      "tags": [
+        "Traversal",
+        "City Feel",
+        "Power Fantasy"
       ]
     },
     {
@@ -224,7 +351,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/242050/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Assassin's Creed Black Flag artwork",
-      "reflection": "A strong example of travel fantasy, naval rhythm, and how a secondary loop can become the memory of a whole game.",
+      "reflection": "Sailing became the part people remember, more than the main loop. A lesson in how a side system can become a game's identity.",
       "tags": [
         "Traversal",
         "Naval Loop",
@@ -232,131 +359,33 @@
       ]
     },
     {
-      "title": "Far Cry Primal",
-      "chapter": "worlds",
-      "platform": "PC",
-      "hours": "50+",
-      "year": "2016",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/371660/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Far Cry Primal artwork",
-      "reflection": "A useful world reference for survival dressing, environmental readability, and theme carrying familiar systems.",
-      "tags": [
-        "Survival Texture",
-        "Theme",
-        "Readable World"
-      ]
-    },
-    {
-      "title": "Assassin's Creed Odyssey",
-      "chapter": "worlds",
-      "platform": "PC",
-      "hours": "100+",
-      "year": "2018",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Assassin's Creed Odyssey artwork",
-      "reflection": "A large-scale reference for destination density, historical fantasy, and the risk of too much map pressure.",
-      "tags": [
-        "Scale",
-        "Historical Fantasy",
-        "Map Design"
-      ]
-    },
-    {
-      "title": "Ori and the Blind Forest",
-      "chapter": "worlds",
-      "platform": "PC",
-      "hours": "10+",
-      "year": "2015",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/387290/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Ori and the Blind Forest artwork",
-      "reflection": "A compact reminder that movement, color, and music can make a world feel emotionally precise.",
-      "tags": [
-        "Mood",
-        "Traversal",
-        "World Feel"
-      ]
-    },
-    {
-      "title": "Sleeping Dogs",
-      "chapter": "worlds",
-      "platform": "PC",
-      "hours": "30+",
-      "year": "2012",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/307690/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Sleeping Dogs artwork",
-      "reflection": "A city memory built from martial arts fantasy, street texture, and compact open-world pacing.",
-      "tags": [
-        "City Texture",
-        "Combat Fantasy",
-        "Pacing"
-      ]
-    },
-    {
-      "title": "God of War 4",
+      "title": "The Last of Us Part I",
       "chapter": "stories",
-      "platform": "Console",
-      "hours": "40+",
-      "year": "2018",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/capsule_616x353.jpg",
+      "platform": "PC/Console",
+      "year": "2022",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "God of War artwork",
-      "reflection": "A reference for intimate camera work, restrained character growth, and combat weight that supports the emotional tone.",
+      "imageAlt": "The Last of Us Part I artwork",
+      "reflection": "Restraint everywhere: quiet rooms, small details, trust that breaks slowly. It shows how environment and pacing can tell the story without a cutscene.",
       "tags": [
-        "Camera",
-        "Character",
-        "Combat Weight"
+        "Restraint",
+        "Environmental Story",
+        "Trust"
       ]
     },
     {
-      "title": "Mafia II",
+      "title": "NieR:Automata",
       "chapter": "stories",
-      "platform": "PC",
-      "hours": "30+",
-      "year": "2010",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/50130/capsule_616x353.jpg",
+      "platform": "PC/Console",
+      "year": "2017",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/524220/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Mafia II artwork",
-      "reflection": "A memory of authored crime drama where city atmosphere supports a focused, linear story.",
+      "imageAlt": "NieR:Automata artwork",
+      "reflection": "Repeating the story from another view changes what it means. A reminder that mechanics and structure can carry a theme, not just the script.",
       "tags": [
-        "Crime Drama",
-        "Pacing",
-        "Atmosphere"
-      ]
-    },
-    {
-      "title": "Valiant Hearts",
-      "chapter": "stories",
-      "platform": "PC",
-      "hours": "10+",
-      "year": "2014",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/260230/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Valiant Hearts artwork",
-      "reflection": "A compact memory of how illustration, puzzle pacing, and historical tone can carry emotion without mechanical complexity.",
-      "tags": [
-        "Tone",
-        "Puzzle Pacing",
-        "Emotion"
-      ]
-    },
-    {
-      "title": "Persona 4 Golden",
-      "chapter": "stories",
-      "platform": "PC",
-      "hours": "80+",
-      "year": "2012",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1113000/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Persona 4 Golden artwork",
-      "reflection": "A reference for social routine, small-town mystery, and using calendar pressure to build attachment.",
-      "tags": [
-        "Routine",
-        "Mystery",
-        "Social Links"
+        "Perspective",
+        "Repetition",
+        "Theme"
       ]
     },
     {
@@ -368,7 +397,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1235140/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Yakuza Like a Dragon artwork",
-      "reflection": "A tonal reference for sincerity, absurdity, party identity, and making side stories feel human.",
+      "reflection": "Absurd side stories that still feel sincere, because the party has clear personalities. Proof that tone can swing widely if characters stay consistent.",
       "tags": [
         "Tone Range",
         "Party Identity",
@@ -376,99 +405,18 @@
       ]
     },
     {
-      "title": "Heavy Rain",
+      "title": "God of War Ragnarok",
       "chapter": "stories",
-      "platform": "PC",
-      "hours": "10+",
-      "year": "2010",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/960910/capsule_616x353.jpg",
+      "platform": "Console/PC",
+      "year": "2022",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Heavy Rain artwork",
-      "reflection": "A useful case for authored tension, player performance, and how interaction can heighten awkward drama.",
+      "imageAlt": "God of War Ragnarok artwork",
+      "reflection": "Companion dialogue during play builds the relationship more than the cutscenes. Useful when content has to carry character between big beats.",
       "tags": [
-        "Interactive Drama",
-        "Tension",
-        "Choice"
-      ]
-    },
-    {
-      "title": "Assassin's Creed III",
-      "chapter": "stories",
-      "platform": "PC",
-      "hours": "50+",
-      "year": "2012",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/911400/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Assassin's Creed III artwork",
-      "reflection": "A story memory where ambition, historical framing, and uneven pacing still left useful lessons.",
-      "tags": [
-        "Historical Drama",
-        "Pacing",
-        "Ambition"
-      ]
-    },
-    {
-      "title": "Batman: Arkham Knight",
-      "chapter": "stories",
-      "platform": "PC",
-      "hours": "50+",
-      "year": "2015",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/208650/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Batman Arkham Knight artwork",
-      "reflection": "A strong reference for superhero embodiment, city mood, and combat readability at high spectacle.",
-      "tags": [
-        "Embodiment",
-        "Combat Flow",
-        "Spectacle"
-      ]
-    },
-    {
-      "title": "Castlevania: Lords of Shadow",
-      "chapter": "stories",
-      "platform": "PC",
-      "hours": "20+",
-      "year": "2010",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/234080/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Castlevania Lords of Shadow artwork",
-      "reflection": "A gothic action memory where mood, scale, and boss framing did a lot of the emotional work.",
-      "tags": [
-        "Gothic Mood",
-        "Boss Framing",
-        "Action"
-      ]
-    },
-    {
-      "title": "Naruto Shippuden: Ultimate Ninja Storm 4",
-      "chapter": "stories",
-      "platform": "PC",
-      "hours": "30+",
-      "year": "2016",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/349040/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Naruto Shippuden Ultimate Ninja Storm 4 artwork",
-      "reflection": "A useful fan-service reference for cinematic combat readability and adapting anime spectacle into inputs.",
-      "tags": [
-        "Adaptation",
-        "Spectacle",
-        "Combat Readability"
-      ]
-    },
-    {
-      "title": "Dead Cells",
-      "chapter": "loops",
-      "platform": "PC",
-      "hours": "40+",
-      "year": "2018",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Dead Cells artwork",
-      "reflection": "A strong loop reference for fast restarts, readable combat, and progression that softens failure without removing tension.",
-      "tags": [
-        "Roguelite Loop",
-        "Combat Feel",
-        "Restart Flow"
+        "Character Arc",
+        "Companion Design",
+        "Payoff"
       ]
     },
     {
@@ -480,7 +428,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Hades 2 key artwork",
-      "reflection": "A reference for how character writing and mechanical repetition can make repeated runs feel less like repetition.",
+      "reflection": "Every failed run moves the story forward, so repetition never feels wasted. A model for giving players a reason to start one more run.",
       "tags": [
         "Run Structure",
         "Dialogue",
@@ -488,52 +436,71 @@
       ]
     },
     {
-      "title": "Left 4 Dead 2",
+      "title": "Dead Cells",
       "chapter": "loops",
       "platform": "PC",
-      "hours": "30+",
-      "year": "2009",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/550/capsule_616x353.jpg",
+      "hours": "40+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Left 4 Dead 2 artwork",
-      "reflection": "A clean multiplayer loop reference for pressure pacing, readable roles, and improvisation inside simple rules.",
+      "imageAlt": "Dead Cells artwork",
+      "reflection": "Instant restarts and permanent unlocks take the sting out of dying without removing tension. I use it to judge how much a failure should cost.",
       "tags": [
-        "Co-op Loop",
-        "Pacing",
-        "Readable Roles"
+        "Roguelite Loop",
+        "Combat Feel",
+        "Restart Flow"
       ]
     },
     {
-      "title": "One Piece: Pirate Warriors 4",
+      "title": "Stardew Valley",
       "chapter": "loops",
-      "platform": "PC",
-      "hours": "20+",
-      "year": "2020",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1089090/capsule_616x353.jpg",
+      "platform": "PC/Console/Mobile",
+      "year": "2016",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "One Piece Pirate Warriors 4 artwork",
-      "reflection": "A comfort-loop example where spectacle, simple inputs, and character collection carry the session rhythm.",
+      "imageAlt": "Stardew Valley artwork",
+      "reflection": "Daily choices, comfort and long-term goals support each other instead of competing. A reference for a loop that lasts hundreds of hours.",
       "tags": [
-        "Power Fantasy",
-        "Session Loop",
-        "Adaptation"
+        "Routine",
+        "Comfort",
+        "Long Tail"
       ]
     },
     {
-      "title": "Dead Island",
+      "title": "Goods Sort Puzzle",
       "chapter": "loops",
-      "platform": "PC",
-      "hours": "30+",
-      "year": "2011",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/383150/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Dead Island artwork",
-      "reflection": "A messy but memorable loot-and-survival loop where co-op friction became part of the memory.",
+      "platform": "Mobile",
+      "image": "./img/games/goodssort.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Goods Sort Puzzle artwork",
+      "reflection": "Short sessions, a tactile sort and a screen that visibly clears. The same feeling I designed for in GoodSort's shelf layouts.",
       "tags": [
-        "Co-op",
-        "Loot Loop",
-        "Survival"
-      ]
+        "Sorting",
+        "Casual Puzzle",
+        "Short Session"
+      ],
+      "appliedIn": {
+        "slug": "good-sort",
+        "title": "GoodSort"
+      }
+    },
+    {
+      "title": "Screw Jam",
+      "chapter": "loops",
+      "platform": "Mobile",
+      "image": "./img/games/screwjam.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Screw Jam artwork",
+      "reflection": "Clear constraints and fast restarts keep the puzzle energy high. A direct reference for my level design work on Screw.",
+      "tags": [
+        "Constraint",
+        "Tactile Puzzle",
+        "Restart"
+      ],
+      "appliedIn": {
+        "slug": "screw",
+        "title": "Screw"
+      }
     },
     {
       "title": "Civilization VI",
@@ -544,12 +511,16 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/289070/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Civilization VI artwork",
-      "reflection": "A systems lesson in compounding decisions, readable tradeoffs, and the dangerous pull of one-more-turn pacing.",
+      "reflection": "Small decisions compound over hundreds of turns, and every tradeoff is visible. I aimed for the same readable economy in Lunarfall's resource sheet.",
       "tags": [
         "Strategy",
         "Tradeoffs",
         "Progression"
-      ]
+      ],
+      "appliedIn": {
+        "slug": "lunarfall-pixel-strategy",
+        "title": "Lunarfall"
+      }
     },
     {
       "title": "Total War: Three Kingdoms",
@@ -560,7 +531,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/779340/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Total War Three Kingdoms artwork",
-      "reflection": "A useful mix of campaign-layer relationships, battlefield spectacle, and systemic tension between loyalty and ambition.",
+      "reflection": "Character relationships drive the campaign map, so loyalty and ambition become strategy. A lesson in tying systems to people.",
       "tags": [
         "Strategy",
         "Relationships",
@@ -576,7 +547,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/364360/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Total War Warhammer artwork",
-      "reflection": "A systems reference for asymmetric factions, spectacle, and making rules feel like fantasy identity.",
+      "reflection": "Factions play differently, and the rules themselves express each faction's identity. My reference for asymmetric design.",
       "tags": [
         "Faction Design",
         "Strategy",
@@ -584,147 +555,48 @@
       ]
     },
     {
-      "title": "Kingdom Come: Deliverance",
+      "title": "Teamfight Tactics",
       "chapter": "systems",
-      "platform": "PC",
-      "hours": "100+",
-      "year": "2018",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/379430/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Kingdom Come Deliverance artwork",
-      "reflection": "A reference for grounded role-play, where friction becomes identity because progression asks the player to inhabit weakness first.",
+      "platform": "PC/Mobile",
+      "year": "2019",
+      "image": "https://media.rawg.io/media/screenshots/717/7170d2e74bd07ce035eee40f5d82c726.jpg",
+      "imageSource": "RAWG",
+      "imageAlt": "Teamfight Tactics artwork",
+      "reflection": "Gold, levels and rerolls create constant economy tension, and pivots stay readable. Useful when I balance a resource players must spend under pressure.",
       "tags": [
-        "Simulation",
-        "Role-play",
-        "Progression"
+        "Auto Battler",
+        "Economy",
+        "Adaptation"
       ]
     },
     {
-      "title": "Assassin's Creed Unity",
+      "title": "Baldur's Gate 3",
       "chapter": "systems",
-      "platform": "PC",
-      "hours": "60+",
-      "year": "2014",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/289650/capsule_616x353.jpg",
+      "platform": "PC/Console",
+      "year": "2023",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Assassin's Creed Unity artwork",
-      "reflection": "A systems reference for crowd density, parkour ambition, and how technical limits shape player trust.",
+      "imageAlt": "Baldur's Gate 3 artwork",
+      "reflection": "Almost any plan is allowed and the world reacts to it. A benchmark for systems that reward creative problem solving.",
       "tags": [
-        "Crowds",
-        "Traversal",
-        "Technical Risk"
+        "Choice Density",
+        "Reactivity",
+        "Role-play"
       ]
     },
     {
-      "title": "Pokemon Emerald",
-      "chapter": "nostalgia",
-      "platform": "Console",
-      "hours": "80+",
-      "year": "2004",
-      "image": "./img/games/pokemonemerald.jpg",
-      "imageSource": "Wikipedia",
-      "imageAlt": "Pokemon Emerald artwork",
-      "reflection": "A milestone memory for collection, party identity, and learning how small choices build ownership.",
-      "tags": [
-        "Collection",
-        "Party Identity",
-        "Milestone"
-      ]
-    },
-    {
-      "title": "Pokemon Black and White",
-      "chapter": "nostalgia",
-      "platform": "Console",
-      "hours": "50+",
-      "year": "2010",
-      "image": "./img/games/pokemonblackwhite.jpg",
-      "imageSource": "Wikipedia",
-      "imageAlt": "Pokemon Black and White artwork",
-      "reflection": "A nostalgia anchor for creature design, journey structure, and the comfort of clear progression.",
-      "tags": [
-        "Creature Design",
-        "Progression",
-        "Memory"
-      ]
-    },
-    {
-      "title": "Dynasty Warriors 8",
-      "chapter": "nostalgia",
-      "platform": "PC",
-      "hours": "70+",
-      "year": "2013",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/278080/capsule_616x353.jpg",
+      "title": "Divinity: Original Sin 2",
+      "chapter": "systems",
+      "platform": "PC/Console",
+      "year": "2017",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/435150/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Dynasty Warriors 8 artwork",
-      "reflection": "A milestone in power-fantasy loops where repetition, roster breadth, and spectacle were the appeal.",
+      "imageAlt": "Divinity: Original Sin 2 artwork",
+      "reflection": "Elemental surfaces turn the battlefield into a toolbox. A reminder that a few systemic rules can create many solutions.",
       "tags": [
-        "Power Fantasy",
-        "Roster",
-        "Comfort Loop"
-      ]
-    },
-    {
-      "title": "Dynasty Warriors 7",
-      "chapter": "nostalgia",
-      "platform": "PC",
-      "hours": "60+",
-      "year": "2011",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/968790/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Dynasty Warriors 7 artwork",
-      "reflection": "A memory shelf game for simple spectacle, historical melodrama, and repeated comfort play.",
-      "tags": [
-        "Spectacle",
-        "Comfort",
-        "Milestone"
-      ]
-    },
-    {
-      "title": "Far Cry 3",
-      "chapter": "nostalgia",
-      "platform": "PC",
-      "hours": "50+",
-      "year": "2012",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/220240/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Far Cry 3 artwork",
-      "reflection": "A milestone open-world memory for outpost loops, villain presence, and improvisational chaos.",
-      "tags": [
-        "Outposts",
-        "Chaos",
-        "Milestone"
-      ]
-    },
-    {
-      "title": "Assassin's Creed II",
-      "chapter": "nostalgia",
-      "platform": "PC",
-      "hours": "40+",
-      "year": "2009",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/33230/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Assassin's Creed II artwork",
-      "reflection": "A milestone memory for movement fantasy, historical spaces, and how a strong protagonist can anchor a long journey.",
-      "tags": [
-        "Traversal",
-        "Historical Fantasy",
-        "Character"
-      ]
-    },
-    {
-      "title": "League of Legends",
-      "chapter": "nostalgia",
-      "platform": "PC",
-      "hours": "1000+",
-      "year": "2009",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg",
-      "imageSource": "Riot Games",
-      "imageAlt": "League of Legends champion artwork",
-      "reflection": "A long-term memory of mastery pressure, team dynamics, and how live games become social habits.",
-      "tags": [
-        "Live Game",
-        "Mastery",
-        "Team Dynamics"
+        "CRPG",
+        "Elemental Systems",
+        "Player Creativity"
       ]
     },
     {
@@ -736,7 +608,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/730310/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Dynasty Warriors 9 artwork",
-      "reflection": "A useful friction case for changing a known formula too broadly without protecting what players already valued.",
+      "reflection": "Going open world diluted what fans loved about the series. A lesson in protecting the core before changing the formula.",
       "tags": [
         "Formula Shift",
         "Scope",
@@ -752,27 +624,11 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/243470/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Watch Dogs artwork",
-      "reflection": "A useful expectation case where fantasy, marketing promise, and actual interaction density did not fully align.",
+      "reflection": "The promise was bigger than the interactions in the city. A reminder that marketing sets the bar the systems must meet.",
       "tags": [
         "Expectation",
         "System Promise",
         "Open World"
-      ]
-    },
-    {
-      "title": "Grand Theft Auto: The Trilogy DE",
-      "chapter": "friction",
-      "platform": "PC",
-      "hours": "10+",
-      "year": "2021",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1547000/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Grand Theft Auto The Trilogy Definitive Edition artwork",
-      "reflection": "A preservation lesson about remaster expectations, visual identity, and the cost of losing original feel.",
-      "tags": [
-        "Remaster",
-        "Preservation",
-        "Expectation"
       ]
     },
     {
@@ -784,7 +640,7 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg",
       "imageSource": "Steam",
       "imageAlt": "Cyberpunk 2077 city artwork",
-      "reflection": "A useful case in ambition, expectation, immersion breaks, and how launch context can define the memory of a game.",
+      "reflection": "On old consoles, broken immersion overshadowed a strong world. Launch conditions can define how a game is remembered.",
       "tags": [
         "Expectation",
         "Immersion",
@@ -792,8 +648,423 @@
       ]
     },
     {
+      "title": "Grand Theft Auto: The Trilogy DE",
+      "chapter": "friction",
+      "platform": "PC",
+      "hours": "10+",
+      "year": "2021",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1547000/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Grand Theft Auto The Trilogy Definitive Edition artwork",
+      "reflection": "New visuals lost the original look and feel. Proof that a remaster has to protect identity, not just raise resolution.",
+      "tags": [
+        "Remaster",
+        "Preservation",
+        "Expectation"
+      ]
+    },
+    {
+      "title": "Assassin's Creed Unity",
+      "chapter": "friction",
+      "platform": "PC",
+      "hours": "60+",
+      "year": "2014",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/289650/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Assassin's Creed Unity artwork",
+      "reflection": "Huge crowds and parkour impressed, but unreliable feedback wore down trust. Ambition only works when the basics feel dependable.",
+      "tags": [
+        "Crowds",
+        "Traversal",
+        "Technical Risk"
+      ]
+    },
+    {
+      "title": "Batman: Arkham Knight",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "50+",
+      "year": "2015",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/208650/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Batman Arkham Knight artwork",
+      "reflection": "Crowd combat stays readable through one clear signal: the counter prompt. When a fight gets busy, I look for the single cue that tells the player what to do next.",
+      "tags": [
+        "Embodiment",
+        "Combat Flow",
+        "Spectacle"
+      ]
+    },
+    {
+      "title": "Temple Run",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2011",
+      "image": "./img/games/templerun.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Temple Run artwork",
+      "reflection": "One input, instant failure feedback and a strong one-more-run pull. The simplest proof that clarity drives retention.",
+      "tags": [
+        "Endless Runner",
+        "Input Feel",
+        "Retry"
+      ]
+    },
+    {
+      "title": "Far Cry Primal",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "50+",
+      "year": "2016",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/371660/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Far Cry Primal artwork",
+      "reflection": "A useful world reference for survival dressing, environmental readability, and theme carrying familiar systems.",
+      "tags": [
+        "Survival Texture",
+        "Theme",
+        "Readable World"
+      ]
+    },
+    {
+      "title": "Assassin's Creed Odyssey",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "100+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Assassin's Creed Odyssey artwork",
+      "reflection": "A large-scale reference for destination density, historical fantasy, and the risk of too much map pressure.",
+      "tags": [
+        "Scale",
+        "Historical Fantasy",
+        "Map Design"
+      ]
+    },
+    {
+      "title": "Ori and the Blind Forest",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "10+",
+      "year": "2015",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/387290/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Ori and the Blind Forest artwork",
+      "reflection": "A compact reminder that movement, color, and music can make a world feel emotionally precise.",
+      "tags": [
+        "Mood",
+        "Traversal",
+        "World Feel"
+      ]
+    },
+    {
+      "title": "Sleeping Dogs",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "30+",
+      "year": "2012",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/307690/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Sleeping Dogs artwork",
+      "reflection": "A city memory built from martial arts fantasy, street texture, and compact open-world pacing.",
+      "tags": [
+        "City Texture",
+        "Combat Fantasy",
+        "Pacing"
+      ]
+    },
+    {
+      "title": "Mafia II",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "30+",
+      "year": "2010",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/50130/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Mafia II artwork",
+      "reflection": "A memory of authored crime drama where city atmosphere supports a focused, linear story.",
+      "tags": [
+        "Crime Drama",
+        "Pacing",
+        "Atmosphere"
+      ]
+    },
+    {
+      "title": "Valiant Hearts",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "10+",
+      "year": "2014",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/260230/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Valiant Hearts artwork",
+      "reflection": "A compact memory of how illustration, puzzle pacing, and historical tone can carry emotion without mechanical complexity.",
+      "tags": [
+        "Tone",
+        "Puzzle Pacing",
+        "Emotion"
+      ]
+    },
+    {
+      "title": "Persona 4 Golden",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "80+",
+      "year": "2012",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1113000/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Persona 4 Golden artwork",
+      "reflection": "A reference for social routine, small-town mystery, and using calendar pressure to build attachment.",
+      "tags": [
+        "Routine",
+        "Mystery",
+        "Social Links"
+      ]
+    },
+    {
+      "title": "Heavy Rain",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "10+",
+      "year": "2010",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/960910/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Heavy Rain artwork",
+      "reflection": "A useful case for authored tension, player performance, and how interaction can heighten awkward drama.",
+      "tags": [
+        "Interactive Drama",
+        "Tension",
+        "Choice"
+      ]
+    },
+    {
+      "title": "Assassin's Creed III",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "50+",
+      "year": "2012",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/911400/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Assassin's Creed III artwork",
+      "reflection": "A story memory where ambition, historical framing, and uneven pacing still left useful lessons.",
+      "tags": [
+        "Historical Drama",
+        "Pacing",
+        "Ambition"
+      ]
+    },
+    {
+      "title": "Castlevania: Lords of Shadow",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "20+",
+      "year": "2010",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/234080/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Castlevania Lords of Shadow artwork",
+      "reflection": "A gothic action memory where mood, scale, and boss framing did a lot of the emotional work.",
+      "tags": [
+        "Gothic Mood",
+        "Boss Framing",
+        "Action"
+      ]
+    },
+    {
+      "title": "Naruto Shippuden: Ultimate Ninja Storm 4",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "30+",
+      "year": "2016",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/349040/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Naruto Shippuden Ultimate Ninja Storm 4 artwork",
+      "reflection": "A useful fan-service reference for cinematic combat readability and adapting anime spectacle into inputs.",
+      "tags": [
+        "Adaptation",
+        "Spectacle",
+        "Combat Readability"
+      ]
+    },
+    {
+      "title": "Left 4 Dead 2",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "30+",
+      "year": "2009",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/550/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Left 4 Dead 2 artwork",
+      "reflection": "A clean multiplayer loop reference for pressure pacing, readable roles, and improvisation inside simple rules.",
+      "tags": [
+        "Co-op Loop",
+        "Pacing",
+        "Readable Roles"
+      ]
+    },
+    {
+      "title": "One Piece: Pirate Warriors 4",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "20+",
+      "year": "2020",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1089090/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "One Piece Pirate Warriors 4 artwork",
+      "reflection": "A comfort-loop example where spectacle, simple inputs, and character collection carry the session rhythm.",
+      "tags": [
+        "Power Fantasy",
+        "Session Loop",
+        "Adaptation"
+      ]
+    },
+    {
+      "title": "Dead Island",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "30+",
+      "year": "2011",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/383150/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Dead Island artwork",
+      "reflection": "A messy but memorable loot-and-survival loop where co-op friction became part of the memory.",
+      "tags": [
+        "Co-op",
+        "Loot Loop",
+        "Survival"
+      ]
+    },
+    {
+      "title": "Kingdom Come: Deliverance",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "100+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/379430/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Kingdom Come Deliverance artwork",
+      "reflection": "A reference for grounded role-play, where friction becomes identity because progression asks the player to inhabit weakness first.",
+      "tags": [
+        "Simulation",
+        "Role-play",
+        "Progression"
+      ]
+    },
+    {
+      "title": "Pokemon Emerald",
+      "chapter": "shelf",
+      "platform": "Console",
+      "hours": "80+",
+      "year": "2004",
+      "image": "./img/games/pokemonemerald.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon Emerald artwork",
+      "reflection": "A milestone memory for collection, party identity, and learning how small choices build ownership.",
+      "tags": [
+        "Collection",
+        "Party Identity",
+        "Milestone"
+      ]
+    },
+    {
+      "title": "Pokemon Black and White",
+      "chapter": "shelf",
+      "platform": "Console",
+      "hours": "50+",
+      "year": "2010",
+      "image": "./img/games/pokemonblackwhite.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon Black and White artwork",
+      "reflection": "A nostalgia anchor for creature design, journey structure, and the comfort of clear progression.",
+      "tags": [
+        "Creature Design",
+        "Progression",
+        "Memory"
+      ]
+    },
+    {
+      "title": "Dynasty Warriors 8",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "70+",
+      "year": "2013",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/278080/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Dynasty Warriors 8 artwork",
+      "reflection": "A milestone in power-fantasy loops where repetition, roster breadth, and spectacle were the appeal.",
+      "tags": [
+        "Power Fantasy",
+        "Roster",
+        "Comfort Loop"
+      ]
+    },
+    {
+      "title": "Dynasty Warriors 7",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "60+",
+      "year": "2011",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/968790/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Dynasty Warriors 7 artwork",
+      "reflection": "A memory shelf game for simple spectacle, historical melodrama, and repeated comfort play.",
+      "tags": [
+        "Spectacle",
+        "Comfort",
+        "Milestone"
+      ]
+    },
+    {
+      "title": "Far Cry 3",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "50+",
+      "year": "2012",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/220240/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Far Cry 3 artwork",
+      "reflection": "A milestone open-world memory for outpost loops, villain presence, and improvisational chaos.",
+      "tags": [
+        "Outposts",
+        "Chaos",
+        "Milestone"
+      ]
+    },
+    {
+      "title": "Assassin's Creed II",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "40+",
+      "year": "2009",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/33230/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Assassin's Creed II artwork",
+      "reflection": "A milestone memory for movement fantasy, historical spaces, and how a strong protagonist can anchor a long journey.",
+      "tags": [
+        "Traversal",
+        "Historical Fantasy",
+        "Character"
+      ]
+    },
+    {
+      "title": "League of Legends",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "1000+",
+      "year": "2009",
+      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg",
+      "imageSource": "Riot Games",
+      "imageAlt": "League of Legends champion artwork",
+      "reflection": "A long-term memory of mastery pressure, team dynamics, and how live games become social habits.",
+      "tags": [
+        "Live Game",
+        "Mastery",
+        "Team Dynamics"
+      ]
+    },
+    {
       "title": "Ni no Kuni II: Revenant Kingdom",
-      "chapter": "worlds",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2018",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/589360/capsule_616x353.jpg",
@@ -807,23 +1078,8 @@
       ]
     },
     {
-      "title": "Marvel's Spider-Man 2",
-      "chapter": "worlds",
-      "platform": "Console/PC",
-      "year": "2023",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/header.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Marvel's Spider-Man 2 artwork",
-      "reflection": "A city traversal lesson where movement itself carries the fantasy before combat begins.",
-      "tags": [
-        "Traversal",
-        "City Feel",
-        "Power Fantasy"
-      ]
-    },
-    {
       "title": "Prototype",
-      "chapter": "worlds",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2009",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/10150/capsule_616x353.jpg",
@@ -838,7 +1094,7 @@
     },
     {
       "title": "Dave the Diver",
-      "chapter": "worlds",
+      "chapter": "shelf",
       "platform": "PC/Switch",
       "year": "2023",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1868140/capsule_616x353.jpg",
@@ -853,7 +1109,7 @@
     },
     {
       "title": "Uncharted: Legacy of Thieves Collection",
-      "chapter": "worlds",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2022",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1659420/capsule_616x353.jpg",
@@ -867,38 +1123,8 @@
       ]
     },
     {
-      "title": "God of War Ragnarok",
-      "chapter": "stories",
-      "platform": "Console/PC",
-      "year": "2022",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "God of War Ragnarok artwork",
-      "reflection": "A strong reference for emotional escalation, companion dialogue, and mythic closure.",
-      "tags": [
-        "Character Arc",
-        "Companion Design",
-        "Payoff"
-      ]
-    },
-    {
-      "title": "The Last of Us Part I",
-      "chapter": "stories",
-      "platform": "PC/Console",
-      "year": "2022",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "The Last of Us Part I artwork",
-      "reflection": "A benchmark for restraint, environmental storytelling, and the pressure of fragile trust.",
-      "tags": [
-        "Restraint",
-        "Environmental Story",
-        "Trust"
-      ]
-    },
-    {
       "title": "Dispatch",
-      "chapter": "stories",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2025",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2592160/header.jpg",
@@ -913,7 +1139,7 @@
     },
     {
       "title": "The Wolf Among Us",
-      "chapter": "stories",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2013",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/250320/capsule_616x353.jpg",
@@ -928,7 +1154,7 @@
     },
     {
       "title": "To the Moon",
-      "chapter": "stories",
+      "chapter": "shelf",
       "platform": "PC",
       "year": "2011",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/206440/capsule_616x353.jpg",
@@ -943,7 +1169,7 @@
     },
     {
       "title": "Sherlock Holmes: The Devil's Daughter",
-      "chapter": "stories",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2016",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/350640/capsule_616x353.jpg",
@@ -958,7 +1184,7 @@
     },
     {
       "title": "Sherlock Holmes: Crimes & Punishments",
-      "chapter": "stories",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2014",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/241260/capsule_616x353.jpg",
@@ -972,23 +1198,8 @@
       ]
     },
     {
-      "title": "NieR:Automata",
-      "chapter": "stories",
-      "platform": "PC/Console",
-      "year": "2017",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/524220/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "NieR:Automata artwork",
-      "reflection": "A bold lesson in using repetition, perspective shifts, and systems to deepen story meaning.",
-      "tags": [
-        "Perspective",
-        "Repetition",
-        "Theme"
-      ]
-    },
-    {
       "title": "Plants vs. Zombies 2",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "Mobile",
       "year": "2013",
       "image": "https://play-lh.googleusercontent.com/2tVB_l67rnZD-baRe7H67vt9IfBDJLAiPkrVv5aom8RzvoC95Vvo2J6hszq_efaTKOUE%3Dw526-h296",
@@ -1003,7 +1214,7 @@
     },
     {
       "title": "It Takes Two",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2021",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/capsule_616x353.jpg",
@@ -1018,7 +1229,7 @@
     },
     {
       "title": "Split Fiction",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2025",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2001120/header.jpg",
@@ -1033,7 +1244,7 @@
     },
     {
       "title": "Stick War: Legacy",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "Mobile",
       "year": "2016",
       "image": "https://play-lh.googleusercontent.com/Ciw2L2imVmP7zGjK0f6uYUV9G35n1gZg2lcJRE2E3_vUy8Vw6oRB4UiMGeYwEmEVag%3Dw526-h296",
@@ -1047,36 +1258,8 @@
       ]
     },
     {
-      "title": "Goods Sort Puzzle",
-      "chapter": "loops",
-      "platform": "Mobile",
-      "image": "./img/games/goodssort.jpg",
-      "imageSource": "App Store",
-      "imageAlt": "Goods Sort Puzzle artwork",
-      "reflection": "A casual puzzle reference for tactile sorting, short sessions, and immediate visual cleanup.",
-      "tags": [
-        "Sorting",
-        "Casual Puzzle",
-        "Short Session"
-      ]
-    },
-    {
-      "title": "Screw Jam",
-      "chapter": "loops",
-      "platform": "Mobile",
-      "image": "./img/games/screwjam.jpg",
-      "imageSource": "App Store",
-      "imageAlt": "Screw Jam artwork",
-      "reflection": "A compact puzzle loop built around constraint clarity, object handling, and fast restart energy.",
-      "tags": [
-        "Constraint",
-        "Tactile Puzzle",
-        "Restart"
-      ]
-    },
-    {
       "title": "Where's My Water?",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "Mobile",
       "year": "2011",
       "image": "./img/games/wheresmywater.jpg",
@@ -1090,23 +1273,8 @@
       ]
     },
     {
-      "title": "Temple Run",
-      "chapter": "loops",
-      "platform": "Mobile",
-      "year": "2011",
-      "image": "./img/games/templerun.jpg",
-      "imageSource": "App Store",
-      "imageAlt": "Temple Run artwork",
-      "reflection": "A landmark endless-runner loop: readable input, instant failure feedback, and one-more-run pacing.",
-      "tags": [
-        "Endless Runner",
-        "Input Feel",
-        "Retry"
-      ]
-    },
-    {
       "title": "Pokemon Unite",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "Switch/Mobile",
       "year": "2021",
       "image": "https://play-lh.googleusercontent.com/JCJdLxWxzSMAo65jZBWhT24o830Sq2z0VgmjRWb1ix4SJcho46pUb4QwDZ3idd2iN90%3Dw526-h296",
@@ -1120,23 +1288,8 @@
       ]
     },
     {
-      "title": "Stardew Valley",
-      "chapter": "loops",
-      "platform": "PC/Console/Mobile",
-      "year": "2016",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Stardew Valley artwork",
-      "reflection": "A durable routine design reference where daily choice, comfort, and long-term goals reinforce each other.",
-      "tags": [
-        "Routine",
-        "Comfort",
-        "Long Tail"
-      ]
-    },
-    {
       "title": "Have a Nice Death",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2023",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1740720/capsule_616x353.jpg",
@@ -1151,7 +1304,7 @@
     },
     {
       "title": "Dead by Daylight",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2016",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/381210/capsule_616x353.jpg",
@@ -1166,7 +1319,7 @@
     },
     {
       "title": "Don't Starve",
-      "chapter": "loops",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2013",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/219740/capsule_616x353.jpg",
@@ -1180,23 +1333,8 @@
       ]
     },
     {
-      "title": "Ninja Gaiden 4",
-      "chapter": "systems",
-      "platform": "PC/Console",
-      "year": "2025",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2627260/header.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Ninja Gaiden 4 artwork",
-      "reflection": "A high-speed action reference for precision, punishment, and reading danger under pressure.",
-      "tags": [
-        "Precision",
-        "Action Combat",
-        "Pressure"
-      ]
-    },
-    {
       "title": "DNF Duel",
-      "chapter": "systems",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2022",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1216060/capsule_616x353.jpg",
@@ -1210,53 +1348,8 @@
       ]
     },
     {
-      "title": "The First Berserker: Khazan",
-      "chapter": "systems",
-      "platform": "PC/Console",
-      "year": "2025",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2680010/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "The First Berserker: Khazan artwork",
-      "reflection": "A combat study in weight, timing windows, and maintaining aggression inside a harsh ruleset.",
-      "tags": [
-        "Combat Timing",
-        "Weight",
-        "Aggression"
-      ]
-    },
-    {
-      "title": "Divinity: Original Sin 2",
-      "chapter": "systems",
-      "platform": "PC/Console",
-      "year": "2017",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/435150/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Divinity: Original Sin 2 artwork",
-      "reflection": "A systems reference for elemental surfaces, party creativity, and permissive encounter solving.",
-      "tags": [
-        "CRPG",
-        "Elemental Systems",
-        "Player Creativity"
-      ]
-    },
-    {
-      "title": "Baldur's Gate 3",
-      "chapter": "systems",
-      "platform": "PC/Console",
-      "year": "2023",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Baldur's Gate 3 artwork",
-      "reflection": "A benchmark for choice density, systemic reactivity, and letting role-play drive problem solving.",
-      "tags": [
-        "Choice Density",
-        "Reactivity",
-        "Role-play"
-      ]
-    },
-    {
       "title": "Clair Obscur: Expedition 33",
-      "chapter": "systems",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2025",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1903340/capsule_616x353.jpg",
@@ -1270,23 +1363,8 @@
       ]
     },
     {
-      "title": "Nine Sols",
-      "chapter": "systems",
-      "platform": "PC/Console",
-      "year": "2024",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1809540/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Nine Sols artwork",
-      "reflection": "A combat structure lesson in parry rhythm, map pressure, and precise escalation.",
-      "tags": [
-        "Parry",
-        "Metroidvania",
-        "Escalation"
-      ]
-    },
-    {
       "title": "No Rest for the Wicked",
-      "chapter": "systems",
+      "chapter": "shelf",
       "platform": "PC",
       "year": "2024",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1371980/capsule_616x353.jpg",
@@ -1301,7 +1379,7 @@
     },
     {
       "title": "The Incredible Adventures of Van Helsing",
-      "chapter": "systems",
+      "chapter": "shelf",
       "platform": "PC",
       "year": "2013",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/215530/capsule_616x353.jpg",
@@ -1315,53 +1393,8 @@
       ]
     },
     {
-      "title": "Teamfight Tactics",
-      "chapter": "systems",
-      "platform": "PC/Mobile",
-      "year": "2019",
-      "image": "https://media.rawg.io/media/screenshots/717/7170d2e74bd07ce035eee40f5d82c726.jpg",
-      "imageSource": "RAWG",
-      "imageAlt": "Teamfight Tactics artwork",
-      "reflection": "A live systems reference for economy tension, draft adaptation, and readable strategic pivots.",
-      "tags": [
-        "Auto Battler",
-        "Economy",
-        "Adaptation"
-      ]
-    },
-    {
-      "title": "Wo Long: Fallen Dynasty",
-      "chapter": "systems",
-      "platform": "PC/Console",
-      "year": "2023",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1448440/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Wo Long: Fallen Dynasty artwork",
-      "reflection": "A deflection-focused combat lesson where morale, timing, and aggression shape encounter flow.",
-      "tags": [
-        "Deflection",
-        "Morale",
-        "Encounter Flow"
-      ]
-    },
-    {
-      "title": "Stellar Blade",
-      "chapter": "systems",
-      "platform": "Console/PC",
-      "year": "2024",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3489700/header.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "Stellar Blade artwork",
-      "reflection": "A modern action reference for animation clarity, enemy tells, and responsive spectacle.",
-      "tags": [
-        "Action Combat",
-        "Animation",
-        "Spectacle"
-      ]
-    },
-    {
       "title": "Pokemon Scarlet and Violet",
-      "chapter": "nostalgia",
+      "chapter": "shelf",
       "platform": "Switch",
       "year": "2022",
       "image": "https://media.rawg.io/media/screenshots/581/5816076624f9bfebae7395cacae23ad3.jpg",
@@ -1376,7 +1409,7 @@
     },
     {
       "title": "Pokemon Omega Ruby",
-      "chapter": "nostalgia",
+      "chapter": "shelf",
       "platform": "Nintendo 3DS",
       "year": "2014",
       "image": "./img/games/pokemonomegaruby.jpg",
@@ -1391,7 +1424,7 @@
     },
     {
       "title": "Dynasty Warriors 7: Xtreme Legends",
-      "chapter": "nostalgia",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2011",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/968790/capsule_616x353.jpg",
@@ -1406,7 +1439,7 @@
     },
     {
       "title": "Dynasty Warriors: Origins",
-      "chapter": "nostalgia",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2025",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2384580/capsule_616x353.jpg",
@@ -1421,7 +1454,7 @@
     },
     {
       "title": "Naruto Mobile",
-      "chapter": "nostalgia",
+      "chapter": "shelf",
       "platform": "Mobile",
       "year": "2016",
       "image": "./img/games/narutomobile.jpg",
@@ -1436,7 +1469,7 @@
     },
     {
       "title": "Jump Force",
-      "chapter": "nostalgia",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "year": "2019",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/816020/capsule_616x353.jpg",
@@ -1451,7 +1484,7 @@
     },
     {
       "title": "Naruto: Ultimate Ninja Storm Series",
-      "chapter": "nostalgia",
+      "chapter": "shelf",
       "platform": "PC/Console",
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/349040/capsule_616x353.jpg",
       "imageSource": "Steam representative",

@@ -1,13 +1,15 @@
 (function (global) {
   const fallbackImage = 'img/og-image.png';
   const hoverIntentDelay = 150;
+  // Filters group work by where it was made and by design discipline.
   const curatedPortfolioFilters = [
     { value: 'featured', label: 'Featured' },
-    { value: 'archive', label: 'Archive' },
-    { value: 'mobile', label: 'Mobile' },
-    { value: 'prototype', label: 'Prototype' },
-    { value: 'unannounced', label: 'Unannounced' },
-    { value: 'case-study', label: 'Case Study' },
+    { value: 'studio', label: 'Studio work' },
+    { value: 'personal', label: 'Personal' },
+    { value: 'combat', label: 'Combat' },
+    { value: 'level-design', label: 'Level design' },
+    { value: 'systems', label: 'Systems & economy' },
+    { value: 'live-ops', label: 'Live ops' },
   ];
 
   function asArray(value) {
@@ -235,11 +237,12 @@
     const keyByValue = {
       all: 'portfolio.allProjects',
       featured: 'portfolio.featured',
-      archive: 'portfolio.archive',
-      mobile: 'portfolio.mobile',
-      prototype: 'portfolio.prototype',
-      unannounced: 'portfolio.unannounced',
-      'case-study': 'portfolio.caseStudy',
+      studio: 'portfolio.studio',
+      personal: 'portfolio.personal',
+      combat: 'portfolio.combat',
+      'level-design': 'portfolio.levelDesign',
+      systems: 'portfolio.systems',
+      'live-ops': 'portfolio.liveOps',
     };
 
     return translate(keyByValue[filterOption.value], filterOption.label);
