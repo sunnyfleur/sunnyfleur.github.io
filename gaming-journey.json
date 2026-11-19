@@ -217,38 +217,35 @@
       }
     },
     {
-      "title": "God of War 4",
+      "title": "Onimusha: Way of the Sword",
       "chapter": "combat",
-      "platform": "Console",
-      "hours": "40+",
-      "year": "2018",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/capsule_616x353.jpg",
+      "platform": "PC",
+      "year": "2026",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2638890/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2638890/library_600x900.jpg",
       "imageSource": "Steam",
-      "imageAlt": "God of War artwork",
-      "reflection": "A close camera makes every hit feel heavy, but only because enemy attacks are telegraphed for that framing. When I design camera and combat together, I start from what the player must see before a hit lands.",
+      "imageAlt": "Onimusha: Way of the Sword artwork",
+      "reflection": "Every clash is a duel: parries, perfect counters and the Issen flash reward reading the enemy over mashing. My reference for making a single sword feel deadly, where one well-timed cut can end a fight.",
       "tags": [
-        "Camera",
-        "Character",
-        "Combat Weight"
-      ],
-      "appliedIn": {
-        "slug": "huli",
-        "title": "Huli"
-      }
+        "Sword Duels",
+        "Parry",
+        "Counter Timing"
+      ]
     },
     {
-      "title": "Ninja Gaiden 4",
+      "title": "Black Myth: Wukong",
       "chapter": "combat",
-      "platform": "PC/Console",
-      "year": "2025",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2627260/header.jpg",
+      "platform": "PC",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2358720/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2358720/library_600x900.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Ninja Gaiden 4 artwork",
-      "reflection": "Fast and punishing, yet fair, because every enemy shows its intent before it strikes. The lesson I take: raise speed only as far as the tells stay readable.",
+      "imageAlt": "Black Myth: Wukong artwork",
+      "reflection": "Each boss is a set piece with its own rhythm, and the staff stances change how the same fight reads. My reference for making boss variety feel like a reward for pushing on, not just a harder wall.",
       "tags": [
-        "Precision",
-        "Action Combat",
-        "Pressure"
+        "Boss Design",
+        "Stances",
+        "Spectacle"
       ]
     },
     {
@@ -297,20 +294,24 @@
       ]
     },
     {
-      "title": "Onimusha: Way of the Sword",
+      "title": "God of War 4",
       "chapter": "combat",
-      "platform": "PC",
-      "year": "2026",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2638890/header.jpg",
-      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2638890/library_600x900.jpg",
+      "platform": "Console",
+      "hours": "40+",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/capsule_616x353.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Onimusha: Way of the Sword artwork",
-      "reflection": "Every clash is a duel: parries, perfect counters and the Issen flash reward reading the enemy over mashing. My reference for making a single sword feel deadly, where one well-timed cut can end a fight.",
+      "imageAlt": "God of War artwork",
+      "reflection": "A close camera makes every hit feel heavy, but only because enemy attacks are telegraphed for that framing. When I design camera and combat together, I start from what the player must see before a hit lands.",
       "tags": [
-        "Sword Duels",
-        "Parry",
-        "Counter Timing"
-      ]
+        "Camera",
+        "Character",
+        "Combat Weight"
+      ],
+      "appliedIn": {
+        "slug": "huli",
+        "title": "Huli"
+      }
     },
     {
       "title": "The Elder Scrolls V: Skyrim",
@@ -329,18 +330,19 @@
       ]
     },
     {
-      "title": "Marvel's Spider-Man 2",
+      "title": "Kingdom Come: Deliverance II",
       "chapter": "worlds",
-      "platform": "Console/PC",
-      "year": "2023",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/header.jpg",
+      "platform": "PC",
+      "year": "2025",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1771300/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1771300/library_600x900.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Marvel's Spider-Man 2 artwork",
-      "reflection": "Moving through the city is the fun before any mission starts. Proof that traversal alone can carry the fantasy.",
+      "imageAlt": "Kingdom Come: Deliverance II artwork",
+      "reflection": "Bohemia feels lived in because its villages run on their own routines, and every quest grows out of local trouble. My reference for a world where slow travel and grounded detail make the player feel like they belong there.",
       "tags": [
-        "Traversal",
-        "City Feel",
-        "Power Fantasy"
+        "Grounded World",
+        "Immersion",
+        "Living Villages"
       ]
     },
     {
@@ -360,18 +362,19 @@
       ]
     },
     {
-      "title": "The Last of Us Part I",
+      "title": "Octopath Traveler II",
       "chapter": "stories",
       "platform": "PC/Console",
-      "year": "2022",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/capsule_616x353.jpg",
+      "year": "2023",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1971650/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1971650/library_600x900.jpg",
       "imageSource": "Steam",
-      "imageAlt": "The Last of Us Part I artwork",
-      "reflection": "Restraint everywhere: quiet rooms, small details, trust that breaks slowly. It shows how environment and pacing can tell the story without a cutscene.",
+      "imageAlt": "Octopath Traveler II artwork",
+      "reflection": "Eight travelers each get their own story, and crossed paths moments tie them together without forcing one plot. A reference for ensemble storytelling, where each character's path ability says who they are as clearly as their dialogue.",
       "tags": [
-        "Restraint",
-        "Environmental Story",
-        "Trust"
+        "Ensemble Cast",
+        "Character Arc",
+        "HD-2D"
       ]
     },
     {
@@ -390,50 +393,51 @@
       ]
     },
     {
-      "title": "Yakuza: Like a Dragon",
+      "title": "Days Gone",
       "chapter": "stories",
       "platform": "PC",
-      "hours": "100+",
-      "year": "2020",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1235140/capsule_616x353.jpg",
+      "year": "2019",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1259420/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1259420/library_600x900.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Yakuza Like a Dragon artwork",
-      "reflection": "Absurd side stories that still feel sincere, because the party has clear personalities. Proof that tone can swing widely if characters stay consistent.",
+      "imageAlt": "Days Gone artwork",
+      "reflection": "Deacon's story lands because the world keeps pushing back: the bike, the fuel, the hordes. A reference for letting survival systems carry the mood of a story between the big scenes.",
       "tags": [
-        "Tone Range",
-        "Party Identity",
-        "Side Stories"
-      ]
-    },
-    {
-      "title": "God of War Ragnarok",
-      "chapter": "stories",
-      "platform": "Console/PC",
-      "year": "2022",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/capsule_616x353.jpg",
-      "imageSource": "Steam",
-      "imageAlt": "God of War Ragnarok artwork",
-      "reflection": "Companion dialogue during play builds the relationship more than the cutscenes. Useful when content has to carry character between big beats.",
-      "tags": [
+        "Survival Mood",
         "Character Arc",
-        "Companion Design",
-        "Payoff"
+        "Hordes"
       ]
     },
     {
-      "title": "Hades 2",
-      "chapter": "loops",
+      "title": "Metaphor: ReFantazio",
+      "chapter": "stories",
       "platform": "PC",
-      "hours": "60+",
-      "year": "2023",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/capsule_616x353.jpg",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2679460/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2679460/library_600x900.jpg",
       "imageSource": "Steam",
-      "imageAlt": "Hades 2 key artwork",
-      "reflection": "Every failed run moves the story forward, so repetition never feels wasted. A model for giving players a reason to start one more run.",
+      "imageAlt": "Metaphor: ReFantazio artwork",
+      "reflection": "Every bond, calendar day and election beat feeds one theme about who gets to lead. My reference for a story where the structure of the game argues the same point as the script.",
       "tags": [
-        "Run Structure",
-        "Dialogue",
-        "Meta Progression"
+        "Theme",
+        "Bonds",
+        "Calendar"
+      ]
+    },
+    {
+      "title": "Pokemon Legends: Arceus",
+      "chapter": "loops",
+      "platform": "Switch",
+      "year": "2022",
+      "image": "./img/games/pokemonlegendsarceus.jpg",
+      "posterImage": "./img/games/pokemonlegendsarceus.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon Legends: Arceus artwork",
+      "reflection": "Catching moves into the open field: sneak, throw, check the dex, repeat. A reference for a collection loop where every short outing ends with visible research progress.",
+      "tags": [
+        "Collection Loop",
+        "Research Goals",
+        "Short Outings"
       ]
     },
     {
@@ -1512,6 +1516,824 @@
         "Spectacle"
       ],
       "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/3489700/library_600x900.jpg"
+    },
+    {
+      "title": "Marvel's Spider-Man 2",
+      "chapter": "shelf",
+      "platform": "Console/PC",
+      "year": "2023",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/header.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Marvel's Spider-Man 2 artwork",
+      "reflection": "Moving through the city is the fun before any mission starts. Proof that traversal alone can carry the fantasy.",
+      "tags": [
+        "Traversal",
+        "City Feel",
+        "Power Fantasy"
+      ],
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/library_600x900.jpg"
+    },
+    {
+      "title": "The Last of Us Part I",
+      "chapter": "shelf",
+      "platform": "PC/Console",
+      "year": "2022",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "The Last of Us Part I artwork",
+      "reflection": "Restraint everywhere: quiet rooms, small details, trust that breaks slowly. It shows how environment and pacing can tell the story without a cutscene.",
+      "tags": [
+        "Restraint",
+        "Environmental Story",
+        "Trust"
+      ],
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/library_600x900.jpg"
+    },
+    {
+      "title": "Ninja Gaiden 4",
+      "chapter": "shelf",
+      "platform": "PC/Console",
+      "year": "2025",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2627260/header.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Ninja Gaiden 4 artwork",
+      "reflection": "Fast and punishing, yet fair, because every enemy shows its intent before it strikes. The lesson I take: raise speed only as far as the tells stay readable.",
+      "tags": [
+        "Precision",
+        "Action Combat",
+        "Pressure"
+      ],
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2627260/library_600x900.jpg"
+    },
+    {
+      "title": "Yakuza: Like a Dragon",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "100+",
+      "year": "2020",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1235140/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Yakuza Like a Dragon artwork",
+      "reflection": "Absurd side stories that still feel sincere, because the party has clear personalities. Proof that tone can swing widely if characters stay consistent.",
+      "tags": [
+        "Tone Range",
+        "Party Identity",
+        "Side Stories"
+      ],
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1235140/library_600x900.jpg"
+    },
+    {
+      "title": "God of War Ragnarok",
+      "chapter": "shelf",
+      "platform": "Console/PC",
+      "year": "2022",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "God of War Ragnarok artwork",
+      "reflection": "Companion dialogue during play builds the relationship more than the cutscenes. Useful when content has to carry character between big beats.",
+      "tags": [
+        "Character Arc",
+        "Companion Design",
+        "Payoff"
+      ],
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/library_600x900.jpg"
+    },
+    {
+      "title": "Hades 2",
+      "chapter": "shelf",
+      "platform": "PC",
+      "hours": "60+",
+      "year": "2023",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/capsule_616x353.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Hades 2 key artwork",
+      "reflection": "Every failed run moves the story forward, so repetition never feels wasted. A model for giving players a reason to start one more run.",
+      "tags": [
+        "Run Structure",
+        "Dialogue",
+        "Meta Progression"
+      ],
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/library_600x900.jpg"
+    },
+    {
+      "title": "Middle-earth: Shadow of Mordor",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2014",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/241930/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/241930/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Middle-earth: Shadow of Mordor artwork",
+      "reflection": "The Nemesis system turns enemies into rivals who remember you.",
+      "tags": [
+        "Nemesis",
+        "Emergent Story",
+        "Combat Flow"
+      ]
+    },
+    {
+      "title": "Rise of the Ronin",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1340990/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1340990/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Rise of the Ronin artwork",
+      "reflection": "Counterspark duels and a Bakumatsu open world.",
+      "tags": [
+        "Parry",
+        "Open World",
+        "Samurai"
+      ]
+    },
+    {
+      "title": "Sekiro: Shadows Die Twice",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2019",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Sekiro: Shadows Die Twice artwork",
+      "reflection": "Posture over health makes every clash a rhythm game.",
+      "tags": [
+        "Posture",
+        "Deflect",
+        "Boss Design"
+      ]
+    },
+    {
+      "title": "Nioh 2",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2020",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Nioh 2 artwork",
+      "reflection": "Stance and Ki pulse give soulslike combat a fighting-game depth.",
+      "tags": [
+        "Stances",
+        "Ki Pulse",
+        "Loot"
+      ]
+    },
+    {
+      "title": "Grand Theft Auto V",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2015",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Grand Theft Auto V artwork",
+      "reflection": "Three playable leads switched mid-mission in one dense city.",
+      "tags": [
+        "Open World",
+        "Heists",
+        "Satire"
+      ]
+    },
+    {
+      "title": "Crusader Kings III",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2020",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1158310/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1158310/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Crusader Kings III artwork",
+      "reflection": "Character traits and dynasties write the story for you.",
+      "tags": [
+        "Emergent Story",
+        "Dynasty",
+        "Strategy"
+      ]
+    },
+    {
+      "title": "Civilization V",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2010",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/8930/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/8930/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Civilization V artwork",
+      "reflection": "Hex grid and one unit per tile made the map itself the puzzle.",
+      "tags": [
+        "Strategy",
+        "Hex Grid",
+        "One More Turn"
+      ]
+    },
+    {
+      "title": "Palworld",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2024",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1623730/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1623730/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Palworld artwork",
+      "reflection": "Creature collection mixed with base building and automation.",
+      "tags": [
+        "Survival",
+        "Collection",
+        "Base Building"
+      ]
+    },
+    {
+      "title": "League of Legends: Wild Rift",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2020",
+      "image": "./img/games/wildrift.jpg",
+      "posterImage": "./img/games/wildrift.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "League of Legends: Wild Rift artwork",
+      "reflection": "A MOBA rebuilt for short mobile sessions.",
+      "tags": [
+        "MOBA",
+        "Mobile",
+        "Session Length"
+      ]
+    },
+    {
+      "title": "Clash of Clans",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2012",
+      "image": "./img/games/clashofclans.jpg",
+      "posterImage": "./img/games/clashofclans.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Clash of Clans artwork",
+      "reflection": "Build timers and raids that set the base-builder template.",
+      "tags": [
+        "Base Building",
+        "Timers",
+        "Social"
+      ]
+    },
+    {
+      "title": "Clash Royale",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2016",
+      "image": "./img/games/clashroyale.jpg",
+      "posterImage": "./img/games/clashroyale.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Clash Royale artwork",
+      "reflection": "Three-minute duels with elixir as the whole economy.",
+      "tags": [
+        "Real-time Strategy",
+        "Cards",
+        "Short Sessions"
+      ]
+    },
+    {
+      "title": "Candy Crush Saga",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2012",
+      "image": "./img/games/candycrush.jpg",
+      "posterImage": "./img/games/candycrush.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Candy Crush Saga artwork",
+      "reflection": "The match-3 saga map and level ramp that defined casual puzzle.",
+      "tags": [
+        "Match-3",
+        "Level Ramp",
+        "Live Ops"
+      ]
+    },
+    {
+      "title": "Subway Surfers",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2012",
+      "image": "./img/games/subwaysurfers.jpg",
+      "posterImage": "./img/games/subwaysurfers.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Subway Surfers artwork",
+      "reflection": "Three lanes, instant restarts and a world tour of live events.",
+      "tags": [
+        "Endless Runner",
+        "Live Events",
+        "Restart"
+      ]
+    },
+    {
+      "title": "Angry Birds",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2009",
+      "image": "./img/games/angrybirds.jpg",
+      "posterImage": "./img/games/angrybirds.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Angry Birds artwork",
+      "reflection": "Physics puzzles you read in one glance.",
+      "tags": [
+        "Physics",
+        "Puzzle",
+        "Readability"
+      ]
+    },
+    {
+      "title": "Cut the Rope",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2010",
+      "image": "./img/games/cuttherope.jpg",
+      "posterImage": "./img/games/cuttherope.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Cut the Rope artwork",
+      "reflection": "One clear goal, a few physics rules, and three stars to chase.",
+      "tags": [
+        "Physics",
+        "Puzzle",
+        "Star Rating"
+      ]
+    },
+    {
+      "title": "Fruit Ninja",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2010",
+      "image": "./img/games/fruitninja.jpg",
+      "posterImage": "./img/games/fruitninja.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Fruit Ninja artwork",
+      "reflection": "The swipe gesture as the whole game feel.",
+      "tags": [
+        "Touch Feel",
+        "Arcade",
+        "Juice"
+      ]
+    },
+    {
+      "title": "Flappy Bird",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2013",
+      "image": "./img/games/flappybird.png",
+      "posterImage": "./img/games/flappybird.png",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Flappy Bird artwork",
+      "reflection": "One tap, one rule, endless retries.",
+      "tags": [
+        "One-touch",
+        "Difficulty",
+        "Retry"
+      ]
+    },
+    {
+      "title": "Hay Day",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2012",
+      "image": "./img/games/hayday.jpg",
+      "posterImage": "./img/games/hayday.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Hay Day artwork",
+      "reflection": "A calm farming loop built on production chains and orders.",
+      "tags": [
+        "Farming",
+        "Production Chains",
+        "Social"
+      ]
+    },
+    {
+      "title": "Block Blast",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2023",
+      "image": "./img/games/blockblast.jpg",
+      "posterImage": "./img/games/blockblast.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Block Blast artwork",
+      "reflection": "A block puzzle where clearing lines feels like a combo.",
+      "tags": [
+        "Block Puzzle",
+        "Combo",
+        "Short Sessions"
+      ]
+    },
+    {
+      "title": "Soul Knight",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2017",
+      "image": "./img/games/soulknight.jpg",
+      "posterImage": "./img/games/soulknight.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Soul Knight artwork",
+      "reflection": "A pocket roguelike shooter with a huge weapon pool.",
+      "tags": [
+        "Roguelike",
+        "Shooter",
+        "Weapons"
+      ]
+    },
+    {
+      "title": "Middle-earth: Shadow of War",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2017",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/356190/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/356190/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Middle-earth: Shadow of War artwork",
+      "reflection": "Nemesis grown into fortresses, followers and sieges.",
+      "tags": [
+        "Nemesis",
+        "Sieges",
+        "Followers"
+      ]
+    },
+    {
+      "title": "Call of Duty: Black Ops",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2010",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/42700/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/42700/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Call of Duty: Black Ops artwork",
+      "reflection": "Set-piece campaign pacing and the round-based Zombies loop.",
+      "tags": [
+        "Set Pieces",
+        "Zombies",
+        "Shooter"
+      ]
+    },
+    {
+      "title": "The Forest",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "The Forest artwork",
+      "reflection": "Survival where the enemies watch and learn before they attack.",
+      "tags": [
+        "Survival",
+        "Enemy AI",
+        "Crafting"
+      ]
+    },
+    {
+      "title": "The Elder Scrolls IV: Oblivion",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2006",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/22330/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/22330/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "The Elder Scrolls IV: Oblivion artwork",
+      "reflection": "Guilds, gates and a world that kept pulling me off the main quest.",
+      "tags": [
+        "Open World",
+        "Guilds",
+        "Role-play"
+      ]
+    },
+    {
+      "title": "The Witcher 2: Assassins of Kings",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2011",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/20920/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/20920/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "The Witcher 2: Assassins of Kings artwork",
+      "reflection": "A branching second act that shows a different half of the story.",
+      "tags": [
+        "Branching Story",
+        "Choices",
+        "Combat"
+      ]
+    },
+    {
+      "title": "Guilty Gear -Strive-",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2021",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1384160/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/1384160/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Guilty Gear -Strive- artwork",
+      "reflection": "Fighting-game readability through big, loud hit effects.",
+      "tags": [
+        "Fighting",
+        "Hit Effects",
+        "Style"
+      ]
+    },
+    {
+      "title": "Brawlhalla",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2017",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/291550/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/291550/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Brawlhalla artwork",
+      "reflection": "Platform-fighter knockouts that anyone can pick up.",
+      "tags": [
+        "Platform Fighter",
+        "Accessible",
+        "Online"
+      ]
+    },
+    {
+      "title": "Lost Soul Aside",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2025",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3378960/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/3378960/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Lost Soul Aside artwork",
+      "reflection": "Flashy combo combat with a dragon companion.",
+      "tags": [
+        "Combo Combat",
+        "Companion",
+        "Action"
+      ]
+    },
+    {
+      "title": "Where Winds Meet",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2025",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3564740/library_600x900.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/3564740/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Where Winds Meet artwork",
+      "reflection": "A wuxia open world built on martial arts and freedom of movement.",
+      "tags": [
+        "Wuxia",
+        "Open World",
+        "Martial Arts"
+      ]
+    },
+    {
+      "title": "Super Mario Odyssey",
+      "chapter": "shelf",
+      "platform": "Switch",
+      "year": "2017",
+      "image": "./img/games/supermarioodyssey.jpg",
+      "posterImage": "./img/games/supermarioodyssey.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Super Mario Odyssey artwork",
+      "reflection": "Cappy turns every enemy into a new verb.",
+      "tags": [
+        "Platformer",
+        "Capture",
+        "Moon Rewards"
+      ]
+    },
+    {
+      "title": "Mario Kart 8 Deluxe",
+      "chapter": "shelf",
+      "platform": "Switch",
+      "year": "2017",
+      "image": "./img/games/mariokart8.jpg",
+      "posterImage": "./img/games/mariokart8.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Mario Kart 8 Deluxe artwork",
+      "reflection": "Rubber-banding items keep every race close.",
+      "tags": [
+        "Racing",
+        "Items",
+        "Party"
+      ]
+    },
+    {
+      "title": "Pokemon Sword and Shield",
+      "chapter": "shelf",
+      "platform": "Switch",
+      "year": "2019",
+      "image": "./img/games/pokemonswordshield.jpg",
+      "posterImage": "./img/games/pokemonswordshield.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon Sword and Shield artwork",
+      "reflection": "Wild Area and Dynamax raids brought co-op into the series.",
+      "tags": [
+        "Collection",
+        "Raids",
+        "Co-op"
+      ]
+    },
+    {
+      "title": "Pokemon X and Y",
+      "chapter": "shelf",
+      "platform": "3DS",
+      "year": "2013",
+      "image": "./img/games/pokemonxy.jpg",
+      "posterImage": "./img/games/pokemonxy.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon X and Y artwork",
+      "reflection": "The series' first full step into 3D, plus Mega Evolution.",
+      "tags": [
+        "Collection",
+        "Mega Evolution",
+        "3D"
+      ]
+    },
+    {
+      "title": "Pokemon Sun and Moon",
+      "chapter": "shelf",
+      "platform": "3DS",
+      "year": "2016",
+      "image": "./img/games/pokemonsunmoon.jpg",
+      "posterImage": "./img/games/pokemonsunmoon.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon Sun and Moon artwork",
+      "reflection": "Island trials replaced gyms with puzzle-like challenges.",
+      "tags": [
+        "Collection",
+        "Trials",
+        "Story"
+      ]
+    },
+    {
+      "title": "Pokemon Diamond and Pearl",
+      "chapter": "shelf",
+      "platform": "DS",
+      "year": "2006",
+      "image": "./img/games/pokemondiamondpearl.jpg",
+      "posterImage": "./img/games/pokemondiamondpearl.jpg",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon Diamond and Pearl artwork",
+      "reflection": "Online trading and the Underground on two screens.",
+      "tags": [
+        "Collection",
+        "Trading",
+        "Dual Screen"
+      ]
+    },
+    {
+      "title": "Pokemon GO",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2016",
+      "image": "./img/games/pokemongo.jpg",
+      "posterImage": "./img/games/pokemongo.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Pokemon GO artwork",
+      "reflection": "The real world as the map, walking as the core loop.",
+      "tags": [
+        "Location-based",
+        "Collection",
+        "Live Events"
+      ]
+    },
+    {
+      "title": "Shadow Fight 2",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2013",
+      "image": "./img/games/shadowfight2.jpg",
+      "posterImage": "./img/games/shadowfight2.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Shadow Fight 2 artwork",
+      "reflection": "Touch-controlled fighting with weighty silhouettes.",
+      "tags": [
+        "Fighting",
+        "Touch Controls",
+        "Progression"
+      ]
+    },
+    {
+      "title": "2048",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2014",
+      "image": "./img/games/game2048.jpg",
+      "posterImage": "./img/games/game2048.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "2048 artwork",
+      "reflection": "One swipe, one merge rule, a whole puzzle.",
+      "tags": [
+        "Merge Puzzle",
+        "Minimal",
+        "Score Chase"
+      ]
+    },
+    {
+      "title": "Piano Tiles",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2014",
+      "image": "./img/games/pianotiles.jpg",
+      "posterImage": "./img/games/pianotiles.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Piano Tiles artwork",
+      "reflection": "Rhythm reduced to tapping the black tile in time.",
+      "tags": [
+        "Rhythm",
+        "Reaction",
+        "Short Sessions"
+      ]
+    },
+    {
+      "title": "Mega Man 11",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2018",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/742300/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/742300/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Mega Man 11 artwork",
+      "reflection": "Double Gear lets the player bend the challenge of tight classic stages.",
+      "tags": [
+        "Platformer",
+        "Boss Patterns",
+        "Difficulty"
+      ]
+    },
+    {
+      "title": "Hogwarts Legacy",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2023",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Hogwarts Legacy artwork",
+      "reflection": "A beloved setting turned into a place you can finally walk around.",
+      "tags": [
+        "Open World",
+        "Fantasy",
+        "Spells"
+      ]
+    },
+    {
+      "title": "Wuchang: Fallen Feathers",
+      "chapter": "shelf",
+      "platform": "PC",
+      "year": "2025",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2277560/header.jpg",
+      "posterImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2277560/library_600x900.jpg",
+      "imageSource": "Steam",
+      "imageAlt": "Wuchang: Fallen Feathers artwork",
+      "reflection": "A late-Ming soulslike where madness changes both risk and reward.",
+      "tags": [
+        "Soulslike",
+        "Risk and Reward",
+        "Late Ming"
+      ]
+    },
+    {
+      "title": "Onmyoji",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2016",
+      "image": "./img/games/onmyoji.jpg",
+      "posterImage": "./img/games/onmyoji.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Onmyoji artwork",
+      "reflection": "A gacha RPG carried by Heian-era art and yokai collection.",
+      "tags": [
+        "Gacha",
+        "Collection",
+        "Art Direction"
+      ]
+    },
+    {
+      "title": "Identity V",
+      "chapter": "shelf",
+      "platform": "Mobile",
+      "year": "2018",
+      "image": "./img/games/identityv.jpg",
+      "posterImage": "./img/games/identityv.jpg",
+      "imageSource": "App Store",
+      "imageAlt": "Identity V artwork",
+      "reflection": "One hunter against four survivors, with asymmetry as the whole game.",
+      "tags": [
+        "Asymmetric",
+        "Multiplayer",
+        "Horror"
+      ]
+    },
+    {
+      "title": "Pokemon Legends: Z-A",
+      "chapter": "shelf",
+      "platform": "Switch",
+      "year": "2025",
+      "image": "./img/games/pokemonlegendsza.png",
+      "posterImage": "./img/games/pokemonlegendsza.png",
+      "imageSource": "Wikipedia",
+      "imageAlt": "Pokemon Legends: Z-A artwork",
+      "reflection": "Real-time battles set inside one city under redevelopment.",
+      "tags": [
+        "Collection",
+        "Real-time Battles",
+        "City"
+      ]
     }
   ]
 }

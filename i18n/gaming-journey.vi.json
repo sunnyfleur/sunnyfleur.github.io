@@ -880,6 +880,465 @@
         "Counter Timing"
       ],
       "imageAlt": "Onimusha: Way of the Sword artwork"
+    },
+    "Kingdom Come: Deliverance II": {
+      "reflection": "Bohemia có cảm giác có người sống thật vì làng mạc vận hành theo nhịp riêng, và mỗi nhiệm vụ đều nảy ra từ chuyện của chính nơi đó. Tham khảo của tôi cho một thế giới mà nhịp di chuyển chậm và chi tiết chân thực khiến người chơi thấy mình thuộc về nơi ấy.",
+      "tags": [
+        "Grounded World",
+        "Immersion",
+        "Living Villages"
+      ],
+      "imageAlt": "Kingdom Come: Deliverance II artwork"
+    },
+    "Octopath Traveler II": {
+      "reflection": "Tám lữ khách, mỗi người một câu chuyện riêng, và những đoạn crossed paths gắn họ lại với nhau mà không ép vào một cốt truyện chung. Tham khảo cho cách kể chuyện nhiều nhân vật chính, khi kỹ năng riêng của từng người nói lên họ là ai rõ như chính lời thoại.",
+      "tags": [
+        "Ensemble Cast",
+        "Character Arc",
+        "HD-2D"
+      ],
+      "imageAlt": "Octopath Traveler II artwork"
+    },
+    "Black Myth: Wukong": {
+      "reflection": "Mỗi boss là một set piece với nhịp riêng, và các thế côn làm cùng một trận đánh đọc khác hẳn. Tham khảo của tôi để sự đa dạng của boss trở thành phần thưởng cho việc tiến lên, chứ không chỉ là một bức tường khó hơn.",
+      "tags": [
+        "Boss Design",
+        "Stances",
+        "Spectacle"
+      ],
+      "imageAlt": "Black Myth: Wukong artwork"
+    },
+    "Days Gone": {
+      "reflection": "Câu chuyện của Deacon có sức nặng vì thế giới liên tục gây khó: chiếc xe, xăng, những đàn zombie. Tham khảo cho cách để hệ thống sinh tồn giữ không khí câu chuyện giữa các cảnh lớn.",
+      "tags": [
+        "Survival Mood",
+        "Character Arc",
+        "Hordes"
+      ],
+      "imageAlt": "Days Gone artwork"
+    },
+    "Metaphor: ReFantazio": {
+      "reflection": "Mỗi mối quan hệ, mỗi ngày trên lịch và mỗi nhịp bầu cử đều phục vụ một chủ đề: ai xứng đáng dẫn dắt. Tham khảo của tôi cho một câu chuyện mà chính cấu trúc game cũng nói cùng một điều với kịch bản.",
+      "tags": [
+        "Theme",
+        "Bonds",
+        "Calendar"
+      ],
+      "imageAlt": "Metaphor: ReFantazio artwork"
+    },
+    "Pokemon Legends: Arceus": {
+      "reflection": "Việc bắt Pokemon chuyển ra ngoài thực địa: rình, ném bóng, mở dex, lặp lại. Tham khảo cho một vòng lặp sưu tầm mà mỗi chuyến đi ngắn đều kết thúc bằng tiến độ nghiên cứu nhìn thấy được.",
+      "tags": [
+        "Collection Loop",
+        "Research Goals",
+        "Short Outings"
+      ],
+      "imageAlt": "Pokemon Legends: Arceus artwork"
+    },
+    "Middle-earth: Shadow of Mordor": {
+      "reflection": "Hệ thống Nemesis biến kẻ địch thành đối thủ nhớ mặt bạn.",
+      "tags": [
+        "Nemesis",
+        "Emergent Story",
+        "Combat Flow"
+      ],
+      "imageAlt": "Middle-earth: Shadow of Mordor artwork"
+    },
+    "Rise of the Ronin": {
+      "reflection": "Những màn đấu Counterspark giữa một open world thời Bakumatsu.",
+      "tags": [
+        "Parry",
+        "Open World",
+        "Samurai"
+      ],
+      "imageAlt": "Rise of the Ronin artwork"
+    },
+    "Sekiro: Shadows Die Twice": {
+      "reflection": "Lấy posture thay cho máu, mỗi lần chạm kiếm thành một trò chơi nhịp điệu.",
+      "tags": [
+        "Posture",
+        "Deflect",
+        "Boss Design"
+      ],
+      "imageAlt": "Sekiro: Shadows Die Twice artwork"
+    },
+    "Nioh 2": {
+      "reflection": "Thế đánh và Ki pulse cho combat soulslike chiều sâu như game đối kháng.",
+      "tags": [
+        "Stances",
+        "Ki Pulse",
+        "Loot"
+      ],
+      "imageAlt": "Nioh 2 artwork"
+    },
+    "Grand Theft Auto V": {
+      "reflection": "Ba nhân vật chính đổi qua lại ngay giữa nhiệm vụ trong một thành phố dày đặc.",
+      "tags": [
+        "Open World",
+        "Heists",
+        "Satire"
+      ],
+      "imageAlt": "Grand Theft Auto V artwork"
+    },
+    "Crusader Kings III": {
+      "reflection": "Tính cách nhân vật và dòng tộc tự viết nên câu chuyện.",
+      "tags": [
+        "Emergent Story",
+        "Dynasty",
+        "Strategy"
+      ],
+      "imageAlt": "Crusader Kings III artwork"
+    },
+    "Civilization V": {
+      "reflection": "Lưới lục giác và mỗi ô một đơn vị biến chính bản đồ thành câu đố.",
+      "tags": [
+        "Strategy",
+        "Hex Grid",
+        "One More Turn"
+      ],
+      "imageAlt": "Civilization V artwork"
+    },
+    "Palworld": {
+      "reflection": "Sưu tầm sinh vật trộn với xây căn cứ và tự động hóa.",
+      "tags": [
+        "Survival",
+        "Collection",
+        "Base Building"
+      ],
+      "imageAlt": "Palworld artwork"
+    },
+    "League of Legends: Wild Rift": {
+      "reflection": "Một game MOBA được làm lại cho phiên chơi ngắn trên điện thoại.",
+      "tags": [
+        "MOBA",
+        "Mobile",
+        "Session Length"
+      ],
+      "imageAlt": "League of Legends: Wild Rift artwork"
+    },
+    "Clash of Clans": {
+      "reflection": "Thời gian xây dựng và các trận raid đặt khuôn mẫu cho thể loại base-builder.",
+      "tags": [
+        "Base Building",
+        "Timers",
+        "Social"
+      ],
+      "imageAlt": "Clash of Clans artwork"
+    },
+    "Clash Royale": {
+      "reflection": "Những trận đấu ba phút với elixir là toàn bộ nền kinh tế.",
+      "tags": [
+        "Real-time Strategy",
+        "Cards",
+        "Short Sessions"
+      ],
+      "imageAlt": "Clash Royale artwork"
+    },
+    "Candy Crush Saga": {
+      "reflection": "Bản đồ saga và đường độ khó đã định hình thể loại puzzle casual.",
+      "tags": [
+        "Match-3",
+        "Level Ramp",
+        "Live Ops"
+      ],
+      "imageAlt": "Candy Crush Saga artwork"
+    },
+    "Subway Surfers": {
+      "reflection": "Ba làn đường, chơi lại tức thì và chuỗi sự kiện vòng quanh thế giới.",
+      "tags": [
+        "Endless Runner",
+        "Live Events",
+        "Restart"
+      ],
+      "imageAlt": "Subway Surfers artwork"
+    },
+    "Angry Birds": {
+      "reflection": "Câu đố vật lý đọc hiểu chỉ trong một cái nhìn.",
+      "tags": [
+        "Physics",
+        "Puzzle",
+        "Readability"
+      ],
+      "imageAlt": "Angry Birds artwork"
+    },
+    "Cut the Rope": {
+      "reflection": "Một mục tiêu rõ, vài luật vật lý và ba ngôi sao để săn.",
+      "tags": [
+        "Physics",
+        "Puzzle",
+        "Star Rating"
+      ],
+      "imageAlt": "Cut the Rope artwork"
+    },
+    "Fruit Ninja": {
+      "reflection": "Cú vuốt màn hình chính là toàn bộ game feel.",
+      "tags": [
+        "Touch Feel",
+        "Arcade",
+        "Juice"
+      ],
+      "imageAlt": "Fruit Ninja artwork"
+    },
+    "Flappy Bird": {
+      "reflection": "Một chạm, một luật, chơi lại không ngừng.",
+      "tags": [
+        "One-touch",
+        "Difficulty",
+        "Retry"
+      ],
+      "imageAlt": "Flappy Bird artwork"
+    },
+    "Hay Day": {
+      "reflection": "Vòng lặp nông trại thư thả xây trên chuỗi sản xuất và đơn hàng.",
+      "tags": [
+        "Farming",
+        "Production Chains",
+        "Social"
+      ],
+      "imageAlt": "Hay Day artwork"
+    },
+    "Block Blast": {
+      "reflection": "Puzzle xếp khối mà mỗi lần xóa hàng cho cảm giác như combo.",
+      "tags": [
+        "Block Puzzle",
+        "Combo",
+        "Short Sessions"
+      ],
+      "imageAlt": "Block Blast artwork"
+    },
+    "Soul Knight": {
+      "reflection": "Một roguelike bắn súng bỏ túi với kho vũ khí khổng lồ.",
+      "tags": [
+        "Roguelike",
+        "Shooter",
+        "Weapons"
+      ],
+      "imageAlt": "Soul Knight artwork"
+    },
+    "Middle-earth: Shadow of War": {
+      "reflection": "Nemesis được mở rộng thành pháo đài, thuộc hạ và những trận công thành.",
+      "tags": [
+        "Nemesis",
+        "Sieges",
+        "Followers"
+      ],
+      "imageAlt": "Middle-earth: Shadow of War artwork"
+    },
+    "Call of Duty: Black Ops": {
+      "reflection": "Nhịp chiến dịch đầy set piece và vòng lặp Zombies theo từng wave.",
+      "tags": [
+        "Set Pieces",
+        "Zombies",
+        "Shooter"
+      ],
+      "imageAlt": "Call of Duty: Black Ops artwork"
+    },
+    "The Forest": {
+      "reflection": "Sinh tồn mà kẻ địch quan sát và học hỏi trước khi tấn công.",
+      "tags": [
+        "Survival",
+        "Enemy AI",
+        "Crafting"
+      ],
+      "imageAlt": "The Forest artwork"
+    },
+    "The Elder Scrolls IV: Oblivion": {
+      "reflection": "Các hội nhóm, những cánh cổng và một thế giới luôn kéo tôi rời nhiệm vụ chính.",
+      "tags": [
+        "Open World",
+        "Guilds",
+        "Role-play"
+      ],
+      "imageAlt": "The Elder Scrolls IV: Oblivion artwork"
+    },
+    "The Witcher 2: Assassins of Kings": {
+      "reflection": "Một màn hai rẽ nhánh, cho thấy một nửa câu chuyện khác hẳn.",
+      "tags": [
+        "Branching Story",
+        "Choices",
+        "Combat"
+      ],
+      "imageAlt": "The Witcher 2: Assassins of Kings artwork"
+    },
+    "Guilty Gear -Strive-": {
+      "reflection": "Game đối kháng dễ đọc nhờ hiệu ứng đòn đánh to và rõ.",
+      "tags": [
+        "Fighting",
+        "Hit Effects",
+        "Style"
+      ],
+      "imageAlt": "Guilty Gear -Strive- artwork"
+    },
+    "Brawlhalla": {
+      "reflection": "Game đối kháng platform với đòn hất văng mà ai cũng chơi được ngay.",
+      "tags": [
+        "Platform Fighter",
+        "Accessible",
+        "Online"
+      ],
+      "imageAlt": "Brawlhalla artwork"
+    },
+    "Lost Soul Aside": {
+      "reflection": "Combat combo hoa mỹ với một con rồng đồng hành.",
+      "tags": [
+        "Combo Combat",
+        "Companion",
+        "Action"
+      ],
+      "imageAlt": "Lost Soul Aside artwork"
+    },
+    "Where Winds Meet": {
+      "reflection": "Open world kiếm hiệp xây trên võ công và sự tự do di chuyển.",
+      "tags": [
+        "Wuxia",
+        "Open World",
+        "Martial Arts"
+      ],
+      "imageAlt": "Where Winds Meet artwork"
+    },
+    "Super Mario Odyssey": {
+      "reflection": "Cappy biến mọi kẻ địch thành một cách chơi mới.",
+      "tags": [
+        "Platformer",
+        "Capture",
+        "Moon Rewards"
+      ],
+      "imageAlt": "Super Mario Odyssey artwork"
+    },
+    "Mario Kart 8 Deluxe": {
+      "reflection": "Hệ thống item giữ cho mọi cuộc đua luôn sát nút.",
+      "tags": [
+        "Racing",
+        "Items",
+        "Party"
+      ],
+      "imageAlt": "Mario Kart 8 Deluxe artwork"
+    },
+    "Pokemon Sword and Shield": {
+      "reflection": "Wild Area và raid Dynamax đưa co-op vào series.",
+      "tags": [
+        "Collection",
+        "Raids",
+        "Co-op"
+      ],
+      "imageAlt": "Pokemon Sword and Shield artwork"
+    },
+    "Pokemon X and Y": {
+      "reflection": "Bước đầu tiên của series vào 3D, cùng Mega Evolution.",
+      "tags": [
+        "Collection",
+        "Mega Evolution",
+        "3D"
+      ],
+      "imageAlt": "Pokemon X and Y artwork"
+    },
+    "Pokemon Sun and Moon": {
+      "reflection": "Island trial thay gym bằng các thử thách như giải đố.",
+      "tags": [
+        "Collection",
+        "Trials",
+        "Story"
+      ],
+      "imageAlt": "Pokemon Sun and Moon artwork"
+    },
+    "Pokemon Diamond and Pearl": {
+      "reflection": "Trao đổi online và khu Underground trên hai màn hình.",
+      "tags": [
+        "Collection",
+        "Trading",
+        "Dual Screen"
+      ],
+      "imageAlt": "Pokemon Diamond and Pearl artwork"
+    },
+    "Pokemon GO": {
+      "reflection": "Thế giới thật là bản đồ, đi bộ là vòng lặp chính.",
+      "tags": [
+        "Location-based",
+        "Collection",
+        "Live Events"
+      ],
+      "imageAlt": "Pokemon GO artwork"
+    },
+    "Shadow Fight 2": {
+      "reflection": "Đối kháng điều khiển cảm ứng với những bóng đen ra đòn có lực.",
+      "tags": [
+        "Fighting",
+        "Touch Controls",
+        "Progression"
+      ],
+      "imageAlt": "Shadow Fight 2 artwork"
+    },
+    "2048": {
+      "reflection": "Một cú vuốt, một luật gộp, cả một câu đố.",
+      "tags": [
+        "Merge Puzzle",
+        "Minimal",
+        "Score Chase"
+      ],
+      "imageAlt": "2048 artwork"
+    },
+    "Piano Tiles": {
+      "reflection": "Nhịp điệu thu gọn lại thành việc chạm đúng phím đen.",
+      "tags": [
+        "Rhythm",
+        "Reaction",
+        "Short Sessions"
+      ],
+      "imageAlt": "Piano Tiles artwork"
+    },
+    "Mega Man 11": {
+      "reflection": "Double Gear cho người chơi tự uốn độ khó của những màn cổ điển đầy thử thách.",
+      "tags": [
+        "Platformer",
+        "Boss Patterns",
+        "Difficulty"
+      ],
+      "imageAlt": "Mega Man 11 artwork"
+    },
+    "Hogwarts Legacy": {
+      "reflection": "Một bối cảnh được yêu thích, cuối cùng cũng thành nơi để tự mình dạo bước.",
+      "tags": [
+        "Open World",
+        "Fantasy",
+        "Spells"
+      ],
+      "imageAlt": "Hogwarts Legacy artwork"
+    },
+    "Wuchang: Fallen Feathers": {
+      "reflection": "Soulslike cuối thời Minh, nơi sự điên loạn thay đổi cả rủi ro lẫn phần thưởng.",
+      "tags": [
+        "Soulslike",
+        "Risk and Reward",
+        "Late Ming"
+      ],
+      "imageAlt": "Wuchang: Fallen Feathers artwork"
+    },
+    "Onmyoji": {
+      "reflection": "Gacha RPG đứng vững nhờ mỹ thuật thời Heian và việc sưu tầm yêu quái.",
+      "tags": [
+        "Gacha",
+        "Collection",
+        "Art Direction"
+      ],
+      "imageAlt": "Onmyoji artwork"
+    },
+    "Identity V": {
+      "reflection": "Một thợ săn đấu bốn người sống sót, sự bất đối xứng là toàn bộ trò chơi.",
+      "tags": [
+        "Asymmetric",
+        "Multiplayer",
+        "Horror"
+      ],
+      "imageAlt": "Identity V artwork"
+    },
+    "Pokemon Legends: Z-A": {
+      "reflection": "Chiến đấu thời gian thực trong một thành phố đang được xây lại.",
+      "tags": [
+        "Collection",
+        "Real-time Battles",
+        "City"
+      ],
+      "imageAlt": "Pokemon Legends: Z-A artwork"
     }
   }
 }
