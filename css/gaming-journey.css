@@ -233,7 +233,7 @@ body {
   white-space: normal;
 }
 
-@media (max-width: 1540px) {
+@media (max-width: 1680px) {
   .journey-index {
     position: sticky;
     top: 12px;
@@ -819,10 +819,11 @@ body {
   opacity: 1;
 }
 
+/* Spotlight card: landscape art across the top, text in two columns below */
 .journey-card--feature {
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 0.54fr) minmax(260px, 0.46fr);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .journey-card--wide {
@@ -869,13 +870,10 @@ body {
   transform: translateY(0);
 }
 
-/* Fills its grid cell: the column sets the width, the card sets the height */
+/* The thumbnail keeps its 16:9 ratio, so logos and key art are never cropped */
 .journey-card--feature .journey-card__media {
   width: 100%;
-  min-width: 0;
-  min-height: clamp(240px, 24vw, 340px);
-  height: 100%;
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .journey-card__source {
@@ -902,9 +900,21 @@ body {
 }
 
 .journey-card--feature .journey-card__body {
-  align-content: center;
-  gap: 14px;
-  padding: clamp(24px, 3vw, 38px);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: 18px clamp(20px, 3vw, 36px);
+  padding: clamp(20px, 2.6vw, 32px);
+}
+
+.journey-card__head,
+.journey-card__text {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.journey-card__head {
+  justify-items: start;
 }
 
 .journey-card__lesson {
@@ -1122,18 +1132,13 @@ body {
     left: 0;
   }
 
-  .journey-card--feature {
-    grid-template-columns: minmax(0, 0.52fr) minmax(240px, 0.48fr);
-  }
+
 
   .journey-shelf {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 
-  .journey-card--feature .journey-card__media {
-    min-height: 220px;
-    aspect-ratio: auto;
-  }
+
 }
 
 @media (max-width: 760px) {
@@ -1177,15 +1182,8 @@ body {
     display: none;
   }
 
-  .journey-card--feature {
-    grid-template-columns: 1fr;
-  }
-
-  /* Stacked card: the image takes a 16:9 strip above the text */
-  .journey-card--feature .journey-card__media {
-    min-height: 0;
-    height: auto;
-    aspect-ratio: 16 / 9;
+  .journey-card--feature .journey-card__body {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

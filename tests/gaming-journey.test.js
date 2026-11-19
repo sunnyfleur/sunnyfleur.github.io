@@ -163,7 +163,8 @@ test('chapter markup alternates layout direction and features the first game', (
   assert.match(css, /\.journey-chapter--reverse \.journey-chapter__header\s*\{[^}]*grid-column:\s*2/s);
   assert.match(css, /\.journey-chapter--reverse \.journey-chapter__spotlight\s*\{[^}]*grid-column:\s*1;[^}]*grid-row:\s*1/s);
   assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-column:\s*1 \/ -1/s);
-  assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*0\.54fr\) minmax\(260px,\s*0\.46fr\)/s);
+  assert.match(css, /\.journey-card--feature\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/s);
+  assert.match(css, /\.journey-card--feature \.journey-card__media\s*\{[^}]*aspect-ratio:\s*16 \/ 9/s);
 });
 
 test('chapter shelves collapse long game lists behind an accessible toggle', () => {
@@ -235,8 +236,8 @@ test('journey index renders chapter navigation and progress affordance', () => {
   assert.match(css, /\.journey-index__progress\s*\{[^}]*height:\s*var\(--journey-progress,\s*0%\)/s);
   assert.match(css, /\.journey-index__link\.is-active\s*\{[^}]*background:\s*color-mix\(in srgb,\s*var\(--chapter-accent\)\s*14%,\s*transparent\)/s);
   assert.match(css, /\.journey-index__title\s*\{[^}]*white-space:\s*normal/s);
-  assert.match(css, /@media \(max-width:\s*1540px\)\s*\{[^}]*\.journey-index\s*\{[^}]*position:\s*sticky/s);
-  assert.doesNotMatch(css, /@media \(max-width:\s*1540px\)\s*\{[^}]*\.journey-index\s*\{[^}]*display:\s*none/s);
+  assert.match(css, /@media \(max-width:\s*1680px\)\s*\{[^}]*\.journey-index\s*\{[^}]*position:\s*sticky/s);
+  assert.doesNotMatch(css, /@media \(max-width:\s*1680px\)\s*\{[^}]*\.journey-index\s*\{[^}]*display:\s*none/s);
 });
 
 test('gamepage uses the chapter-led journey shell instead of tier list filters', () => {

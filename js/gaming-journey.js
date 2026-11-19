@@ -233,12 +233,15 @@
           ${sourceMarkup}
         </figure>
         <div class="journey-card__body">
+          ${isFeatured ? '<div class="journey-card__head">' : ''}
           ${createLessonMarkup(game)}
           <h3 class="journey-card__title">${title}</h3>
           <div class="journey-card__meta">${createMetaMarkup(game)}</div>
+          ${isFeatured ? `${createAppliedMarkup(game)}</div><div class="journey-card__text">` : ''}
           ${reflection ? `<p class="journey-card__reflection">${reflection}</p>` : ''}
-          ${createAppliedMarkup(game)}
+          ${isFeatured ? '' : createAppliedMarkup(game)}
           <div class="journey-card__tags">${createTagsMarkup(game.tags)}</div>
+          ${isFeatured ? '</div>' : ''}
         </div>
       </article>
     `;
